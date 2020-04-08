@@ -2,10 +2,7 @@
   "name": "@manuth/eslint-plugin",
   "version": "0.0.0",
   "description": "A set of personal eslint-rulesets for TypeScript-projects",
-  "author": {
-    "name": "Manuel Thalmann",
-    "email": "m@nuth.ch"
-  },
+  "author": "Manuel Thalmann <m@nuth.ch>",
   "keywords": [],
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
