@@ -3,9 +3,26 @@
   "version": "0.0.0",
   "description": "A set of personal eslint-rulesets for TypeScript-projects",
   "author": "Manuel Thalmann <m@nuth.ch>",
-  "keywords": [],
+  "license": "MIT",
+  "keywords": [
+    "ESLint",
+    "Presets",
+    "Rules"
+  ],
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/manuth/ESLintPresets.git"
+  },
+  "bugs": {
+    "url": "https://github.com/manuth/ESLintPresets/issues"
+  },
+  "homepage": "https://github.com/manuth/ESLintPresets#readme",
   "scripts": {
     "build": "tsc -p .",
     "rebuild": "npm run clean && npm run build",
