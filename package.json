@@ -1,5 +1,5 @@
 {
-  "name": "@manuth/eslint-plugin",
+  "name": "@manuth/eslint-plugin-typescript",
   "version": "0.0.0",
   "description": "A set of personal eslint-rulesets for TypeScript-projects",
   "author": "Manuel Thalmann <m@nuth.ch>",
@@ -28,20 +28,22 @@
     "rebuild": "npm run clean && npm run build",
     "watch": "tsc -p . --watch",
     "clean": "rimraf ./lib",
-    "lint": "tslint -p ./ -t verbose",
+    "lint": "eslint --max-warnings 0 --ext .js,.jsx,.ts,.tsx ./src",
+    "lint-compact": "npm run lint -- -f compact || exit 0",
     "test": "mocha",
     "prepare": "npm run rebuild"
   },
   "dependencies": {},
   "devDependencies": {
     "@manuth/tsconfig": "^1.2.2",
-    "@manuth/tslint-presets": "^1.0.3",
     "@types/mocha": "^5.2.7",
     "@types/node": "^12.6.9",
+    "@typescript-eslint/eslint-plugin": "^2.27.0",
+    "@typescript-eslint/parser": "^2.27.0",
+    "eslint": "^6.8.0",
     "mocha": "^6.2.0",
     "rimraf": "^2.6.3",
-    "tslint": "^5.18.0",
     "typescript": "^3.5.3",
-    "typescript-tslint-plugin": "^0.5.4"
+    "typescript-eslint-plugin": "^1.1.2"
   }
 }
