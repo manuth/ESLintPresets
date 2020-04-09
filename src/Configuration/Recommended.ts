@@ -371,6 +371,10 @@ export = {
         "prefer-object-spread": "warn",
         "prefer-rest-params": "warn",
         "prefer-spread": "warn",
+        "quote-props": [
+            "warn",
+            "as-needed"
+        ],
         radix: "warn",
         "rest-spread-spacing": "warn",
         "semi-spacing": "warn",
