@@ -155,10 +155,6 @@ export = {
                 allowSingleLine: true
             }
         ],
-        "capitalized-comments": [
-            "warn",
-            "always"
-        ],
         "comma-dangle": "warn",
         "comma-style": "warn",
         complexity: "off",
