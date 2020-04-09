@@ -39,10 +39,15 @@
     "@types/mocha": "^5.2.7",
     "@types/node": "^12.6.9",
     "@typescript-eslint/eslint-plugin": "^2.27.0",
+    "@typescript-eslint/eslint-plugin-tslint": "^2.27.0",
     "@typescript-eslint/parser": "^2.27.0",
     "eslint": "^6.8.0",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-jsdoc": "^22.1.0",
+    "eslint-plugin-prefer-arrow": "^1.2.0",
     "mocha": "^6.2.0",
     "rimraf": "^2.6.3",
+    "tslint": "^6.1.1",
     "typescript": "^3.5.3",
     "typescript-eslint-plugin": "^1.1.2"
   }
