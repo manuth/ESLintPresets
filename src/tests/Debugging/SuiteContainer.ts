@@ -16,6 +16,11 @@ export class SuiteContainer implements ISuite
     private suiteName: string;
 
     /**
+     * The children of the suite.
+     */
+    private children: ISuite[];
+
+    /**
      * Initializes a new instance of the `SuiteContainer` class.
      *
      * @param suiteName
@@ -32,5 +37,13 @@ export class SuiteContainer implements ISuite
     public get SuiteName(): string
     {
         return this.suiteName;
+    }
+
+    /**
+     * Gets the children of the suite.
+     */
+    public get Children(): ISuite[]
+    {
+        return this.children;
     }
 }
