@@ -230,7 +230,9 @@ export = {
                     "TSEnumMember",
                     "TSInterfaceDeclaration",
                     "ClassProperty",
-                    "TSTypeAliasDeclaration"
+                    "TSTypeAliasDeclaration",
+                    "TSPropertySignature",
+                    "TSAbstractMethodDefinition"
                 ]
             }
         ],
@@ -250,7 +252,9 @@ export = {
                     "TSEnumMember",
                     "TSInterfaceDeclaration",
                     "ClassProperty",
-                    "TSTypeAliasDeclaration"
+                    "TSTypeAliasDeclaration",
+                    "TSPropertySignature",
+                    "TSAbstractMethodDefinition"
                 ]
             }
         ],
