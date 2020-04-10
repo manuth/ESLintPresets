@@ -1,11 +1,12 @@
 import { ISuite } from "./ISuite";
 import { RuleSet } from "./RuleSet";
+import { Suite } from "./Suite";
 import { TestContext } from "./TestContext";
 
 /**
  * Represents a suite which contains other suites.
  */
-export class SuiteContainer implements ISuite
+export class SuiteContainer extends Suite
 {
     /**
      * @inheritdoc
@@ -33,6 +34,7 @@ export class SuiteContainer implements ISuite
      */
     public constructor(suiteName: string, children: ISuite[])
     {
+        super();
         this.suiteName = suiteName;
 
         for (let child of children)
@@ -67,7 +69,7 @@ export class SuiteContainer implements ISuite
      * @param ruleSet
      * The rule-set to add tests for.
      */
-    public Register(context: TestContext, ruleSet: RuleSet): void
+    protected RegisterInternal(context: TestContext, ruleSet: RuleSet): void
     {
         for (let child of this.Children)
         {

@@ -85,7 +85,7 @@ export abstract class LintSuite extends Suite
      * @param context
      * The test-context.
      */
-    public Register(context: TestContext, ruleSet: RuleSet): void
+    protected RegisterInternal(context: TestContext, ruleSet: RuleSet): void
     {
         suite(
             this.SuiteName,

@@ -33,5 +33,24 @@ export abstract class Suite implements ISuite
      * @param ruleSet
      * The rule-set to add tests for.
      */
-    public abstract Register(context: TestContext, ruleSet: RuleSet): void;
+    public Register(context: TestContext, ruleSet: RuleSet): void
+    {
+        suite(
+            this.SuiteName,
+            () =>
+            {
+                this.RegisterInternal(context, ruleSet);
+            });
+    }
+
+    /**
+     * Registers the `mocha`-tests.
+     *
+     * @param context
+     * The test-context.
+     *
+     * @param ruleSet
+     * The rule-set to add tests for.
+     */
+    protected abstract RegisterInternal(context: TestContext, ruleSet: RuleSet): void;
 }
