@@ -1,6 +1,8 @@
-import { LintSuite } from "../../Debugging/LintSuite";
+import { SuiteContainer } from "../../Debugging/SuiteContainer";
 import { AdjacentOverloadSignatures } from "./AdjacentOverloadSignatures";
 
-export let TypeScriptTests: LintSuite[] = [
-    AdjacentOverloadSignatures
-];
+export let TypeScriptTests = new SuiteContainer(
+    "TypeScript",
+    [
+        AdjacentOverloadSignatures
+    ]);

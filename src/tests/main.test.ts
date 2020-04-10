@@ -16,10 +16,7 @@ suite(
                 await context.Workspace.Initialize();
             });
 
-        for (let ruleTest of RuleTests)
-        {
-            ruleTest.Register(context);
-        }
+        RuleTests.Register(context);
 
         suiteTeardown(
             () =>

@@ -26,10 +26,19 @@ export class SuiteContainer implements ISuite
      *
      * @param suiteName
      * The name of the suite.
+     *
+     * @param children
+     * The children of the suite.
      */
-    public constructor(suiteName: string)
+    public constructor(suiteName: string, children: ISuite[])
     {
         this.suiteName = suiteName;
+
+        for (let child of children)
+        {
+            this.children.push(child);
+            child.Parent = this;
+        }
     }
 
     /**
@@ -43,7 +52,7 @@ export class SuiteContainer implements ISuite
     /**
      * Gets the children of the suite.
      */
-    public get Children(): ISuite[]
+    public get Children(): readonly ISuite[]
     {
         return this.children;
     }
