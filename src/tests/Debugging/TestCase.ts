@@ -1,11 +1,13 @@
 import { ICodeSnippetCollection } from "./ICodeSnippet";
+import { ITestCase } from "./ITestCase";
 import { LintSuite } from "./LintSuite";
+import { RuleSet } from "./RuleSet";
 import { ScriptKind } from "./ScriptKind";
 
 /**
  * Represents a test-case.
  */
-export class TestCase
+export class TestCase implements ITestCase
 {
     /**
      * The test-suite of this case.
@@ -16,6 +18,11 @@ export class TestCase
      * The description of the test-case.
      */
     private description: string;
+
+    /**
+     * The rule-sets this case is applicable to.
+     */
+    private ruleSet: RuleSet;
 
     /**
      * The script-kinds this test-case is applicable to.
@@ -36,18 +43,22 @@ export class TestCase
      * @param description
      * The description of the test-case.
      *
+     * @param ruleSet
+     * The rule-sets this case is applicable to.
+     *
      * @param scriptKind
      * The script-kinds this test-case is applicable to.
      *
      * @param codeSnippets
      * A set of code-snippets for testing.
      */
-    public constructor(testSuite: LintSuite, description: string, scriptKind: ScriptKind, codeSnippets: ICodeSnippetCollection[])
+    public constructor(testSuite: LintSuite, description: string, ruleSet: RuleSet, scriptKind: ScriptKind, codeSnippets: readonly ICodeSnippetCollection[])
     {
         this.testSuite = testSuite;
         this.description = description;
+        this.ruleSet = ruleSet;
         this.scriptKind = scriptKind;
-        this.codeSnippets = codeSnippets;
+        this.codeSnippets.push(...codeSnippets);
     }
 
     /**
@@ -64,6 +75,14 @@ export class TestCase
     public get Description(): string
     {
         return this.description;
+    }
+
+    /**
+     * Gets the rule-set this test-case is applicable to.
+     */
+    public get RuleSet(): RuleSet
+    {
+        return this.ruleSet;
     }
 
     /**

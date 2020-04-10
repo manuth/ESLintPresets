@@ -4,6 +4,7 @@ import { CLIEngine } from "eslint";
 import merge = require("lodash.merge");
 import { Context } from "mocha";
 import { ITestCase } from "./ITestCase";
+import { RuleSet } from "./RuleSet";
 import { ScriptKind } from "./ScriptKind";
 import { Suite } from "./Suite";
 import { SuiteContainer } from "./SuiteContainer";
@@ -49,6 +50,7 @@ export abstract class LintSuite extends Suite
                 new TestCase(
                     this,
                     testCase.Description,
+                    testCase.RuleSet,
                     testCase.ScriptKind,
                     testCase.CodeSnippets));
         }

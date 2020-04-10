@@ -1,4 +1,5 @@
 import { ICodeSnippetCollection } from "./ICodeSnippet";
+import { RuleSet } from "./RuleSet";
 import { ScriptKind } from "./ScriptKind";
 
 /**
@@ -12,6 +13,11 @@ export interface ITestCase
     Description: string;
 
     /**
+     * The rule-sets this test-case is applicable to.
+     */
+    RuleSet: RuleSet;
+
+    /**
      * The script-kinds this test-case is applicable to.
      */
     ScriptKind: ScriptKind;
@@ -19,5 +25,5 @@ export interface ITestCase
     /**
      * A set of code-snippets for testing.
      */
-    CodeSnippets: ICodeSnippetCollection[];
+    CodeSnippets: readonly ICodeSnippetCollection[];
 }

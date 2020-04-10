@@ -1,3 +1,4 @@
+import { RuleSet } from "../../Debugging/RuleSet";
 import { RuleSuite } from "../../Debugging/RuleSuite";
 import { ScriptKind } from "../../Debugging/ScriptKind";
 
@@ -6,6 +7,7 @@ let ruleTest = new RuleSuite(
     [
         {
             Description: "Checking whether the rule works as expected…",
+            RuleSet: RuleSet.All,
             ScriptKind: ScriptKind.TS,
             CodeSnippets: [
                 {
