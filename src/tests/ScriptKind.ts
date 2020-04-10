@@ -6,10 +6,10 @@ export enum ScriptKind
     /**
      * Indicates javascript.
      */
-    JS,
+    JS = 1,
 
     /**
      * Indicates a typescript.
      */
-    TS
+    TS = 2
 }
