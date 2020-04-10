@@ -7,4 +7,4 @@ module.exports = {
         require.resolve("./lib/Configuration/Recommended"),
         require.resolve("./lib/Configuration/RecommendedWithTypeChecking")
     ]
-}
+};
