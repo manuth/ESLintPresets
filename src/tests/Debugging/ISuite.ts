@@ -12,9 +12,4 @@ export interface ISuite
      * Gets or sets the parent of the suite.
      */
     Parent: ISuite;
-
-    /**
-     * Gets the `eslint`-configuration to use.
-     */
-    Config: any;
 }

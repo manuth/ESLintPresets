@@ -54,12 +54,7 @@ export abstract class LintSuite implements ISuite
     }
 
     /**
-     * @inheritdoc
-     */
-    public abstract get SuiteName(): string;
-
-    /**
-     * @inheritdoc
+     * Gets the `eslint`-configuration to use.
      */
     public get Config(): any
     {
