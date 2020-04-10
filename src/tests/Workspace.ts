@@ -8,6 +8,14 @@ import { ScriptKind } from "./ScriptKind";
 export class Workspace
 {
     /**
+     * The default filenames for different script-kinds.
+     */
+    private static fileNameMap = {
+        [ScriptKind.JS]: "javascript.js",
+        [ScriptKind.TS]: "typescript.ts"
+    };
+
+    /**
      * The directory of the workspace.
      */
     private tempDir: TempDirectory;
@@ -71,20 +79,7 @@ export class Workspace
      */
     public GetFileName(scriptKind: ScriptKind): string
     {
-        let fileName: string;
-
-        switch (scriptKind)
-        {
-            case ScriptKind.JS:
-                fileName = "javascript.js";
-                break;
-            case ScriptKind.TS:
-            default:
-                fileName = "typescript.ts";
-                break;
-        }
-
-        let result = this.TempDir.MakePath(this.sourceDirectory, fileName);
+        let result = this.TempDir.MakePath(this.sourceDirectory, Workspace.fileNameMap[scriptKind]);
         ensureFileSync(result);
         return result;
     }
