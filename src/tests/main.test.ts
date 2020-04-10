@@ -1,13 +1,29 @@
-import Assert = require("assert");
+import { RuleTests } from "./Rules";
+import { TestContext } from "./TestContext";
+import { Workspace } from "./Workspace";
 
 suite(
     "ESLintPresets",
     () =>
     {
-        test(
-            "Example...",
+        let context = new TestContext();
+
+        suiteSetup(
+            async function()
+            {
+                this.enableTimeouts(false);
+                context.Workspace = new Workspace();
+                await context.Workspace.Initialize();
+            });
+
+        for (let ruleTest of RuleTests)
+        {
+            ruleTest.Register(context);
+        }
+
+        suiteTeardown(
             () =>
             {
-                Assert.strictEqual(1, 1);
+                context.Workspace.Dispose();
             });
     });
