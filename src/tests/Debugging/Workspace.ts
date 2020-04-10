@@ -1,5 +1,6 @@
 import { writeJSON, ensureFileSync } from "fs-extra";
 import { TempDirectory } from "temp-filesystem";
+import { TestConstants } from "../TestConstants";
 import { ScriptKind } from "./ScriptKind";
 
 /**
@@ -7,14 +8,6 @@ import { ScriptKind } from "./ScriptKind";
  */
 export class Workspace
 {
-    /**
-     * The default filenames for different script-kinds.
-     */
-    private static fileNameMap: Record<ScriptKind, string> = {
-        [ScriptKind.JS]: "javascript.js",
-        [ScriptKind.TS]: "typescript.ts"
-    };
-
     /**
      * The directory of the workspace.
      */
@@ -79,7 +72,7 @@ export class Workspace
      */
     public GetFileName(scriptKind: ScriptKind): string
     {
-        let result = this.TempDir.MakePath(this.sourceDirectory, Workspace.fileNameMap[scriptKind]);
+        let result = this.TempDir.MakePath(this.sourceDirectory, TestConstants.FileNames[scriptKind]);
         ensureFileSync(result);
         return result;
     }
