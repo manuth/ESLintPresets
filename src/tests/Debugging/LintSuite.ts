@@ -3,21 +3,22 @@ import dedent = require("dedent");
 import { CLIEngine } from "eslint";
 import merge = require("lodash.merge");
 import { Context } from "mocha";
-import { ISuite } from "./ISuite";
 import { ITestCase } from "./ITestCase";
 import { ScriptKind } from "./ScriptKind";
+import { Suite } from "./Suite";
+import { SuiteContainer } from "./SuiteContainer";
 import { TestCase } from "./TestCase";
 import { TestContext } from "./TestContext";
 
 /**
  * Represents a test for linting.
  */
-export abstract class LintSuite implements ISuite
+export abstract class LintSuite extends Suite
 {
     /**
      * @inheritdoc
      */
-    public Parent: ISuite;
+    public Parent: SuiteContainer;
 
     /**
      * The test-cases.
@@ -40,6 +41,8 @@ export abstract class LintSuite implements ISuite
      */
     public constructor(testCases: ITestCase[], config?: any)
     {
+        super();
+
         for (let testCase of testCases)
         {
             this.testCases.push(
