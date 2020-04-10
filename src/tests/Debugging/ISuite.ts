@@ -1,4 +1,5 @@
 import { SuiteContainer } from "./SuiteContainer";
+import { TestContext } from "./TestContext";
 
 /**
  * Represents a suite.
@@ -14,4 +15,12 @@ export interface ISuite
      * Gets the name of the test-suite.
      */
     SuiteName: string;
+
+    /**
+     * Registers the `mocha`-tests.
+     *
+     * @param context
+     * The test-context.
+     */
+    Register(context: TestContext): void;
 }

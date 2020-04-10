@@ -1,4 +1,5 @@
 import { ISuite } from "./ISuite";
+import { TestContext } from "./TestContext";
 
 /**
  * Represents a suite which contains other suites.
@@ -45,5 +46,19 @@ export class SuiteContainer implements ISuite
     public get Children(): ISuite[]
     {
         return this.children;
+    }
+
+    /**
+     * @inheritdoc
+     *
+     * @param context
+     * The test-context.
+     */
+    public Register(context: TestContext): void
+    {
+        for (let child of this.Children)
+        {
+            child.Register(context);
+        }
     }
 }

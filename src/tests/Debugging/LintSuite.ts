@@ -78,7 +78,7 @@ export abstract class LintSuite extends Suite
     }
 
     /**
-     * Registers the `mocha`-tests.
+     * @inheritdoc
      *
      * @param context
      * The test-context.

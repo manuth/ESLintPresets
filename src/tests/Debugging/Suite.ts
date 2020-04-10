@@ -1,5 +1,6 @@
 import { ISuite } from "./ISuite";
 import { SuiteContainer } from "./SuiteContainer";
+import { TestContext } from "./TestContext";
 
 /**
  * Represents a suite.
@@ -21,4 +22,12 @@ export abstract class Suite implements ISuite
      * @inheritdoc
      */
     public abstract get SuiteName(): string;
+
+    /**
+     * @inheritdoc
+     *
+     * @param context
+     * The test-context.
+     */
+    public abstract Register(context: TestContext): void;
 }
