@@ -1,4 +1,4 @@
-import { LintSuite } from "../../LintSuite";
+import { LintSuite } from "../../Debugging/LintSuite";
 import { AdjacentOverloadSignatures } from "./AdjacentOverloadSignatures";
 
 export let TypeScriptTests: LintSuite[] = [

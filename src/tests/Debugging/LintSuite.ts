@@ -3,10 +3,10 @@ import dedent = require("dedent");
 import { CLIEngine } from "eslint";
 import merge = require("lodash.merge");
 import { Context } from "mocha";
+import RecommendedRules = require("../../Configuration/Recommended");
 import { ScriptKind } from "./ScriptKind";
 import { TestCase } from "./TestCase";
 import { TestContext } from "./TestContext";
-import RecommendedRules = require("../Configuration/Recommended");
 
 /**
  * Represents a test for linting.

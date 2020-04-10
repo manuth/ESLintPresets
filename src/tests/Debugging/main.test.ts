@@ -1,4 +1,4 @@
-import { RuleTests } from "./Rules";
+import { RuleTests } from "../Rules";
 import { TestContext } from "./TestContext";
 import { Workspace } from "./Workspace";
 

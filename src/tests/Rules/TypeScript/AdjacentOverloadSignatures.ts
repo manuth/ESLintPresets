@@ -1,6 +1,6 @@
-import { RuleSuite } from "../../RuleSuite";
-import { ScriptKind } from "../../ScriptKind";
-import { TestCase } from "../../TestCase";
+import { RuleSuite } from "../../Debugging/RuleSuite";
+import { ScriptKind } from "../../Debugging/ScriptKind";
+import { TestCase } from "../../Debugging/TestCase";
 
 let ruleTest = new RuleSuite("@typescript-eslint/adjacent-overload-signatures", {});
 
