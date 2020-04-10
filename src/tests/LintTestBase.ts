@@ -29,9 +29,9 @@ export abstract class LintTestBase
      * @param config
      * The `eslint`-configuration to apply.
      */
-    public constructor(config: any)
+    public constructor(config?: any)
     {
-        this.config = config;
+        this.config = config ?? {};
     }
 
     /**

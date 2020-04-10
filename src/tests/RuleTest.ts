@@ -21,7 +21,7 @@ export class RuleTest extends LintTestBase
      * @param config
      * The `eslint`-configuration to apply.
      */
-    public constructor(ruleName: string, config: any)
+    public constructor(ruleName: string, config?: any)
     {
         super(config);
         this.ruleName = ruleName;

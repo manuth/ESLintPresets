@@ -20,7 +20,7 @@ export class LintTest extends LintTestBase
      * @param config
      * The `eslint`-configuration to apply.
      */
-    public constructor(suiteName: string, config: any)
+    public constructor(suiteName: string, config?: any)
     {
         super(config);
         this.suiteName = suiteName;
