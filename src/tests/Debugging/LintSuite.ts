@@ -4,6 +4,7 @@ import { CLIEngine } from "eslint";
 import merge = require("lodash.merge");
 import { Context } from "mocha";
 import RecommendedRules = require("../../Configuration/Recommended");
+import { ITestCase } from "./ITestCase";
 import { ScriptKind } from "./ScriptKind";
 import { TestCase } from "./TestCase";
 import { TestContext } from "./TestContext";
@@ -26,11 +27,24 @@ export abstract class LintSuite
     /**
      * Initializes a new instance of the `LintTestBase` class.
      *
+     * @param testCases
+     * The test-cases of the test-suite.
+     *
      * @param config
      * The `eslint`-configuration to apply.
      */
-    public constructor(config?: any)
+    public constructor(testCases: ITestCase[], config?: any)
     {
+        for (let testCase of testCases)
+        {
+            this.testCases.push(
+                new TestCase(
+                    this,
+                    testCase.Description,
+                    testCase.ScriptKind,
+                    testCase.CodeSnippets));
+        }
+
         this.config = config ?? {};
     }
 

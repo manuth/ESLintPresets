@@ -1,4 +1,5 @@
 import { CLIEngine } from "eslint";
+import { ITestCase } from "./ITestCase";
 import { LintSuite } from "./LintSuite";
 
 /**
@@ -17,12 +18,15 @@ export class CustomSuite extends LintSuite
      * @param suiteName
      * The name of the lint-test.
      *
+     * @param testCases
+     * The test-cases of the test-suite.
+     *
      * @param config
      * The `eslint`-configuration to apply.
      */
-    public constructor(suiteName: string, config?: any)
+    public constructor(suiteName: string, testCases: ITestCase[], config?: any)
     {
-        super(config);
+        super(testCases, config);
         this.suiteName = suiteName;
     }
 

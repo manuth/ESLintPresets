@@ -1,4 +1,5 @@
 import { ICodeSnippetCollection } from "./ICodeSnippet";
+import { LintSuite } from "./LintSuite";
 import { ScriptKind } from "./ScriptKind";
 
 /**
@@ -6,6 +7,11 @@ import { ScriptKind } from "./ScriptKind";
  */
 export class TestCase
 {
+    /**
+     * The test-suite of this case.
+     */
+    private testSuite: LintSuite;
+
     /**
      * The description of the test-case.
      */
@@ -24,6 +30,9 @@ export class TestCase
     /**
      * Initializes a new instance of the `TestCase` class.
      *
+     * @param testSuite
+     * The suite of this test-case.
+     *
      * @param description
      * The description of the test-case.
      *
@@ -33,11 +42,20 @@ export class TestCase
      * @param codeSnippets
      * A set of code-snippets for testing.
      */
-    public constructor(description: string, scriptKind: ScriptKind, codeSnippets: ICodeSnippetCollection[])
+    public constructor(testSuite: LintSuite, description: string, scriptKind: ScriptKind, codeSnippets: ICodeSnippetCollection[])
     {
+        this.testSuite = testSuite;
         this.description = description;
         this.scriptKind = scriptKind;
         this.codeSnippets = codeSnippets;
+    }
+
+    /**
+     * Gets the test-suite of this case.
+     */
+    public get TestSuite(): LintSuite
+    {
+        return this.testSuite;
     }
 
     /**

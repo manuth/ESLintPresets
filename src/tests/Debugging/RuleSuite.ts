@@ -1,5 +1,6 @@
 import { CLIEngine } from "eslint";
 import merge = require("lodash.merge");
+import { ITestCase } from "./ITestCase";
 import { LintSuite } from "./LintSuite";
 
 /**
@@ -18,12 +19,15 @@ export class RuleSuite extends LintSuite
      * @param ruleName
      * The name of the rule to test.
      *
+     * @param testCases
+     * The test-cases of the test-suite.
+     *
      * @param config
      * The `eslint`-configuration to apply.
      */
-    public constructor(ruleName: string, config?: any)
+    public constructor(ruleName: string, testCases: ITestCase[], config?: any)
     {
-        super(config);
+        super(testCases, config);
         this.ruleName = ruleName;
     }
 
