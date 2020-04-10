@@ -1,6 +1,6 @@
-import { RuleTests } from "../Rules";
-import { TestContext } from "./TestContext";
-import { Workspace } from "./Workspace";
+import { TestContext } from "./Debugging/TestContext";
+import { Workspace } from "./Debugging/Workspace";
+import { RuleTests } from "./Rules";
 
 suite(
     "ESLintPresets",
