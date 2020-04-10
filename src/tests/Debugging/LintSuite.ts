@@ -85,7 +85,7 @@ export abstract class LintSuite extends Suite
      * @param context
      * The test-context.
      */
-    public Register(context: TestContext): void
+    public Register(context: TestContext, ruleSet: RuleSet): void
     {
         suite(
             this.SuiteName,
@@ -123,7 +123,9 @@ export abstract class LintSuite extends Suite
 
                             for (let scriptKind of [ScriptKind.JS, ScriptKind.TS])
                             {
-                                if ((testCase.ScriptKind & scriptKind) > 0)
+                                if (
+                                    (testCase.RuleSet & ruleSet) > 0 &&
+                                    (testCase.ScriptKind & scriptKind) > 0)
                                 {
                                     let fileName = context.Workspace.GetFileName(scriptKind);
 

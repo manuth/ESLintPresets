@@ -1,4 +1,5 @@
 import { ISuite } from "./ISuite";
+import { RuleSet } from "./RuleSet";
 import { TestContext } from "./TestContext";
 
 /**
@@ -62,12 +63,15 @@ export class SuiteContainer implements ISuite
      *
      * @param context
      * The test-context.
+     *
+     * @param ruleSet
+     * The rule-set to add tests for.
      */
-    public Register(context: TestContext): void
+    public Register(context: TestContext, ruleSet: RuleSet): void
     {
         for (let child of this.Children)
         {
-            child.Register(context);
+            child.Register(context, ruleSet);
         }
     }
 }

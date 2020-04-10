@@ -1,4 +1,5 @@
 import { ISuite } from "./ISuite";
+import { RuleSet } from "./RuleSet";
 import { SuiteContainer } from "./SuiteContainer";
 import { TestContext } from "./TestContext";
 
@@ -28,6 +29,9 @@ export abstract class Suite implements ISuite
      *
      * @param context
      * The test-context.
+     *
+     * @param ruleSet
+     * The rule-set to add tests for.
      */
-    public abstract Register(context: TestContext): void;
+    public abstract Register(context: TestContext, ruleSet: RuleSet): void;
 }

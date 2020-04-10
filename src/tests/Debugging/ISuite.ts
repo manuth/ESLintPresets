@@ -1,3 +1,4 @@
+import { RuleSet } from "./RuleSet";
 import { SuiteContainer } from "./SuiteContainer";
 import { TestContext } from "./TestContext";
 
@@ -21,6 +22,9 @@ export interface ISuite
      *
      * @param context
      * The test-context.
+     *
+     * @param ruleSet
+     * The rule-set to add tests for.
      */
-    Register(context: TestContext): void;
+    Register(context: TestContext, ruleSet: RuleSet): void;
 }
