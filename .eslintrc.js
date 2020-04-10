@@ -4,7 +4,6 @@ module.exports = {
         project: "tsconfig.json"
     },
     extends: [
-        require.resolve("./lib/Configuration/Recommended"),
         require.resolve("./lib/Configuration/RecommendedWithTypeChecking")
     ]
 };

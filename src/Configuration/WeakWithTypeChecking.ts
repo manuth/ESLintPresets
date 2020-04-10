@@ -1,5 +1,3 @@
-export = {
-    rules: {
-        "@typescript-eslint/tslint/config": "off"
-    }
-};
+import { GenerateConfiguration } from "./GenerateConfiguration";
+
+export = GenerateConfiguration(true, true);
