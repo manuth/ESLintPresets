@@ -1,10 +1,10 @@
 import { CLIEngine } from "eslint";
-import { LintTestBase } from "./LintTestBase";
+import { LintSuite } from "./LintSuite";
 
 /**
  * Represetns a test for linting.
  */
-export class LintTest extends LintTestBase
+export class CustomSuite extends LintSuite
 {
     /**
      * The name of the lint-test.

@@ -1,11 +1,11 @@
 import { CLIEngine } from "eslint";
 import merge = require("lodash.merge");
-import { LintTestBase } from "./LintTestBase";
+import { LintSuite } from "./LintSuite";
 
 /**
  * Represents a test for an `eslint`-rule.
  */
-export class RuleTest extends LintTestBase
+export class RuleSuite extends LintSuite
 {
     /**
      * The name of the rule to test.

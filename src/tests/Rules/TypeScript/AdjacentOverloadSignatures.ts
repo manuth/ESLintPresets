@@ -1,8 +1,8 @@
-import { RuleTest } from "../../RuleTest";
+import { RuleSuite } from "../../RuleSuite";
 import { ScriptKind } from "../../ScriptKind";
 import { TestCase } from "../../TestCase";
 
-let ruleTest = new RuleTest("@typescript-eslint/adjacent-overload-signatures", {});
+let ruleTest = new RuleSuite("@typescript-eslint/adjacent-overload-signatures", {});
 
 ruleTest.TestCases.push(
     new TestCase(

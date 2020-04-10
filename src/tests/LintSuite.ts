@@ -11,7 +11,7 @@ import RecommendedRules = require("../Configuration/Recommended");
 /**
  * Represents a test for linting.
  */
-export abstract class LintTestBase
+export abstract class LintSuite
 {
     /**
      * The test-cases.

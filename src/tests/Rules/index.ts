@@ -1,6 +1,6 @@
-import { LintTestBase } from "../LintTestBase";
+import { LintSuite } from "../LintSuite";
 import { TypeScriptTests } from "./TypeScript";
 
-export let RuleTests: LintTestBase[] = [
+export let RuleTests: LintSuite[] = [
     ...TypeScriptTests
 ];
