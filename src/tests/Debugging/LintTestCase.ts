@@ -8,7 +8,6 @@ import { ITestCase } from "./ITestCase";
 import { RuleSet } from "./RuleSet";
 import { ScriptKind } from "./ScriptKind";
 import { TestContext } from "./TestContext";
-import dedent = require("dedent");
 
 /**
  * Represents a test-case.

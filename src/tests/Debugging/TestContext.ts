@@ -43,6 +43,39 @@ export class TestContext
     }
 
     /**
+     * Gets a specific configuration.
+     *
+     * @param ruleSet
+     * The rule-set to get the configuration for.
+     *
+     * @param useTypeCheckingRules
+     * A value indicating whether type-checking rules should be loaded.
+     *
+     * @param enableTypeChecking
+     * A value indicating whether the type-checking should be enabled.
+     *
+     * @returns
+     * The configuration for the specified `ruleSet`.
+     */
+    public GetConfiguration(ruleSet: RuleSet, useTypeCheckingRules: boolean, enableTypeChecking: boolean): CLIEngine.Options
+    {
+        return {
+            useEslintrc: false,
+            baseConfig: merge(
+                enableTypeChecking ?
+                    {
+                        parserOptions: {
+                            project: this.Workspace.TSConfigFileName
+                        }
+                    } :
+                    {},
+                (useTypeCheckingRules ?
+                    TestConstants.RuleSetConfigurationsWithTypeChecking :
+                    TestConstants.RuleSetConfigurations)[ruleSet])
+        };
+    }
+
+    /**
      * Gets the `CLIEngine` for the specified `ruleSet`.
      *
      * @param ruleSet
@@ -66,18 +99,7 @@ export class TestContext
             this.engines.get(ruleSet).set(
                 typeChecking,
                 new CLIEngine(
-                    {
-                        useEslintrc: false,
-                        baseConfig: typeChecking ?
-                            merge(
-                                {
-                                    parserOptions: {
-                                        project: this.Workspace.TSConfigFileName
-                                    }
-                                },
-                                TestConstants.RuleSetConfigurationsWithTypeChecking[ruleSet]) :
-                            TestConstants.RuleSetConfigurations[ruleSet]
-                    }));
+                    this.GetConfiguration(ruleSet, typeChecking, typeChecking)));
         }
 
         return this.engines.get(ruleSet).get(typeChecking);
