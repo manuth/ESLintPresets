@@ -1,6 +1,5 @@
 import { ISuite } from "./ISuite";
 import { RuleSet } from "./RuleSet";
-import { SuiteContainer } from "./SuiteContainer";
 import { TestContext } from "./TestContext";
 
 /**
@@ -8,11 +7,6 @@ import { TestContext } from "./TestContext";
  */
 export abstract class Suite implements ISuite
 {
-    /**
-     * @inheritdoc
-     */
-    public Parent: SuiteContainer = null;
-
     /**
      * Initializes a new instance of the `Suite` class.
      */

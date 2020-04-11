@@ -1,5 +1,4 @@
 import { RuleSet } from "./RuleSet";
-import { SuiteContainer } from "./SuiteContainer";
 import { TestContext } from "./TestContext";
 
 /**
@@ -7,11 +6,6 @@ import { TestContext } from "./TestContext";
  */
 export interface ISuite
 {
-    /**
-     * Gets or sets the parent of the suite.
-     */
-    Parent: SuiteContainer;
-
     /**
      * Gets the name of the test-suite.
      */

@@ -9,11 +9,6 @@ import { TestContext } from "./TestContext";
 export class SuiteContainer extends Suite
 {
     /**
-     * @inheritdoc
-     */
-    public Parent: SuiteContainer;
-
-    /**
      * The name of the suite.
      */
     private suiteName: string;
@@ -40,7 +35,6 @@ export class SuiteContainer extends Suite
         for (let child of children)
         {
             this.children.push(child);
-            child.Parent = this;
         }
     }
 
