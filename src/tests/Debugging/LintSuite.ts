@@ -2,7 +2,6 @@ import { ITestCase } from "./ITestCase";
 import { LintTestCase } from "./LintTestCase";
 import { RuleSet } from "./RuleSet";
 import { Suite } from "./Suite";
-import { SuiteContainer } from "./SuiteContainer";
 import { TestContext } from "./TestContext";
 
 /**
@@ -10,11 +9,6 @@ import { TestContext } from "./TestContext";
  */
 export abstract class LintSuite<TCaseData = ITestCase> extends Suite
 {
-    /**
-     * @inheritdoc
-     */
-    public Parent: SuiteContainer;
-
     /**
      * The test-cases.
      */
