@@ -130,10 +130,7 @@ export abstract class LintTestCase implements ITestCase, IRegisterable
                                     for (let codeSnippet of snippetCollection.Snippets)
                                     {
                                         Assert.strictEqual(
-                                            this.VerifyResult(
-                                                this.GetCLIEngine(context, set).executeOnText(
-                                                    dedent(codeSnippet),
-                                                    context.GetFileName(scriptKind))),
+                                            this.Verify(context, this.GetCLIEngine(context, set), scriptKind, dedent(codeSnippet)),
                                             snippetCollection.Valid);
                                     }
                                 }
@@ -162,10 +159,19 @@ export abstract class LintTestCase implements ITestCase, IRegisterable
     }
 
     /**
-     * Verifies whether the the lint-report is correct.
+     * Verifies whether the test-case is applicable.
      *
-     * @param report
-     * The report to check.
+     * @param context
+     * The test-context.
+     *
+     * @param engine
+     * The `CLIEngine` to use.
+     *
+     * @param scriptKind
+     * The kind of script to verify.
+     *
+     * @param codeSnippet
+     * The code-snippet to test.
      */
-    protected abstract VerifyResult(report: CLIEngine.LintReport): boolean;
+    protected abstract Verify(context: TestContext, engine: CLIEngine, scriptKind: ScriptKind, codeSnippet: string): boolean;
 }

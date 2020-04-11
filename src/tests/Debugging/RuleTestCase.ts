@@ -1,6 +1,6 @@
 import { CLIEngine } from "eslint";
 import { ICodeSnippetCollection } from "./ICodeSnippet";
-import { LintTestCase } from "./LintTestCase";
+import { LintReportTestCase } from "./LintReportTestCase";
 import { RuleSet } from "./RuleSet";
 import { RuleSuite } from "./RuleSuite";
 import { ScriptKind } from "./ScriptKind";
@@ -8,7 +8,7 @@ import { ScriptKind } from "./ScriptKind";
 /**
  * Represents a test-case which verifies a rule.
  */
-export class RuleTestCase extends LintTestCase
+export class RuleTestCase extends LintReportTestCase
 {
     /**
      * The test-suite of this case.
@@ -53,7 +53,7 @@ export class RuleTestCase extends LintTestCase
      * @param report
      * The report to check.
      */
-    protected VerifyResult(report: CLIEngine.LintReport): boolean
+    protected VerifyReport(report: CLIEngine.LintReport): boolean
     {
         return !report.results.some(
             (result) =>
