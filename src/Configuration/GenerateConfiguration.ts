@@ -1,4 +1,5 @@
 import merge = require("lodash.merge");
+import { join } from "upath";
 
 /**
  * Generates an `eslint`-configuration.
@@ -488,10 +489,7 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
                 "@typescript-eslint/tslint/config": [
                     weak ? "off" : "warn",
                     {
-                        rules: {
-                            "match-default-export-name": true,
-                            "return-undefined": true
-                        }
+                        lintFile: join(__dirname, "..", "..", "tslint.json")
                     }
                 ]
             }
