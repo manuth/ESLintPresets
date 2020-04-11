@@ -1,7 +1,7 @@
+import { IRegisterable } from "../IRegisterable";
 import { RegisterableContainer } from "../RegisterableContainer";
 import { RuleSet } from "../RuleSet";
 import { TestContext } from "../TestContext";
-import { ISuite } from "./ISuite";
 import { Suite } from "./Suite";
 
 /**
@@ -28,7 +28,7 @@ export class ContainerSuite extends Suite
      * @param children
      * The children of the suite.
      */
-    public constructor(suiteName: string, children: ISuite[])
+    public constructor(suiteName: string, children: IRegisterable[])
     {
         super();
         this.suiteName = suiteName;
