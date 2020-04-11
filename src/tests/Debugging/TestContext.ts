@@ -18,7 +18,7 @@ export class TestContext
     /**
      * The engines for the specific rule-sets.
      */
-    private engines: Map<RuleSet, CLIEngine> = new Map();
+    private engines: Map<RuleSet, Map<boolean, CLIEngine>> = new Map();
 
     /**
      * Initializes a new instance of the `TestContext` class.
@@ -58,22 +58,29 @@ export class TestContext
     {
         if (!this.engines.has(ruleSet))
         {
-            this.engines.set(ruleSet, new CLIEngine(
-                {
-                    useEslintrc: false,
-                    baseConfig: typeChecking ?
-                        merge(
-                        {
-                            parserOptions: {
-                                project: this.Workspace.TSConfigFileName
-                            }
-                        },
-                        TestConstants.RuleSetConfigurationsWithTypeChecking[ruleSet]) :
-                        TestConstants.RuleSetConfigurations[ruleSet]
-                }));
+            this.engines.set(ruleSet, new Map());
         }
 
-        return this.engines.get(ruleSet);
+        if (!this.engines.get(ruleSet).has(typeChecking))
+        {
+            this.engines.get(ruleSet).set(
+                typeChecking,
+                new CLIEngine(
+                    {
+                        useEslintrc: false,
+                        baseConfig: typeChecking ?
+                            merge(
+                            {
+                                parserOptions: {
+                                    project: this.Workspace.TSConfigFileName
+                                }
+                            },
+                            TestConstants.RuleSetConfigurationsWithTypeChecking[ruleSet]) :
+                            TestConstants.RuleSetConfigurations[ruleSet]
+                    }));
+        }
+
+        return this.engines.get(ruleSet).get(typeChecking);
     }
 
     /**
