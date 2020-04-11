@@ -172,6 +172,9 @@ export abstract class LintTestCase implements ITestCase, IRegisterable
      *
      * @param codeSnippet
      * The code-snippet to test.
+     *
+     * @returns
+     * A value indicating whether the test-case is applicable.
      */
     protected abstract Verify(context: TestContext, engine: CLIEngine, scriptKind: ScriptKind, codeSnippet: string): boolean;
 }
