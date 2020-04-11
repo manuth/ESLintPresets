@@ -1,4 +1,4 @@
-import { IRegisterable } from "./IRegisterable";
+import { IRegisterable } from "../IRegisterable";
 
 /**
  * Represents a suite.

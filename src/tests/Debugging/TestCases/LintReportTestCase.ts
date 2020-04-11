@@ -1,9 +1,8 @@
 import { CLIEngine } from "eslint";
+import { RuleSet } from "../RuleSet";
+import { ScriptKind } from "../ScriptKind";
+import { LintTestCase } from "../Suites/LintTestCase";
 import { ICodeSnippetCollection } from "./ICodeSnippet";
-import { LintTestCase } from "./LintTestCase";
-import { RuleSet } from "./RuleSet";
-import { ScriptKind } from "./ScriptKind";
-import { TestContext } from "./TestContext";
 
 /**
  * Represents a test which checks lint-reports.

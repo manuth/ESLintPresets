@@ -1,7 +1,7 @@
+import { RuleSet } from "../RuleSet";
+import { TestContext } from "../TestContext";
 import { ISuite } from "./ISuite";
-import { RuleSet } from "./RuleSet";
 import { Suite } from "./Suite";
-import { TestContext } from "./TestContext";
 
 /**
  * Represents a suite which contains other suites.

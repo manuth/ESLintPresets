@@ -1,8 +1,8 @@
-import { ITestCase } from "./ITestCase";
+import { RuleSet } from "../RuleSet";
+import { ITestCase } from "../TestCases/ITestCase";
+import { TestContext } from "../TestContext";
 import { LintTestCase } from "./LintTestCase";
-import { RuleSet } from "./RuleSet";
 import { Suite } from "./Suite";
-import { TestContext } from "./TestContext";
 
 /**
  * Represents a test for linting.

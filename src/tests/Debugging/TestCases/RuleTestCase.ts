@@ -1,9 +1,9 @@
 import { CLIEngine } from "eslint";
+import { RuleSet } from "../RuleSet";
+import { ScriptKind } from "../ScriptKind";
+import { RuleSuite } from "../Suites/RuleSuite";
 import { ICodeSnippetCollection } from "./ICodeSnippet";
 import { LintReportTestCase } from "./LintReportTestCase";
-import { RuleSet } from "./RuleSet";
-import { RuleSuite } from "./RuleSuite";
-import { ScriptKind } from "./ScriptKind";
 
 /**
  * Represents a test-case which verifies a rule.

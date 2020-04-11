@@ -1,13 +1,13 @@
 import Assert = require("assert");
 import { CLIEngine } from "eslint";
 import { Context } from "mocha";
-import { TestConstants } from "../TestConstants";
-import { ICodeSnippetCollection } from "./ICodeSnippet";
-import { IRegisterable } from "./IRegisterable";
-import { ITestCase } from "./ITestCase";
-import { RuleSet } from "./RuleSet";
-import { ScriptKind } from "./ScriptKind";
-import { TestContext } from "./TestContext";
+import { TestConstants } from "../../TestConstants";
+import { IRegisterable } from "../IRegisterable";
+import { RuleSet } from "../RuleSet";
+import { ScriptKind } from "../ScriptKind";
+import { ICodeSnippetCollection } from "../TestCases/ICodeSnippet";
+import { ITestCase } from "../TestCases/ITestCase";
+import { TestContext } from "../TestContext";
 
 /**
  * Represents a test-case.

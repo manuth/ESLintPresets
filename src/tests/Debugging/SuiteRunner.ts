@@ -1,7 +1,7 @@
 import { TestConstants } from "../TestConstants";
 import { IRegisterable } from "./IRegisterable";
-import { ISuite } from "./ISuite";
 import { RuleSet } from "./RuleSet";
+import { ISuite } from "./Suites/ISuite";
 import { TestContext } from "./TestContext";
 
 /**

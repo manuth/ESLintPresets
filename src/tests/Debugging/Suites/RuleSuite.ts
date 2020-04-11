@@ -1,6 +1,6 @@
-import { ITestCase } from "./ITestCase";
+import { ITestCase } from "../TestCases/ITestCase";
+import { RuleTestCase } from "../TestCases/RuleTestCase";
 import { LintSuite } from "./LintSuite";
-import { RuleTestCase } from "./RuleTestCase";
 
 /**
  * Represents a test for an `eslint`-rule.

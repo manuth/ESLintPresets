@@ -1,6 +1,6 @@
+import { RuleSet } from "../RuleSet";
+import { ScriptKind } from "../ScriptKind";
 import { ICodeSnippetCollection } from "./ICodeSnippet";
-import { RuleSet } from "./RuleSet";
-import { ScriptKind } from "./ScriptKind";
 
 /**
  * Represents a test-case.
