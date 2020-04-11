@@ -91,7 +91,7 @@ export abstract class LintSuite extends Suite
                                 {
                                     Assert.strictEqual(
                                         this.VerifyResult(
-                                            context.GetCLIEngine(ruleSet).executeOnText(
+                                            context.GetCLIEngine(ruleSet, true).executeOnText(
                                                 dedent(codeSnippet),
                                                 context.GetFileName(scriptKind))),
                                         snippetCollection.Valid);

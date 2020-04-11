@@ -48,24 +48,28 @@ export class TestContext
      * @param ruleSet
      * The rule-set to get the `CLIEngine` for.
      *
+     * @param typeChecking
+     * A value indicating whether type-checking should be enabled.
+     *
      * @returns
      * The `CLIEngine` for the specified `ruleSet`.
      */
-    public GetCLIEngine(ruleSet: RuleSet): CLIEngine
+    public GetCLIEngine(ruleSet: RuleSet, typeChecking: boolean): CLIEngine
     {
         if (!this.engines.has(ruleSet))
         {
             this.engines.set(ruleSet, new CLIEngine(
                 {
                     useEslintrc: false,
-                    baseConfig: merge(
+                    baseConfig: typeChecking ?
+                        merge(
                         {
                             parserOptions: {
                                 project: this.Workspace.TSConfigFileName
                             }
                         },
+                        TestConstants.RuleSetConfigurationsWithTypeChecking[ruleSet]) :
                         TestConstants.RuleSetConfigurations[ruleSet]
-                    )
                 }));
         }
 
