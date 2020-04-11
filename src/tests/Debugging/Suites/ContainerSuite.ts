@@ -6,7 +6,7 @@ import { Suite } from "./Suite";
 /**
  * Represents a suite which contains other suites.
  */
-export class SuiteContainer extends Suite
+export class ContainerSuite extends Suite
 {
     /**
      * The name of the suite.
