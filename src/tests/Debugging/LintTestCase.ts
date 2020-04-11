@@ -163,6 +163,23 @@ export abstract class LintTestCase implements ITestCase, IRegisterable
     }
 
     /**
+     * Gets the CLIEngine for the specified `ruleSet`.
+     *
+     * @param context
+     * The test-context.
+     *
+     * @param ruleSet
+     * The rule-set to get the `CLIEngine` for.
+     *
+     * @returns
+     * The `CLIEngine` for the specified `ruleSet`.
+     */
+    protected GetCLIEngine(context: TestContext, ruleSet: RuleSet): CLIEngine
+    {
+        return context.GetCLIEngine(ruleSet, true);
+    }
+
+    /**
      * Verifies whether the the lint-report is correct.
      *
      * @param report
