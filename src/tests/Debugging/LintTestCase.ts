@@ -1,13 +1,19 @@
+import Assert = require("assert");
+import { CLIEngine } from "eslint";
+import { Context } from "mocha";
+import { TestConstants } from "../TestConstants";
 import { ICodeSnippetCollection } from "./ICodeSnippet";
 import { ITestCase } from "./ITestCase";
 import { LintSuite } from "./LintSuite";
 import { RuleSet } from "./RuleSet";
 import { ScriptKind } from "./ScriptKind";
+import { TestContext } from "./TestContext";
+import dedent = require("dedent");
 
 /**
  * Represents a test-case.
  */
-export class LintTestCase implements ITestCase
+export abstract class LintTestCase implements ITestCase
 {
     /**
      * The test-suite of this case.
@@ -100,4 +106,66 @@ export class LintTestCase implements ITestCase
     {
         return this.codeSnippets;
     }
+
+    /**
+     * Registers the `mocha`-tests.
+     *
+     * @param context
+     * The test-context.
+     *
+     * @param ruleSet
+     * The rule-set to add tests for.
+     */
+    public Register(context: TestContext, ruleSet: RuleSet): void
+    {
+        let mocha: Context;
+
+        suiteSetup(
+            function()
+            {
+                mocha = this;
+            });
+
+        test(
+            this.Description,
+            async () =>
+            {
+                mocha.enableTimeouts(false);
+
+                for (let set of TestConstants.RuleSets)
+                {
+                    if (
+                        ((ruleSet & set) > 0) &&
+                        ((this.RuleSet & set) > 0))
+                    {
+                        for (let scriptKind of TestConstants.ScriptKinds)
+                        {
+                            if ((this.ScriptKind & scriptKind) > 0)
+                            {
+                                for (let snippetCollection of this.CodeSnippets)
+                                {
+                                    for (let codeSnippet of snippetCollection.Snippets)
+                                    {
+                                        Assert.strictEqual(
+                                            this.VerifyResult(
+                                                context.GetCLIEngine(set, true).executeOnText(
+                                                    dedent(codeSnippet),
+                                                    context.GetFileName(scriptKind))),
+                                            snippetCollection.Valid);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+    }
+
+    /**
+     * Verifies whether the the lint-report is correct.
+     *
+     * @param report
+     * The report to check.
+     */
+    protected abstract VerifyResult(report: CLIEngine.LintReport): boolean;
 }

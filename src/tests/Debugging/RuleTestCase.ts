@@ -1,3 +1,4 @@
+import { CLIEngine } from "eslint";
 import { ICodeSnippetCollection } from "./ICodeSnippet";
 import { LintTestCase } from "./LintTestCase";
 import { RuleSet } from "./RuleSet";
@@ -35,6 +36,7 @@ export class RuleTestCase extends LintTestCase
     public constructor(ruleSuite: RuleSuite, description: string, ruleSet: RuleSet, scriptKind: ScriptKind, codeSnippets: readonly ICodeSnippetCollection[])
     {
         super(ruleSuite, description, ruleSet, scriptKind, codeSnippets);
+        this.ruleSuite = ruleSuite;
     }
 
     /**
@@ -43,5 +45,20 @@ export class RuleTestCase extends LintTestCase
     public get TestSuite(): RuleSuite
     {
         return this.ruleSuite;
+    }
+
+    /**
+     * @inheritdoc
+     *
+     * @param report
+     * The report to check.
+     */
+    protected VerifyResult(report: CLIEngine.LintReport): boolean
+    {
+        return !report.results.some(
+            (result) =>
+            {
+                return result.messages.some((message) => message.ruleId === this.TestSuite.RuleName);
+            });
     }
 }
