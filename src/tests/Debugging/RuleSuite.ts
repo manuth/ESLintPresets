@@ -1,4 +1,3 @@
-import { CLIEngine } from "eslint";
 import { ITestCase } from "./ITestCase";
 import { LintSuite } from "./LintSuite";
 import { RuleTestCase } from "./RuleTestCase";
@@ -61,17 +60,5 @@ export class RuleSuite extends LintSuite
             testCase.RuleSet,
             testCase.ScriptKind,
             testCase.CodeSnippets);
-    }
-
-    /**
-     * @inheritdoc
-     */
-    protected VerifyResult(report: CLIEngine.LintReport): boolean
-    {
-        return !report.results.some(
-            (result) =>
-            {
-                return result.messages.some((message) => message.ruleId === this.RuleName);
-            });
     }
 }
