@@ -1,6 +1,6 @@
 import merge = require("lodash.merge");
 import { join } from "upath";
-import ESLintRecommended = require("./ESLintRecommended");
+import { ESLintRecommended } from "./ESLintRecommended";
 
 /**
  * Generates an `eslint`-configuration.
