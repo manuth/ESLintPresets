@@ -1,3 +1,4 @@
+import { RegisterableContainer } from "../RegisterableContainer";
 import { RuleSet } from "../RuleSet";
 import { TestContext } from "../TestContext";
 import { ISuite } from "./ISuite";
@@ -16,7 +17,7 @@ export class ContainerSuite extends Suite
     /**
      * The children of the suite.
      */
-    private children: ISuite[] = [];
+    private container: RegisterableContainer;
 
     /**
      * Initializes a new instance of the `SuiteContainer` class.
@@ -31,11 +32,7 @@ export class ContainerSuite extends Suite
     {
         super();
         this.suiteName = suiteName;
-
-        for (let child of children)
-        {
-            this.children.push(child);
-        }
+        this.container = new RegisterableContainer(children);
     }
 
     /**
@@ -47,11 +44,11 @@ export class ContainerSuite extends Suite
     }
 
     /**
-     * Gets the children of the suite.
+     * Gets the container which contains the suites.
      */
-    public get Children(): readonly ISuite[]
+    protected get Container(): RegisterableContainer
     {
-        return this.children;
+        return this.container;
     }
 
     /**
@@ -65,9 +62,6 @@ export class ContainerSuite extends Suite
      */
     protected RegisterInternal(context: TestContext, ruleSet: RuleSet): void
     {
-        for (let child of this.Children)
-        {
-            child.Register(context, ruleSet);
-        }
+        this.Container.Register(context, ruleSet);
     }
 }
