@@ -131,7 +131,7 @@ export abstract class LintTestCase implements ITestCase, IRegisterable
                                     {
                                         Assert.strictEqual(
                                             this.VerifyResult(
-                                                context.GetCLIEngine(set, true).executeOnText(
+                                                this.GetCLIEngine(context, set).executeOnText(
                                                     dedent(codeSnippet),
                                                     context.GetFileName(scriptKind))),
                                             snippetCollection.Valid);

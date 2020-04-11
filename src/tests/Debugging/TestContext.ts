@@ -70,12 +70,12 @@ export class TestContext
                         useEslintrc: false,
                         baseConfig: typeChecking ?
                             merge(
-                            {
-                                parserOptions: {
-                                    project: this.Workspace.TSConfigFileName
-                                }
-                            },
-                            TestConstants.RuleSetConfigurationsWithTypeChecking[ruleSet]) :
+                                {
+                                    parserOptions: {
+                                        project: this.Workspace.TSConfigFileName
+                                    }
+                                },
+                                TestConstants.RuleSetConfigurationsWithTypeChecking[ruleSet]) :
                             TestConstants.RuleSetConfigurations[ruleSet]
                     }));
         }
