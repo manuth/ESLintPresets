@@ -100,49 +100,52 @@ export abstract class LintTestCase implements ITestCase, IRegisterable
      */
     public Register(context: TestContext, ruleSet: RuleSet): void
     {
-        let mocha: Context;
+        if ((this.RuleSet & ruleSet) > 0)
+        {
+            let mocha: Context;
 
-        suiteSetup(
-            function()
-            {
-                mocha = this;
-            });
-
-        test(
-            this.Description,
-            async () =>
-            {
-                mocha.enableTimeouts(false);
-
-                for (let set of TestConstants.RuleSets)
+            suiteSetup(
+                function()
                 {
-                    if (
-                        ((ruleSet & set) > 0) &&
-                        ((this.RuleSet & set) > 0))
+                    mocha = this;
+                });
+
+            test(
+                this.Description,
+                async () =>
+                {
+                    mocha.enableTimeouts(false);
+
+                    for (let set of TestConstants.RuleSets)
                     {
-                        for (let scriptKind of TestConstants.ScriptKinds)
+                        if (
+                            ((ruleSet & set) > 0) &&
+                            ((this.RuleSet & set) > 0))
                         {
-                            if ((this.ScriptKind & scriptKind) > 0)
+                            for (let scriptKind of TestConstants.ScriptKinds)
                             {
-                                for (let snippetCollection of this.CodeSnippets)
+                                if ((this.ScriptKind & scriptKind) > 0)
                                 {
-                                    for (let codeSnippet of snippetCollection.Snippets)
+                                    for (let snippetCollection of this.CodeSnippets)
                                     {
-                                        Assert.strictEqual(
-                                            this.Verify(() =>
-                                            {
-                                                return this.GetCLIEngine(context, set).executeOnText(
-                                                    codeSnippet,
-                                                    context.GetFileName(scriptKind));
-                                            }),
-                                            snippetCollection.Valid);
+                                        for (let codeSnippet of snippetCollection.Snippets)
+                                        {
+                                            Assert.strictEqual(
+                                                this.Verify(() =>
+                                                {
+                                                    return this.GetCLIEngine(context, set).executeOnText(
+                                                        codeSnippet,
+                                                        context.GetFileName(scriptKind));
+                                                }),
+                                                snippetCollection.Valid);
+                                        }
                                     }
                                 }
                             }
                         }
                     }
-                }
-            });
+                });
+        }
     }
 
     /**
