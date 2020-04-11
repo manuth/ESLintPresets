@@ -4,10 +4,10 @@ import { CLIEngine } from "eslint";
 import { Context } from "mocha";
 import { TestConstants } from "../TestConstants";
 import { ITestCase } from "./ITestCase";
+import { TestCase } from "./LintTestCase";
 import { RuleSet } from "./RuleSet";
 import { Suite } from "./Suite";
 import { SuiteContainer } from "./SuiteContainer";
-import { TestCase } from "./TestCase";
 import { TestContext } from "./TestContext";
 
 /**
