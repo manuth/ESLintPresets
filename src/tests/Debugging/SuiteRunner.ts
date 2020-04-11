@@ -32,36 +32,6 @@ export class SuiteRunner
     }
 
     /**
-     * Converts flags to an array.
-     *
-     * @param declaration
-     * The declaration of the enum.
-     *
-     * @param value
-     * The value to convert.
-     *
-     * @returns
-     * An array which contains all enum-values of the flags.
-     */
-    protected static FlagsToArray<TEnum extends number>(declaration: { [key: number]: string }, value: TEnum): TEnum[]
-    {
-        let result: TEnum[] = [];
-
-        for (let key of Object.keys(declaration))
-        {
-            if (typeof key === "number")
-            {
-                if ((value & key) > 0)
-                {
-                    result.push(key);
-                }
-            }
-        }
-
-        return result;
-    }
-
-    /**
      * Registers the `mocha`-tests.
      *
      * @param context
