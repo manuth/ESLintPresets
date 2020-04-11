@@ -2,7 +2,7 @@ import { RegisterableContainer } from "./Debugging/RegisterableContainer";
 import { RuleSet } from "./Debugging/RuleSet";
 import { TestContext } from "./Debugging/TestContext";
 import { Workspace } from "./Debugging/Workspace";
-import { RuleTests } from "./Rules";
+import RuleSets = require("./RuleSets");
 
 suite(
     "ESLintPresets",
