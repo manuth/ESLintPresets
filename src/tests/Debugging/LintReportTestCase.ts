@@ -33,24 +33,15 @@ export abstract class LintReportTestCase extends LintTestCase
     /**
      * @inheritdoc
      *
-     * @param context
-     * The test-context.
+     * @param engineRunner
+     * A component which runs the cli-engine.
      *
-     * @param engine
-     * The `CLIEngine` to use.
-     *
-     * @param scriptKind
-     * The kind of script to verify.
-     *
-     * @param codeSnippet
-     * The code-snippet to test.
+     * @returns
+     * A value indicating whether the test-case is applicable.
      */
-    protected Verify(context: TestContext, engine: CLIEngine, scriptKind: ScriptKind, codeSnippet: string): boolean
+    protected Verify(engineRunner: () => CLIEngine.LintReport): boolean
     {
-        return this.VerifyReport(
-            engine.executeOnText(
-                codeSnippet,
-                context.GetFileName(scriptKind)));
+        return this.VerifyReport(engineRunner());
     }
 
     /**

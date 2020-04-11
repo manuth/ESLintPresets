@@ -130,7 +130,12 @@ export abstract class LintTestCase implements ITestCase, IRegisterable
                                     for (let codeSnippet of snippetCollection.Snippets)
                                     {
                                         Assert.strictEqual(
-                                            this.Verify(context, this.GetCLIEngine(context, set), scriptKind, dedent(codeSnippet)),
+                                            this.Verify(() =>
+                                            {
+                                                return this.GetCLIEngine(context, set).executeOnText(
+                                                    codeSnippet,
+                                                    context.GetFileName(scriptKind));
+                                            }),
                                             snippetCollection.Valid);
                                     }
                                 }
@@ -161,20 +166,11 @@ export abstract class LintTestCase implements ITestCase, IRegisterable
     /**
      * Verifies whether the test-case is applicable.
      *
-     * @param context
-     * The test-context.
-     *
-     * @param engine
-     * The `CLIEngine` to use.
-     *
-     * @param scriptKind
-     * The kind of script to verify.
-     *
-     * @param codeSnippet
-     * The code-snippet to test.
+     * @param engineRunner
+     * A component which runs the cli-engine.
      *
      * @returns
      * A value indicating whether the test-case is applicable.
      */
-    protected abstract Verify(context: TestContext, engine: CLIEngine, scriptKind: ScriptKind, codeSnippet: string): boolean;
+    protected abstract Verify(engineRunner: () => CLIEngine.LintReport): boolean;
 }
