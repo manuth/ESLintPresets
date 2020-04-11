@@ -1,4 +1,4 @@
-import { RuleSet } from "./Debugging/RuleSet";
+import { SuiteRunner } from "./Debugging/SuiteRunner";
 import { TestContext } from "./Debugging/TestContext";
 import { Workspace } from "./Debugging/Workspace";
 import { RuleTests } from "./Rules";
@@ -17,7 +17,11 @@ suite(
                 await context.Workspace.Initialize();
             });
 
-        RuleTests.Register(context, RuleSet.All);
+        new SuiteRunner(
+            [
+                RuleTests
+            ]
+        ).Register(context);
 
         suiteTeardown(
             () =>
