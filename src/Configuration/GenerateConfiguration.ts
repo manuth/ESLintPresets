@@ -1,6 +1,6 @@
 import merge = require("lodash.merge");
 import { join } from "upath";
-import { ESLintRecommended } from "./ESLintRecommended";
+import ESLintRecommended = require("./ESLintRecommended");
 
 /**
  * Generates an `eslint`-configuration.
@@ -27,7 +27,7 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
             ],
             extends: [
                 "eslint:recommended",
-                "plugin:@typescript-eslint/eslint-recommended",
+                join(__dirname, "ESLintRecommended"),
                 "plugin:@typescript-eslint/recommended"
             ],
             rules: {
