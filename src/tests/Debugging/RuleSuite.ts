@@ -1,5 +1,4 @@
 import { CLIEngine } from "eslint";
-import merge = require("lodash.merge");
 import { ITestCase } from "./ITestCase";
 import { LintSuite } from "./LintSuite";
 
@@ -21,13 +20,10 @@ export class RuleSuite extends LintSuite
      *
      * @param testCases
      * The test-cases of the test-suite.
-     *
-     * @param config
-     * The `eslint`-configuration to apply.
      */
-    public constructor(ruleName: string, testCases: ITestCase[], config?: any)
+    public constructor(ruleName: string, testCases: ITestCase[])
     {
-        super(testCases, config);
+        super(testCases);
         this.ruleName = ruleName;
     }
 
@@ -37,20 +33,6 @@ export class RuleSuite extends LintSuite
     public get SuiteName(): string
     {
         return `Testing the \`${this.RuleName}\`-rule…`;
-    }
-
-    /**
-     * @inheritdoc
-     */
-    public get Config(): any
-    {
-        return merge(
-            {
-                rules: {
-                    [this.RuleName]: "warn"
-                }
-            },
-            super.Config);
     }
 
     /**

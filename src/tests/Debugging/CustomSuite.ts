@@ -20,13 +20,10 @@ export class CustomSuite extends LintSuite
      *
      * @param testCases
      * The test-cases of the test-suite.
-     *
-     * @param config
-     * The `eslint`-configuration to apply.
      */
-    public constructor(suiteName: string, testCases: ITestCase[], config?: any)
+    public constructor(suiteName: string, testCases: ITestCase[])
     {
-        super(testCases, config);
+        super(testCases);
         this.suiteName = suiteName;
     }
 

@@ -26,20 +26,12 @@ export abstract class LintSuite extends Suite
     private readonly testCases: TestCase[] = [];
 
     /**
-     * The `eslint`-configuration to apply.
-     */
-    private config: any;
-
-    /**
      * Initializes a new instance of the `LintTestBase` class.
      *
      * @param testCases
      * The test-cases of the test-suite.
-     *
-     * @param config
-     * The `eslint`-configuration to apply.
      */
-    public constructor(testCases: ITestCase[], config?: any)
+    public constructor(testCases: ITestCase[])
     {
         super();
 
@@ -53,16 +45,6 @@ export abstract class LintSuite extends Suite
                     testCase.ScriptKind,
                     testCase.CodeSnippets));
         }
-
-        this.config = config ?? {};
-    }
-
-    /**
-     * Gets the `eslint`-configuration to use.
-     */
-    public get Config(): any
-    {
-        return this.config;
     }
 
     /**
