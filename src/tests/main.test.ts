@@ -3,6 +3,7 @@ import { RuleSet } from "./Debugging/RuleSet";
 import { TestContext } from "./Debugging/TestContext";
 import { Workspace } from "./Debugging/Workspace";
 import RuleSets = require("./RuleSets");
+import General = require("./General");
 
 suite(
     "ESLintPresets",
@@ -20,6 +21,7 @@ suite(
 
         new RegisterableContainer(
             [
+                General,
                 RuleSets
             ]).Register(context, RuleSet.All);
 
