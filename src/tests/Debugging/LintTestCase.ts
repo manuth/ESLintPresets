@@ -3,6 +3,7 @@ import { CLIEngine } from "eslint";
 import { Context } from "mocha";
 import { TestConstants } from "../TestConstants";
 import { ICodeSnippetCollection } from "./ICodeSnippet";
+import { IRegisterable } from "./IRegisterable";
 import { ITestCase } from "./ITestCase";
 import { LintSuite } from "./LintSuite";
 import { RuleSet } from "./RuleSet";
@@ -13,7 +14,7 @@ import dedent = require("dedent");
 /**
  * Represents a test-case.
  */
-export abstract class LintTestCase implements ITestCase
+export abstract class LintTestCase implements ITestCase, IRegisterable
 {
     /**
      * The test-suite of this case.
@@ -108,7 +109,7 @@ export abstract class LintTestCase implements ITestCase
     }
 
     /**
-     * Registers the `mocha`-tests.
+     * @inheritdoc
      *
      * @param context
      * The test-context.

@@ -1,24 +1,12 @@
-import { RuleSet } from "./RuleSet";
-import { TestContext } from "./TestContext";
+import { IRegisterable } from "./IRegisterable";
 
 /**
  * Represents a suite.
  */
-export interface ISuite
+export interface ISuite extends IRegisterable
 {
     /**
      * Gets the name of the test-suite.
      */
     SuiteName: string;
-
-    /**
-     * Registers the `mocha`-tests.
-     *
-     * @param context
-     * The test-context.
-     *
-     * @param ruleSet
-     * The rule-set to add tests for.
-     */
-    Register(context: TestContext, ruleSet: RuleSet): void;
 }
