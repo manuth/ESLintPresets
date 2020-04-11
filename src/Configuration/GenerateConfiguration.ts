@@ -248,7 +248,10 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
                         "ClassProperty",
                         "TSTypeAliasDeclaration",
                         "TSPropertySignature",
-                        "TSAbstractMethodDefinition"
+                        "TSAbstractMethodDefinition",
+                        "TSCallSignatureDeclaration",
+                        "TSConstructSignatureDeclaration",
+                        "TSMethodSignature"
                     ]
                 }
             ],
@@ -270,7 +273,10 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
                         "ClassProperty",
                         "TSTypeAliasDeclaration",
                         "TSPropertySignature",
-                        "TSAbstractMethodDefinition"
+                        "TSAbstractMethodDefinition",
+                        "TSCallSignatureDeclaration",
+                        "TSConstructSignatureDeclaration",
+                        "TSMethodSignature"
                     ]
                 }
             ],
