@@ -1,7 +1,7 @@
 import { ContainerSuite } from "../../Debugging/Suites/ContainerSuite";
 import { TypeCheckingSuite } from "./TypeCheckingSuite";
 
-export = new ContainerSuite(
+export let TypeCheckingTests = new ContainerSuite(
     "TypeChecking",
     [
         new TypeCheckingSuite()

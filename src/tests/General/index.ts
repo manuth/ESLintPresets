@@ -1,8 +1,8 @@
 import { ContainerSuite } from "../Debugging/Suites/ContainerSuite";
-import TypeChecking = require("./TypeChecking");
+import { TypeCheckingTests } from "./TypeChecking";
 
-export = new ContainerSuite(
+export let GeneralTests = new ContainerSuite(
     "General",
     [
-        TypeChecking
+        TypeCheckingTests
     ]);

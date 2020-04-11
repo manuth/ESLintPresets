@@ -2,8 +2,8 @@ import { RegisterableContainer } from "./Debugging/RegisterableContainer";
 import { RuleSet } from "./Debugging/RuleSet";
 import { TestContext } from "./Debugging/TestContext";
 import { Workspace } from "./Debugging/Workspace";
-import RuleSets = require("./RuleSets");
-import General = require("./General");
+import { GeneralTests } from "./General";
+import { RuleSetsTests } from "./RuleSets";
 
 suite(
     "ESLintPresets",
@@ -21,8 +21,8 @@ suite(
 
         new RegisterableContainer(
             [
-                General,
-                RuleSets
+                GeneralTests,
+                RuleSetsTests
             ]).Register(context, RuleSet.All);
 
         suiteTeardown(
