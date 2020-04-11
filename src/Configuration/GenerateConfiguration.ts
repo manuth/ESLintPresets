@@ -232,9 +232,6 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
             "jsdoc/require-description": [
                 weak ? "off" : "warn",
                 {
-                    exemptedBy: [
-                        "inheritdoc"
-                    ],
                     contexts: [
                         "ClassDeclaration",
                         "ClassExpression",
@@ -283,7 +280,22 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
             "jsdoc/require-param-description": weak ? "off" : "warn",
             "jsdoc/require-param-name": "warn",
             "jsdoc/require-param-type": weak ? "off" : "warn",
-            "jsdoc/require-param": weak ? "off" : "warn",
+            "jsdoc/require-param": [
+                weak ? "off" : "warn",
+                {
+                    exemptedBy: [],
+                    contexts: [
+                        "ArrowFunctionExpression",
+                        "FunctionDeclaration",
+                        "FunctionExpression",
+                        "MethodDefinition",
+                        "TSAbstractMethodDefinition",
+                        "TSCallSignatureDeclaration",
+                        "TSConstructSignatureDeclaration",
+                        "TSMethodSignature"
+                    ]
+                }
+            ],
             "jsdoc/require-property-name": "warn",
             "jsdoc/require-property-type": weak ? "off" : "warn",
             "jsdoc/require-returns-description": weak ? "off" : "warn",
@@ -291,7 +303,8 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
             "jsdoc/require-returns": [
                 weak ? "off" : "warn",
                 {
-                    checkGetters: false
+                    checkGetters: false,
+                    exemptedBy: []
                 }
             ],
             "lines-between-class-members": "warn",
