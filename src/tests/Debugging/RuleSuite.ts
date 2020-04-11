@@ -1,6 +1,7 @@
 import { CLIEngine } from "eslint";
 import { ITestCase } from "./ITestCase";
 import { LintSuite } from "./LintSuite";
+import { RuleTestCase } from "./RuleTestCase";
 
 /**
  * Represents a test for an `eslint`-rule.
@@ -41,6 +42,25 @@ export class RuleSuite extends LintSuite
     public get RuleName(): string
     {
         return this.ruleName;
+    }
+
+    /**
+     * @inheritdoc
+     *
+     * @param testCase
+     * The properties of the test-case.
+     *
+     * @returns
+     * The newly created test-case.
+     */
+    protected CreateTestCase(testCase: ITestCase): RuleTestCase
+    {
+        return new RuleTestCase(
+            this,
+            testCase.Description,
+            testCase.RuleSet,
+            testCase.ScriptKind,
+            testCase.CodeSnippets);
     }
 
     /**

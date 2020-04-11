@@ -37,13 +37,7 @@ export abstract class LintSuite extends Suite
 
         for (let testCase of testCases)
         {
-            this.testCases.push(
-                new LintTestCase(
-                    this,
-                    testCase.Description,
-                    testCase.RuleSet,
-                    testCase.ScriptKind,
-                    testCase.CodeSnippets));
+            this.testCases.push(this.CreateTestCase(testCase));
         }
     }
 
@@ -53,6 +47,25 @@ export abstract class LintSuite extends Suite
     public get TestCases(): LintTestCase[]
     {
         return this.testCases;
+    }
+
+    /**
+     * Creates a new test-case.
+     *
+     * @param testCase
+     * The properties of the test-case to create.
+     *
+     * @returns
+     * The newly created test-case.
+     */
+    protected CreateTestCase(testCase: ITestCase): LintTestCase
+    {
+        return new LintTestCase(
+            this,
+            testCase.Description,
+            testCase.RuleSet,
+            testCase.ScriptKind,
+            testCase.CodeSnippets);
     }
 
     /**
