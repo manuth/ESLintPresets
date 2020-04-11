@@ -11,9 +11,9 @@ import { ScriptKind } from "./ScriptKind";
 export class RuleTestCase extends LintTestCase
 {
     /**
-     * The `RuleSuite` of this case.
+     * The test-suite of this case.
      */
-    private ruleSuite: RuleSuite;
+    private testSuite: RuleSuite;
 
     /**
      * Initializes a new instance of the `TestCase` class.
@@ -35,16 +35,16 @@ export class RuleTestCase extends LintTestCase
      */
     public constructor(ruleSuite: RuleSuite, description: string, ruleSet: RuleSet, scriptKind: ScriptKind, codeSnippets: readonly ICodeSnippetCollection[])
     {
-        super(ruleSuite, description, ruleSet, scriptKind, codeSnippets);
-        this.ruleSuite = ruleSuite;
+        super(description, ruleSet, scriptKind, codeSnippets);
+        this.testSuite = ruleSuite;
     }
 
     /**
-     * @inheritdoc
+     * Gets the test-suite of this case.
      */
     public get TestSuite(): RuleSuite
     {
-        return this.ruleSuite;
+        return this.testSuite;
     }
 
     /**

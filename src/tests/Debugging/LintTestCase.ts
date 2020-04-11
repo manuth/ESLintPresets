@@ -5,7 +5,6 @@ import { TestConstants } from "../TestConstants";
 import { ICodeSnippetCollection } from "./ICodeSnippet";
 import { IRegisterable } from "./IRegisterable";
 import { ITestCase } from "./ITestCase";
-import { LintSuite } from "./LintSuite";
 import { RuleSet } from "./RuleSet";
 import { ScriptKind } from "./ScriptKind";
 import { TestContext } from "./TestContext";
@@ -16,11 +15,6 @@ import dedent = require("dedent");
  */
 export abstract class LintTestCase implements ITestCase, IRegisterable
 {
-    /**
-     * The test-suite of this case.
-     */
-    private testSuite: LintSuite;
-
     /**
      * The description of the test-case.
      */
@@ -44,9 +38,6 @@ export abstract class LintTestCase implements ITestCase, IRegisterable
     /**
      * Initializes a new instance of the `TestCase` class.
      *
-     * @param testSuite
-     * The suite of this test-case.
-     *
      * @param description
      * The description of the test-case.
      *
@@ -59,21 +50,12 @@ export abstract class LintTestCase implements ITestCase, IRegisterable
      * @param codeSnippets
      * A set of code-snippets for testing.
      */
-    public constructor(testSuite: LintSuite, description: string, ruleSet: RuleSet, scriptKind: ScriptKind, codeSnippets: readonly ICodeSnippetCollection[])
+    public constructor(description: string, ruleSet: RuleSet, scriptKind: ScriptKind, codeSnippets: readonly ICodeSnippetCollection[])
     {
-        this.testSuite = testSuite;
         this.description = description;
         this.ruleSet = ruleSet;
         this.scriptKind = scriptKind;
         this.codeSnippets.push(...codeSnippets);
-    }
-
-    /**
-     * Gets the test-suite of this case.
-     */
-    public get TestSuite(): LintSuite
-    {
-        return this.testSuite;
     }
 
     /**
