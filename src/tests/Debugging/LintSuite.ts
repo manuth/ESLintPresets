@@ -8,7 +8,7 @@ import { TestContext } from "./TestContext";
 /**
  * Represents a test for linting.
  */
-export abstract class LintSuite extends Suite
+export abstract class LintSuite<TCaseData = ITestCase> extends Suite
 {
     /**
      * @inheritdoc
@@ -26,7 +26,7 @@ export abstract class LintSuite extends Suite
      * @param testCases
      * The test-cases of the test-suite.
      */
-    public constructor(testCases: ITestCase[])
+    public constructor(testCases: TCaseData[])
     {
         super();
 
@@ -70,5 +70,5 @@ export abstract class LintSuite extends Suite
      * @returns
      * The newly created test-case.
      */
-    protected abstract CreateTestCase(testCase: ITestCase): LintTestCase;
+    protected abstract CreateTestCase(testCase: TCaseData): LintTestCase;
 }
