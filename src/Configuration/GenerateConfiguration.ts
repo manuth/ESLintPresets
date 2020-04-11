@@ -17,7 +17,6 @@ import ESLintRecommended = require("./ESLintRecommended");
 export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
 {
     let config: any = merge(
-        ESLintRecommended,
         {
             parser: "@typescript-eslint/parser",
             plugins: [
@@ -453,7 +452,8 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
                     }
                 }
             ]
-        });
+        },
+        ESLintRecommended);
 
     return merge(
         config,
