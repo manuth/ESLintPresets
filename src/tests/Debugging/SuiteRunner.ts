@@ -1,11 +1,13 @@
 import { TestConstants } from "../TestConstants";
+import { IRegisterable } from "./IRegisterable";
 import { ISuite } from "./ISuite";
+import { RuleSet } from "./RuleSet";
 import { TestContext } from "./TestContext";
 
 /**
  * Provides the functionality to execute test-suites.
  */
-export class SuiteRunner
+export class SuiteRunner implements IRegisterable
 {
     /**
      * The suites to run.
@@ -32,24 +34,30 @@ export class SuiteRunner
     }
 
     /**
-     * Registers the `mocha`-tests.
+     * @inheritdoc
      *
      * @param context
      * The test-context.
+     *
+     * @param ruleSet
+     * The rule-set to add tests for.
      */
-    public Register(context: TestContext): void
+    public Register(context: TestContext, ruleSet: RuleSet): void
     {
-        for (let ruleSet of TestConstants.RuleSets)
+        for (let set of TestConstants.RuleSets)
         {
-            suite(
-                TestConstants.RuleSetNames[ruleSet],
-                () =>
-                {
-                    for (let suite of this.Suites)
+            if ((ruleSet & set) > 0)
+            {
+                suite(
+                    TestConstants.RuleSetNames[set],
+                    () =>
                     {
-                        suite.Register(context, ruleSet);
-                    }
-                });
+                        for (let suite of this.Suites)
+                        {
+                            suite.Register(context, set);
+                        }
+                    });
+            }
         }
     }
 }

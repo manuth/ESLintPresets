@@ -1,7 +1,9 @@
+import { RuleSet } from "./Debugging/RuleSet";
 import { SuiteRunner } from "./Debugging/SuiteRunner";
 import { TestContext } from "./Debugging/TestContext";
 import { Workspace } from "./Debugging/Workspace";
 import { RuleTests } from "./Rules";
+import General = require("./General");
 
 suite(
     "ESLintPresets",
@@ -19,9 +21,10 @@ suite(
 
         new SuiteRunner(
             [
+                General,
                 RuleTests
             ]
-        ).Register(context);
+        ).Register(context, RuleSet.All);
 
         suiteTeardown(
             () =>
