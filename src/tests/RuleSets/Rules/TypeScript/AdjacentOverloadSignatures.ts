@@ -2,7 +2,7 @@ import { RuleSet } from "../../../Debugging/RuleSet";
 import { ScriptKind } from "../../../Debugging/ScriptKind";
 import { RuleSuite } from "../../../Debugging/Suites/RuleSuite";
 
-let ruleTest = new RuleSuite(
+export let AdjacentOverloadSignatures = new RuleSuite(
     "@typescript-eslint/adjacent-overload-signatures",
     [
         {
@@ -32,7 +32,3 @@ let ruleTest = new RuleSuite(
             ]
         }
     ]);
-
-ruleTest.TestCases.push();
-
-export let AdjacentOverloadSignatures = ruleTest;
