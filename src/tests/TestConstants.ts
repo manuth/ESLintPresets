@@ -1,4 +1,7 @@
+import { RuleSet } from "./Debugging/RuleSet";
 import { ScriptKind } from "./Debugging/ScriptKind";
+import RecommendedWithTypeChecking = require("../Configuration/RecommendedWithTypeChecking");
+import WeakWithTypeChecking = require("../Configuration/WeakWithTypeChecking");
 
 /**
  * Provides constants for the tests.
@@ -11,5 +14,37 @@ export class TestConstants
     public static FileNames: Record<ScriptKind, string> = {
         [ScriptKind.JS]: "javascript.js",
         [ScriptKind.TS]: "typescript.ts"
+    };
+
+    /**
+     * Provides the rule-sets to execute.
+     */
+    public static RuleSets: RuleSet[] = [
+        RuleSet.Recommended,
+        RuleSet.Weak
+    ];
+
+    /**
+     * Provides the script-kinds to execute.
+     */
+    public static ScriptKinds: ScriptKind[] = [
+        ScriptKind.TS,
+        ScriptKind.JS
+    ];
+
+    /**
+     * Provides names for the different rule-sets.
+     */
+    public static RuleSetNames: Record<RuleSet, string> = {
+        [RuleSet.Recommended]: RuleSet[RuleSet.Recommended],
+        [RuleSet.Weak]: RuleSet[RuleSet.Weak]
+    };
+
+    /**
+     * Provides configurations for the different rule-sets.
+     */
+    public static RuleSetConfigurations: Record<RuleSet, any> = {
+        [RuleSet.Recommended]: RecommendedWithTypeChecking,
+        [RuleSet.Weak]: WeakWithTypeChecking
     };
 }

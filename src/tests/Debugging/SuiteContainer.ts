@@ -21,7 +21,7 @@ export class SuiteContainer extends Suite
     /**
      * The children of the suite.
      */
-    private children: ISuite[];
+    private children: ISuite[] = [];
 
     /**
      * Initializes a new instance of the `SuiteContainer` class.

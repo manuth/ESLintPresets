@@ -1,11 +1,10 @@
 import Assert = require("assert");
 import dedent = require("dedent");
 import { CLIEngine } from "eslint";
-import merge = require("lodash.merge");
 import { Context } from "mocha";
+import { TestConstants } from "../TestConstants";
 import { ITestCase } from "./ITestCase";
 import { RuleSet } from "./RuleSet";
-import { ScriptKind } from "./ScriptKind";
 import { Suite } from "./Suite";
 import { SuiteContainer } from "./SuiteContainer";
 import { TestCase } from "./TestCase";
@@ -63,12 +62,7 @@ export abstract class LintSuite extends Suite
      */
     public get Config(): any
     {
-        return merge(
-            {
-                parser: RecommendedRules.parser,
-                plugins: RecommendedRules.plugins
-            },
-            this.config);
+        return this.config;
     }
 
     /**
@@ -87,65 +81,44 @@ export abstract class LintSuite extends Suite
      */
     protected RegisterInternal(context: TestContext, ruleSet: RuleSet): void
     {
-        suite(
-            this.SuiteName,
-            () =>
+        let mocha: Context;
+
+        suiteSetup(
+            function()
             {
-                let engine: CLIEngine;
-                let mocha: Context;
+                mocha = this;
+            });
 
-                suiteSetup(
-                    function()
-                    {
-                        mocha = this;
-                    });
-
-                suiteSetup(
-                    () =>
-                    {
-                        engine = new CLIEngine(
-                            merge(
-                                {
-                                    parserOptions: {
-                                        project: context.Workspace.TSConfigFileName
-                                    }
-                                },
-                                this.Config));
-                    });
-
-                for (let testCase of this.TestCases)
+        for (let testCase of this.TestCases)
+        {
+            test(
+                testCase.Description,
+                async () =>
                 {
-                    test(
-                        testCase.Description,
-                        async () =>
+                    mocha.enableTimeouts(false);
+
+                    for (let scriptKind of TestConstants.ScriptKinds)
+                    {
+                        if (
+                            (testCase.RuleSet & ruleSet) > 0 &&
+                            (testCase.ScriptKind & scriptKind) > 0)
                         {
-                            mocha.enableTimeouts(false);
-
-                            for (let scriptKind of [ScriptKind.JS, ScriptKind.TS])
+                            for (let snippetCollection of testCase.CodeSnippets)
                             {
-                                if (
-                                    (testCase.RuleSet & ruleSet) > 0 &&
-                                    (testCase.ScriptKind & scriptKind) > 0)
+                                for (let codeSnippet of snippetCollection.Snippets)
                                 {
-                                    let fileName = context.Workspace.GetFileName(scriptKind);
-
-                                    for (let snippetCollection of testCase.CodeSnippets)
-                                    {
-                                        for (let codeSnippet of snippetCollection.Snippets)
-                                        {
-                                            Assert.strictEqual(
-                                                this.VerifyResult(
-                                                    engine.executeOnText(
-                                                        dedent(codeSnippet),
-                                                        fileName)),
-                                                snippetCollection.Valid);
-                                        }
-                                    }
+                                    Assert.strictEqual(
+                                        this.VerifyResult(
+                                            context.GetCLIEngine(ruleSet).executeOnText(
+                                                dedent(codeSnippet),
+                                                context.GetFileName(scriptKind))),
+                                        snippetCollection.Valid);
                                 }
                             }
-                        });
-                }
-            });
+                        }
+                    }
+                });
+        }
     }
 
     /**
