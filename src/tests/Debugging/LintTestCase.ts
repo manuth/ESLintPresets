@@ -7,7 +7,7 @@ import { ScriptKind } from "./ScriptKind";
 /**
  * Represents a test-case.
  */
-export class TestCase implements ITestCase
+export class LintTestCase implements ITestCase
 {
     /**
      * The test-suite of this case.

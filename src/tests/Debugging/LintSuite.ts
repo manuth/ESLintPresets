@@ -4,7 +4,7 @@ import { CLIEngine } from "eslint";
 import { Context } from "mocha";
 import { TestConstants } from "../TestConstants";
 import { ITestCase } from "./ITestCase";
-import { TestCase } from "./LintTestCase";
+import { LintTestCase } from "./LintTestCase";
 import { RuleSet } from "./RuleSet";
 import { Suite } from "./Suite";
 import { SuiteContainer } from "./SuiteContainer";
@@ -23,7 +23,7 @@ export abstract class LintSuite extends Suite
     /**
      * The test-cases.
      */
-    private readonly testCases: TestCase[] = [];
+    private readonly testCases: LintTestCase[] = [];
 
     /**
      * Initializes a new instance of the `LintTestBase` class.
@@ -38,7 +38,7 @@ export abstract class LintSuite extends Suite
         for (let testCase of testCases)
         {
             this.testCases.push(
-                new TestCase(
+                new LintTestCase(
                     this,
                     testCase.Description,
                     testCase.RuleSet,
@@ -50,7 +50,7 @@ export abstract class LintSuite extends Suite
     /**
      * Gets the test-cases.
      */
-    public get TestCases(): TestCase[]
+    public get TestCases(): LintTestCase[]
     {
         return this.testCases;
     }
