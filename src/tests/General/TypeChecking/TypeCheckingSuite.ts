@@ -32,6 +32,14 @@ export class TypeCheckingSuite extends LintSuite<ITypeCheckingCase>
 
     /**
      * @inheritdoc
+     */
+    public get SuiteName(): string
+    {
+        return "TypeChecking";
+    }
+
+    /**
+     * @inheritdoc
      *
      * @param testCase
      * The properties of the test-case to create.
@@ -44,13 +52,5 @@ export class TypeCheckingSuite extends LintSuite<ITypeCheckingCase>
         return new TypeCheckingCase(
             testCase.UseTypeCheckingRules,
             testCase.EnableTypeChecking);
-    }
-
-    /**
-     * @inheritdoc
-     */
-    public get SuiteName(): string
-    {
-        return "TypeChecking";
     }
 }
