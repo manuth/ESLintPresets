@@ -71,6 +71,10 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
                 "@typescript-eslint/member-delimiter-style": [
                     "warn",
                     {
+                        singleline: {
+                            delimiter: "comma",
+                            requireLast: false
+                        },
                         multiline: {
                             delimiter: "semi",
                             requireLast: true
