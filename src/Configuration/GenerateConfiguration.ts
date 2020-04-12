@@ -276,7 +276,8 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
                             "TSAbstractMethodDefinition",
                             "TSCallSignatureDeclaration",
                             "TSConstructSignatureDeclaration",
-                            "TSMethodSignature"
+                            "TSMethodSignature",
+                            "TSDeclareFunction"
                         ]
                     }
                 ],
@@ -286,7 +287,17 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
                 "jsdoc/require-param": [
                     weak ? "off" : "warn",
                     {
-                        exemptedBy: []
+                        exemptedBy: [],
+                        contexts: [
+                            "ArrowFunctionExpression",
+                            "FunctionDeclaration",
+                            "FunctionExpression",
+                            // "TSAbstractMethodDefinition",
+                            "TSMethodSignature",
+                            "TSEmptyBodyFunctionExpression",
+                            "TSDeclareFunction",
+                            "TSFunctionType"
+                        ]
                     }
                 ],
                 "jsdoc/require-property-name": "warn",

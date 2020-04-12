@@ -47,7 +47,7 @@
     "dedent": "^0.7.0",
     "eslint": "^6.8.0",
     "eslint-plugin-import": "^2.20.2",
-    "eslint-plugin-jsdoc": "^22.1.0",
+    "eslint-plugin-jsdoc": "^23.0.0",
     "eslint-plugin-prefer-arrow": "^1.2.0",
     "fs-extra": "^9.0.0",
     "lodash.merge": "^4.6.2",
