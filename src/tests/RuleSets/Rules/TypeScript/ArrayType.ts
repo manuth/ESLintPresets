@@ -35,14 +35,14 @@ export let ArrayType = new RuleSuite(
                     Valid: false,
                     Snippets: [
                         `
-                            let x: Array<string>;`
+                            let x: Array<any>;`
                     ]
                 },
                 {
                     Valid: true,
                     Snippets: [
                         `
-                            let x: string[];`
+                            let x: any[];`
                     ]
                 }
             ]
@@ -56,8 +56,8 @@ export let ArrayType = new RuleSuite(
                     Valid: true,
                     Snippets: [
                         `
-                            let a: Array<string>;
-                            let b: string[];
+                            let a: Array<any>;
+                            let b: any[];
                             let x: Array<string | number>;
                             let y: (string | number)[];`
                     ]

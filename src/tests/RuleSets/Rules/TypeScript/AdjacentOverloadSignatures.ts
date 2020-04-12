@@ -14,19 +14,18 @@ export let AdjacentOverloadSignatures = new RuleSuite(
                     Valid: false,
                     Snippets: [
                         `
-                            function test1(): void { }
-                            function test2(): void { }
-                            function test1(id: number): void { }
-                        `
+                            function test1() { }
+                            function test2() { }
+                            function test1(id) { }`
                     ]
                 },
                 {
                     Valid: true,
                     Snippets: [
                         `
-                            function test1(): void { }
-                            function test1(id: number): void { }
-                            function test2(): void { }`
+                            function test1() { }
+                            function test1(id) { }
+                            function test2() { }`
                     ]
                 }
             ]
