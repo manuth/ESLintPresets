@@ -52,6 +52,9 @@ export class RuleTestCase extends LintReportTestCase
      *
      * @param report
      * The report to check.
+     *
+     * @returns
+     * A value indicating whether the test-case is applicable.
      */
     protected VerifyReport(report: CLIEngine.LintReport): boolean
     {
