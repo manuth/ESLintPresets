@@ -162,7 +162,7 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
                         selector: "typeParameter",
                         format: [],
                         custom: {
-                            regex: "^T([A-Z][A-Za-z]+)?$",
+                            regex: /^T([A-Z][A-Za-z0-9]+)?$/.source,
                             match: true
                         }
                     }
