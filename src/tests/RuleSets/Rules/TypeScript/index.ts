@@ -19,6 +19,7 @@ import { NoEmptyInterface } from "./NoEmptyInterface";
 import { NoExplicitAny } from "./NoExplicitAny";
 import { NoFloatingPromises } from "./NoFloatingPromises";
 import { NoForInArray } from "./NoForInArray";
+import { NoInferrableTypes } from "./NoInferrableTypes";
 import { NoMisusedNew } from "./NoMisusedNew";
 import { NoNamespace } from "./NoNamespace";
 import { NoParameterProperties } from "./NoParameterProperties";
@@ -27,6 +28,7 @@ import { NoUnusedExpressions } from "./NoUnusedExpressions";
 import { NoUnusedVars } from "./NoUnusedVars";
 import { NoUseBeforeDefine } from "./NoUseBeforeDefine";
 import { NoVarRequires } from "./NoVarRequires";
+import { PreferAsConst } from "./PreferAsConst";
 import { PreferForOf } from "./PreferForOf";
 import { PreferFunctionType } from "./PreferFunctionType";
 import { PreferNamespaceKeyword } from "./PreferNamespaceKeyword";
@@ -62,6 +64,7 @@ export let TypeScriptTests = new ContainerSuite(
         NoExplicitAny,
         NoFloatingPromises,
         NoForInArray,
+        NoInferrableTypes,
         NoMisusedNew,
         NoNamespace,
         NoParameterProperties,
@@ -70,6 +73,7 @@ export let TypeScriptTests = new ContainerSuite(
         NoUnusedVars,
         NoUseBeforeDefine,
         NoVarRequires,
+        PreferAsConst,
         PreferForOf,
         PreferFunctionType,
         PreferNamespaceKeyword,
