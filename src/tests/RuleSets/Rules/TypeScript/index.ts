@@ -31,6 +31,13 @@ import { PreferForOf } from "./PreferForOf";
 import { PreferFunctionType } from "./PreferFunctionType";
 import { PreferNamespaceKeyword } from "./PreferNamespaceKeyword";
 import { PreferOptionalChain } from "./PreferOptionalChain";
+import { Quotes } from "./Quotes";
+import { Semi } from "./Semi";
+import { SpaceBeforeFunctionParen } from "./SpaceBeforeFunctionParen";
+import { TripleSlashReference } from "./TripleSlashReference";
+import { TypeAnnotationSpacing } from "./TypeAnnotationSpacing";
+import { UnboundMethod } from "./UnboundMethod";
+import { UnifiedSignatures } from "./UnifiedSignatures";
 
 export let TypeScriptTests = new ContainerSuite(
     "TypeScript",
@@ -66,5 +73,12 @@ export let TypeScriptTests = new ContainerSuite(
         PreferForOf,
         PreferFunctionType,
         PreferNamespaceKeyword,
-        PreferOptionalChain
+        PreferOptionalChain,
+        Quotes,
+        Semi,
+        SpaceBeforeFunctionParen,
+        TripleSlashReference,
+        TypeAnnotationSpacing,
+        UnboundMethod,
+        UnifiedSignatures
     ]);
