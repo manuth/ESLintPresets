@@ -245,7 +245,7 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
                 complexity: "off",
                 "computed-property-spacing": "warn",
                 "constructor-super": "warn",
-                curly: "warn",
+                curly: "off",
                 "dot-notation": "off",
                 "eol-last": "warn",
                 eqeqeq: [
