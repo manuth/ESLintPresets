@@ -218,7 +218,7 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
                 ],
                 "@typescript-eslint/triple-slash-reference": "off",
                 "@typescript-eslint/type-annotation-spacing": "warn",
-                "@typescript-eslint/unified-signatures": "warn",
+                "@typescript-eslint/unified-signatures": "off",
                 "array-bracket-spacing": "warn",
                 "array-bracket-newline": [
                     "warn",
