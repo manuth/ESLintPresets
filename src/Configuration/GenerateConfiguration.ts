@@ -289,7 +289,6 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
                     }
                 ],
                 "jsdoc/check-alignment": weak ? "off" : "warn",
-                "jsdoc/check-examples": weak ? "off" : "warn",
                 "jsdoc/check-indentation": weak ? "off" : "warn",
                 "jsdoc/check-param-names": weak ? "off" : "warn",
                 "jsdoc/check-syntax": weak ? "off" : "warn",
