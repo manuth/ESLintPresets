@@ -75,6 +75,9 @@ export class TypeCheckingCase extends LintTestCase
      *
      * @param ruleSet
      * The rule-set to add tests for.
+     *
+     * @returns
+     * The CLI-engine for the specified `ruleSet`.
      */
     protected GetCLIEngine(context: TestContext, ruleSet: RuleSet): CLIEngine
     {
