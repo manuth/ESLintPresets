@@ -542,6 +542,7 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
                 rules: {
                     "@typescript-eslint/await-thenable": "warn",
                     "@typescript-eslint/no-throw-literal": "warn",
+                    "@typescript-eslint/no-floating-promises": "off",
                     "@typescript-eslint/no-unnecessary-boolean-literal-compare": "warn",
                     "@typescript-eslint/no-unnecessary-qualifier": "warn",
                     "@typescript-eslint/no-unnecessary-type-arguments": "warn",
