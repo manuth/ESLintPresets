@@ -218,7 +218,6 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
                 ],
                 "@typescript-eslint/triple-slash-reference": "off",
                 "@typescript-eslint/type-annotation-spacing": "warn",
-                "@typescript-eslint/unbound-method": "warn",
                 "@typescript-eslint/unified-signatures": "warn",
                 "array-bracket-spacing": "warn",
                 "array-bracket-newline": [
@@ -558,6 +557,7 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
                         }
                     ],
                     "@typescript-eslint/return-await": "warn",
+                    "@typescript-eslint/unbound-method": "warn",
                     "@typescript-eslint/tslint/config": [
                         weak ? "off" : "warn",
                         {
