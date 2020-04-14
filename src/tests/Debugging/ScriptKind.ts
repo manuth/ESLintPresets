@@ -11,5 +11,10 @@ export enum ScriptKind
     /**
      * Indicates a typescript.
      */
-    TS = 1 << 1
+    TS = 1 << 1,
+
+    /**
+     * Indicates a type-declaration file.
+     */
+    DTS = 1 << 2
 }

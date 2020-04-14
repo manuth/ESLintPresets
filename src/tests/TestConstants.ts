@@ -15,7 +15,8 @@ export class TestConstants
      */
     public static FileNames: Record<ScriptKind, string> = {
         [ScriptKind.JS]: "javascript.js",
-        [ScriptKind.TS]: "typescript.ts"
+        [ScriptKind.TS]: "typescript.ts",
+        [ScriptKind.DTS]: "types.d.ts"
     };
 
     /**
@@ -30,8 +31,9 @@ export class TestConstants
      * Provides the script-kinds to execute.
      */
     public static ScriptKinds: ScriptKind[] = [
+        ScriptKind.JS,
         ScriptKind.TS,
-        ScriptKind.JS
+        ScriptKind.DTS
     ];
 
     /**

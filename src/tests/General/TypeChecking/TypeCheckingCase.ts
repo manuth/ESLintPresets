@@ -37,7 +37,7 @@ export class TypeCheckingCase extends LintTestCase
                     "Checking whether using rule-sets with type-checking without type-checking enabled causes an error…") :
                     "Checking whether rule-sets without type-checking can be used in any case…",
             RuleSet.All,
-            ScriptKind.JS | ScriptKind.TS,
+            ScriptKind.JS | ScriptKind.TS | ScriptKind.DTS,
             [
                 {
                     Valid: enableTypeChecking || (!useTypeCheckingRules),
