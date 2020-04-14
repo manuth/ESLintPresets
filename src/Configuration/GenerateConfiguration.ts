@@ -259,7 +259,6 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
                 "generator-star-spacing": "warn",
                 "grouped-accessor-pairs": "warn",
                 "guard-for-in": "off",
-                "id-match": "warn",
                 "import/no-default-export": weak ? "off" : "warn",
                 "import/no-duplicates": weak ? "off" : "warn",
                 "import/order": [
