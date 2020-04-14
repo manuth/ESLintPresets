@@ -173,7 +173,13 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
                 "@typescript-eslint/no-for-in-array": weak ? "off" : "error",
                 "@typescript-eslint/no-inferrable-types": weak ? "off" : "warn",
                 "@typescript-eslint/no-misused-new": "warn",
-                "@typescript-eslint/no-namespace": "warn",
+                "@typescript-eslint/no-namespace": [
+                    "warn",
+                    {
+                        allowDeclarations: true,
+                        allowDefinitionFiles: true
+                    }
+                ],
                 "@typescript-eslint/no-parameter-properties": "warn",
                 "@typescript-eslint/no-this-alias": "off",
                 "@typescript-eslint/no-unused-expressions": "warn",
