@@ -173,7 +173,7 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
                 "@typescript-eslint/no-empty-interface": "off",
                 "@typescript-eslint/no-explicit-any": "off",
                 "@typescript-eslint/no-floating-promises": "off",
-                "@typescript-eslint/no-for-in-array": "off",
+                "@typescript-eslint/no-for-in-array": weak ? "off" : "error",
                 "@typescript-eslint/no-inferrable-types": weak ? "off" : "warn",
                 "@typescript-eslint/no-misused-new": "warn",
                 "@typescript-eslint/no-namespace": "warn",
