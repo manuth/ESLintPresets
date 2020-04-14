@@ -160,11 +160,8 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
                     },
                     {
                         selector: "typeParameter",
-                        format: [],
-                        custom: {
-                            regex: /^T([0-9]+|[A-Z][A-Za-z0-9]+)?$/.source,
-                            match: true
-                        }
+                        prefix: ["T"],
+                        format: ["PascalCase"]
                     }
                 ],
                 "@typescript-eslint/no-dupe-class-members": "warn",
