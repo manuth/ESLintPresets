@@ -361,7 +361,14 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
                         ]
                     }
                 ],
-                "jsdoc/require-param-type": weak ? "off" : "warn",
+                "jsdoc/require-param-type": [
+                    weak ? "off" : "warn",
+                    {
+                        contexts: [
+                            "any"
+                        ]
+                    }
+                ],
                 "jsdoc/require-param": [
                     weak ? "off" : "warn",
                     {
