@@ -387,6 +387,13 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
                     }
                 ],
                 "jsdoc/require-returns-type": [
+                    weak ? "off" : "warn",
+                    {
+                        contexts: [
+                            "any"
+                        ]
+                    }
+                ],
                 "jsdoc/require-returns": [
                     weak ? "off" : "warn",
                     {
