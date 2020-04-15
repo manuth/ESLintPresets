@@ -385,9 +385,6 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
                         ]
                     }
                 ],
-                "jsdoc/require-property-name": "warn",
-                "jsdoc/require-property-type": weak ? "off" : "warn",
-                "jsdoc/require-returns-description": weak ? "off" : "warn",
                 "jsdoc/require-returns-type": weak ? "off" : "warn",
                 "jsdoc/require-returns": [
                     weak ? "off" : "warn",
