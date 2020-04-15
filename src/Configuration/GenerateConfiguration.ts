@@ -379,13 +379,14 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
                             "FunctionExpression",
                             // "TSAbstractMethodDefinition",
                             "TSMethodSignature",
-                            "TSEmptyBodyFunctionExpression",
+                            "TSConstructSignatureDeclaration",
+                            "TSCallSignatureDeclaration",
                             "TSDeclareFunction",
                             "TSFunctionType"
                         ]
                     }
                 ],
-                "jsdoc/require-returns-type": weak ? "off" : "warn",
+                "jsdoc/require-returns-type": [
                 "jsdoc/require-returns": [
                     weak ? "off" : "warn",
                     {
