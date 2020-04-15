@@ -2,7 +2,6 @@ import { RuleSet } from "../../../Debugging/RuleSet";
 import { ScriptKind } from "../../../Debugging/ScriptKind";
 import { RuleSuite } from "../../../Debugging/Suites/RuleSuite";
 
-/* ToDo: Wait for `unified-signatures` to be updated. */
 export let UnifiedSignatures = new RuleSuite(
     "@typescript-eslint/unified-signatures",
     [
