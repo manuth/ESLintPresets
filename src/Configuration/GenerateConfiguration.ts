@@ -515,41 +515,42 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
                 "yield-star-spacing": "warn",
                 yoda: "warn"
             },
-            overrides: [
-                {
-                    files: [
-                        "*.ts",
-                        "*.tsx"
-                    ],
-                    rules: {
-                        "@typescript-eslint/explicit-member-accessibility": [
-                            "warn",
-                            {
-                                accessibility: "explicit"
-                            }
-                        ],
-                        "@typescript-eslint/explicit-function-return-type": [
-                            "warn",
-                            {
-                                allowExpressions: true
-                            }
-                        ],
-                        "jsdoc/no-types": [
-                            "warn",
-                            {
-                                contexts: [
-                                    "any"
-                                ]
-                            }
-                        ],
-                        "jsdoc/require-param-type": "off",
-                        "jsdoc/require-property-type": "off",
-                        "jsdoc/require-returns-type": "off"
-                    }
-                }
-            ]
+            overrides: []
         },
         ESLintRecommended);
+
+    config.overrides.push(
+        {
+            files: [
+                "*.ts",
+                "*.tsx"
+            ],
+            rules: {
+                "@typescript-eslint/explicit-member-accessibility": [
+                    "warn",
+                    {
+                        accessibility: "explicit"
+                    }
+                ],
+                "@typescript-eslint/explicit-function-return-type": [
+                    "warn",
+                    {
+                        allowExpressions: true
+                    }
+                ],
+                "jsdoc/no-types": [
+                    "warn",
+                    {
+                        contexts: [
+                            "any"
+                        ]
+                    }
+                ],
+                "jsdoc/require-param-type": "off",
+                "jsdoc/require-property-type": "off",
+                "jsdoc/require-returns-type": "off"
+            }
+        });
 
     return merge(
         config,
