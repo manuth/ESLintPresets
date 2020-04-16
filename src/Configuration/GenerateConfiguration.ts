@@ -471,7 +471,10 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
                     "warn",
                     "never"
                 ],
-                "operator-linebreak": ["warn", "after"],
+                "operator-linebreak": [
+                    weak ? "off" : "warn",
+                    "after"
+                ],
                 "padded-blocks": ["warn", "never"],
                 "padding-line-between-statements": [
                     "warn",
