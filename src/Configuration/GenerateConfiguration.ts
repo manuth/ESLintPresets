@@ -423,7 +423,7 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
                 "no-empty": "off",
                 "no-empty-pattern": "off",
                 "no-eval": "warn",
-                "no-fallthrough": "off",
+                "no-fallthrough": "error",
                 "no-floating-decimal": "warn",
                 "no-implicit-coercion": "warn",
                 "no-inner-declarations": "off",
