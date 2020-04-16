@@ -134,7 +134,7 @@ export abstract class LintTestCase implements ITestCase, IRegisterable
                                                 this.Verify(() =>
                                                 {
                                                     return this.GetCLIEngine(context, set).executeOnText(
-                                                        codeSnippet,
+                                                        dedent(codeSnippet),
                                                         context.GetFileName(scriptKind));
                                                 }),
                                                 snippetCollection.Valid);
