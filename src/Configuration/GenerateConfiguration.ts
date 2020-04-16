@@ -446,7 +446,7 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
                 "no-shadow": "off",
                 "no-sparse-arrays": "warn",
                 "no-throw-literal": "off",
-                "no-trailing-spaces": weak ? "off" : "warn",
+                "no-trailing-spaces": "warn",
                 "no-undef-init": "warn",
                 "no-underscore-dangle": "warn",
                 "no-unsafe-finally": "warn",
