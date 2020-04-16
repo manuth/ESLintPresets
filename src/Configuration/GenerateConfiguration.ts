@@ -403,11 +403,11 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
                 ],
                 "lines-between-class-members": "warn",
                 "max-classes-per-file": "off",
+                "max-len": "off",
                 "multiline-ternary": [
                     "warn",
                     "always-multiline"
                 ],
-                "max-len": "off",
                 "new-parens": "warn",
                 "no-async-promise-executor": "off",
                 "no-bitwise": "off",
