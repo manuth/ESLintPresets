@@ -448,7 +448,6 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
                 "no-throw-literal": "off",
                 "no-trailing-spaces": "warn",
                 "no-undef-init": "warn",
-                "no-underscore-dangle": "warn",
                 "no-unsafe-finally": "warn",
                 "no-unused-labels": "warn",
                 "no-useless-catch": "off",
