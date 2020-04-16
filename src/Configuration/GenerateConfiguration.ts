@@ -415,7 +415,7 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
                 "no-case-declarations": "off",
                 "no-cond-assign": "warn",
                 "no-console": "off",
-                "no-constant-condition": "off",
+                "no-constant-condition": "warn",
                 "no-control-regex": "off",
                 "no-constructor-return": "warn",
                 "no-debugger": "warn",
