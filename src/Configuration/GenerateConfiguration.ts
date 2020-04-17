@@ -475,7 +475,10 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
                     weak ? "off" : "warn",
                     "after"
                 ],
-                "padded-blocks": ["warn", "never"],
+                "padded-blocks": [
+                    weak ? "off" : "warn",
+                    "never"
+                ],
                 "padding-line-between-statements": [
                     "warn",
                     {
