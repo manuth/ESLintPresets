@@ -509,7 +509,6 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
                     weak ? "off" : "warn",
                     "as-needed"
                 ],
-                radix: "warn",
                 "rest-spread-spacing": "warn",
                 "semi-spacing": "warn",
                 "semi-style": "warn",
