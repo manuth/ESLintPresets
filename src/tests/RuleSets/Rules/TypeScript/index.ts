@@ -8,6 +8,7 @@ import { ConsistentTypeAssertions } from "./ConsistentTypeAssertions";
 import { ConsistentTypeDefinitions } from "./ConsistentTypeDefinitions";
 import { DefaultParamLast } from "./DefaultParamLast";
 import { ExplicitFunctionReturnType } from "./ExplicitFunctionReturnType";
+import { ExplicitMemberAccessibility } from "./ExplicitMemberAccessibility";
 import { FuncCallSpacing } from "./FuncCallSpacing";
 import { MemberDelimiterStyle } from "./MemberDelimiterStyle";
 import { MemberOrdering } from "./MemberOrdering";
@@ -53,6 +54,7 @@ export let TypeScriptTests = new ContainerSuite(
         ConsistentTypeDefinitions,
         DefaultParamLast,
         ExplicitFunctionReturnType,
+        ExplicitMemberAccessibility,
         FuncCallSpacing,
         MemberDelimiterStyle,
         MemberOrdering,

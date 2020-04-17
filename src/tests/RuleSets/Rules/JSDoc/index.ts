@@ -7,6 +7,7 @@ import { CheckTagNames } from "./CheckTagNames";
 import { CheckValues } from "./CheckValues";
 import { EmptyTags } from "./EmptyTags";
 import { NewLineAfterDescription } from "./NewLineAfterDescription";
+import { NoTypes } from "./NoTypes";
 import { RequireDescription } from "./RequireDescription";
 import { RequireJSDoc } from "./RequireJSDoc";
 import { RequireParam } from "./RequireParam";
@@ -26,6 +27,7 @@ export let JSDocTests = new ContainerSuite(
         CheckValues,
         EmptyTags,
         NewLineAfterDescription,
+        NoTypes,
         RequireDescription,
         RequireJSDoc,
         RequireParamDescription,
