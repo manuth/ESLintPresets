@@ -8,7 +8,7 @@ export let NoTypes = new RuleSuite(
         {
             Description: "Checking whether types in jsdoc-comments are disallowed for typescript-files…",
             RuleSet: RuleSet.All,
-            ScriptKind: ScriptKind.JS | ScriptKind.TS,
+            ScriptKind: ScriptKind.TS,
             CodeSnippets: [
                 {
                     Valid: false,
