@@ -480,7 +480,7 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
                     "never"
                 ],
                 "padding-line-between-statements": [
-                    "warn",
+                    weak ? "off" : "warn",
                     {
                         blankLine: "always",
                         prev: "*",
