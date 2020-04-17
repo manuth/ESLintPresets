@@ -447,7 +447,6 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
                 "no-sparse-arrays": "warn",
                 "no-throw-literal": "off",
                 "no-trailing-spaces": "warn",
-                "no-undef": "off",
                 "no-undef-init": "warn",
                 "no-unreachable": "off",
                 "no-unsafe-finally": "warn",
