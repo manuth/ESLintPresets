@@ -8,12 +8,18 @@ import { ScriptKind } from "../ScriptKind";
 import { ICodeSnippetCollection } from "../TestCases/ICodeSnippet";
 import { ITestCase } from "../TestCases/ITestCase";
 import { TestContext } from "../TestContext";
+import dedent = require("dedent");
 
 /**
  * Represents a test-case.
  */
 export abstract class LintTestCase implements ITestCase, IRegisterable
 {
+    /**
+     * A marker for indicating the end of a file.
+     */
+    private static readonly endOfFileMarker = "EOF";
+
     /**
      * The description of the test-case.
      */
@@ -134,7 +140,8 @@ export abstract class LintTestCase implements ITestCase, IRegisterable
                                                 this.Verify(() =>
                                                 {
                                                     return this.GetCLIEngine(context, set).executeOnText(
-                                                        dedent(codeSnippet),
+                                                        dedent(`${codeSnippet}${LintTestCase.endOfFileMarker}`).replace(
+                                                            new RegExp(`${LintTestCase.endOfFileMarker}$`), ""),
                                                         context.GetFileName(scriptKind));
                                                 }),
                                                 snippetCollection.Valid);
