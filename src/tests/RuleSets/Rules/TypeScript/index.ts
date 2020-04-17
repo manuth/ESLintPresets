@@ -1,6 +1,7 @@
 import { ContainerSuite } from "../../../Debugging/Suites/ContainerSuite";
 import { AdjacentOverloadSignatures } from "./AdjacentOverloadSignatures";
 import { ArrayType } from "./ArrayType";
+import { AwaitThenable } from "./AwaitThenable";
 import { BanTSIgnore } from "./BanTSIgnore";
 import { BanTypes } from "./BanTypes";
 import { CommaSpacing } from "./CommaSpacing";
@@ -13,7 +14,6 @@ import { FuncCallSpacing } from "./FuncCallSpacing";
 import { MemberDelimiterStyle } from "./MemberDelimiterStyle";
 import { MemberOrdering } from "./MemberOrdering";
 import { NamingConvention } from "./NamingConvention";
-import { NoDupeClassMembers } from "./NoDupeClassMembers";
 import { NoDynamicDelete } from "./NoDynamicDelete";
 import { NoEmptyFunction } from "./NoEmptyFunction";
 import { NoEmptyInterface } from "./NoEmptyInterface";
@@ -47,6 +47,7 @@ export let TypeScriptTests = new ContainerSuite(
     [
         AdjacentOverloadSignatures,
         ArrayType,
+        AwaitThenable,
         BanTSIgnore,
         BanTypes,
         CommaSpacing,
@@ -59,7 +60,6 @@ export let TypeScriptTests = new ContainerSuite(
         MemberDelimiterStyle,
         MemberOrdering,
         NamingConvention,
-        NoDupeClassMembers,
         NoDynamicDelete,
         NoEmptyFunction,
         NoEmptyInterface,
