@@ -564,7 +564,6 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
                     }
                 ],
                 "jsdoc/require-param-type": "off",
-                "jsdoc/require-property-type": "off",
                 "jsdoc/require-returns-type": "off"
             }
         });
