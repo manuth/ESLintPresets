@@ -5,7 +5,7 @@
         "rootDir": "./src",
         "module": "commonjs",
         "lib": [
-            "ES2019"
+            "ES6"
         ],
         "plugins": [
             {
