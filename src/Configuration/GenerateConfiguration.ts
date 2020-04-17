@@ -39,7 +39,7 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
                     }
                 ],
                 "@typescript-eslint/ban-ts-ignore": "off",
-                "@typescript-eslint/ban-types": "warn",
+                "@typescript-eslint/ban-types": "error",
                 "@typescript-eslint/camelcase": "off",
                 "@typescript-eslint/class-name-casing": "off",
                 "@typescript-eslint/comma-spacing": "warn",
@@ -48,7 +48,7 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
                     "warn",
                     "interface"
                 ],
-                "@typescript-eslint/default-param-last": "warn",
+                "@typescript-eslint/default-param-last": "error",
                 "@typescript-eslint/explicit-function-return-type": "off",
                 "@typescript-eslint/func-call-spacing": "warn",
                 // "@typescript-eslint/indent": [
@@ -164,13 +164,13 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
                         format: ["PascalCase"]
                     }
                 ],
-                "@typescript-eslint/no-dynamic-delete": weak ? "off" : "warn",
+                "@typescript-eslint/no-dynamic-delete": weak ? "off" : "error",
                 "@typescript-eslint/no-empty-function": "off",
                 "@typescript-eslint/no-empty-interface": "off",
                 "@typescript-eslint/no-explicit-any": "off",
                 "@typescript-eslint/no-for-in-array": weak ? "off" : "error",
-                "@typescript-eslint/no-inferrable-types": weak ? "off" : "warn",
-                "@typescript-eslint/no-misused-new": "warn",
+                "@typescript-eslint/no-inferrable-types": weak ? "off" : "error",
+                "@typescript-eslint/no-misused-new": "error",
                 "@typescript-eslint/no-namespace": [
                     "warn",
                     {
@@ -178,7 +178,7 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
                         allowDefinitionFiles: true
                     }
                 ],
-                "@typescript-eslint/no-parameter-properties": "warn",
+                "@typescript-eslint/no-parameter-properties": "error",
                 "@typescript-eslint/no-this-alias": "off",
                 "@typescript-eslint/no-unused-expressions": "warn",
                 "@typescript-eslint/no-unused-vars": "warn",
@@ -191,9 +191,10 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
                     }
                 ],
                 "@typescript-eslint/no-var-requires": "warn",
+                "@typescript-eslint/prefer-as-const": "warn",
                 "@typescript-eslint/prefer-for-of": "warn",
                 "@typescript-eslint/prefer-function-type": "warn",
-                "@typescript-eslint/prefer-namespace-keyword": "warn",
+                "@typescript-eslint/prefer-namespace-keyword": "error",
                 "@typescript-eslint/prefer-optional-chain": "warn",
                 "@typescript-eslint/quotes": [
                     "warn",
@@ -203,7 +204,7 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
                     }
                 ],
                 "@typescript-eslint/semi": [
-                    "warn",
+                    "error",
                     "always"
                 ],
                 "@typescript-eslint/space-before-function-paren": [
@@ -239,11 +240,11 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
                         allowSingleLine: true
                     }
                 ],
-                "comma-dangle": weak ? "off" : "warn",
+                "comma-dangle": weak ? "off" : "error",
                 "comma-style": "warn",
                 complexity: "off",
                 "computed-property-spacing": "warn",
-                "constructor-super": "warn",
+                "constructor-super": "error",
                 curly: "off",
                 "dot-notation": "off",
                 "eol-last": "warn",
@@ -309,12 +310,12 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
                             "TSEnumMember",
                             "TSInterfaceDeclaration",
                             "ClassProperty",
-                            "TSTypeAliasDeclaration",
                             "TSPropertySignature",
                             "TSAbstractMethodDefinition",
                             "TSCallSignatureDeclaration",
                             "TSConstructSignatureDeclaration",
-                            "TSMethodSignature"
+                            "TSMethodSignature",
+                            "TSTypeAliasDeclaration"
                         ]
                     }
                 ],
@@ -410,20 +411,20 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
                 "new-parens": "warn",
                 "no-async-promise-executor": "off",
                 "no-bitwise": "off",
-                "no-caller": "warn",
+                "no-caller": "error",
                 "no-case-declarations": "off",
-                "no-cond-assign": "warn",
+                "no-cond-assign": "error",
                 "no-console": "off",
                 "no-constant-condition": "warn",
-                "no-constructor-return": "warn",
+                "no-constructor-return": "error",
                 "no-control-regex": "off",
                 "no-debugger": "warn",
-                "no-duplicate-case": "warn",
+                "no-duplicate-case": "error",
                 "no-empty": "off",
                 "no-empty-pattern": "off",
                 "no-eval": "warn",
                 "no-fallthrough": "error",
-                "no-floating-decimal": "warn",
+                "no-floating-decimal": "error",
                 "no-implicit-coercion": "warn",
                 "no-inner-declarations": "off",
                 "no-invalid-this": "off",
@@ -437,22 +438,22 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
                     }
                 ],
                 "no-multi-spaces": "warn",
-                "no-new-wrappers": "warn",
+                "no-new-wrappers": "error",
                 "no-octal-escape": "warn",
                 "no-regex-spaces": "off",
                 "no-return-await": "warn",
-                "no-sequences": "warn",
+                "no-sequences": "error",
                 "no-shadow": "off",
-                "no-sparse-arrays": "warn",
-                "no-throw-literal": "off",
+                "no-sparse-arrays": "error",
+                "no-throw-literal": "error",
                 "no-trailing-spaces": "warn",
                 "no-undef-init": "warn",
                 "no-unreachable": "off",
-                "no-unsafe-finally": "warn",
+                "no-unsafe-finally": "error",
                 "no-unused-labels": "warn",
                 "no-useless-catch": "off",
                 "no-useless-rename": "warn",
-                "no-var": "warn",
+                "no-var": "error",
                 "no-void": "warn",
                 "no-whitespace-before-property": "warn",
                 "object-curly-newline": "warn",
