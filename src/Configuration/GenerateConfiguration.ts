@@ -520,7 +520,6 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
                 "switch-colon-spacing": "warn",
                 "template-curly-spacing": "warn",
                 "use-isnan": "warn",
-                "valid-typeof": "warn",
                 "yield-star-spacing": "warn",
                 yoda: "warn"
             },
@@ -529,6 +528,15 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
         ESLintRecommended);
 
     config.overrides.push(
+        {
+            files: [
+                "*.js",
+                "*.jsx"
+            ],
+            rules: {
+                "valid-typeof": "error"
+            }
+        },
         {
             files: [
                 "*.ts",
