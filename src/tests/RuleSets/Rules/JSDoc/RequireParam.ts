@@ -108,41 +108,41 @@ export let RequireParam = new RuleSuite(
                              *
                              */
                             declare function test(id);`,
-                        // `
-                        //     declare class Test {
-                        //         /**
-                        //          *
-                        //          */
-                        //         TestMethod(id);
-                        //     }`,
-                        // `
-                        //     declare class Test {
-                        //         /**
-                        //          *
-                        //          */
-                        //         new(id);
-                        //     }`,
-                        // `
-                        //     declare class Test {
-                        //         /**
-                        //          *
-                        //          */
-                        //         constructor(id);
-                        //     }`,
-                        // `
-                        //     declare class Test {
-                        //         /**
-                        //          *
-                        //          */
-                        //         abstract TestMethod(id);
-                        //     }`,
-                        // `
-                        //     class Test {
-                        //         /**
-                        //          *
-                        //          */
-                        //         abstract TestMethod(id);
-                        //     }`,
+                        `
+                            declare class Test {
+                                /**
+                                 *
+                                 */
+                                TestMethod(id);
+                            }`,
+                        `
+                            declare class Test {
+                                /**
+                                 *
+                                 */
+                                new(id);
+                            }`,
+                        `
+                            declare class Test {
+                                /**
+                                 *
+                                 */
+                                constructor(id);
+                            }`,
+                        `
+                            declare class Test {
+                                /**
+                                 *
+                                 */
+                                abstract TestMethod(id);
+                            }`,
+                        `
+                            class Test {
+                                /**
+                                 *
+                                 */
+                                abstract TestMethod(id);
+                            }`,
                         `
                             interface Test {
                                 /**
@@ -306,6 +306,26 @@ export let RequireParam = new RuleSuite(
                                  * @param id
                                  */
                                 (id);
+                            }`
+                    ]
+                }
+            ]
+        },
+        {
+            Description: "Checking whether params are not required for setters…",
+            RuleSet: RuleSet.Recommended,
+            ScriptKind: ScriptKind.JS | ScriptKind.TS,
+            CodeSnippets: [
+                {
+                    Valid: true,
+                    Snippets: [
+                        `
+                            class Test
+                            {
+                                /**
+                                 *
+                                 */
+                                set TestProperty(value) { }
                             }`
                     ]
                 }
