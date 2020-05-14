@@ -6,12 +6,12 @@ export let UnboundMethod = new RuleSuite(
     "@typescript-eslint/unbound-method",
     [
         {
-            Description: "Checking whether unbound methods are disallowed…",
+            Description: "Checking whether unbound methods are allowed…",
             RuleSet: RuleSet.All,
             ScriptKind: ScriptKind.JS | ScriptKind.TS,
             CodeSnippets: [
                 {
-                    Valid: false,
+                    Valid: true,
                     Snippets: [
                         `
                             class Logger {
