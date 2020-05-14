@@ -1,6 +1,5 @@
 import merge = require("lodash.merge");
 import { join } from "upath";
-import ESLintRecommended = require("./ESLintRecommended");
 
 /**
  * Generates an `eslint`-configuration.
@@ -16,8 +15,7 @@ import ESLintRecommended = require("./ESLintRecommended");
  */
 export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
 {
-    let config: any = merge(
-        {
+    let config: any = {
             parser: "@typescript-eslint/parser",
             plugins: [
                 "@typescript-eslint",
@@ -27,7 +25,7 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
             ],
             extends: [
                 "eslint:recommended",
-                join(__dirname, "ESLintRecommended"),
+                "plugin:@typescript-eslint/eslint-recommended",
                 "plugin:@typescript-eslint/recommended"
             ],
             rules: {
@@ -525,8 +523,7 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
                 yoda: "warn"
             },
             overrides: []
-        },
-        ESLintRecommended);
+        };
 
     config.overrides.push(
         {
