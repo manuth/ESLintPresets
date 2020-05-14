@@ -371,11 +371,12 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
                     weak ? "off" : "warn",
                     {
                         exemptedBy: [],
+                        checkSetters: false,
                         contexts: [
                             "ArrowFunctionExpression",
                             "FunctionDeclaration",
                             "FunctionExpression",
-                            // "TSAbstractMethodDefinition",
+                            "TSEmptyBodyFunctionExpression",
                             "TSMethodSignature",
                             "TSConstructSignatureDeclaration",
                             "TSCallSignatureDeclaration",
