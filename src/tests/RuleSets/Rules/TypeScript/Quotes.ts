@@ -1,6 +1,6 @@
-import { RuleSuite } from "../../../Debugging/Suites/RuleSuite";
 import { RuleSet } from "../../../Debugging/RuleSet";
 import { ScriptKind } from "../../../Debugging/ScriptKind";
+import { RuleSuite } from "../../../Debugging/Suites/RuleSuite";
 
 export let Quotes = new RuleSuite(
     "@typescript-eslint/quotes",
