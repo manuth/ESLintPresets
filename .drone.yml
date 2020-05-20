@@ -40,14 +40,22 @@ steps:
       - tag
     ref:
     - refs/tags/v[0-9].[0-9].[0-9]
+- name: release preparation
+  image: node
+  commands:
+  - npm install escape-string-regexp
+  - node -e "console.log(require('escape-string-regexp')('${DRONE_TAG}'))" > TagName.txt
+  when:
+    event:
+      - tag
 - name: release notes
   image: ubuntu
   commands:
+  - export TagName=$$(cat TagName.txt)
+  - export TagHeading="/## \(.* \($${TagName}\|[$${TagName}]\)\)\$/"
   - export HeadingPattern='/## \(.* \(v[0-9.]*\|\[.*\]\)\)/'
-  - export UnreleasedPattern='/## \(.* \(\[[Uu]nreleased\]\)\)/'
   - cp -f CHANGELOG.md ReleaseNotes.md
-  - sed -i "$${UnreleasedPattern},$${HeadingPattern}{ $${UnreleasedPattern} d ; $${HeadingPattern}P ; d }" ReleaseNotes.md
-  - sed -i "0,$${HeadingPattern}{ $${HeadingPattern}P ; d } ; $${HeadingPattern},\$d" ReleaseNotes.md
+  - sed -i "0,$${TagHeading}{ $${TagHeading}P ; d } ; $${HeadingPattern},\$d" ReleaseNotes.md
   - cp -f ReleaseNotes.md ReleaseTitle.md
   - sed -i "2,\$d ; s$${HeadingPattern}\\\\1/" ReleaseTitle.md
   when:
