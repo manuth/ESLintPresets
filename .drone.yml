@@ -1,4 +1,4 @@
-name: TypeScriptESLintPlugin
+name: ESLintPresets
 kind: pipeline
 type: docker
 
