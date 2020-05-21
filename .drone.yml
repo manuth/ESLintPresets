@@ -34,7 +34,7 @@ steps:
   commands:
   - echo "always_auth=true" > ~/.npmrc
   - echo "//registry.npmjs.org/:_authToken=$${NPM_TOKEN}" >> ~/.npmrc
-  - npm publish
+  - npm publish --access=public
   when:
     event:
       - tag
