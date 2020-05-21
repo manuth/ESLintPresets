@@ -1,0 +1,22 @@
+import { RuleSet } from "../../../Debugging/RuleSet";
+import { ScriptKind } from "../../../Debugging/ScriptKind";
+import { RuleSuite } from "../../../Debugging/Suites/RuleSuite";
+
+export let NoImplicitCoericon = new RuleSuite(
+    "no-implicit-coercion",
+    [
+        {
+            Description: "Checking whether shorthand type-conversion is disallowed…",
+            RuleSet: RuleSet.All,
+            ScriptKind: ScriptKind.JS | ScriptKind.TS,
+            CodeSnippets: [
+                {
+                    Valid: false,
+                    Snippets: [
+                        "!!test",
+                        '""+test'
+                    ]
+                }
+            ]
+        }
+    ]);
