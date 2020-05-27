@@ -323,7 +323,7 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
                         require: {
                             ClassDeclaration: true,
                             ClassExpression: true,
-                            ArrowFunctionExpression: true,
+                            ArrowFunctionExpression: false,
                             FunctionDeclaration: true,
                             FunctionExpression: true,
                             MethodDefinition: true
@@ -339,7 +339,9 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
                             "TSCallSignatureDeclaration",
                             "TSConstructSignatureDeclaration",
                             "TSMethodSignature",
-                            "TSDeclareFunction"
+                            "TSDeclareFunction",
+                            "TSFunctionType",
+                            "VariableDeclaration VariableDeclarator:not([id.typeAnnotation]) ArrowFunctionExpression"
                         ]
                     }
                 ],
