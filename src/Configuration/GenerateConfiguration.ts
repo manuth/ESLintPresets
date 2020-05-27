@@ -341,7 +341,7 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
                             "TSMethodSignature",
                             "TSDeclareFunction",
                             "TSFunctionType",
-                            "VariableDeclaration VariableDeclarator:not([id.typeAnnotation]) ArrowFunctionExpression"
+                            "VariableDeclaration > VariableDeclarator:not([id.typeAnnotation]) > ArrowFunctionExpression"
                         ]
                     }
                 ],
