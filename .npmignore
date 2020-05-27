@@ -111,7 +111,6 @@ dist
 
 # TypeScript config-files
 tsconfig.json
-tslint.json
 
 # Source-maps
 [Ll]ib/**/*.js.map
