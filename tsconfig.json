@@ -10,7 +10,7 @@
         ],
         "plugins": [
             {
-                "name": "typescript-tslint-plugin"
+                "name": "typescript-eslint-plugin"
             }
         ],
         "target": "es6",
