@@ -5,6 +5,14 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## ESLintPresets [unreleased]
+As the shareable configurations weren't even added to the module-exports, the configurations didn't work.  
+This is fixed now and the plugin can be used now.
+
+### Added
+  - The actual configurations to the module exports
+
+### Fixed
+  - The shareable configurations
 
 [Show differences](https://github.com/manuth/ESLintPresets/compare/v1.0.1...dev)
 
