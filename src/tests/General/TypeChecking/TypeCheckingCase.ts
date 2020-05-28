@@ -1,6 +1,7 @@
 import { CLIEngine } from "eslint";
 import { RuleSet } from "../../Debugging/RuleSet";
 import { ScriptKind } from "../../Debugging/ScriptKind";
+import { EngineRunner } from "../../Debugging/Suites/EngineRunner";
 import { LintTestCase } from "../../Debugging/Suites/LintTestCase";
 import { TestContext } from "../../Debugging/TestContext";
 
@@ -93,7 +94,7 @@ export class TypeCheckingCase extends LintTestCase
      * @returns
      * A value indicating whether the test-case is applicable.
      */
-    protected Verify(engineRunner: () => CLIEngine.LintReport): boolean
+    protected Verify(engineRunner: EngineRunner): boolean
     {
         try
         {

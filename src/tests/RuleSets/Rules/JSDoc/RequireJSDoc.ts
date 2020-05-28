@@ -53,7 +53,7 @@ export let RequireJSDoc = new RuleSuite(
                     Snippets: [
                         `
                             /**
-                             * 
+                             *
                              */
                             let test = () => { };`,
                         "test = (arg1, arg2) => 10;",
@@ -64,7 +64,7 @@ export let RequireJSDoc = new RuleSuite(
                             function test() { }`,
                         `
                             /**
-                             * 
+                             *
                              */
                             class Test { }`,
                         `

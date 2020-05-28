@@ -1,4 +1,5 @@
 import Assert = require("assert");
+import dedent = require("dedent");
 import { CLIEngine } from "eslint";
 import { Context } from "mocha";
 import { TestConstants } from "../../TestConstants";
@@ -8,7 +9,7 @@ import { ScriptKind } from "../ScriptKind";
 import { ICodeSnippetCollection } from "../TestCases/ICodeSnippet";
 import { ITestCase } from "../TestCases/ITestCase";
 import { TestContext } from "../TestContext";
-import dedent = require("dedent");
+import { EngineRunner } from "./EngineRunner";
 
 /**
  * Represents a test-case.
@@ -181,5 +182,5 @@ export abstract class LintTestCase implements ITestCase, IRegisterable
      * @returns
      * A value indicating whether the test-case is applicable.
      */
-    protected abstract Verify(engineRunner: () => CLIEngine.LintReport): boolean;
+    protected abstract Verify(engineRunner: EngineRunner): boolean;
 }
