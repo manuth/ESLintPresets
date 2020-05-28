@@ -49,7 +49,7 @@ export let RequireReturnsType = new RuleSuite(
         {
             Description: "Checking whether the rule is disabled for the weak rule-set…",
             RuleSet: RuleSet.Weak,
-            ScriptKind: ScriptKind.JS | ScriptKind.TS,
+            ScriptKind: ScriptKind.Scripts,
             CodeSnippets: [
                 {
                     Valid: true,

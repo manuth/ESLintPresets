@@ -8,7 +8,7 @@ export let BlockSpacint = new RuleSuite(
         {
             Description: "Checking whether function-blocks must be spaced correctly…",
             RuleSet: RuleSet.All,
-            ScriptKind: ScriptKind.JS | ScriptKind.TS,
+            ScriptKind: ScriptKind.Scripts,
             CodeSnippets: [
                 {
                     Valid: false,

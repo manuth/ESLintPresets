@@ -8,7 +8,7 @@ export let RequireDescription = new RuleSuite(
         {
             Description: "Checking whether descriptions are required where appropriate…",
             RuleSet: RuleSet.Recommended,
-            ScriptKind: ScriptKind.JS | ScriptKind.TS,
+            ScriptKind: ScriptKind.Scripts,
             CodeSnippets: [
                 {
                     Valid: false,
@@ -428,7 +428,7 @@ export let RequireDescription = new RuleSuite(
         {
             Description: "Checking whether the rule is disabled for the weak rule-set…",
             RuleSet: RuleSet.Weak,
-            ScriptKind: ScriptKind.JS | ScriptKind.TS,
+            ScriptKind: ScriptKind.Scripts,
             CodeSnippets: [
                 {
                     Valid: true,

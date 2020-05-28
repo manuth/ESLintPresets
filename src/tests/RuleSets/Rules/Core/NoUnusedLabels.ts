@@ -8,7 +8,7 @@ export let NoUnusedLabels = new RuleSuite(
         {
             Description: "Checking whether unused labels are disallowed…",
             RuleSet: RuleSet.All,
-            ScriptKind: ScriptKind.JS | ScriptKind.TS,
+            ScriptKind: ScriptKind.Scripts,
             CodeSnippets: [
                 {
                     Valid: false,

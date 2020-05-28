@@ -8,7 +8,7 @@ export let MaxClassesPerFile = new RuleSuite(
         {
             Description: "Checking whether more than one class is allowed per file…",
             RuleSet: RuleSet.All,
-            ScriptKind: ScriptKind.JS | ScriptKind.TS,
+            ScriptKind: ScriptKind.Scripts,
             CodeSnippets: [
                 {
                     Valid: true,

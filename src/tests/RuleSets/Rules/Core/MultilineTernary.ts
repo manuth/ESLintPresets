@@ -8,7 +8,7 @@ export let MultilineTernary = new RuleSuite(
         {
             Description: "Checking whether ternary operations either must be consistently multiline or consistently singleline…",
             RuleSet: RuleSet.All,
-            ScriptKind: ScriptKind.JS | ScriptKind.TS,
+            ScriptKind: ScriptKind.Scripts,
             CodeSnippets: [
                 {
                     Valid: false,

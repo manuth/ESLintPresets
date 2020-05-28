@@ -8,7 +8,7 @@ export let ObjectPropertyNewLine = new RuleSuite(
         {
             Description: "Checking whether new-lines between object-properties must be consistent…",
             RuleSet: RuleSet.All,
-            ScriptKind: ScriptKind.JS | ScriptKind.TS,
+            ScriptKind: ScriptKind.Scripts,
             CodeSnippets: []
         }
     ]);

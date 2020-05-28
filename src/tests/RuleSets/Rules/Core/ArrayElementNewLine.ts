@@ -8,7 +8,7 @@ export let ArrayElementNewLine = new RuleSuite(
         {
             Description: "Checking whether new lines between array-elements are enforced correctly…",
             RuleSet: RuleSet.All,
-            ScriptKind: ScriptKind.JS | ScriptKind.TS,
+            ScriptKind: ScriptKind.Scripts,
             CodeSnippets: [
                 {
                     Valid: false,

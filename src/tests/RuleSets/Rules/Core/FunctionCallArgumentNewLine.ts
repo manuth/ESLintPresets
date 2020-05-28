@@ -8,7 +8,7 @@ export let FunctionCallArgumentNewLine = new RuleSuite(
         {
             Description: "Checking whether new-lines in function calls must be consistent…",
             RuleSet: RuleSet.All,
-            ScriptKind: ScriptKind.JS | ScriptKind.TS,
+            ScriptKind: ScriptKind.Scripts,
             CodeSnippets: [
                 {
                     Valid: false,

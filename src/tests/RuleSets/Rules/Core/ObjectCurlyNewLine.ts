@@ -8,7 +8,7 @@ export let ObjectCurlyNewLine = new RuleSuite(
         {
             Description: "Checking whether new-lines in after curly braces must be consistent…",
             RuleSet: RuleSet.All,
-            ScriptKind: ScriptKind.JS | ScriptKind.TS,
+            ScriptKind: ScriptKind.Scripts,
             CodeSnippets: [
                 {
                     Valid: false,

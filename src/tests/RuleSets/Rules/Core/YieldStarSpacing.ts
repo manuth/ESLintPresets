@@ -8,7 +8,7 @@ export let YieldStarSpacing = new RuleSuite(
         {
             Description: "Checking whether yield-operators must be spaced correctly…",
             RuleSet: RuleSet.All,
-            ScriptKind: ScriptKind.JS | ScriptKind.TS,
+            ScriptKind: ScriptKind.Scripts,
             CodeSnippets: [
                 {
                     Valid: false,

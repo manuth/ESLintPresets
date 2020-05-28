@@ -8,7 +8,7 @@ export let RequireJSDoc = new RuleSuite(
         {
             Description: "Checking whether jsdocs are required where appropriate…",
             RuleSet: RuleSet.Recommended,
-            ScriptKind: ScriptKind.JS | ScriptKind.TS,
+            ScriptKind: ScriptKind.Scripts,
             CodeSnippets: [
                 {
                     Valid: false,

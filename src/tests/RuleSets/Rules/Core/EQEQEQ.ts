@@ -8,7 +8,7 @@ export let EQEQEQ = new RuleSuite(
         {
             Description: "Checking whether tripple equal signs are required…",
             RuleSet: RuleSet.All,
-            ScriptKind: ScriptKind.JS | ScriptKind.TS,
+            ScriptKind: ScriptKind.Scripts,
             CodeSnippets: [
                 {
                     Valid: false,

@@ -8,7 +8,7 @@ export let NoWhitespaceBeforeProperty = new RuleSuite(
         {
             Description: "Checking whether whitespaces in property-paths are disallowed…",
             RuleSet: RuleSet.All,
-            ScriptKind: ScriptKind.JS | ScriptKind.TS,
+            ScriptKind: ScriptKind.Scripts,
             CodeSnippets: [
                 {
                     Valid: false,

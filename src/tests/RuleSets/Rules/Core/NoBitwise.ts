@@ -8,7 +8,7 @@ export let NoBitwise = new RuleSuite(
         {
             Description: "Checking whether bitwise operators are allowed…",
             RuleSet: RuleSet.All,
-            ScriptKind: ScriptKind.JS | ScriptKind.TS,
+            ScriptKind: ScriptKind.Scripts,
             CodeSnippets: [
                 {
                     Valid: true,

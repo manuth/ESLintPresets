@@ -8,7 +8,7 @@ export let NoVar = new RuleSuite(
         {
             Description: "Checking whether declaring `var`s is disallowed…",
             RuleSet: RuleSet.All,
-            ScriptKind: ScriptKind.JS | ScriptKind.TS,
+            ScriptKind: ScriptKind.Scripts,
             CodeSnippets: [
                 {
                     Valid: false,

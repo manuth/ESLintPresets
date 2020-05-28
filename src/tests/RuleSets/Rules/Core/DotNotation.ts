@@ -8,7 +8,7 @@ export let DotNotation = new RuleSuite(
         {
             Description: "Checking whether `dot-notation`-rule is disabled…",
             RuleSet: RuleSet.All,
-            ScriptKind: ScriptKind.JS | ScriptKind.TS,
+            ScriptKind: ScriptKind.Scripts,
             CodeSnippets: [
                 {
                     Valid: true,

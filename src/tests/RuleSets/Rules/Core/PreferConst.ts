@@ -8,7 +8,7 @@ export let PreferConst = new RuleSuite(
         {
             Description: "Checking whether the `const`-keyword is not preferred…",
             RuleSet: RuleSet.All,
-            ScriptKind: ScriptKind.JS | ScriptKind.TS,
+            ScriptKind: ScriptKind.Scripts,
             CodeSnippets: [
                 {
                     Valid: true,

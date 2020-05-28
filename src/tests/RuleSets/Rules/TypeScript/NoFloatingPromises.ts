@@ -8,7 +8,7 @@ export let NoFloatingPromises = new RuleSuite(
         {
             Description: "Checking whether floating promises are allowed…",
             RuleSet: RuleSet.All,
-            ScriptKind: ScriptKind.JS | ScriptKind.TS,
+            ScriptKind: ScriptKind.Scripts,
             CodeSnippets: [
                 {
                     Valid: true,

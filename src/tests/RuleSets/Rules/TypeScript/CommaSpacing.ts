@@ -8,7 +8,7 @@ export let CommaSpacing = new RuleSuite(
         {
             Description: "Checking whether commas need to be spaced correctly…",
             RuleSet: RuleSet.All,
-            ScriptKind: ScriptKind.JS | ScriptKind.TS,
+            ScriptKind: ScriptKind.Scripts,
             CodeSnippets: [
                 {
                     Valid: false,

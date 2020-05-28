@@ -8,7 +8,7 @@ export let CheckAlignment = new RuleSuite(
         {
             Description: "Checking whether the alignment is enforced correctly…",
             RuleSet: RuleSet.Recommended,
-            ScriptKind: ScriptKind.JS | ScriptKind.TS,
+            ScriptKind: ScriptKind.Scripts,
             CodeSnippets: [
                 {
                     Valid: false,
@@ -37,7 +37,7 @@ export let CheckAlignment = new RuleSuite(
         {
             Description: "Checking whether the alignment is ignored for the weak rule-set…",
             RuleSet: RuleSet.Weak,
-            ScriptKind: ScriptKind.JS | ScriptKind.TS,
+            ScriptKind: ScriptKind.Scripts,
             CodeSnippets: [
                 {
                     Valid: true,

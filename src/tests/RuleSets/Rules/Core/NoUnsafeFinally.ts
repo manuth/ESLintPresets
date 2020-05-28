@@ -8,7 +8,7 @@ export let NoUnsafeFinally = new RuleSuite(
         {
             Description: "Checking whether keywords like `return` are disallowed in `finally`-blocks…",
             RuleSet: RuleSet.All,
-            ScriptKind: ScriptKind.JS | ScriptKind.TS,
+            ScriptKind: ScriptKind.Scripts,
             CodeSnippets: [
                 {
                     Valid: false,

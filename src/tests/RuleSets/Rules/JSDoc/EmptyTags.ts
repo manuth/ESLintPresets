@@ -8,7 +8,7 @@ export let EmptyTags = new RuleSuite(
         {
             Description: "Checking whether some specific tags need to be empty…",
             RuleSet: RuleSet.All,
-            ScriptKind: ScriptKind.JS | ScriptKind.TS,
+            ScriptKind: ScriptKind.Scripts,
             CodeSnippets: [
                 {
                     Valid: false,

@@ -8,7 +8,7 @@ export let NoEmptyFunction = new RuleSuite(
         {
             Description: "Checking whether empty functions are allowed…",
             RuleSet: RuleSet.All,
-            ScriptKind: ScriptKind.JS | ScriptKind.TS,
+            ScriptKind: ScriptKind.Scripts,
             CodeSnippets: [
                 {
                     Valid: true,

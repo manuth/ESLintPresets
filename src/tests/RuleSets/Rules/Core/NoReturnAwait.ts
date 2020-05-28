@@ -8,7 +8,7 @@ export let NoReturnAwait = new RuleSuite(
         {
             Description: "Checking whether `return await`-expressions are disallowed…",
             RuleSet: RuleSet.All,
-            ScriptKind: ScriptKind.JS | ScriptKind.TS,
+            ScriptKind: ScriptKind.Scripts,
             CodeSnippets: [
                 {
                     Valid: false,

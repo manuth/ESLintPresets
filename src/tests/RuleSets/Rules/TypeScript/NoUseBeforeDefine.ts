@@ -8,7 +8,7 @@ export let NoUseBeforeDefine = new RuleSuite(
         {
             Description: "Checking whether using variables before declaration is disallowed…",
             RuleSet: RuleSet.All,
-            ScriptKind: ScriptKind.JS | ScriptKind.TS,
+            ScriptKind: ScriptKind.Scripts,
             CodeSnippets: [
                 {
                     Valid: false,

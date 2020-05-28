@@ -8,7 +8,7 @@ export let PaddingLineBetweenStatements = new RuleSuite(
         {
             Description: "Checking whether lines between some statements are required…",
             RuleSet: RuleSet.Recommended,
-            ScriptKind: ScriptKind.JS | ScriptKind.TS,
+            ScriptKind: ScriptKind.Scripts,
             CodeSnippets: [
                 {
                     Valid: false,
@@ -51,7 +51,7 @@ export let PaddingLineBetweenStatements = new RuleSuite(
         {
             Description: "Checking whether block-statements are allowed before certain keywords…",
             RuleSet: RuleSet.Recommended,
-            ScriptKind: ScriptKind.JS | ScriptKind.TS,
+            ScriptKind: ScriptKind.Scripts,
             CodeSnippets: [
                 {
                     Valid: true,
@@ -88,7 +88,7 @@ export let PaddingLineBetweenStatements = new RuleSuite(
         {
             Description: "Checking whether the rule is disabled for the weak rule-set…",
             RuleSet: RuleSet.Weak,
-            ScriptKind: ScriptKind.JS | ScriptKind.TS,
+            ScriptKind: ScriptKind.Scripts,
             CodeSnippets: [
                 {
                     Valid: true,

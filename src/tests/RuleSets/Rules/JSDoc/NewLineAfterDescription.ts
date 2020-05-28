@@ -8,7 +8,7 @@ export let NewLineAfterDescription = new RuleSuite(
         {
             Description: "Checking whether a new line after the jsdoc-body is required…",
             RuleSet: RuleSet.Recommended,
-            ScriptKind: ScriptKind.JS | ScriptKind.TS,
+            ScriptKind: ScriptKind.Scripts,
             CodeSnippets: [
                 {
                     Valid: false,

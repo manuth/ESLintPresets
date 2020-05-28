@@ -8,7 +8,7 @@ export let EOLLast = new RuleSuite(
         {
             Description: "Checking whether files must have a new-line character at the end…",
             RuleSet: RuleSet.All,
-            ScriptKind: ScriptKind.JS | ScriptKind.TS,
+            ScriptKind: ScriptKind.Scripts,
             CodeSnippets: [
                 {
                     Valid: false,
