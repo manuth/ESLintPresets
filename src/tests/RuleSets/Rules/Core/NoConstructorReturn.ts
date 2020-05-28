@@ -8,7 +8,7 @@ export let NoConstructorReturn = new RuleSuite(
         {
             Description: "Checking whether `return`-statements in constructors are disallowed…",
             RuleSet: RuleSet.All,
-            ScriptKind: ScriptKind.JS | ScriptKind.TS,
+            ScriptKind: ScriptKind.Scripts,
             CodeSnippets: [
                 {
                     Valid: false,

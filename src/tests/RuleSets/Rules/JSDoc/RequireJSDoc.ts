@@ -8,7 +8,7 @@ export let RequireJSDoc = new RuleSuite(
         {
             Description: "Checking whether jsdocs are required where appropriate…",
             RuleSet: RuleSet.Recommended,
-            ScriptKind: ScriptKind.JS | ScriptKind.TS,
+            ScriptKind: ScriptKind.Scripts,
             CodeSnippets: [
                 {
                     Valid: false,
@@ -53,9 +53,10 @@ export let RequireJSDoc = new RuleSuite(
                     Snippets: [
                         `
                             /**
-                             * 
+                             *
                              */
                             let test = () => { };`,
+                        "test = (arg1, arg2) => 10;",
                         `
                             /**
                              *
@@ -63,7 +64,7 @@ export let RequireJSDoc = new RuleSuite(
                             function test() { }`,
                         `
                             /**
-                             * 
+                             *
                              */
                             class Test { }`,
                         `
@@ -120,6 +121,7 @@ export let RequireJSDoc = new RuleSuite(
                 {
                     Valid: false,
                     Snippets: [
+                        "let test: (arg1: string, arg2: string) => number;",
                         "enum Test { }",
                         `
                             /**
@@ -209,6 +211,12 @@ export let RequireJSDoc = new RuleSuite(
                 {
                     Valid: true,
                     Snippets: [
+                        "let test: TestFunction = () => { };",
+                        `
+                            /**
+                             * Test
+                             */
+                            let test: (arg1: string, arg2: string) => number;`,
                         `
                         /**
                          *

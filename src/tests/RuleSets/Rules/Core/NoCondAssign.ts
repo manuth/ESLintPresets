@@ -8,7 +8,7 @@ export let NoCondAssign = new RuleSuite(
         {
             Description: "Checking whether assignments in conditionals are disallowed…",
             RuleSet: RuleSet.All,
-            ScriptKind: ScriptKind.JS | ScriptKind.TS,
+            ScriptKind: ScriptKind.Scripts,
             CodeSnippets: [
                 {
                     Valid: false,
@@ -28,7 +28,7 @@ export let NoCondAssign = new RuleSuite(
         {
             Description: "Checking whether assignments in conditionals are allowed if they're wrapped in parentheses…",
             RuleSet: RuleSet.All,
-            ScriptKind: ScriptKind.JS | ScriptKind.TS,
+            ScriptKind: ScriptKind.Scripts,
             CodeSnippets: [
                 {
                     Valid: true,

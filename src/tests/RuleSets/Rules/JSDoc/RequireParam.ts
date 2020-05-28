@@ -8,7 +8,7 @@ export let RequireParam = new RuleSuite(
         {
             Description: "Checking whether all parameters must have a `@param`-tag…",
             RuleSet: RuleSet.Recommended,
-            ScriptKind: ScriptKind.JS | ScriptKind.TS,
+            ScriptKind: ScriptKind.Scripts,
             CodeSnippets: [
                 {
                     Valid: false,
@@ -46,7 +46,7 @@ export let RequireParam = new RuleSuite(
         {
             Description: "Checking whether the rule is applicable to all sorts of functions…",
             RuleSet: RuleSet.Recommended,
-            ScriptKind: ScriptKind.JS | ScriptKind.TS,
+            ScriptKind: ScriptKind.Scripts,
             CodeSnippets: [
                 {
                     Valid: false,
@@ -314,7 +314,7 @@ export let RequireParam = new RuleSuite(
         {
             Description: "Checking whether params are not required for setters…",
             RuleSet: RuleSet.Recommended,
-            ScriptKind: ScriptKind.JS | ScriptKind.TS,
+            ScriptKind: ScriptKind.Scripts,
             CodeSnippets: [
                 {
                     Valid: true,

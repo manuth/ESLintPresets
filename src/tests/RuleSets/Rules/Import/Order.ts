@@ -8,7 +8,7 @@ export let Order = new RuleSuite(
         {
             Description: "Checking whether imports of the same group must be sorted alphabetically…",
             RuleSet: RuleSet.All,
-            ScriptKind: ScriptKind.JS | ScriptKind.TS,
+            ScriptKind: ScriptKind.Scripts,
             CodeSnippets: [
                 {
                     Valid: false,
@@ -31,7 +31,7 @@ export let Order = new RuleSuite(
         {
             Description: "Checking whether imports must be sorted by their group…",
             RuleSet: RuleSet.All,
-            ScriptKind: ScriptKind.JS | ScriptKind.TS,
+            ScriptKind: ScriptKind.Scripts,
             CodeSnippets: [
                 {
                     Valid: false,

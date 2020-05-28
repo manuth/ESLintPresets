@@ -8,7 +8,7 @@ export let NoDefaultExport = new RuleSuite(
         {
             Description: "Checking whether default exports are disallowed…",
             RuleSet: RuleSet.Recommended,
-            ScriptKind: ScriptKind.JS | ScriptKind.TS,
+            ScriptKind: ScriptKind.Scripts,
             CodeSnippets: [
                 {
                     Valid: false,
@@ -30,7 +30,7 @@ export let NoDefaultExport = new RuleSuite(
         {
             Description: "Checking whether default exports are allowed for the weak rule-set…",
             RuleSet: RuleSet.Weak,
-            ScriptKind: ScriptKind.JS | ScriptKind.TS,
+            ScriptKind: ScriptKind.Scripts,
             CodeSnippets: [
                 {
                     Valid: true,

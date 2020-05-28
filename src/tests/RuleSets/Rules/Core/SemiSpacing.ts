@@ -8,7 +8,7 @@ export let SemiSpacing = new RuleSuite(
         {
             Description: "Checking whether semicolons must be spaced correctly…",
             RuleSet: RuleSet.All,
-            ScriptKind: ScriptKind.JS | ScriptKind.TS,
+            ScriptKind: ScriptKind.Scripts,
             CodeSnippets: [
                 {
                     Valid: false,

@@ -16,7 +16,7 @@ export class DeprecatedCase extends LintReportTestCase
         super(
             "Checking whether none of the rules are deprecated…",
             RuleSet.All,
-            ScriptKind.JS | ScriptKind.TS | ScriptKind.DTS,
+            ScriptKind.All,
             [
                 {
                     Valid: true,

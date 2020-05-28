@@ -8,7 +8,7 @@ export let NoImplicitCoericon = new RuleSuite(
         {
             Description: "Checking whether shorthand type-conversion is disallowed…",
             RuleSet: RuleSet.All,
-            ScriptKind: ScriptKind.JS | ScriptKind.TS,
+            ScriptKind: ScriptKind.Scripts,
             CodeSnippets: [
                 {
                     Valid: false,

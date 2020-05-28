@@ -8,7 +8,7 @@ export let SpaceInfixOPs = new RuleSuite(
         {
             Description: "Checking whether spacing around operators must be present…",
             RuleSet: RuleSet.All,
-            ScriptKind: ScriptKind.JS | ScriptKind.TS,
+            ScriptKind: ScriptKind.Scripts,
             CodeSnippets: [
                 {
                     Valid: false,

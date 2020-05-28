@@ -8,7 +8,7 @@ export let NoOctalEscape = new RuleSuite(
         {
             Description: "Checking whether octal escape-sequences are disallowed…",
             RuleSet: RuleSet.All,
-            ScriptKind: ScriptKind.JS | ScriptKind.TS,
+            ScriptKind: ScriptKind.Scripts,
             CodeSnippets: [
                 {
                     Valid: false,

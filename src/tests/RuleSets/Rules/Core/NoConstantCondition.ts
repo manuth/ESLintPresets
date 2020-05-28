@@ -8,7 +8,7 @@ export let NoConstantCondition = new RuleSuite(
         {
             Description: "Checking whether constant conditions are disallowed…",
             RuleSet: RuleSet.All,
-            ScriptKind: ScriptKind.JS | ScriptKind.TS,
+            ScriptKind: ScriptKind.Scripts,
             CodeSnippets: [
                 {
                     Valid: false,

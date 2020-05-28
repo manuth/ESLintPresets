@@ -8,7 +8,7 @@ export let SpaceInParens = new RuleSuite(
         {
             Description: "Checking whether spaces in parentheses are disallowed…",
             RuleSet: RuleSet.All,
-            ScriptKind: ScriptKind.JS | ScriptKind.TS,
+            ScriptKind: ScriptKind.Scripts,
             CodeSnippets: [
                 {
                     Valid: false,

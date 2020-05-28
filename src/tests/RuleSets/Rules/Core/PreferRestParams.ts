@@ -8,7 +8,7 @@ export let PreferRestParams = new RuleSuite(
         {
             Description: "Checking whether rest-parameters are preferred…",
             RuleSet: RuleSet.All,
-            ScriptKind: ScriptKind.JS | ScriptKind.TS,
+            ScriptKind: ScriptKind.Scripts,
             CodeSnippets: [
                 {
                     Valid: false,

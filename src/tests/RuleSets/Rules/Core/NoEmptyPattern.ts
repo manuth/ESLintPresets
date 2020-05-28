@@ -8,7 +8,7 @@ export let NoEmptyPattern = new RuleSuite(
         {
             Description: "Checking whether empty patterns are allowed…",
             RuleSet: RuleSet.All,
-            ScriptKind: ScriptKind.JS | ScriptKind.TS,
+            ScriptKind: ScriptKind.Scripts,
             CodeSnippets: [
                 {
                     Valid: true,

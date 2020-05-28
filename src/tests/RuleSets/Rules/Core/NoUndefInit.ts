@@ -8,7 +8,7 @@ export let NoUndefInit = new RuleSuite(
         {
             Description: "Checking whether initializeations to `undefined` are disallowed…",
             RuleSet: RuleSet.All,
-            ScriptKind: ScriptKind.JS | ScriptKind.TS,
+            ScriptKind: ScriptKind.Scripts,
             CodeSnippets: [
                 {
                     Valid: false,

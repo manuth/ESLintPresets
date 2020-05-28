@@ -8,7 +8,7 @@ export let NoDebugger = new RuleSuite(
         {
             Description: "Checking whether the `debugger`-keyword is disallowed…",
             RuleSet: RuleSet.All,
-            ScriptKind: ScriptKind.JS | ScriptKind.TS,
+            ScriptKind: ScriptKind.Scripts,
             CodeSnippets: [
                 {
                     Valid: false,

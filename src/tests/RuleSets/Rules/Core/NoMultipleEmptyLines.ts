@@ -8,7 +8,7 @@ export let NoMultipleEmptyLines = new RuleSuite(
         {
             Description: "Checking whether multiple empty lines in a row are disallowed…",
             RuleSet: RuleSet.All,
-            ScriptKind: ScriptKind.JS | ScriptKind.TS,
+            ScriptKind: ScriptKind.Scripts,
             CodeSnippets: [
                 {
                     Valid: false,

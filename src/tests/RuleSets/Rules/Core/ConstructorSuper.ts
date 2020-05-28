@@ -8,7 +8,7 @@ export let ConstructorSuper = new RuleSuite(
         {
             Description: "Checking whether constructors must contain a `super()`-call…",
             RuleSet: RuleSet.All,
-            ScriptKind: ScriptKind.JS | ScriptKind.TS,
+            ScriptKind: ScriptKind.Scripts,
             CodeSnippets: [
                 {
                     Valid: false,

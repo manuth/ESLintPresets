@@ -8,7 +8,7 @@ export let MaxLen = new RuleSuite(
         {
             Description: "Checking whether lengths of lines aren't limited…",
             RuleSet: RuleSet.All,
-            ScriptKind: ScriptKind.JS | ScriptKind.TS,
+            ScriptKind: ScriptKind.Scripts,
             CodeSnippets: [
                 {
                     Valid: true,

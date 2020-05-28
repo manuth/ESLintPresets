@@ -8,7 +8,7 @@ export let QuoteProps = new RuleSuite(
         {
             Description: "Checking whether properties must not be quoted unless it's necessary…",
             RuleSet: RuleSet.Recommended,
-            ScriptKind: ScriptKind.JS | ScriptKind.TS,
+            ScriptKind: ScriptKind.Scripts,
             CodeSnippets: [
                 {
                     Valid: false,

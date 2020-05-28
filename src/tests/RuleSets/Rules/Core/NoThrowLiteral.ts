@@ -8,7 +8,7 @@ export let NoThrowLiteral = new RuleSuite(
         {
             Description: "Checking whether throwin literals is disallowed…",
             RuleSet: RuleSet.All,
-            ScriptKind: ScriptKind.JS | ScriptKind.TS,
+            ScriptKind: ScriptKind.Scripts,
             CodeSnippets: [
                 {
                     Valid: false,

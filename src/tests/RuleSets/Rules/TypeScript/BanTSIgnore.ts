@@ -8,7 +8,7 @@ export let BanTSIgnore = new RuleSuite(
         {
             Description: "Checking whether `// @ts-ignore` comments can be used…",
             RuleSet: RuleSet.All,
-            ScriptKind: ScriptKind.JS | ScriptKind.TS,
+            ScriptKind: ScriptKind.Scripts,
             CodeSnippets: [
                 {
                     Valid: true,

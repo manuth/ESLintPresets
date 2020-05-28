@@ -8,7 +8,7 @@ export let Quotes = new RuleSuite(
         {
             Description: "Checking whether strings must be written using doublequotes…",
             RuleSet: RuleSet.All,
-            ScriptKind: ScriptKind.JS | ScriptKind.TS,
+            ScriptKind: ScriptKind.Scripts,
             CodeSnippets: [
                 {
                     Valid: false,
@@ -28,7 +28,7 @@ export let Quotes = new RuleSuite(
         {
             Description: "Checking whether other quotes are allowed if the string contains a doublequote…",
             RuleSet: RuleSet.All,
-            ScriptKind: ScriptKind.JS | ScriptKind.TS,
+            ScriptKind: ScriptKind.Scripts,
             CodeSnippets: [
                 {
                     Valid: true,
@@ -41,7 +41,7 @@ export let Quotes = new RuleSuite(
         {
             Description: "Checking whether backticks are allowed if the string contains template-expressions…",
             RuleSet: RuleSet.All,
-            ScriptKind: ScriptKind.JS | ScriptKind.TS,
+            ScriptKind: ScriptKind.Scripts,
             CodeSnippets: [
                 {
                     Valid: true,

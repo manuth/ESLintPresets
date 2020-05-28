@@ -8,7 +8,7 @@ export let SpaceUnaryOPs = new RuleSuite(
         {
             Description: "Checking whether spacing of unary operators must be correct…",
             RuleSet: RuleSet.All,
-            ScriptKind: ScriptKind.JS | ScriptKind.TS,
+            ScriptKind: ScriptKind.Scripts,
             CodeSnippets: [
                 {
                     Valid: false,

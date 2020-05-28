@@ -8,7 +8,7 @@ export let NoDuplicateCase = new RuleSuite(
         {
             Description: "Checking whether duplicate cases are disallowed…",
             RuleSet: RuleSet.All,
-            ScriptKind: ScriptKind.JS | ScriptKind.TS,
+            ScriptKind: ScriptKind.Scripts,
             CodeSnippets: [
                 {
                     Valid: false,

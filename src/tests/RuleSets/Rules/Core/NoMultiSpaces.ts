@@ -8,7 +8,7 @@ export let NoMultiSpaces = new RuleSuite(
         {
             Description: "Checking whether multiple spaces in a row are disallowed…",
             RuleSet: RuleSet.All,
-            ScriptKind: ScriptKind.JS | ScriptKind.TS,
+            ScriptKind: ScriptKind.Scripts,
             CodeSnippets: [
                 {
                     Valid: false,

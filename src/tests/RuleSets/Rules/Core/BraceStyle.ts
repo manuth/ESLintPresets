@@ -8,7 +8,7 @@ export let BraceStyle = new RuleSuite(
         {
             Description: "Checking whether the brace-style is enforced correctly…",
             RuleSet: RuleSet.All,
-            ScriptKind: ScriptKind.JS | ScriptKind.TS,
+            ScriptKind: ScriptKind.Scripts,
             CodeSnippets: [
                 {
                     Valid: false,

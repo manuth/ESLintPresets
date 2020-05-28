@@ -8,7 +8,7 @@ export let NoDuplicates = new RuleSuite(
         {
             Description: "Checking whether duplicate imports are disallowed…",
             RuleSet: RuleSet.Recommended,
-            ScriptKind: ScriptKind.JS | ScriptKind.TS,
+            ScriptKind: ScriptKind.Scripts,
             CodeSnippets: [
                 {
                     Valid: false,

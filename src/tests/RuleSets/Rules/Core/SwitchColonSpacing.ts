@@ -8,7 +8,7 @@ export let SwitchColonSpacing = new RuleSuite(
         {
             Description: "Checking whether colons in `switch`es must be spaced correctly…",
             RuleSet: RuleSet.All,
-            ScriptKind: ScriptKind.JS | ScriptKind.TS,
+            ScriptKind: ScriptKind.Scripts,
             CodeSnippets: [
                 {
                     Valid: false,

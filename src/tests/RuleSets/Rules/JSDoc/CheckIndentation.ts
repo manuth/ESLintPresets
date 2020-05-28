@@ -8,7 +8,7 @@ export let CheckIndentation = new RuleSuite(
         {
             Description: "Checking whether the parameter names must be matching…",
             RuleSet: RuleSet.Recommended,
-            ScriptKind: ScriptKind.JS | ScriptKind.TS,
+            ScriptKind: ScriptKind.Scripts,
             CodeSnippets: [
                 {
                     Valid: false,
@@ -37,7 +37,7 @@ export let CheckIndentation = new RuleSuite(
         {
             Description: "Checking whether the indentation is ignored for the weak rule-set…",
             RuleSet: RuleSet.Weak,
-            ScriptKind: ScriptKind.JS | ScriptKind.TS,
+            ScriptKind: ScriptKind.Scripts,
             CodeSnippets: [
                 {
                     Valid: true,

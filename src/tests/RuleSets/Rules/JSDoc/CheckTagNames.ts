@@ -8,7 +8,7 @@ export let CheckTagNames = new RuleSuite(
         {
             Description: "Checking whether invalid tag-names cause a failure…",
             RuleSet: RuleSet.All,
-            ScriptKind: ScriptKind.JS | ScriptKind.TS,
+            ScriptKind: ScriptKind.Scripts,
             CodeSnippets: [
                 {
                     Valid: false,

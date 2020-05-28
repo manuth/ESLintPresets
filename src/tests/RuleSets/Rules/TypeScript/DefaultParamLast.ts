@@ -8,7 +8,7 @@ export let DefaultParamLast = new RuleSuite(
         {
             Description: "Checking whether default-parameters must be declared after required parameters…",
             RuleSet: RuleSet.All,
-            ScriptKind: ScriptKind.JS | ScriptKind.TS,
+            ScriptKind: ScriptKind.Scripts,
             CodeSnippets: [
                 {
                     Valid: false,

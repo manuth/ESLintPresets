@@ -8,7 +8,7 @@ export let UseIsNaN = new RuleSuite(
         {
             Description: "Checking whether `NaN`-equatations are disallowed…",
             RuleSet: RuleSet.All,
-            ScriptKind: ScriptKind.JS | ScriptKind.TS,
+            ScriptKind: ScriptKind.Scripts,
             CodeSnippets: [
                 {
                     Valid: false,

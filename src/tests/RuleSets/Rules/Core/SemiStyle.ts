@@ -8,7 +8,7 @@ export let SemiStyle = new RuleSuite(
         {
             Description: "Checking whether semicolons must be at the end of the lilne rather than at the beginning…",
             RuleSet: RuleSet.All,
-            ScriptKind: ScriptKind.JS | ScriptKind.TS,
+            ScriptKind: ScriptKind.Scripts,
             CodeSnippets: [
                 {
                     Valid: false,

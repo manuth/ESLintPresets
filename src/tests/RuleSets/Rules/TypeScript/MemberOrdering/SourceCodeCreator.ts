@@ -270,6 +270,12 @@ export class SourceCodeCreator
      */
     protected static GetMemberCode(containerType: ContainerType, member: MemberDefinition): string
     {
+        /**
+         * Generates the appropriate source-code.
+         *
+         * @param memberTypeCode
+         * The source-code of the specified member-type.
+         */
         let processor: (memberTypeCode: string) => string;
 
         if (containerType === ContainerType.Class)

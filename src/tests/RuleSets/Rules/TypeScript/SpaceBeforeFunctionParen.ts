@@ -8,7 +8,7 @@ export let SpaceBeforeFunctionParen = new RuleSuite(
         {
             Description: "Checking whether spaces before parens of named and anonymous functions are disallowed…",
             RuleSet: RuleSet.All,
-            ScriptKind: ScriptKind.JS | ScriptKind.TS,
+            ScriptKind: ScriptKind.Scripts,
             CodeSnippets: [
                 {
                     Valid: false,
@@ -29,7 +29,7 @@ export let SpaceBeforeFunctionParen = new RuleSuite(
         {
             Description: "Checking whether spaces before parens of async arrow functions are required…",
             RuleSet: RuleSet.All,
-            ScriptKind: ScriptKind.JS | ScriptKind.TS,
+            ScriptKind: ScriptKind.Scripts,
             CodeSnippets: [
                 {
                     Valid: false,

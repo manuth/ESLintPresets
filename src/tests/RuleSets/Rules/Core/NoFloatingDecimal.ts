@@ -8,7 +8,7 @@ export let NoFloatingDecimal = new RuleSuite(
         {
             Description: "Checking whether decimal points without a leading number or zero are disallowed…",
             RuleSet: RuleSet.All,
-            ScriptKind: ScriptKind.JS | ScriptKind.TS,
+            ScriptKind: ScriptKind.Scripts,
             CodeSnippets: [
                 {
                     Valid: false,

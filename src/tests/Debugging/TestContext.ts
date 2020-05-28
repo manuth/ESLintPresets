@@ -37,7 +37,7 @@ export class TestContext
     /**
      * @inheritdoc
      */
-    public set Workspace(value)
+    public set Workspace(value: Workspace)
     {
         this.workspace = value;
     }
