@@ -17,5 +17,5 @@ export enum RuleSet
     /**
      * Indicates all rule-sets.
      */
-    All = (Recommended as number) + (Weak as number)
+    All = Recommended | Weak
 }
