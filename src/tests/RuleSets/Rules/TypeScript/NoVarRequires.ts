@@ -8,7 +8,7 @@ export let NoVarRequires = new RuleSuite(
         {
             Description: 'Checking whether the `var foo = require("foo"); syntax is banned…',
             RuleSet: RuleSet.All,
-            ScriptKind: ScriptKind.Scripts,
+            ScriptKind: ScriptKind.TS,
             CodeSnippets: [
                 {
                     Valid: false,
