@@ -188,7 +188,7 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
                         variables: true
                     }
                 ],
-                "@typescript-eslint/no-var-requires": "warn",
+                "@typescript-eslint/no-var-requires": "off",
                 "@typescript-eslint/prefer-as-const": "warn",
                 "@typescript-eslint/prefer-for-of": "warn",
                 "@typescript-eslint/prefer-function-type": "warn",
@@ -556,6 +556,7 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
                         allowExpressions: true
                     }
                 ],
+                "@typescript-eslint/no-var-requires": "warn",
                 "jsdoc/no-types": [
                     "warn",
                     {
