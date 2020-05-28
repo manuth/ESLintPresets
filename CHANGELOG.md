@@ -6,7 +6,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## ESLintPresets [unreleased]
 
-[Show differences](https://github.com/manuth/ESLintPresets/compare/v2.0.0...dev)
+[Show differences](https://github.com/manuth/ESLintPresets/compare/v2.0.1...dev)
+
+## ESLintPresets v2.0.1
+### Updated
+  - The plugin to exclude an unnecessary dependency
+
+[Show differences](https://github.com/manuth/ESLintPresets/compare/v2.0.0...v2.0.1)
 
 ## ESLintPresets v2.0.0
 As the shareable configurations weren't even added to the module-exports, the configurations didn't work.  
