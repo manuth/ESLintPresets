@@ -20,8 +20,7 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
             plugins: [
                 "@typescript-eslint",
                 "import",
-                "jsdoc",
-                "prefer-arrow"
+                "jsdoc"
             ],
             extends: [
                 "eslint:recommended",
