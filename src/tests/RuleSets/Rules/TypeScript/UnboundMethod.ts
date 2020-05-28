@@ -8,7 +8,7 @@ export let UnboundMethod = new RuleSuite(
         {
             Description: "Checking whether unbound methods are allowed…",
             RuleSet: RuleSet.All,
-            ScriptKind: ScriptKind.JS | ScriptKind.TS,
+            ScriptKind: ScriptKind.Scripts,
             CodeSnippets: [
                 {
                     Valid: true,

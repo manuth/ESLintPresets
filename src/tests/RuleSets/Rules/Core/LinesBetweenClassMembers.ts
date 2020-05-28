@@ -8,7 +8,7 @@ export let LinesBetweenClassMembers = new RuleSuite(
         {
             Description: "Checking whether class-members must be separated by a blank line…",
             RuleSet: RuleSet.All,
-            ScriptKind: ScriptKind.JS | ScriptKind.TS,
+            ScriptKind: ScriptKind.Scripts,
             CodeSnippets: [
                 {
                     Valid: false,

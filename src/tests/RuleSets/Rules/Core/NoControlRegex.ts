@@ -8,7 +8,7 @@ export let NoControlRegex = new RuleSuite(
         {
             Description: "Checking whether control-characters in regular expressions are allowed…",
             RuleSet: RuleSet.All,
-            ScriptKind: ScriptKind.JS | ScriptKind.TS,
+            ScriptKind: ScriptKind.Scripts,
             CodeSnippets: [
                 {
                     Valid: true,

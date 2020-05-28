@@ -8,7 +8,7 @@ export let NoInvalidThis = new RuleSuite(
         {
             Description: "Checking whether the usage of the global `this`-object is allowed…",
             RuleSet: RuleSet.All,
-            ScriptKind: ScriptKind.JS | ScriptKind.TS,
+            ScriptKind: ScriptKind.Scripts,
             CodeSnippets: [
                 {
                     Valid: true,

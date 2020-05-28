@@ -8,7 +8,7 @@ export let NoThisAlias = new RuleSuite(
         {
             Description: "Checking whether the `no-this-alias` rule is disabled…",
             RuleSet: RuleSet.All,
-            ScriptKind: ScriptKind.JS | ScriptKind.TS,
+            ScriptKind: ScriptKind.Scripts,
             CodeSnippets: [
                 {
                     Valid: true,

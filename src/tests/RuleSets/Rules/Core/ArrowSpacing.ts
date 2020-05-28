@@ -8,7 +8,7 @@ export let ArrowSpacing = new RuleSuite(
         {
             Description: "Checking whether arrow functions must be spaced correctly…",
             RuleSet: RuleSet.All,
-            ScriptKind: ScriptKind.JS | ScriptKind.TS,
+            ScriptKind: ScriptKind.Scripts,
             CodeSnippets: [
                 {
                     Valid: false,

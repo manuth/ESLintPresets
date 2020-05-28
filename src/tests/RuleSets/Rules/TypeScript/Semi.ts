@@ -8,7 +8,7 @@ export let Semi = new RuleSuite(
         {
             Description: "Checking whether semicolons at the end of expressions are required…",
             RuleSet: RuleSet.All,
-            ScriptKind: ScriptKind.JS | ScriptKind.TS,
+            ScriptKind: ScriptKind.Scripts,
             CodeSnippets: [
                 {
                     Valid: false,

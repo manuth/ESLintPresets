@@ -8,7 +8,7 @@ export let NoTrailingSpaces = new RuleSuite(
         {
             Description: "Checking whether trailing space-characters are disallowed…",
             RuleSet: RuleSet.All,
-            ScriptKind: ScriptKind.JS | ScriptKind.TS,
+            ScriptKind: ScriptKind.Scripts,
             CodeSnippets: [
                 {
                     Valid: false,

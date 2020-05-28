@@ -8,7 +8,7 @@ export let NoCaller = new RuleSuite(
         {
             Description: "Checking whether the use of `arguments.caller` is disallowed…",
             RuleSet: RuleSet.All,
-            ScriptKind: ScriptKind.JS | ScriptKind.TS,
+            ScriptKind: ScriptKind.Scripts,
             CodeSnippets: [
                 {
                     Valid: false,

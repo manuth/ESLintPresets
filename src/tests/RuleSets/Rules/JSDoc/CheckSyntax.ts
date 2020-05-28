@@ -8,7 +8,7 @@ export let CheckSyntax = new RuleSuite(
         {
             Description: "Checking whether syntax-errors cause rule-failures…",
             RuleSet: RuleSet.Recommended,
-            ScriptKind: ScriptKind.JS | ScriptKind.TS,
+            ScriptKind: ScriptKind.Scripts,
             CodeSnippets: [
                 {
                     Valid: false,
@@ -35,7 +35,7 @@ export let CheckSyntax = new RuleSuite(
         {
             Description: "Checking whether the `check-syntax` rule is disabled for the weak rule-set…",
             RuleSet: RuleSet.Weak,
-            ScriptKind: ScriptKind.JS | ScriptKind.TS,
+            ScriptKind: ScriptKind.Scripts,
             CodeSnippets: [
                 {
                     Valid: true,

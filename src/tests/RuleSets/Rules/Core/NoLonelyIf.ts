@@ -8,7 +8,7 @@ export let NoLonelyIf = new RuleSuite(
         {
             Description: "Checking whether expressions that could be converted to an `else if` cause a failure…",
             RuleSet: RuleSet.All,
-            ScriptKind: ScriptKind.JS | ScriptKind.TS,
+            ScriptKind: ScriptKind.Scripts,
             CodeSnippets: [
                 {
                     Valid: false,

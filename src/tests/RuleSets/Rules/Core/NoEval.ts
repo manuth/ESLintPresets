@@ -8,7 +8,7 @@ export let NoEval = new RuleSuite(
         {
             Description: "Checking whether the `eval`-method and similar methods are disallowed…",
             RuleSet: RuleSet.All,
-            ScriptKind: ScriptKind.JS | ScriptKind.TS,
+            ScriptKind: ScriptKind.Scripts,
             CodeSnippets: [
                 {
                     Valid: false,

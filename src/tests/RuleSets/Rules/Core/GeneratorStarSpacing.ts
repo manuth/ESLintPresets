@@ -8,7 +8,7 @@ export let GeneratorStarSpacing = new RuleSuite(
         {
             Description: "Checking whether the expected star-spacing is forced…",
             RuleSet: RuleSet.All,
-            ScriptKind: ScriptKind.JS | ScriptKind.TS,
+            ScriptKind: ScriptKind.Scripts,
             CodeSnippets: [
                 {
                     Valid: false,

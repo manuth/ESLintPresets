@@ -8,7 +8,7 @@ export let OneVar = new RuleSuite(
         {
             Description: "Checking whether multiple var-declarations in one statement are disallowed…",
             RuleSet: RuleSet.All,
-            ScriptKind: ScriptKind.JS | ScriptKind.TS,
+            ScriptKind: ScriptKind.Scripts,
             CodeSnippets: [
                 {
                     Valid: false,

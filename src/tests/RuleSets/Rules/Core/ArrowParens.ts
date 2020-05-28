@@ -8,7 +8,7 @@ export let ArrowParens = new RuleSuite(
         {
             Description: "Checking whether arrow-parens aren't enforced…",
             RuleSet: RuleSet.All,
-            ScriptKind: ScriptKind.JS | ScriptKind.TS,
+            ScriptKind: ScriptKind.Scripts,
             CodeSnippets: [
                 {
                     Valid: true,

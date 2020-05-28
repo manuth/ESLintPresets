@@ -8,7 +8,7 @@ export let NoSparseArrays = new RuleSuite(
         {
             Description: "Checking whether the rule acts as expected…",
             RuleSet: RuleSet.All,
-            ScriptKind: ScriptKind.JS | ScriptKind.TS,
+            ScriptKind: ScriptKind.Scripts,
             CodeSnippets: [
                 {
                     Valid: false,

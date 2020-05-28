@@ -1,6 +1,7 @@
 import { CLIEngine } from "eslint";
 import { RuleSet } from "../RuleSet";
 import { ScriptKind } from "../ScriptKind";
+import { EngineRunner } from "../Suites/EngineRunner";
 import { LintTestCase } from "../Suites/LintTestCase";
 import { ICodeSnippetCollection } from "./ICodeSnippet";
 
@@ -38,7 +39,7 @@ export abstract class LintReportTestCase extends LintTestCase
      * @returns
      * A value indicating whether the test-case is applicable.
      */
-    protected Verify(engineRunner: () => CLIEngine.LintReport): boolean
+    protected Verify(engineRunner: EngineRunner): boolean
     {
         return this.VerifyReport(engineRunner());
     }

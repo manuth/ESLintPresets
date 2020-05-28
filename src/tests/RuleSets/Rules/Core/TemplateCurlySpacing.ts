@@ -8,7 +8,7 @@ export let TemplateCurlySpacing = new RuleSuite(
         {
             Description: "Checking whether spaces at the beginning and the end of template-expressions are disallowed…",
             RuleSet: RuleSet.All,
-            ScriptKind: ScriptKind.JS | ScriptKind.TS,
+            ScriptKind: ScriptKind.Scripts,
             CodeSnippets: [
                 {
                     Valid: false,

@@ -8,7 +8,7 @@ export let NoUnusedExpressions = new RuleSuite(
         {
             Description: "Checking whether unused expressions cause a warning…",
             RuleSet: RuleSet.All,
-            ScriptKind: ScriptKind.JS | ScriptKind.TS,
+            ScriptKind: ScriptKind.Scripts,
             CodeSnippets: [
                 {
                     Valid: false,

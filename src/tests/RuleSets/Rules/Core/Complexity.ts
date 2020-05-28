@@ -48,7 +48,7 @@ export let Complexity = new RuleSuite(
         {
             Description: "Checking whether any complexity is allowed…",
             RuleSet: RuleSet.All,
-            ScriptKind: ScriptKind.JS | ScriptKind.TS,
+            ScriptKind: ScriptKind.Scripts,
             CodeSnippets: [
                 {
                     Valid: true,

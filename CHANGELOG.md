@@ -6,7 +6,23 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## ESLintPresets [unreleased]
 
-[Show differences](https://github.com/manuth/ESLintPresets/compare/v1.0.1...dev)
+[Show differences](https://github.com/manuth/ESLintPresets/compare/v2.0.0...dev)
+
+## ESLintPresets v2.0.0
+As the shareable configurations weren't even added to the module-exports, the configurations didn't work.  
+This is fixed now and the plugin can be used now.
+
+### Updated
+  - JSDoc-rules to only require jsdocs for variables which are arrow-functions
+  - All dependencies
+
+### Added
+  - The actual configurations to the module exports
+
+### Fixed
+  - The shareable configurations
+
+[Show differences](https://github.com/manuth/ESLintPresets/compare/v1.0.1...v2.0.0)
 
 ## ESLintPresets v1.0.1
 ### Fixed

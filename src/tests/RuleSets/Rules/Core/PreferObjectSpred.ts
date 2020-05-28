@@ -8,7 +8,7 @@ export let PreferObjectSpread = new RuleSuite(
         {
             Description: "Checking whether object-spreading is preferred…",
             RuleSet: RuleSet.All,
-            ScriptKind: ScriptKind.JS | ScriptKind.TS,
+            ScriptKind: ScriptKind.Scripts,
             CodeSnippets: [
                 {
                     Valid: false,

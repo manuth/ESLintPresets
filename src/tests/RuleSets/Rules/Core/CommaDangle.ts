@@ -8,7 +8,7 @@ export let CommaDangle = new RuleSuite(
         {
             Description: "Checking whether trailing commas are disallowed…",
             RuleSet: RuleSet.Recommended,
-            ScriptKind: ScriptKind.TS | ScriptKind.JS,
+            ScriptKind: ScriptKind.Scripts,
             CodeSnippets: [
                 {
                     Valid: false,

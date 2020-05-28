@@ -8,7 +8,7 @@ export let NewParens = new RuleSuite(
         {
             Description: "Checking whether `new`-expressions without parentheses are disallowed…",
             RuleSet: RuleSet.All,
-            ScriptKind: ScriptKind.JS | ScriptKind.TS,
+            ScriptKind: ScriptKind.Scripts,
             CodeSnippets: [
                 {
                     Valid: false,

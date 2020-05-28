@@ -16,5 +16,15 @@ export enum ScriptKind
     /**
      * Indicates a type-declaration file.
      */
-    DTS = 1 << 2
+    DTS = 1 << 2,
+
+    /**
+     * Indicates javascript and typescript.
+     */
+    Scripts = JS | TS,
+
+    /**
+     * Indicates all script-kinds.
+     */
+    All = JS | TS | DTS
 }

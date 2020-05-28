@@ -8,7 +8,7 @@ export let PreferForOf = new RuleSuite(
         {
             Description: "Checking whether `for ... of` loops are preferred…",
             RuleSet: RuleSet.All,
-            ScriptKind: ScriptKind.JS | ScriptKind.TS,
+            ScriptKind: ScriptKind.Scripts,
             CodeSnippets: [
                 {
                     Valid: false,

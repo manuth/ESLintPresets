@@ -8,7 +8,7 @@ export let ArrayBracketNewLine = new RuleSuite(
         {
             Description: "Checking whether consistent newlines are required between array-brackets…",
             RuleSet: RuleSet.All,
-            ScriptKind: ScriptKind.JS | ScriptKind.TS,
+            ScriptKind: ScriptKind.Scripts,
             CodeSnippets: [
                 {
                     Valid: false,

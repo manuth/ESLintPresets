@@ -8,7 +8,7 @@ export let OperatorLineBreak = new RuleSuite(
         {
             Description: "Checking whether operators, if separated by line-breaks must be at the end of the line…",
             RuleSet: RuleSet.Recommended,
-            ScriptKind: ScriptKind.JS | ScriptKind.TS,
+            ScriptKind: ScriptKind.Scripts,
             CodeSnippets: [
                 {
                     Valid: false,
@@ -31,7 +31,7 @@ export let OperatorLineBreak = new RuleSuite(
         {
             Description: "Checking whether the rule is disabled for the weak rule-set…",
             RuleSet: RuleSet.Weak,
-            ScriptKind: ScriptKind.JS | ScriptKind.TS,
+            ScriptKind: ScriptKind.Scripts,
             CodeSnippets: [
                 {
                     Valid: true,

@@ -8,7 +8,7 @@ export let RestSpreadSpacing = new RuleSuite(
         {
             Description: "Checking whether the spacing of the rest-parameter is enforced correctly…",
             RuleSet: RuleSet.All,
-            ScriptKind: ScriptKind.JS | ScriptKind.TS,
+            ScriptKind: ScriptKind.Scripts,
             CodeSnippets: [
                 {
                     Valid: false,

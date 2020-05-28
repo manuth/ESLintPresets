@@ -8,7 +8,7 @@ export let GuardForIn = new RuleSuite(
         {
             Description: "Checking whether `for ... in`-loops do not have to be guarded…",
             RuleSet: RuleSet.All,
-            ScriptKind: ScriptKind.JS | ScriptKind.TS,
+            ScriptKind: ScriptKind.Scripts,
             CodeSnippets: [
                 {
                     Valid: true,

@@ -8,7 +8,7 @@ export let NoUnusedVars = new RuleSuite(
         {
             Description: "Checking whether unused variables cause an error…",
             RuleSet: RuleSet.All,
-            ScriptKind: ScriptKind.JS | ScriptKind.TS,
+            ScriptKind: ScriptKind.Scripts,
             CodeSnippets: [
                 {
                     Valid: false,
