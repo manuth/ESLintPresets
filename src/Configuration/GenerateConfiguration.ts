@@ -398,7 +398,12 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
                     weak ? "off" : "warn",
                     {
                         checkGetters: false,
-                        exemptedBy: []
+                        exemptedBy: [],
+                        contexts: [
+                            "ArrowFunctionExpression:not([returnType.typeAnnotation.type='TSVoidKeyword']):not([returnType.typeAnnotation.typeName.name='Promise'][returnType.typeAnnotation.typeParameters.params.0.type='TSVoidKeyword'])",
+                            "FunctionDeclaration:not([returnType.typeAnnotation.type='TSVoidKeyword']):not([returnType.typeAnnotation.typeName.name='Promise'][returnType.typeAnnotation.typeParameters.params.0.type='TSVoidKeyword'])",
+                            "FunctionExpression:not([returnType.typeAnnotation.type='TSVoidKeyword']):not([returnType.typeAnnotation.typeName.name='Promise'][returnType.typeAnnotation.typeParameters.params.0.type='TSVoidKeyword'])"
+                        ]
                     }
                 ],
                 "lines-between-class-members": "warn",
