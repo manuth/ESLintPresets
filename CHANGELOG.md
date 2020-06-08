@@ -6,7 +6,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## ESLintPresets [unreleased]
 
-[Show differences](https://github.com/manuth/ESLintPresets/compare/v2.1.0...dev)
+[Show differences](https://github.com/manuth/ESLintPresets/compare/v2.1.1...dev)
+
+## ESLintPresets v2.1.1
+### Updated
+  - The `require-returns` rule to only require a `@returns`-tag for non-`void` functions
+
+[Show differences](https://github.com/manuth/ESLintPresets/compare/v2.1.0...2.1.1)
 
 ## ESLintPresets v2.1.0
 The new version of `eslint-plugin-import` supports tyescript's `TSImportEqualsDeclaration`s.
