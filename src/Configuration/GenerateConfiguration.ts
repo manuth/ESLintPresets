@@ -529,7 +529,12 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
                 "yield-star-spacing": "warn",
                 yoda: "warn"
             },
-            overrides: []
+            overrides: [],
+            settings: {
+                jsdoc: {
+                    mode: "typescript"
+                }
+            }
         };
 
     config.overrides.push(
