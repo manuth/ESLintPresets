@@ -1,9 +1,9 @@
+import Recommended = require("../Configuration/Recommended");
+import RecommendedWithTypeChecking = require("../Configuration/RecommendedWithTypeChecking");
+import Weak = require("../Configuration/Weak");
+import WeakWithTypeChecking = require("../Configuration/WeakWithTypeChecking");
 import { RuleSet } from "./Debugging/RuleSet";
 import { ScriptKind } from "./Debugging/ScriptKind";
-import RecommendedWithTypeChecking = require("../Configuration/RecommendedWithTypeChecking");
-import WeakWithTypeChecking = require("../Configuration/WeakWithTypeChecking");
-import Recommended = require("../Configuration/Recommended");
-import Weak = require("../Configuration/Weak");
 
 /**
  * Provides constants for the tests.
