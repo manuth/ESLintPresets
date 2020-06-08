@@ -19,7 +19,7 @@ export let NoVarRequires = new RuleSuite(
                 {
                     Valid: true,
                     Snippets: [
-                        'require("fs-extra").writeFile("file.txt", "content");'
+                        'import foo = require("foo");'
                     ]
                 }
             ]
