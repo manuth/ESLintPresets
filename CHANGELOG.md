@@ -6,7 +6,18 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## ESLintPresets [unreleased]
 
-[Show differences](https://github.com/manuth/ESLintPresets/compare/v2.0.1...dev)
+[Show differences](https://github.com/manuth/ESLintPresets/compare/v2.1.0...dev)
+
+## ESLintPresets v2.1.0
+The new version of `eslint-plugin-import` supports tyescript's `TSImportEqualsDeclaration`s.
+
+### Added
+  - `peerDependencies` where necessary
+
+### Updated
+  - All packages
+
+[Show differences](https://github.com/manuth/ESLintPresets/compare/v2.0.1...v2.1.0)
 
 ## ESLintPresets v2.0.1
 ### Updated
