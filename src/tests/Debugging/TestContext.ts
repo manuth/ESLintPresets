@@ -1,9 +1,9 @@
 import { CLIEngine } from "eslint";
+import merge = require("lodash.merge");
 import { TestConstants } from "../TestConstants";
 import { RuleSet } from "./RuleSet";
 import { ScriptKind } from "./ScriptKind";
 import { Workspace } from "./Workspace";
-import merge = require("lodash.merge");
 
 /**
  * Represents a test-context.
