@@ -33,22 +33,16 @@ steps:
         - tag
       ref:
         - refs/tags/v[0-9].[0-9].[0-9]
-  - name: build package
+  - name: prepare release
     image: node
     commands:
       - npm pack
-    when:
-      event:
-        - tag
-  - name: release preparation
-    image: node
-    commands:
-      - npm install escape-string-regexp
+      - npm install --no-save escape-string-regexp
       - node -e "console.log(require('escape-string-regexp')('${DRONE_TAG}'))" > TagName.txt
     when:
       event:
         - tag
-  - name: release notes
+  - name: prepare release notes
     image: ubuntu
     commands:
       - export TagName=$$(cat TagName.txt)
@@ -63,6 +57,7 @@ steps:
         - tag
   - name: publish
     image: plugins/github-release
+    commands: []
     settings:
       api_key:
         from_secret: github_token
