@@ -6,7 +6,16 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## ESLintPresets [unreleased]
 
-[Show differences](https://github.com/manuth/ESLintPresets/compare/v2.1.1...dev)
+[Show differences](https://github.com/manuth/ESLintPresets/compare/v2.1.2...dev)
+
+## ESLintPresets v2.1.2
+### Added
+  - Support for typescript jsdoc-tags
+
+### Updated
+  - Configuration to not report `ts-<directive>` comments
+
+[Show differences](https://github.com/manuth/ESLintPresets/compare/v2.1.1...v2.1.2)
 
 ## ESLintPresets v2.1.1
 ### Updated
