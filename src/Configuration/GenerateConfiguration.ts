@@ -35,7 +35,7 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
                         default: "array-simple"
                     }
                 ],
-                "@typescript-eslint/ban-ts-ignore": "off",
+                "@typescript-eslint/ban-ts-comment": "off",
                 "@typescript-eslint/ban-types": "error",
                 "@typescript-eslint/camelcase": "off",
                 "@typescript-eslint/class-name-casing": "off",
@@ -529,7 +529,12 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
                 "yield-star-spacing": "warn",
                 yoda: "warn"
             },
-            overrides: []
+            overrides: [],
+            settings: {
+                jsdoc: {
+                    mode: "typescript"
+                }
+            }
         };
 
     config.overrides.push(
