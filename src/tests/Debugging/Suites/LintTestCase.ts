@@ -121,7 +121,7 @@ export abstract class LintTestCase implements ITestCase, IRegisterable
                 this.Description,
                 async () =>
                 {
-                    mocha.enableTimeouts(false);
+                    mocha.timeout(0);
 
                     for (let set of TestConstants.RuleSets)
                     {

@@ -14,7 +14,7 @@ suite(
         suiteSetup(
             async function()
             {
-                this.enableTimeouts(false);
+                this.timeout(0);
                 context.Workspace = new Workspace();
                 await context.Workspace.Initialize();
             });
