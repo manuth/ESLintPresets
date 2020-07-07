@@ -5,6 +5,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## ESLintPresets [unreleased]
+### Updated
+  - Configuration to not require jsdoc-comments for `TSFunctionType`s
 
 [Show differences](https://github.com/manuth/ESLintPresets/compare/v2.1.2...dev)
 
