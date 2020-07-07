@@ -121,7 +121,6 @@ export let RequireJSDoc = new RuleSuite(
                 {
                     Valid: false,
                     Snippets: [
-                        "let test: (arg1: string, arg2: string) => number;",
                         "enum Test { }",
                         `
                             /**
@@ -212,11 +211,6 @@ export let RequireJSDoc = new RuleSuite(
                     Valid: true,
                     Snippets: [
                         "let test: TestFunction = () => { };",
-                        `
-                            /**
-                             * Test
-                             */
-                            let test: (arg1: string, arg2: string) => number;`,
                         `
                         /**
                          *
