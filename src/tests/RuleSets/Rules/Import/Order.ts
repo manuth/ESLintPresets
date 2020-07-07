@@ -53,5 +53,28 @@ export let Order = new RuleSuite(
                     ]
                 }
             ]
+        },
+        {
+            Description: "Checking whether object-imports must be placed at the end of the import-statements…",
+            RuleSet: RuleSet.All,
+            ScriptKind: ScriptKind.Scripts,
+            CodeSnippets: [
+                {
+                    Valid: false,
+                    Snippets: [
+                        `
+                            import log = console.log;
+                            import path = require("path");`
+                    ]
+                },
+                {
+                    Valid: true,
+                    Snippets: [
+                        `
+                            import path = require("path");
+                            import log = console.log;`
+                    ]
+                }
+            ]
         }
     ]);
