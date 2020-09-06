@@ -237,7 +237,18 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
                     "warn",
                     "consistent"
                 ],
-                "generator-star-spacing": "warn",
+                "generator-star-spacing": [
+                    "warn",
+                    {
+                        before: false,
+                        after: true,
+                        anonymous: "neither",
+                        method: {
+                            before: true,
+                            after: false
+                        }
+                    }
+                ],
                 "grouped-accessor-pairs": "warn",
                 "guard-for-in": "off",
                 "import/no-default-export": weak ? "off" : "warn",
