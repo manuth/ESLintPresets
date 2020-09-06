@@ -162,7 +162,12 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
                 "@typescript-eslint/no-parameter-properties": "error",
                 "@typescript-eslint/no-this-alias": "off",
                 "@typescript-eslint/no-unused-expressions": "warn",
-                "@typescript-eslint/no-unused-vars": "off",
+                "@typescript-eslint/no-unused-vars": [
+                    "warn",
+                    {
+                        args: "none"
+                    }
+                ],
                 "@typescript-eslint/no-use-before-define": [
                     "warn",
                     {
