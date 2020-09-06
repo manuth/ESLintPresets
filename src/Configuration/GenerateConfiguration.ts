@@ -146,7 +146,6 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
                         format: ["PascalCase"]
                     }
                 ],
-                "@typescript-eslint/no-dynamic-delete": weak ? "off" : "error",
                 "@typescript-eslint/no-empty-function": "off",
                 "@typescript-eslint/no-empty-interface": "off",
                 "@typescript-eslint/no-explicit-any": "off",
@@ -163,7 +162,7 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
                 "@typescript-eslint/no-parameter-properties": "error",
                 "@typescript-eslint/no-this-alias": "off",
                 "@typescript-eslint/no-unused-expressions": "warn",
-                "@typescript-eslint/no-unused-vars": "warn",
+                "@typescript-eslint/no-unused-vars": "off",
                 "@typescript-eslint/no-use-before-define": [
                     "warn",
                     {
