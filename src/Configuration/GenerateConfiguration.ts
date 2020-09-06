@@ -276,7 +276,7 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
                         ],
                         alphabetize: {
                             order: "asc",
-                            caseInsensitive: false
+                            caseInsensitive: true
                         }
                     }
                 ],
