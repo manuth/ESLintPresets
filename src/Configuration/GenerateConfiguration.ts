@@ -47,6 +47,12 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
                 ],
                 "@typescript-eslint/default-param-last": "error",
                 "@typescript-eslint/explicit-function-return-type": "off",
+                "@typescript-eslint/explicit-module-boundary-types": [
+                    "warn",
+                    {
+                        allowArgumentsExplicitlyTypedAsAny: true
+                    }
+                ],
                 "@typescript-eslint/func-call-spacing": "warn",
                 // "@typescript-eslint/indent": [
                 //     "warn",
