@@ -3,5 +3,7 @@
         "./lib/tests/main.test"
     ],
     "ui": "tdd",
-    "colors": true
+    "colors": true,
+    "timeout": 10000,
+    "slow": 10000
 }
