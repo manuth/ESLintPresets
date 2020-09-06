@@ -1,9 +1,11 @@
 {
     "rules": {
         "match-default-export-name": true,
+        "no-void-expression": true,
         "return-undefined": true
     },
     "jsRules": {
+        "no-void-expression": true,
         "return-undefined": true
     }
 }
