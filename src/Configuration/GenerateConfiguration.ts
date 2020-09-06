@@ -146,6 +146,7 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
                         format: ["PascalCase"]
                     }
                 ],
+                "@typescript-eslint/no-dynamic-delete": "off",
                 "@typescript-eslint/no-empty-function": "off",
                 "@typescript-eslint/no-empty-interface": "off",
                 "@typescript-eslint/no-explicit-any": "off",
