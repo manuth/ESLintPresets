@@ -1,6 +1,3 @@
-# Build results
-[Ll]ib/
-
 # Logs
 logs
 *.log
@@ -111,13 +108,21 @@ dist
 
 # TypeScript config-files
 tsconfig.json
+tsconfig.*.json
+
+# Lint config-files
+.eslintrc
+.eslintrc.*
 
 # Source-maps
-[Ll]ib/**/*.js.map
+[Ll]ib/**/*.map
 
 # Unit-Tests
-test/
+.mocharc.*
 [Ll]ib/tests/
 
 # Visual Studio Code-Environment
 .vscode/
+
+# Drone configuration
+.drone.yml
