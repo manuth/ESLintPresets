@@ -316,10 +316,10 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
                     {
                         require: {
                             ClassDeclaration: true,
-                            ClassExpression: true,
+                            ClassExpression: false,
                             ArrowFunctionExpression: false,
                             FunctionDeclaration: true,
-                            FunctionExpression: true,
+                            FunctionExpression: false,
                             MethodDefinition: true
                         },
                         contexts: [
