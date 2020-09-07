@@ -13,7 +13,6 @@ export let RequireJSDoc = new RuleSuite(
                 {
                     Valid: false,
                     Snippets: [
-                        "let test = () => { };",
                         "function test() { }",
                         "class Test  { }",
                         `
@@ -51,12 +50,6 @@ export let RequireJSDoc = new RuleSuite(
                 {
                     Valid: true,
                     Snippets: [
-                        `
-                            /**
-                             *
-                             */
-                            let test = () => { };`,
-                        "test = (arg1, arg2) => 10;",
                         `
                             /**
                              *
@@ -130,6 +123,12 @@ export let RequireJSDoc = new RuleSuite(
                                 Test
                             }`,
                         `
+                            class Test {
+                            }`,
+                        `
+                            /**
+                             *
+                             */
                             class Test {
                                 abstract Method();
                             }`,
@@ -210,7 +209,6 @@ export let RequireJSDoc = new RuleSuite(
                 {
                     Valid: true,
                     Snippets: [
-                        "let test: TestFunction = () => { };",
                         `
                         /**
                          *
@@ -346,6 +344,21 @@ export let RequireJSDoc = new RuleSuite(
                                  */
                                 (a, b);
                             }`
+                    ]
+                }
+            ]
+        },
+        {
+            Description: "Checking whether inline-expressions don't require jsdocs…",
+            RuleSet: RuleSet.Recommended,
+            ScriptKind: ScriptKind.Scripts,
+            CodeSnippets: [
+                {
+                    Valid: true,
+                    Snippets: [
+                        "let x = new class { }",
+                        "let x = function() { }",
+                        "let x = () => { }"
                     ]
                 }
             ]

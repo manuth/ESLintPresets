@@ -82,7 +82,50 @@ export let MemberOrdering = new RuleSuite(
                 })
         },
         {
-            Description: "Checking whether members of the same type must be ordered by their modifier…",
+            Description: "Checking whether static members must be placed before members of the same type and accessor…",
+            RuleSet: RuleSet.Recommended,
+            ScriptKind: ScriptKind.TS,
+            CodeSnippets: [
+                {
+                    Valid: false,
+                    Snippets: signatureMembers.flatMap(
+                        (memberType) =>
+                        {
+                            return [
+                                SourceCodeCreator.TestSignature(
+                                    memberType,
+                                    [Accessor.Public, Modifier.Instance],
+                                    [Accessor.Public, Modifier.Static]),
+                                SourceCodeCreator.TestSignature(
+                                    memberType,
+                                    [Accessor.Public, Modifier.Abstract],
+                                    [Accessor.Public, Modifier.Static]),
+                                SourceCodeCreator.TestSignature(
+                                    memberType,
+                                    [Accessor.Protected, Modifier.Static],
+                                    [Accessor.Public, Modifier.Instance])
+                            ];
+                        })
+                },
+                {
+                    Valid: true,
+                    Snippets: signatureMembers.flatMap(
+                        (memberType) =>
+                        {
+                            return [
+                                SourceCodeCreator.TestSignature(
+                                    memberType,
+                                    [Accessor.Public, Modifier.Static],
+                                    [Accessor.Public, Modifier.Instance],
+                                    [Accessor.Protected, Modifier.Static],
+                                    [Accessor.Protected, Modifier.Instance])
+                            ];
+                        })
+                }
+            ]
+        },
+        {
+            Description: "Checking whether the order of non-static members is irrelevant…",
             RuleSet: RuleSet.Recommended,
             ScriptKind: ScriptKind.TS,
             CodeSnippets: signatureMembers.flatMap(
@@ -92,9 +135,8 @@ export let MemberOrdering = new RuleSuite(
                         {
                             Valid: false,
                             Snippets: [
-                                SourceCodeCreator.TestModifiers(memberType, Modifier.Instance, Modifier.Static),
                                 SourceCodeCreator.TestModifiers(memberType, Modifier.Abstract, Modifier.Static),
-                                SourceCodeCreator.TestModifiers(memberType, Modifier.Abstract, Modifier.Instance)
+                                SourceCodeCreator.TestModifiers(memberType, Modifier.Instance, Modifier.Static)
                             ]
                         },
                         {
@@ -102,38 +144,8 @@ export let MemberOrdering = new RuleSuite(
                             Snippets: [
                                 SourceCodeCreator.TestModifiers(memberType, Modifier.Static, Modifier.Instance),
                                 SourceCodeCreator.TestModifiers(memberType, Modifier.Static, Modifier.Abstract),
-                                SourceCodeCreator.TestModifiers(memberType, Modifier.Instance, Modifier.Abstract)
-                            ]
-                        }
-                    ];
-                })
-        },
-        {
-            Description: "Checking whether the modifier-order has a higher priority than the accessor-order…",
-            RuleSet: RuleSet.Recommended,
-            ScriptKind: ScriptKind.TS,
-            CodeSnippets: signatureMembers.flatMap(
-                (memberType): ICodeSnippetCollection[] =>
-                {
-                    return [
-                        {
-                            Valid: false,
-                            Snippets: [
-                                SourceCodeCreator.TestSignature(
-                                    memberType,
-                                    [Accessor.Public, Modifier.Static],
-                                    [Accessor.Public, Modifier.Instance],
-                                    [Accessor.Protected, Modifier.Static])
-                            ]
-                        },
-                        {
-                            Valid: true,
-                            Snippets: [
-                                SourceCodeCreator.TestSignature(
-                                    memberType,
-                                    [Accessor.Public, Modifier.Static],
-                                    [Accessor.Protected, Modifier.Static],
-                                    [Accessor.Public, Modifier.Instance])
+                                SourceCodeCreator.TestModifiers(memberType, Modifier.Instance, Modifier.Abstract),
+                                SourceCodeCreator.TestModifiers(memberType, Modifier.Abstract, Modifier.Instance)
                             ]
                         }
                     ];
