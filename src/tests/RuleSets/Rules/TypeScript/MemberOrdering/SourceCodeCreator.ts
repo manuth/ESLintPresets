@@ -245,7 +245,7 @@ export class SourceCodeCreator
             case MemberType.Constructor:
                 code = isClass ? "constructor() { }" : "new ();";
                 break;
-            case MemberType.Signature:
+            case MemberType.Indexer:
                 code = "[key: string]: any;";
                 break;
             case MemberType.Method:

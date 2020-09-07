@@ -14,9 +14,9 @@ export enum MemberType
     Constructor,
 
     /**
-     * Indicates a signature.
+     * Indicates an indexer.
      */
-    Signature,
+    Indexer,
 
     /**
      * Indicates a method.

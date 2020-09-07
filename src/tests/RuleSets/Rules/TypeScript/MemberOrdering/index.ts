@@ -33,22 +33,22 @@ export let MemberOrdering = new RuleSuite(
                             Valid: false,
                             Snippets: [
                                 SourceCodeCreator.TestTypes(containerType, MemberType.Constructor, MemberType.Field),
-                                SourceCodeCreator.TestTypes(containerType, MemberType.Signature, MemberType.Field),
+                                SourceCodeCreator.TestTypes(containerType, MemberType.Indexer, MemberType.Field),
                                 SourceCodeCreator.TestTypes(containerType, MemberType.Method, MemberType.Field),
-                                SourceCodeCreator.TestTypes(containerType, MemberType.Signature, MemberType.Constructor),
+                                SourceCodeCreator.TestTypes(containerType, MemberType.Indexer, MemberType.Constructor),
                                 SourceCodeCreator.TestTypes(containerType, MemberType.Method, MemberType.Constructor),
-                                SourceCodeCreator.TestTypes(containerType, MemberType.Method, MemberType.Signature)
+                                SourceCodeCreator.TestTypes(containerType, MemberType.Method, MemberType.Indexer)
                             ]
                         },
                         {
                             Valid: true,
                             Snippets: [
                                 SourceCodeCreator.TestTypes(containerType, MemberType.Field, MemberType.Constructor),
-                                SourceCodeCreator.TestTypes(containerType, MemberType.Field, MemberType.Signature),
+                                SourceCodeCreator.TestTypes(containerType, MemberType.Field, MemberType.Indexer),
                                 SourceCodeCreator.TestTypes(containerType, MemberType.Field, MemberType.Method),
-                                SourceCodeCreator.TestTypes(containerType, MemberType.Constructor, MemberType.Signature),
+                                SourceCodeCreator.TestTypes(containerType, MemberType.Constructor, MemberType.Indexer),
                                 SourceCodeCreator.TestTypes(containerType, MemberType.Constructor, MemberType.Method),
-                                SourceCodeCreator.TestTypes(containerType, MemberType.Signature, MemberType.Method)
+                                SourceCodeCreator.TestTypes(containerType, MemberType.Indexer, MemberType.Method)
                             ]
                         }
                     ];
