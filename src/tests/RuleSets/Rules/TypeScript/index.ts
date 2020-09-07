@@ -38,6 +38,7 @@ import { Quotes } from "./Quotes";
 import { Semi } from "./Semi";
 import { SpaceBeforeFunctionParen } from "./SpaceBeforeFunctionParen";
 import { TripleSlashReference } from "./TripleSlashReference";
+import { TSLintTests } from "./TSLint";
 import { TypeAnnotationSpacing } from "./TypeAnnotationSpacing";
 import { UnboundMethod } from "./UnboundMethod";
 import { UnifiedSignatures } from "./UnifiedSignatures";
@@ -86,5 +87,6 @@ export let TypeScriptTests = new ContainerSuite(
         TripleSlashReference,
         TypeAnnotationSpacing,
         UnboundMethod,
-        UnifiedSignatures
+        UnifiedSignatures,
+        TSLintTests
     ]);
