@@ -162,7 +162,14 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
                 ],
                 "@typescript-eslint/no-parameter-properties": "error",
                 "@typescript-eslint/no-this-alias": "off",
-                "@typescript-eslint/no-unused-expressions": "warn",
+                "@typescript-eslint/no-unused-expressions": [
+                    "warn",
+                    {
+                        allowShortCircuit: true,
+                        allowTernary: true,
+                        allowTaggedTemplates: true
+                    }
+                ],
                 "@typescript-eslint/no-unused-vars": [
                     "warn",
                     {
