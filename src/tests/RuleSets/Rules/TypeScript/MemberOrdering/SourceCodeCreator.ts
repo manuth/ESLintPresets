@@ -109,6 +109,20 @@ export class SourceCodeCreator
     }
 
     /**
+     * Generates test-code for class-members.
+     *
+     * @param members
+     * The class-members to create.
+     *
+     * @returns
+     * The code of the specified `members`.
+     */
+    public static TestMembers(members: MemberDefinition[]): string
+    {
+        return this.GetContainerCode(ContainerType.Class, ...members);
+    }
+
+    /**
      * Gets code for a container.
      *
      * @param containerType
