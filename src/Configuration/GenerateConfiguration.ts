@@ -566,12 +566,6 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
                         allowExpressions: true
                     }
                 ],
-                "@typescript-eslint/explicit-module-boundary-types": [
-                    "warn",
-                    {
-                        allowArgumentsExplicitlyTypedAsAny: true
-                    }
-                ],
                 "@typescript-eslint/no-var-requires": "warn",
                 "jsdoc/no-types": [
                     "warn",
