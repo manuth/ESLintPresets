@@ -130,15 +130,29 @@ export abstract class LintTestCase implements ITestCase, IRegisterable
                                     {
                                         for (let codeSnippet of snippetCollection.Snippets)
                                         {
-                                            Assert.strictEqual(
-                                                self.Verify(() =>
-                                                {
-                                                    return self.GetCLIEngine(context, set).executeOnText(
-                                                        dedent(`${codeSnippet}${LintTestCase.endOfFileMarker}`).replace(
-                                                            new RegExp(`${LintTestCase.endOfFileMarker}$`), ""),
-                                                        context.GetFileName(scriptKind));
-                                                }),
-                                                snippetCollection.Valid);
+                                            try
+                                            {
+                                                Assert.strictEqual(
+                                                    self.Verify(() =>
+                                                    {
+                                                        return self.GetCLIEngine(context, set).executeOnText(
+                                                            dedent(`${codeSnippet}${LintTestCase.endOfFileMarker}`).replace(
+                                                                new RegExp(`${LintTestCase.endOfFileMarker}$`), ""),
+                                                            context.GetFileName(scriptKind));
+                                                    }),
+                                                    snippetCollection.Valid);
+                                            }
+                                            catch
+                                            {
+                                                let valid = snippetCollection.Valid;
+
+                                                throw new Error(
+                                                    dedent(
+                                                        `
+                                                            Unexpected Linting-result:
+                                                            This code-snippet is expected to report ${valid ? "no errors" : "an error"} but reported ${valid ? "one" : "none"}:
+                                                            ${codeSnippet}`));
+                                            }
                                         }
                                     }
                                 }
