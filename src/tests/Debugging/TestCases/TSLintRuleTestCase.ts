@@ -62,7 +62,12 @@ export class TSLintRuleTestCase extends RuleTestCase
             !report.results.some(
                 (result) =>
                 {
-                    return result.messages.some((message) => message.message.includes(this.TestSuite.TSLintRuleName));
+                    return result.messages.some(
+                        (message) =>
+                        {
+                            return message.ruleId === this.TestSuite.RuleName &&
+                                message.message.includes(`tslint:${this.TestSuite.TSLintRuleName}`);
+                        });
                 });
     }
 }
