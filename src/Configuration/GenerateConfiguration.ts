@@ -605,7 +605,7 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
                     "@typescript-eslint/return-await": "warn",
                     "@typescript-eslint/unbound-method": "off",
                     "@typescript-eslint/tslint/config": [
-                        weak ? "off" : "warn",
+                        "warn",
                         {
                             lintFile: join(__dirname, "..", "..", "tslint.json")
                         }
