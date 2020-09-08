@@ -1,7 +1,6 @@
 import Assert = require("assert");
 import dedent = require("dedent");
 import { CLIEngine } from "eslint";
-import { Context } from "mocha";
 import { TestConstants } from "../../TestConstants";
 import { IRegisterable } from "../IRegisterable";
 import { RuleSet } from "../RuleSet";
@@ -109,43 +108,51 @@ export abstract class LintTestCase implements ITestCase, IRegisterable
     {
         if ((this.RuleSet & ruleSet) > 0)
         {
-            let mocha: Context;
-
-            suiteSetup(
-                function()
-                {
-                    mocha = this;
-                });
+            let self = this;
 
             test(
                 this.Description,
-                async () =>
+                async function()
                 {
-                    mocha.enableTimeouts(false);
+                    this.timeout(0);
 
                     for (let set of TestConstants.RuleSets)
                     {
                         if (
                             ((ruleSet & set) > 0) &&
-                            ((this.RuleSet & set) > 0))
+                            ((self.RuleSet & set) > 0))
                         {
                             for (let scriptKind of TestConstants.ScriptKinds)
                             {
-                                if ((this.ScriptKind & scriptKind) > 0)
+                                if ((self.ScriptKind & scriptKind) > 0)
                                 {
-                                    for (let snippetCollection of this.CodeSnippets)
+                                    for (let snippetCollection of self.CodeSnippets)
                                     {
                                         for (let codeSnippet of snippetCollection.Snippets)
                                         {
-                                            Assert.strictEqual(
-                                                this.Verify(() =>
-                                                {
-                                                    return this.GetCLIEngine(context, set).executeOnText(
-                                                        dedent(`${codeSnippet}${LintTestCase.endOfFileMarker}`).replace(
-                                                            new RegExp(`${LintTestCase.endOfFileMarker}$`), ""),
-                                                        context.GetFileName(scriptKind));
-                                                }),
-                                                snippetCollection.Valid);
+                                            try
+                                            {
+                                                Assert.strictEqual(
+                                                    self.Verify(() =>
+                                                    {
+                                                        return self.GetCLIEngine(context, set).executeOnText(
+                                                            dedent(`${codeSnippet}${LintTestCase.endOfFileMarker}`).replace(
+                                                                new RegExp(`${LintTestCase.endOfFileMarker}$`), ""),
+                                                            context.GetFileName(scriptKind));
+                                                    }),
+                                                    snippetCollection.Valid);
+                                            }
+                                            catch
+                                            {
+                                                let valid = snippetCollection.Valid;
+
+                                                throw new Error(
+                                                    dedent(
+                                                        `
+                                                            Unexpected Linting-result:
+                                                            This code-snippet is expected to report ${valid ? "no errors" : "an error"} but reported ${valid ? "one" : "none"}:
+                                                            ${codeSnippet}`));
+                                            }
                                         }
                                     }
                                 }

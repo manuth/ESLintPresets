@@ -53,5 +53,51 @@ export let Order = new RuleSuite(
                     ]
                 }
             ]
+        },
+        {
+            Description: "Checking whether object-imports must be placed at the end of the import-statements…",
+            RuleSet: RuleSet.All,
+            ScriptKind: ScriptKind.Scripts,
+            CodeSnippets: [
+                {
+                    Valid: false,
+                    Snippets: [
+                        `
+                            import log = console.log;
+                            import path = require("path");`
+                    ]
+                },
+                {
+                    Valid: true,
+                    Snippets: [
+                        `
+                            import path = require("path");
+                            import log = console.log;`
+                    ]
+                }
+            ]
+        },
+        {
+            Description: "Checking whether imports must be sorted case insensitive…",
+            RuleSet: RuleSet.All,
+            ScriptKind: ScriptKind.Scripts,
+            CodeSnippets: [
+                {
+                    Valid: false,
+                    Snippets: [
+                        `
+                            import test1 = require("aB");
+                            import test2 = require("aa");`
+                    ]
+                },
+                {
+                    Valid: true,
+                    Snippets: [
+                        `
+                            import test1 = require("aa");
+                            import test2 = require("aB");`
+                    ]
+                }
+            ]
         }
     ]);

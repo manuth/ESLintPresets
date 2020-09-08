@@ -1,3 +1,4 @@
+import { Context } from "mocha";
 import { RuleSet } from "../RuleSet";
 import { TestContext } from "../TestContext";
 import { ISuite } from "./ISuite";
@@ -29,13 +30,75 @@ export abstract class Suite implements ISuite
      */
     public Register(context: TestContext, ruleSet: RuleSet): void
     {
+        let self = this;
+
         suite(
             this.SuiteName,
             () =>
             {
+                suiteSetup(
+                    async function()
+                    {
+                        return self.SuiteSetup(this);
+                    });
+
+                suiteTeardown(
+                    async function()
+                    {
+                        return self.SuiteTeardown(this);
+                    });
+
+                setup(
+                    async function()
+                    {
+                        return self.TestSetup(this);
+                    });
+
+                teardown(
+                    async function()
+                    {
+                        return self.TestTeardown(this);
+                    });
+
                 this.RegisterInternal(context, ruleSet);
             });
     }
+
+    /**
+     * Prepares the suite.
+     *
+     * @param mocha
+     * The mocha-context.
+     */
+    public async SuiteSetup(mocha: Context): Promise<void>
+    { }
+
+    /**
+     * Releases all resources used by the suite.
+     *
+     * @param mocha
+     * The mocha-context.
+     */
+    public async SuiteTeardown(mocha: Context): Promise<void>
+    { }
+
+    /**
+     * Prepares each test.
+     *
+     * @param mocha
+     * The mocha-context.
+     */
+    public async TestSetup(mocha: Context): Promise<void>
+    { }
+
+    /**
+     * Releases the resources of each test.
+     *
+     * @param mocha
+     * The mocha-context.
+     */
+    public async TestTeardown(mocha: Context): Promise<void>
+    { }
 
     /**
      * Registers the `mocha`-tests.

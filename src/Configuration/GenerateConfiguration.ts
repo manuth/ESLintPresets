@@ -11,7 +11,7 @@ import { join } from "upath";
  * A value indicating whether a ruleset for a workspace with type-checking should be generated.
  *
  * @returns
- * THe configuration.
+ * The configuration.
  */
 export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
 {
@@ -47,6 +47,7 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
                 ],
                 "@typescript-eslint/default-param-last": "error",
                 "@typescript-eslint/explicit-function-return-type": "off",
+                "@typescript-eslint/explicit-module-boundary-types": "off",
                 "@typescript-eslint/func-call-spacing": "warn",
                 // "@typescript-eslint/indent": [
                 //     "warn",
@@ -83,60 +84,39 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
                     {
                         default: [
                             // Fields
-                            "public-static-field",
-                            "protected-static-field",
-                            "private-static-field",
-
-                            "public-instance-field",
-                            "protected-instance-field",
-                            "private-instance-field",
-
-                            "public-abstract-field",
-                            "protected-abstract-field",
-                            "private-abstract-field",
-
-                            "public-field",
-                            "protected-field",
-                            "private-field",
-
                             "static-field",
-                            "instance-field",
-                            "abstract-field",
-
                             "field",
 
+                            "public-static-field",
+                            "public-field",
+
+                            "protected-static-field",
+                            "protected-field",
+
+                            "private-static-field",
+                            "private-field",
+
                             // Constructors
+                            "constructor",
                             "public-constructor",
                             "protected-constructor",
                             "private-constructor",
-
-                            "constructor",
 
                             // Index signature
                             "signature",
 
                             // Methods
-                            "public-static-method",
-                            "protected-static-method",
-                            "private-static-method",
-
-                            "public-instance-method",
-                            "protected-instance-method",
-                            "private-instance-method",
-
-                            "public-abstract-method",
-                            "protected-abstract-method",
-                            "private-abstract-method",
-
-                            "public-method",
-                            "protected-method",
-                            "private-method",
-
                             "static-method",
-                            "instance-method",
-                            "abstract-method",
+                            "method",
 
-                            "method"
+                            "public-static-method",
+                            "public-method",
+
+                            "protected-static-method",
+                            "protected-method",
+
+                            "private-static-method",
+                            "private-method"
                         ]
                     }
                 ],
@@ -161,7 +141,7 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
                         format: ["PascalCase"]
                     }
                 ],
-                "@typescript-eslint/no-dynamic-delete": weak ? "off" : "error",
+                "@typescript-eslint/no-dynamic-delete": "off",
                 "@typescript-eslint/no-empty-function": "off",
                 "@typescript-eslint/no-empty-interface": "off",
                 "@typescript-eslint/no-explicit-any": "off",
@@ -177,8 +157,20 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
                 ],
                 "@typescript-eslint/no-parameter-properties": "error",
                 "@typescript-eslint/no-this-alias": "off",
-                "@typescript-eslint/no-unused-expressions": "warn",
-                "@typescript-eslint/no-unused-vars": "warn",
+                "@typescript-eslint/no-unused-expressions": [
+                    "warn",
+                    {
+                        allowShortCircuit: true,
+                        allowTernary: true,
+                        allowTaggedTemplates: true
+                    }
+                ],
+                "@typescript-eslint/no-unused-vars": [
+                    "warn",
+                    {
+                        args: "none"
+                    }
+                ],
                 "@typescript-eslint/no-use-before-define": [
                     "warn",
                     {
@@ -253,7 +245,18 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
                     "warn",
                     "consistent"
                 ],
-                "generator-star-spacing": "warn",
+                "generator-star-spacing": [
+                    "warn",
+                    {
+                        before: false,
+                        after: true,
+                        anonymous: "neither",
+                        method: {
+                            before: true,
+                            after: false
+                        }
+                    }
+                ],
                 "grouped-accessor-pairs": "warn",
                 "guard-for-in": "off",
                 "import/no-default-export": weak ? "off" : "warn",
@@ -281,7 +284,7 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
                         ],
                         alphabetize: {
                             order: "asc",
-                            caseInsensitive: false
+                            caseInsensitive: true
                         }
                     }
                 ],
@@ -321,10 +324,10 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
                     {
                         require: {
                             ClassDeclaration: true,
-                            ClassExpression: true,
+                            ClassExpression: false,
                             ArrowFunctionExpression: false,
                             FunctionDeclaration: true,
-                            FunctionExpression: true,
+                            FunctionExpression: false,
                             MethodDefinition: true
                         },
                         contexts: [
@@ -338,9 +341,7 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
                             "TSCallSignatureDeclaration",
                             "TSConstructSignatureDeclaration",
                             "TSMethodSignature",
-                            "TSDeclareFunction",
-                            "TSFunctionType",
-                            "VariableDeclaration > VariableDeclarator:not([id.typeAnnotation]) > ArrowFunctionExpression"
+                            "TSDeclareFunction"
                         ]
                     }
                 ],
@@ -606,9 +607,13 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
                     "@typescript-eslint/return-await": "warn",
                     "@typescript-eslint/unbound-method": "off",
                     "@typescript-eslint/tslint/config": [
-                        weak ? "off" : "warn",
+                        "warn",
                         {
-                            lintFile: join(__dirname, "..", "..", "tslint.json")
+                            lintFile: require.resolve(
+                                join(
+                                    __dirname,
+                                    "TSLint",
+                                    `${weak ? "Weak" : "Recommended"}${typeChecking ? "WithTypeChecking" : ""}`))
                         }
                     ]
                 }

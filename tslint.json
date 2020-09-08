@@ -1,9 +1,23 @@
 {
     "rules": {
         "match-default-export-name": true,
+        "no-void-expression": true,
+        "ordered-imports": {
+            "options": {
+                "import-sources-order": "any",
+                "named-imports-order": "case-insensitive"
+            }
+        },
         "return-undefined": true
     },
     "jsRules": {
+        "no-void-expression": true,
+        "ordered-imports": {
+            "options": {
+                "import-sources-order": "any",
+                "named-imports-order": "case-insensitive"
+            }
+        },
         "return-undefined": true
     }
 }

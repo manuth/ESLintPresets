@@ -14,7 +14,8 @@ export let NoUnusedExpressions = new RuleSuite(
                     Valid: false,
                     Snippets: [
                         "1;",
-                        "test > 0.5 ? 0 : 1;"
+                        "test > 0.5 ? 0 : 1;",
+                        "`test`"
                     ]
                 },
                 {
@@ -22,7 +23,12 @@ export let NoUnusedExpressions = new RuleSuite(
                     Snippets: [
                         "Math.random();",
                         "let test = 'test';",
-                        "let test = Math.random() > 0.5 ? 0 : 1;"
+                        "let test = Math.random() > 0.5 ? 0 : 1;",
+                        "test > 0.5 ? test1() : test2();",
+                        `
+                            class A { }
+                            new A();`,
+                        "tag`test`"
                     ]
                 }
             ]

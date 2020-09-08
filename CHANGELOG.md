@@ -4,9 +4,43 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
-## ESLintPresets [unreleased]
+## ESLintPresets [Unreleased]
 
-[Show differences](https://github.com/manuth/ESLintPresets/compare/v2.1.2...dev)
+[Show differences](https://github.com/manuth/ESLintPresets/compare/v2.2.0...dev)
+
+## ESLintPresets v2.2.0
+### Updated
+  - Configuration to not require jsdoc-comments for `TSFunctionType`s
+  - Rules to allow explicit `any`-types in parameter- and return-types
+  - Member-Ordering rule
+    - Members must be grouped by their type and access
+    - Static members of the same type and acess must occur first
+    - The order of abstract/non-abstract members of the same type and access is irrelevant
+  - The `@typescript-eslint/no-unused-expressions`-rule to allow side-effects
+  - The `@typescript-eslint/no-unused-vars` to allow unused function-parameters
+  - The `generator-star-spacing` to equal VSCode's formatter
+  - The `import/order`-rule to be case-insensitive
+  - The `tslint`-configuration to
+    - Enforce the order of named import-components
+    - Disallow `return;`-statements in value-returning functions
+    - Disallow `return undefined;`-statements in void functions
+    - Force the name of `default` imports to match the exported component
+    - Disallow incorrect usage of void expressions
+
+### Added
+  - Support for the usage of the `delete`-statement
+  - The functionality to create separate `tslint.json`-configurations for the weak and the recommended rule-set
+
+### Removed
+  - The JSDoc-enforcement for inline-statements such as
+    - `ClassExpression`s
+    - `FunctionExpression`s
+    - `TSFunctionType`s
+
+### Updated
+  - The unit-tests to print the code-snippet which caused the failure
+
+[Show differences](https://github.com/manuth/ESLintPresets/compare/v2.2.0...dev)
 
 ## ESLintPresets v2.1.2
 ### Added

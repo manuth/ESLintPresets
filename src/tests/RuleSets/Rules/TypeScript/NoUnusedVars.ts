@@ -25,5 +25,19 @@ export let NoUnusedVars = new RuleSuite(
                     ]
                 }
             ]
+        },
+        {
+            Description: "Checking whether unused arguments are allowed…",
+            RuleSet: RuleSet.All,
+            ScriptKind: ScriptKind.Scripts,
+            CodeSnippets: [
+                {
+                    Valid: true,
+                    Snippets: [
+                        "function (unused, used) { console.log(used) }",
+                        "function (unused) { }"
+                    ]
+                }
+            ]
         }
     ]);

@@ -13,18 +13,23 @@ export let GeneratorStarSpacing = new RuleSuite(
                 {
                     Valid: false,
                     Snippets: [
-                        "function* generator() { }",
+                        "function*generator() { }",
+                        "function *generator() { }",
                         "function * generator() { }",
-                        "let x = function*() { }",
                         "let x = function* () { }",
-                        "let x = function * () { }"
+                        "let x = function * () { }",
+                        "let x = function *() { }",
+                        "class { static*generator() { } }",
+                        "class { static* generator() { } }",
+                        "class { static * generator() { } }"
                     ]
                 },
                 {
                     Valid: true,
                     Snippets: [
-                        "function *generator()",
-                        "et x = function *()"
+                        "function* generator()",
+                        "let x = function*()",
+                        "class { static *generator() }"
                     ]
                 }
             ]

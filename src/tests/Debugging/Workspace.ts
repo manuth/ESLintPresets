@@ -1,5 +1,5 @@
-import { writeJSON, ensureFileSync } from "fs-extra";
-import { TempDirectory } from "temp-filesystem";
+import { TempDirectory } from "@manuth/temp-files";
+import { ensureFileSync, writeJSON } from "fs-extra";
 import { TestConstants } from "../TestConstants";
 import { ScriptKind } from "./ScriptKind";
 

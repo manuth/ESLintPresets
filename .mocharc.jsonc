@@ -4,5 +4,6 @@
     ],
     "ui": "tdd",
     "colors": true,
-    "no-timeout": true
+    "timeout": 10000,
+    "slow": 10000
 }
