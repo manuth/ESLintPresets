@@ -45,5 +45,5 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
     return {
         rules: merge(typeScriptRules, commonRules),
         jsRules: merge(javaScriptRules, commonRules)
-    }
+    };
 }
