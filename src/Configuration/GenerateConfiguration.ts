@@ -609,7 +609,11 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
                     "@typescript-eslint/tslint/config": [
                         "warn",
                         {
-                            lintFile: join(__dirname, "..", "..", "tslint.json")
+                            lintFile: require.resolve(
+                                join(
+                                    __dirname,
+                                    "TSLint",
+                                    `${weak ? "Weak" : "Recommended"}${typeChecking ? "WithTypeChecking" : ""}`))
                         }
                     ]
                 }
