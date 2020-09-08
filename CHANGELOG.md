@@ -6,7 +6,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## ESLintPresets [Unreleased]
 
-[Show differences](https://github.com/manuth/ESLintPresets/compare/v2.2.0...dev)
+[Show differences](https://github.com/manuth/ESLintPresets/compare/v2.2.1...dev)
+
+## ESLintPresets v2.2.1
+### Updated
+  - The `tslint`-configuration to allow void expressions
+
+[Show differences](https://github.com/manuth/ESLintPresets/compare/v2.2.0...v2.2.1)
 
 ## ESLintPresets v2.2.0
 ### Updated
