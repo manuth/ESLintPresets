@@ -11,7 +11,7 @@ import { join } from "upath";
  * A value indicating whether a ruleset for a workspace with type-checking should be generated.
  *
  * @returns
- * THe configuration.
+ * The configuration.
  */
 export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
 {
