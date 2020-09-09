@@ -1,7 +1,6 @@
-import { TempFile, TempFileSystem } from "@manuth/temp-files";
-import { writeFile } from "fs-extra";
+import { TempFileSystem } from "@manuth/temp-files";
+import { remove, writeFile } from "fs-extra";
 import { Context } from "mocha";
-import { basename } from "upath";
 import { RuleSet } from "../../../../Debugging/RuleSet";
 import { ScriptKind } from "../../../../Debugging/ScriptKind";
 import { LintTestCase } from "../../../../Debugging/Suites/LintTestCase";
@@ -17,11 +16,6 @@ class MatchDefaultExportNameSuite extends TSLintRuleSuite
      * The name of the temporary file.
      */
     private tempFileName: string;
-
-    /**
-     * A temprary file with a default export;
-     */
-    private tempFile: TempFile;
 
     /**
      * The name of the export to test.
@@ -45,19 +39,11 @@ class MatchDefaultExportNameSuite extends TSLintRuleSuite
         {
             this.tempFileName = TempFileSystem.TempName(
                 {
-                    postfix: ".ts"
+                    Suffix: ".ts"
                 });
         }
 
         return this.tempFileName;
-    }
-
-    /**
-     * Gets a temporary file with a default export.
-     */
-    public get TempFile(): TempFile
-    {
-        return this.tempFile;
     }
 
     /**
@@ -112,14 +98,8 @@ class MatchDefaultExportNameSuite extends TSLintRuleSuite
      */
     public async SuiteSetup(mocha: Context): Promise<void>
     {
-        this.tempFile = new TempFile(
-            {
-                name: basename(this.TempFileName),
-                discardDescriptor: true
-            });
-
         return writeFile(
-            this.TempFile.FullName,
+            this.TempFileName,
             `
                 let ${this.ExportName} = 2;
                 export default ${this.ExportName};`);
@@ -133,8 +113,7 @@ class MatchDefaultExportNameSuite extends TSLintRuleSuite
      */
     public async SuiteTeardown(mocha: Context): Promise<void>
     {
-        this.TempFile.Dispose();
-        this.tempFile = null;
+        return remove(this.TempFileName);
     }
 }
 
