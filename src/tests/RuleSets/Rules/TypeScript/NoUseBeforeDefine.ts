@@ -11,27 +11,20 @@ export let NoUseBeforeDefine = new RuleSuite(
             ScriptKind: ScriptKind.Scripts,
             CodeSnippets: [
                 {
-                    Valid: false,
+                    Valid: true,
                     Snippets: [
                         `
                             function test()
                             {
                                 console.log(hello);
                             }
-                            
-                            let hello = "world";`
-                    ]
-                },
-                {
-                    Valid: true,
-                    Snippets: [
-                        `
+
+                            let hello = "world";
+
                             function test()
                             {
                                 test2();
                             }
-
-                            let hello = "world";
 
                             function test2()
                             {

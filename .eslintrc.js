@@ -1,20 +1,18 @@
 const path = require("path");
 
 module.exports = {
-    parser: "@typescript-eslint/parser",
+    extends: [
+        require.resolve("./lib/Configuration/RecommendedWithTypeChecking")
+    ],
     env: {
         node: true,
         es6: true
     },
     parserOptions: {
-        sourceType: "module",
         project: [
             path.join(__dirname, "tsconfig.json"),
             path.join(__dirname, "tsconfig.eslint.json"),
             path.join(__dirname, "src", "tests", "tsconfig.json")
         ]
-    },
-    extends: [
-        require.resolve("./lib/Configuration/RecommendedWithTypeChecking")
-    ]
+    }
 };
