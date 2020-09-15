@@ -14,10 +14,6 @@ export let NoUseBeforeDefine = new RuleSuite(
                     Valid: false,
                     Snippets: [
                         `
-                            function test()
-                            {
-                                console.log(hello);
-                            }
                             
                             let hello = "world";`
                     ]
@@ -28,10 +24,15 @@ export let NoUseBeforeDefine = new RuleSuite(
                         `
                             function test()
                             {
-                                test2();
+                                console.log(hello);
                             }
 
                             let hello = "world";
+
+                            function test()
+                            {
+                                test2();
+                            }
 
                             function test2()
                             {
