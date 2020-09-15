@@ -11,14 +11,6 @@ export let NoUseBeforeDefine = new RuleSuite(
             ScriptKind: ScriptKind.Scripts,
             CodeSnippets: [
                 {
-                    Valid: false,
-                    Snippets: [
-                        `
-                            
-                            let hello = "world";`
-                    ]
-                },
-                {
                     Valid: true,
                     Snippets: [
                         `
