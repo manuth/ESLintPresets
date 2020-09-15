@@ -171,14 +171,7 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
                         args: "none"
                     }
                 ],
-                "@typescript-eslint/no-use-before-define": [
-                    "warn",
-                    {
-                        functions: false,
-                        classes: false,
-                        variables: true
-                    }
-                ],
+                "@typescript-eslint/no-use-before-define": "off",
                 "@typescript-eslint/no-var-requires": "off",
                 "@typescript-eslint/prefer-as-const": "warn",
                 "@typescript-eslint/prefer-for-of": "warn",
