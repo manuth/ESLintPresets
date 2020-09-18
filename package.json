@@ -41,7 +41,6 @@
     "upath": "^1.2.0"
   },
   "devDependencies": {
-    "@manuth/eslint-plugin-typescript": "^2.3.0",
     "@manuth/temp-files": "^2.0.0",
     "@manuth/tsconfig": "^1.2.3",
     "@types/dedent": "^0.7.0",
