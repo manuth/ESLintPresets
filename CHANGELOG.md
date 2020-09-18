@@ -6,7 +6,18 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## ESLintPresets [Unreleased]
 
-[Show differences](https://github.com/manuth/ESLintPresets/compare/v2.3.0...dev)
+[Show differences](https://github.com/manuth/ESLintPresets/compare/v2.3.1...dev)
+
+## ESLintPresets v2.3.1
+### Added
+  - Rules for preventing deprecated components
+  - Configurations for dependabot
+
+### Updated
+  - All dependencies
+  - Deprecated API-usage
+
+[Show differences](https://github.com/manuth/ESLintPresets/compare/v2.3.0...v2.3.1)
 
 ## ESLintPresets v2.3.0
 ### Added
