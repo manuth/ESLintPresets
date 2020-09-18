@@ -1,7 +1,7 @@
-import { CLIEngine } from "eslint";
+import { ESLint } from "eslint";
 import { RuleSet } from "../../Debugging/RuleSet";
 import { ScriptKind } from "../../Debugging/ScriptKind";
-import { EngineRunner } from "../../Debugging/Suites/EngineRunner";
+import { ESLintRunner } from "../../Debugging/Suites/ESLintRunner";
 import { LintTestCase } from "../../Debugging/Suites/LintTestCase";
 import { TestContext } from "../../Debugging/TestContext";
 
@@ -78,27 +78,27 @@ export class TypeCheckingCase extends LintTestCase
      * The rule-set to add tests for.
      *
      * @returns
-     * The CLI-engine for the specified `ruleSet`.
+     * The linter for the specified `ruleSet`.
      */
-    protected GetCLIEngine(context: TestContext, ruleSet: RuleSet): CLIEngine
+    protected GetLinter(context: TestContext, ruleSet: RuleSet): ESLint
     {
-        return new CLIEngine(context.GetConfiguration(ruleSet, this.UseTypeCheckingRules, this.TypeCheckingEnabled));
+        return new ESLint(context.GetConfiguration(ruleSet, this.UseTypeCheckingRules, this.TypeCheckingEnabled));
     }
 
     /**
      * Verifies whether the test-case is applicable.
      *
      * @param engineRunner
-     * A component which runs the cli-engine.
+     * A component which runs `eslint`.
      *
      * @returns
      * A value indicating whether the test-case is applicable.
      */
-    protected Verify(engineRunner: EngineRunner): boolean
+    protected async Verify(engineRunner: ESLintRunner): Promise<boolean>
     {
         try
         {
-            engineRunner();
+            await engineRunner();
             return true;
         }
         catch (e)

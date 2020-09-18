@@ -1,4 +1,4 @@
-import { CLIEngine } from "eslint";
+import { ESLint, Linter } from "eslint";
 import merge = require("lodash.merge");
 import { TestConstants } from "../TestConstants";
 import { RuleSet } from "./RuleSet";
@@ -16,9 +16,9 @@ export class TestContext
     private workspace: Workspace = null;
 
     /**
-     * The engines for the specific rule-sets.
+     * The linters for the specific rule-sets.
      */
-    private engines: Map<RuleSet, Map<boolean, CLIEngine>> = new Map();
+    private linters: Map<RuleSet, Map<boolean, ESLint>> = new Map();
 
     /**
      * Initializes a new instance of the `TestContext` class.
@@ -57,11 +57,11 @@ export class TestContext
      * @returns
      * The configuration for the specified `ruleSet`.
      */
-    public GetConfiguration(ruleSet: RuleSet, useTypeCheckingRules: boolean, enableTypeChecking: boolean): CLIEngine.Options
+    public GetConfiguration(ruleSet: RuleSet, useTypeCheckingRules: boolean, enableTypeChecking: boolean): ESLint.Options
     {
         return {
             useEslintrc: false,
-            baseConfig: merge(
+            baseConfig: merge<Linter.Config<Linter.RulesRecord>, Linter.Config<Linter.RulesRecord>>(
                 enableTypeChecking ?
                     {
                         parserOptions: {
@@ -76,33 +76,33 @@ export class TestContext
     }
 
     /**
-     * Gets the `CLIEngine` for the specified `ruleSet`.
+     * Gets the linter for the specified `ruleSet`.
      *
      * @param ruleSet
-     * The rule-set to get the `CLIEngine` for.
+     * The rule-set to get the linter for.
      *
      * @param typeChecking
      * A value indicating whether type-checking should be enabled.
      *
      * @returns
-     * The `CLIEngine` for the specified `ruleSet`.
+     * The linter for the specified `ruleSet`.
      */
-    public GetCLIEngine(ruleSet: RuleSet, typeChecking: boolean): CLIEngine
+    public GetLinter(ruleSet: RuleSet, typeChecking: boolean): ESLint
     {
-        if (!this.engines.has(ruleSet))
+        if (!this.linters.has(ruleSet))
         {
-            this.engines.set(ruleSet, new Map());
+            this.linters.set(ruleSet, new Map());
         }
 
-        if (!this.engines.get(ruleSet).has(typeChecking))
+        if (!this.linters.get(ruleSet).has(typeChecking))
         {
-            this.engines.get(ruleSet).set(
+            this.linters.get(ruleSet).set(
                 typeChecking,
-                new CLIEngine(
+                new ESLint(
                     this.GetConfiguration(ruleSet, typeChecking, typeChecking)));
         }
 
-        return this.engines.get(ruleSet).get(typeChecking);
+        return this.linters.get(ruleSet).get(typeChecking);
     }
 
     /**

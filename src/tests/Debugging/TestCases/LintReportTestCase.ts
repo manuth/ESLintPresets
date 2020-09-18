@@ -1,7 +1,7 @@
-import { CLIEngine } from "eslint";
+import { ESLint } from "eslint";
 import { RuleSet } from "../RuleSet";
 import { ScriptKind } from "../ScriptKind";
-import { EngineRunner } from "../Suites/EngineRunner";
+import { ESLintRunner } from "../Suites/ESLintRunner";
 import { LintTestCase } from "../Suites/LintTestCase";
 import { ICodeSnippetCollection } from "./ICodeSnippet";
 
@@ -34,24 +34,24 @@ export abstract class LintReportTestCase extends LintTestCase
      * @inheritdoc
      *
      * @param engineRunner
-     * A component which runs the cli-engine.
+     * A component which runs the linter.
      *
      * @returns
      * A value indicating whether the test-case is applicable.
      */
-    protected Verify(engineRunner: EngineRunner): boolean
+    protected async Verify(engineRunner: ESLintRunner): Promise<boolean>
     {
-        return this.VerifyReport(engineRunner());
+        return this.VerifyResults(await engineRunner());
     }
 
     /**
-     * Verifies whether the the lint-report is correct.
+     * Verifies whether the the lint-results are correct.
      *
-     * @param report
-     * The report to check.
+     * @param results
+     * The results to check.
      *
      * @returns
-     * A value indicating whether the result is correct.
+     * A value indicating whether the results are correct.
      */
-    protected abstract VerifyReport(report: CLIEngine.LintReport): boolean;
+    protected abstract async VerifyResults(results: ESLint.LintResult[]): Promise<boolean>;
 }
