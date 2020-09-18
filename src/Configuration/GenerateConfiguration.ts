@@ -229,7 +229,6 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
                 "computed-property-spacing": "warn",
                 "constructor-super": "error",
                 curly: "off",
-                "deprecation/deprecation": "warn",
                 "dot-notation": "off",
                 "eol-last": "warn",
                 eqeqeq: [
@@ -610,7 +609,8 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
                                     "TSLint",
                                     `${weak ? "Weak" : "Recommended"}${typeChecking ? "WithTypeChecking" : ""}`))
                         }
-                    ]
+                    ],
+                    "deprecation/deprecation": "warn"
                 }
             } :
             {});
