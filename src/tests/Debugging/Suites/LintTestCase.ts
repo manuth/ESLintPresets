@@ -1,6 +1,6 @@
 import Assert = require("assert");
 import dedent = require("dedent");
-import { CLIEngine } from "eslint";
+import { ESLint } from "eslint";
 import { TestConstants } from "../../TestConstants";
 import { IRegisterable } from "../IRegisterable";
 import { RuleSet } from "../RuleSet";
@@ -8,7 +8,7 @@ import { ScriptKind } from "../ScriptKind";
 import { ICodeSnippetCollection } from "../TestCases/ICodeSnippet";
 import { ITestCase } from "../TestCases/ITestCase";
 import { TestContext } from "../TestContext";
-import { EngineRunner } from "./EngineRunner";
+import { ESLintRunner } from "./ESLintRunner";
 
 /**
  * Represents a test-case.
@@ -133,12 +133,14 @@ export abstract class LintTestCase implements ITestCase, IRegisterable
                                             try
                                             {
                                                 Assert.strictEqual(
-                                                    self.Verify(() =>
+                                                    await self.Verify(() =>
                                                     {
-                                                        return self.GetCLIEngine(context, set).executeOnText(
+                                                        return self.GetLinter(context, set).lintText(
                                                             dedent(`${codeSnippet}${LintTestCase.endOfFileMarker}`).replace(
                                                                 new RegExp(`${LintTestCase.endOfFileMarker}$`), ""),
-                                                            context.GetFileName(scriptKind));
+                                                            {
+                                                                filePath: context.GetFileName(scriptKind)
+                                                            });
                                                     }),
                                                     snippetCollection.Valid);
                                             }
@@ -164,30 +166,30 @@ export abstract class LintTestCase implements ITestCase, IRegisterable
     }
 
     /**
-     * Gets the CLIEngine for the specified `ruleSet`.
+     * Gets the linter for the specified `ruleSet`.
      *
      * @param context
      * The test-context.
      *
      * @param ruleSet
-     * The rule-set to get the `CLIEngine` for.
+     * The rule-set to get the linter for.
      *
      * @returns
-     * The `CLIEngine` for the specified `ruleSet`.
+     * The linter for the specified `ruleSet`.
      */
-    protected GetCLIEngine(context: TestContext, ruleSet: RuleSet): CLIEngine
+    protected GetLinter(context: TestContext, ruleSet: RuleSet): ESLint
     {
-        return context.GetCLIEngine(ruleSet, true);
+        return context.GetLinter(ruleSet, true);
     }
 
     /**
      * Verifies whether the test-case is applicable.
      *
-     * @param engineRunner
-     * A component which runs the cli-engine.
+     * @param eslintRunner
+     * A component which runs `eslint`.
      *
      * @returns
      * A value indicating whether the test-case is applicable.
      */
-    protected abstract Verify(engineRunner: EngineRunner): boolean;
+    protected abstract async Verify(eslintRunner: ESLintRunner): Promise<boolean>;
 }

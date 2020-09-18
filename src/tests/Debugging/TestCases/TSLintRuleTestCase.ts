@@ -1,4 +1,4 @@
-import { CLIEngine } from "eslint";
+import { ESLint } from "eslint";
 import { RuleSet } from "../RuleSet";
 import { ScriptKind } from "../ScriptKind";
 import { TSLintRuleSuite } from "../Suites/TSLintRuleSuite";
@@ -50,16 +50,16 @@ export class TSLintRuleTestCase extends RuleTestCase
     /**
      * @inheritdoc
      *
-     * @param report
-     * The report to check.
+     * @param results
+     * The results to check.
      *
      * @returns
      * A value indicating whether the test-case is applicable.
      */
-    protected VerifyReport(report: CLIEngine.LintReport): boolean
+    protected async VerifyResults(results: ESLint.LintResult[]): Promise<boolean>
     {
-        return super.VerifyReport(report) &&
-            !report.results.some(
+        return super.VerifyResults(results) &&
+            !results.some(
                 (result) =>
                 {
                     return result.messages.some(

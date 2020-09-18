@@ -1,4 +1,4 @@
-import { CLIEngine } from "eslint";
+import { ESLint } from "eslint";
 import { RuleSet } from "../../Debugging/RuleSet";
 import { ScriptKind } from "../../Debugging/ScriptKind";
 import { LintReportTestCase } from "../../Debugging/TestCases/LintReportTestCase";
@@ -30,14 +30,18 @@ export class DeprecatedCase extends LintReportTestCase
     /**
      * @inheritdoc
      *
-     * @param report
-     * The report to check.
+     * @param results
+     * The results to check.
      *
      * @returns
      * A value indicating whether the result is correct.
      */
-    protected VerifyReport(report: CLIEngine.LintReport): boolean
+    protected async VerifyResults(results: ESLint.LintResult[]): Promise<boolean>
     {
-        return report.usedDeprecatedRules.length === 0;
+        return results.every(
+            (result) =>
+            {
+                return result.usedDeprecatedRules.length === 0;
+            });
     }
 }
