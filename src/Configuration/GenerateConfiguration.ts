@@ -19,6 +19,7 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
             parser: "@typescript-eslint/parser",
             plugins: [
                 "@typescript-eslint",
+                "deprecation",
                 "import",
                 "jsdoc"
             ],
