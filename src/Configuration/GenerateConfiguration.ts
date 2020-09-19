@@ -579,6 +579,7 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
         typeChecking ?
             {
                 plugins: [
+                    ...config.plugins,
                     "@typescript-eslint/tslint"
                 ],
                 rules: {
