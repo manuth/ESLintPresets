@@ -114,7 +114,8 @@ export abstract class LintTestCase implements ITestCase, IRegisterable
                 this.Description,
                 async function()
                 {
-                    this.timeout(0);
+                    this.timeout(10 * 1000);
+                    this.slow(5 * 1000);
 
                     for (let set of TestConstants.RuleSets)
                     {

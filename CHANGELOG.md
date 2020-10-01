@@ -1,12 +1,20 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
-The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
-and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
+and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## ESLintPresets [Unreleased]
 
-[Show differences](https://github.com/manuth/ESLintPresets/compare/v2.3.2...dev)
+[Show differences](https://github.com/manuth/ESLintPresets/compare/v2.3.3...dev)
+
+## ESLintPresets v2.3.3
+### Updated
+  - The mocha-timeouts
+  - The development-environment
+  - All dependencies
+
+[Show differences](https://github.com/manuth/ESLintPresets/compare/v2.3.2...v2.3.3)
 
 ## ESLintPresets v2.3.2
 ### Fixed
