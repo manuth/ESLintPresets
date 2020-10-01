@@ -6,7 +6,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## ESLintPresets [Unreleased]
 
-[Show differences](https://github.com/manuth/ESLintPresets/compare/v2.3.2...dev)
+[Show differences](https://github.com/manuth/ESLintPresets/compare/v2.3.3...dev)
+
+## ESLintPresets v2.3.3
+### Updated
+  - The mocha-timeouts
+  - The development-environment
+  - All dependencies
+
+[Show differences](https://github.com/manuth/ESLintPresets/compare/v2.3.2...v2.3.3)
 
 ## ESLintPresets v2.3.2
 ### Fixed
