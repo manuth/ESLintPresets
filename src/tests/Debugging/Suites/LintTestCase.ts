@@ -192,5 +192,5 @@ export abstract class LintTestCase implements ITestCase, IRegisterable
      * @returns
      * A value indicating whether the test-case is applicable.
      */
-    protected abstract async Verify(eslintRunner: ESLintRunner): Promise<boolean>;
+    protected abstract Verify(eslintRunner: ESLintRunner): Promise<boolean>;
 }
