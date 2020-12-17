@@ -1,4 +1,4 @@
-import Assert = require("assert");
+import { strictEqual } from "assert";
 import dedent = require("dedent");
 import { ESLint } from "eslint";
 import { TestConstants } from "../../TestConstants";
@@ -133,7 +133,7 @@ export abstract class LintTestCase implements ITestCase, IRegisterable
                                         {
                                             try
                                             {
-                                                Assert.strictEqual(
+                                                strictEqual(
                                                     await self.Verify(() =>
                                                     {
                                                         return self.GetLinter(context, set).lintText(
@@ -192,5 +192,5 @@ export abstract class LintTestCase implements ITestCase, IRegisterable
      * @returns
      * A value indicating whether the test-case is applicable.
      */
-    protected abstract async Verify(eslintRunner: ESLintRunner): Promise<boolean>;
+    protected abstract Verify(eslintRunner: ESLintRunner): Promise<boolean>;
 }
