@@ -53,5 +53,5 @@ export abstract class LintReportTestCase extends LintTestCase
      * @returns
      * A value indicating whether the results are correct.
      */
-    protected abstract async VerifyResults(results: ESLint.LintResult[]): Promise<boolean>;
+    protected abstract VerifyResults(results: ESLint.LintResult[]): Promise<boolean>;
 }
