@@ -5,6 +5,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## ESLintPresets [Unreleased]
+
+[Show differences](https://github.com/manuth/ESLintPresets/compare/v2.3.9...dev)
+
+## ESLintPresets v2.3.9
 ### Fixed
   - Broken drone-pipelines
   - Broken Auto-Merge workflow
@@ -13,7 +17,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - All dependencies
   - Drone-pipelines to use small-sized images
 
-[Show differences](https://github.com/manuth/ESLintPresets/compare/v2.3.8...dev)
+[Show differences](https://github.com/manuth/ESLintPresets/compare/v2.3.8...v2.3.9)
 
 ## ESLintPresets v2.3.8
 ### Fixed
