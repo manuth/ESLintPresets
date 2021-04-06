@@ -6,11 +6,26 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## ESLintPresets [Unreleased]
 
-[Show differences](https://github.com/manuth/ESLintPresets/compare/v2.3.8...dev)
+[Show differences](https://github.com/manuth/ESLintPresets/compare/v2.3.9...dev)
+
+## ESLintPresets v2.3.9
+### Fixed
+  - Broken drone-pipelines
+  - Broken Auto-Merge workflow
+
+### Updated
+  - All dependencies
+  - Drone-pipelines to use small-sized images
+
+[Show differences](https://github.com/manuth/ESLintPresets/compare/v2.3.8...v2.3.9)
 
 ## ESLintPresets v2.3.8
 ### Fixed
   - Vulnerabilities in dependencies
+
+### Added
+  - A workflow for merging Dependabot-PRs
+  - A workflow for analyzing the code
 
 ### Updated
   - All dependencies
