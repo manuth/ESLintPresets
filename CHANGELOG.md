@@ -6,7 +6,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## ESLintPresets [Unreleased]
 
-[Show differences](https://github.com/manuth/ESLintPresets/compare/v2.3.9...dev)
+[Show differences](https://github.com/manuth/ESLintPresets/compare/v2.3.10...dev)
+
+## ESLintPresets v2.3.10
+### Updated
+  - All dependencies
+
+### Fixed
+  - Broken drone-pipelines
+
+[Show differences](https://github.com/manuth/ESLintPresets/compare/v2.3.9...v2.3.10)
 
 ## ESLintPresets v2.3.9
 ### Fixed
