@@ -31,6 +31,10 @@ export class Workspace
      */
     public async Initialize(): Promise<void>
     {
+        // ToDo: Remove this workaround once
+        // [benmosher/eslint-plugin-import#2096](https://github.com/benmosher/eslint-plugin-import/issues/2096) is fixed
+        await writeJSON(this.PackageManifestFileName, {});
+
         await writeJSON(
             this.TSConfigFileName,
             {
@@ -51,6 +55,14 @@ export class Workspace
     public get TempDir(): TempDirectory
     {
         return this.tempDir;
+    }
+
+    /**
+     * Gets the path to the `package.json`-file.
+     */
+    public get PackageManifestFileName(): string
+    {
+        return this.TempDir.MakePath("package.json");
     }
 
     /**
