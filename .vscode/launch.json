@@ -12,6 +12,10 @@
             "internalConsoleOptions": "openOnSessionStart",
             "preLaunchTask": "Build",
             "sourceMaps": true,
+            "skipFiles": [
+                "<node_internals>/**",
+                "${workspaceFolder}/node_modules/typescript/**"
+            ],
             "outFiles": [
                 "${workspaceFolder}/**/*.js",
                 "!**/node_modules/**"
