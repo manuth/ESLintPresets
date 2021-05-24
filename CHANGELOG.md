@@ -5,6 +5,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## ESLintPresets [Unreleased]
+### Fixed
+  - The debug-experience by specifying the `outFiles` and skipping `typescript`s `debugger`-statements
+
+### Updated
+  - All dependencies
+  - The way to print error-messages while linting to improve debugging-experience
+  - Settings to replace `tslint`s `no-void-expression` with `@typescript-eslint/no-confusing-void-expression`
 
 [Show differences](https://github.com/manuth/ESLintPresets/compare/v2.3.10...dev)
 
