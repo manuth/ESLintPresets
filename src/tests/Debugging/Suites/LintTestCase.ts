@@ -134,15 +134,11 @@ export abstract class LintTestCase implements ITestCase, IRegisterable
                                             try
                                             {
                                                 strictEqual(
-                                                    await self.Verify(() =>
-                                                    {
-                                                        return self.GetLinter(context, set).lintText(
-                                                            dedent(`${codeSnippet}${LintTestCase.endOfFileMarker}`).replace(
-                                                                new RegExp(`${LintTestCase.endOfFileMarker}$`), ""),
-                                                            {
-                                                                filePath: context.GetFileName(scriptKind)
-                                                            });
-                                                    }),
+                                                    await self.Verify(
+                                                        () =>
+                                                        {
+                                                            return self.LintSnippet(context, set, scriptKind, codeSnippet);
+                                                        }),
                                                     snippetCollection.Valid);
                                             }
                                             catch
@@ -164,6 +160,34 @@ export abstract class LintTestCase implements ITestCase, IRegisterable
                     }
                 });
         }
+    }
+
+    /**
+     * Lints the specified `codeSnippet`.
+     *
+     * @param context
+     * The test-context.
+     *
+     * @param ruleSet
+     * The rule-set to test for.
+     *
+     * @param scriptKind
+     * The script-kind to test.
+     *
+     * @param codeSnippet
+     * The code-snippet to test.
+     *
+     * @returns
+     * The `eslint`-result.
+     */
+    protected LintSnippet(context: TestContext, ruleSet: RuleSet, scriptKind: ScriptKind, codeSnippet: string): Promise<ESLint.LintResult[]>
+    {
+        return this.GetLinter(context, ruleSet).lintText(
+            dedent(`${codeSnippet}${LintTestCase.endOfFileMarker}`).replace(
+                new RegExp(`${LintTestCase.endOfFileMarker}$`), ""),
+            {
+                filePath: context.GetFileName(scriptKind)
+            });
     }
 
     /**
