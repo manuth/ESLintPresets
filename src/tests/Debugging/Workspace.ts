@@ -31,6 +31,8 @@ export class Workspace
      */
     public async Initialize(): Promise<void>
     {
+        await writeJSON(this.PackageManifestFileName, {});
+
         await writeJSON(
             this.TSConfigFileName,
             {
@@ -51,6 +53,14 @@ export class Workspace
     public get TempDir(): TempDirectory
     {
         return this.tempDir;
+    }
+
+    /**
+     * Gets the path to the `package.json`-file.
+     */
+    public get PackageManifestFileName(): string
+    {
+        return this.TempDir.MakePath("package.json");
     }
 
     /**

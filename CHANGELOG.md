@@ -6,7 +6,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## ESLintPresets [Unreleased]
 
-[Show differences](https://github.com/manuth/ESLintPresets/compare/v2.3.10...dev)
+[Show differences](https://github.com/manuth/ESLintPresets/compare/v3.0.0...dev)
+
+## ESLintPresets v3.0.0
+### Breaking
+  - Updated `eslint-plugin-jsdoc` to `35.0.0`
+
+### Fixed
+  - The debug-experience by specifying the `outFiles` and skipping `typescript`s `debugger`-statements
+
+### Updated
+  - All dependencies
+  - The way to print error-messages while linting to improve debugging-experience
+  - Settings to replace `tslint`s `no-void-expression` with `@typescript-eslint/no-confusing-void-expression`
+
+[Show differences](https://github.com/manuth/ESLintPresets/compare/v2.3.10...v3.0.0)
 
 ## ESLintPresets v2.3.10
 ### Updated

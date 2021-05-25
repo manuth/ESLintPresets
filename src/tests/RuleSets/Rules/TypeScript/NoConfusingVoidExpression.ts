@@ -1,9 +1,9 @@
-import { RuleSet } from "../../../../Debugging/RuleSet";
-import { ScriptKind } from "../../../../Debugging/ScriptKind";
-import { TSLintRuleSuite } from "../../../../Debugging/Suites/TSLintRuleSuite";
+import { RuleSet } from "../../../Debugging/RuleSet";
+import { ScriptKind } from "../../../Debugging/ScriptKind";
+import { RuleSuite } from "../../../Debugging/Suites/RuleSuite";
 
-export let NoVoidExpression = new TSLintRuleSuite(
-    "no-void-expression",
+export let NoConfusingVoidExpression = new RuleSuite(
+    "@typescript-eslint/no-confusing-void-expression",
     [
         {
             Description: "Checking whether the correct usage of void-returning functions is enforced…",
@@ -29,7 +29,7 @@ export let NoVoidExpression = new TSLintRuleSuite(
             ]
         },
         {
-            Description: "Checking whether void-returnung functions are allowed in shorthand arrow-functions…",
+            Description: "Checking whether void-returning functions are allowed in the shorthand-arrow form…",
             RuleSet: RuleSet.All,
             ScriptKind: ScriptKind.Scripts,
             CodeSnippets: [

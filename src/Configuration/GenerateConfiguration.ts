@@ -142,6 +142,12 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
                         format: ["PascalCase"]
                     }
                 ],
+                "@typescript-eslint/no-confusing-void-expression": [
+                    "error",
+                    {
+                        ignoreArrowShorthand: true
+                    }
+                ],
                 "@typescript-eslint/no-dynamic-delete": "off",
                 "@typescript-eslint/no-empty-function": "off",
                 "@typescript-eslint/no-empty-interface": "off",

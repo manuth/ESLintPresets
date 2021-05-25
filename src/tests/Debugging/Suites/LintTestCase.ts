@@ -1,4 +1,5 @@
 import { strictEqual } from "assert";
+import { EOL } from "os";
 import dedent = require("dedent");
 import { ESLint } from "eslint";
 import { TestConstants } from "../../TestConstants";
@@ -131,30 +132,74 @@ export abstract class LintTestCase implements ITestCase, IRegisterable
                                     {
                                         for (let codeSnippet of snippetCollection.Snippets)
                                         {
+                                            let error: Error;
+                                            let results: ESLint.LintResult[];
+
                                             try
                                             {
                                                 strictEqual(
-                                                    await self.Verify(() =>
-                                                    {
-                                                        return self.GetLinter(context, set).lintText(
-                                                            dedent(`${codeSnippet}${LintTestCase.endOfFileMarker}`).replace(
-                                                                new RegExp(`${LintTestCase.endOfFileMarker}$`), ""),
+                                                    await self.Verify(
+                                                        async () =>
+                                                        {
+                                                            try
                                                             {
-                                                                filePath: context.GetFileName(scriptKind)
-                                                            });
-                                                    }),
+                                                                results = await self.LintSnippet(context, set, scriptKind, codeSnippet);
+                                                                return results;
+                                                            }
+                                                            catch (exception)
+                                                            {
+                                                                error = exception;
+                                                                throw exception;
+                                                            }
+                                                        }),
                                                     snippetCollection.Valid);
                                             }
                                             catch
                                             {
-                                                let valid = snippetCollection.Valid;
+                                                let snippetBlock = [
+                                                    "```",
+                                                    dedent(codeSnippet),
+                                                    "```"
+                                                ].join(EOL);
 
-                                                throw new Error(
-                                                    dedent(
-                                                        `
-                                                            Unexpected Linting-result:
-                                                            This code-snippet is expected to report ${valid ? "no errors" : "an error"} but reported ${valid ? "one" : "none"}:
-                                                            ${codeSnippet}`));
+                                                if (error)
+                                                {
+                                                    throw new Error(
+                                                        [
+                                                            "The following code-snippet couldn't be linted:",
+                                                            snippetBlock,
+                                                            "",
+                                                            "Following error occurred:",
+                                                            "```",
+                                                            error,
+                                                            "```",
+                                                            "",
+                                                            "Stack trace:",
+                                                            error.stack
+                                                        ].join(EOL));
+                                                }
+                                                else
+                                                {
+                                                    let valid = snippetCollection.Valid;
+
+                                                    let messages = results.flatMap(
+                                                        (lintResult) => lintResult.messages).map(
+                                                            (message) =>
+                                                            {
+                                                                return `${message.ruleId}: ${message.message}`;
+                                                            }).join("\n");
+
+                                                    throw new Error(
+                                                        [
+                                                            dedent(`
+                                                                Unexpected Linting-result:
+                                                                This code-snippet is expected to report ${valid ? "no errors" : "an error"} but reported ${valid ? "at least one" : "none"}:`),
+                                                            snippetBlock,
+                                                            "",
+                                                            "Following errors were reported:",
+                                                            messages
+                                                        ].join(EOL));
+                                                }
                                             }
                                         }
                                     }
@@ -164,6 +209,34 @@ export abstract class LintTestCase implements ITestCase, IRegisterable
                     }
                 });
         }
+    }
+
+    /**
+     * Lints the specified `codeSnippet`.
+     *
+     * @param context
+     * The test-context.
+     *
+     * @param ruleSet
+     * The rule-set to test for.
+     *
+     * @param scriptKind
+     * The script-kind to test.
+     *
+     * @param codeSnippet
+     * The code-snippet to test.
+     *
+     * @returns
+     * The `eslint`-result.
+     */
+    protected LintSnippet(context: TestContext, ruleSet: RuleSet, scriptKind: ScriptKind, codeSnippet: string): Promise<ESLint.LintResult[]>
+    {
+        return this.GetLinter(context, ruleSet).lintText(
+            dedent(`${codeSnippet}${LintTestCase.endOfFileMarker}`).replace(
+                new RegExp(`${LintTestCase.endOfFileMarker}$`), ""),
+            {
+                filePath: context.GetFileName(scriptKind)
+            });
     }
 
     /**

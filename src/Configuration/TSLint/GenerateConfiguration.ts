@@ -31,11 +31,6 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
         commonRules = merge(
             commonRules,
             {
-                "no-void-expression": {
-                    options: [
-                        "ignore-arrow-function-shorthand"
-                    ]
-                },
                 "return-undefined": true
             });
 
