@@ -81,7 +81,7 @@ class MatchDefaultExportNameSuite extends TSLintRuleSuite
     /**
      * @inheritdoc
      */
-    public get TestCases(): LintTestCase[]
+    public override get TestCases(): LintTestCase[]
     {
         return this.InternalTestCases.map(
             (testCase) =>
@@ -96,7 +96,7 @@ class MatchDefaultExportNameSuite extends TSLintRuleSuite
      * @param mocha
      * The mocha-context.
      */
-    public async SuiteSetup(mocha: Context): Promise<void>
+    public override async SuiteSetup(mocha: Context): Promise<void>
     {
         return writeFile(
             this.TempFileName,
@@ -111,7 +111,7 @@ class MatchDefaultExportNameSuite extends TSLintRuleSuite
      * @param mocha
      * The mocha-context.
      */
-    public async SuiteTeardown(mocha: Context): Promise<void>
+    public override async SuiteTeardown(mocha: Context): Promise<void>
     {
         return remove(this.TempFileName);
     }

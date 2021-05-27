@@ -42,7 +42,7 @@ export class TSLintRuleTestCase extends RuleTestCase
     /**
      * Gets the test-suite of this case.
      */
-    public get TestSuite(): TSLintRuleSuite
+    public override get TestSuite(): TSLintRuleSuite
     {
         return this.tslintTestSuite;
     }
@@ -56,7 +56,7 @@ export class TSLintRuleTestCase extends RuleTestCase
      * @returns
      * A value indicating whether the test-case is applicable.
      */
-    protected async VerifyResults(results: ESLint.LintResult[]): Promise<boolean>
+    protected override async VerifyResults(results: ESLint.LintResult[]): Promise<boolean>
     {
         return super.VerifyResults(results) &&
             !results.some(

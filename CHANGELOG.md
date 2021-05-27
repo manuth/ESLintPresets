@@ -6,7 +6,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## ESLintPresets [Unreleased]
 
-[Show differences](https://github.com/manuth/ESLintPresets/compare/v3.0.0...dev)
+[Show differences](https://github.com/manuth/ESLintPresets/compare/v3.0.1...dev)
+
+## ESLintPresets v3.0.1
+### Updated
+  - All dependencies
+  - `@typescript-eslint/no-confusing-void-expression` back to `tslint`s `no-void-expression`
+
+### Added
+  - `override`-flags to all overridden members
+
+[Show differences](https://github.com/manuth/ESLintPresets/compare/v3.0.0...v3.0.1)
 
 ## ESLintPresets v3.0.0
 ### Breaking
