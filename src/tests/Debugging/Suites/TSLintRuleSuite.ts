@@ -38,7 +38,7 @@ export class TSLintRuleSuite extends RuleSuite
     /**
      * @inheritdoc
      */
-    public get SuiteName(): string
+    public override get SuiteName(): string
     {
         return this.BaseRuleSuite.SuiteName;
     }
@@ -60,7 +60,7 @@ export class TSLintRuleSuite extends RuleSuite
      * @returns
      * The newly created test-case.
      */
-    protected CreateTestCase(testCase: ITestCase): TSLintRuleTestCase
+    protected override CreateTestCase(testCase: ITestCase): TSLintRuleTestCase
     {
         return new TSLintRuleTestCase(
             this,
