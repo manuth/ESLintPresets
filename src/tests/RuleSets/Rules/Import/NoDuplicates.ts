@@ -17,6 +17,13 @@ export let NoDuplicates = new RuleSuite(
                             import fs from "fs";
                             import { readFile } from "fs";`
                     ]
+                },
+                {
+                    Valid: true,
+                    Snippets: [
+                        `
+                            import fs, { readFile } from "fs";`
+                    ]
                 }
             ]
         }
