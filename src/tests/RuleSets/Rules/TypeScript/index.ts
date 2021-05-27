@@ -14,7 +14,6 @@ import { FuncCallSpacing } from "./FuncCallSpacing";
 import { MemberDelimiterStyle } from "./MemberDelimiterStyle";
 import { MemberOrdering } from "./MemberOrdering";
 import { NamingConvention } from "./NamingConvention";
-import { NoConfusingVoidExpression } from "./NoConfusingVoidExpression";
 import { NoDynamicDelete } from "./NoDynamicDelete";
 import { NoEmptyFunction } from "./NoEmptyFunction";
 import { NoEmptyInterface } from "./NoEmptyInterface";
@@ -62,7 +61,6 @@ export let TypeScriptTests = new ContainerSuite(
         MemberDelimiterStyle,
         MemberOrdering,
         NamingConvention,
-        NoConfusingVoidExpression,
         NoDynamicDelete,
         NoEmptyFunction,
         NoEmptyInterface,
