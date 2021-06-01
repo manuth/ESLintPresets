@@ -14,17 +14,9 @@ export let ObjectPropertyNewLine = new RuleSuite(
                     Valid: false,
                     Snippets: [
                         `
-                            let x = { a: "test",
-                                b: "test"
-                            }`,
-                        `
                             let x = {
                                 a: "test",
                                 b: "test", c: "test"
-                            }`,
-                        `
-                            let x = {
-                                a: "test", b: "test"
                             }`
                     ]
                 },
