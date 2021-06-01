@@ -1,3 +1,4 @@
+import type { Linter } from "eslint";
 import merge = require("lodash.merge");
 import { join } from "upath";
 
@@ -15,7 +16,7 @@ import { join } from "upath";
  */
 export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
 {
-    let config: any = {
+    let config: Linter.Config = {
             parser: "@typescript-eslint/parser",
             plugins: [
                 "@typescript-eslint",
