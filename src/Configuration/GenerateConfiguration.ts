@@ -575,7 +575,20 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
             }
         });
 
-    return merge(
+    if (!weak)
+    {
+        config.overrides.push(
+            {
+                files: [
+                    "*.d.ts"
+                ],
+                rules: {
+                    "import/no-default-export": "off"
+                }
+            });
+    }
+
+    return merge<Linter.Config, Linter.Config>(
         config,
         typeChecking ?
             {
