@@ -33,5 +33,30 @@ export let ObjectCurlyNewLine = new RuleSuite(
                     ]
                 }
             ]
+        },
+        {
+            Description: "Checking whether new-lines areforced for multi-line objects…",
+            RuleSet: RuleSet.All,
+            ScriptKind: ScriptKind.Scripts,
+            CodeSnippets: [
+                {
+                    Valid: false,
+                    Snippets: [
+                        `
+                            let x = { a: "test",
+                                b: "test" }`
+                    ]
+                },
+                {
+                    Valid: true,
+                    Snippets: [
+                        `
+                            let x = {
+                                a: "test",
+                                b: "test"
+                            }`
+                    ]
+                }
+            ]
         }
     ]);

@@ -457,7 +457,14 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
             "no-var": "error",
             "no-void": "warn",
             "no-whitespace-before-property": "warn",
-            "object-curly-newline": "warn",
+            "object-curly-newline":
+                [
+                    "warn",
+                    {
+                        multiline: true,
+                        consistent: true
+                    }
+                ],
             "object-curly-spacing": [
                 "warn",
                 "always"
