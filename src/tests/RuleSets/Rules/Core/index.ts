@@ -10,6 +10,7 @@ import { CommaDangle } from "./CommaDangle";
 import { CommaStyle } from "./CommaStyle";
 import { Complexity } from "./Complexity";
 import { ComputedPropertySpacing } from "./ComputedPropertySpacing";
+import { ConstructorSuper } from "./ConstructorSuper";
 import { Curly } from "./Curly";
 import { DotNotation } from "./DotNotation";
 import { EOLLast } from "./EOLLast";
@@ -101,6 +102,7 @@ export let CoreTests = new ContainerSuite(
         CommaStyle,
         Complexity,
         ComputedPropertySpacing,
+        ConstructorSuper,
         Curly,
         DotNotation,
         EOLLast,
