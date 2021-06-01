@@ -41,5 +41,20 @@ export let NoDefaultExport = new RuleSuite(
                     ]
                 }
             ]
+        },
+        {
+            Description: "Checking whether default exports are allowed in `.d.ts`-files…",
+            RuleSet: RuleSet.All,
+            ScriptKind: ScriptKind.DTS,
+            CodeSnippets: [
+                {
+                    Valid: true,
+                    Snippets: [
+                        `
+                            let test = "Hello World";
+                            export default test;`
+                    ]
+                }
+            ]
         }
     ]);

@@ -29,6 +29,27 @@ export let SpacedComment = new RuleSuite(
             ]
         },
         {
+            Description: "Checking whether triple-slash references are treated correctly…",
+            RuleSet: RuleSet.Recommended,
+            ScriptKind: ScriptKind.All,
+            CodeSnippets: [
+                {
+                    Valid: false,
+                    Snippets: [
+                        `
+                            ///<reference lib="DOM" />`
+                    ]
+                },
+                {
+                    Valid: true,
+                    Snippets: [
+                        `
+                            /// <reference lib="DOM" />`
+                    ]
+                }
+            ]
+        },
+        {
             Description: "Checking whether the rule is disabled for the weak rule-set…",
             RuleSet: RuleSet.Weak,
             ScriptKind: ScriptKind.Scripts,

@@ -6,7 +6,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## ESLintPresets [Unreleased]
 
-[Show differences](https://github.com/manuth/ESLintPresets/compare/v3.0.1...dev)
+[Show differences](https://github.com/manuth/ESLintPresets/compare/v3.0.2...dev)
+
+## ESLintPresets v3.0.2
+### Updated
+  - All dependencies
+  - The settings to disable `import/no-default-export` for `.d.ts`-files
+  - Unit-tests
+  - `spaced-comment` settings to allow triple-slash references
+
+### Added
+  - Missing unit-tests
+
+[Show differences](https://github.com/manuth/ESLintPresets/compare/v3.0.1...v3.0.2)
 
 ## ESLintPresets v3.0.1
 ### Updated

@@ -21,6 +21,14 @@ export let NoLonelyIf = new RuleSuite(
                                 { }
                             }`
                     ]
+                },
+                {
+                    Valid: true,
+                    Snippets: [
+                        `
+                            if (test) { }
+                            else if (test2) { }`
+                    ]
                 }
             ]
         }

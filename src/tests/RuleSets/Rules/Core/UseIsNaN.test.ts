@@ -21,8 +21,6 @@ export let UseIsNaN = new RuleSuite(
                     Valid: true,
                     Snippets: [
                         `
-                            import { isNaN } from "util";
-                            
                             if (isNaN(test)) { }`
                     ]
                 }
