@@ -17,7 +17,7 @@ export let ConstructorSuper = new RuleSuite(
                             class BaseClass {
                                 constructor() { }
                             }
-                            class TestClass {
+                            class TestClass extends BaseClass {
                                 constructor() {
                                 }
                             }`
@@ -30,7 +30,7 @@ export let ConstructorSuper = new RuleSuite(
                             class BaseClass {
                                 constructor() { }
                             }
-                            class TestClass {
+                            class TestClass extends BaseClass {
                                 constructor() {
                                     super();
                                 }
