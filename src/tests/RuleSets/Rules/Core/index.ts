@@ -61,6 +61,7 @@ import { NoUselessCatch } from "./NoUselessCatch";
 import { NoUselessRename } from "./NoUselessRename";
 import { NoVar } from "./NoVar";
 import { NoVoid } from "./NoVoid";
+import { NoWhitespaceBeforeProperty } from "./NoWhitespaceBeforeProperty";
 import { ObjectCurlyNewLine } from "./ObjectCurlyNewLine";
 import { ObjectCurlySpacing } from "./ObjectCurlySpacing";
 import { ObjectPropertyNewLine } from "./ObjectPropertyNewLine";
@@ -153,6 +154,7 @@ export let CoreTests = new ContainerSuite(
         NoUselessRename,
         NoVar,
         NoVoid,
+        NoWhitespaceBeforeProperty,
         ObjectCurlyNewLine,
         ObjectCurlySpacing,
         ObjectPropertyNewLine,
