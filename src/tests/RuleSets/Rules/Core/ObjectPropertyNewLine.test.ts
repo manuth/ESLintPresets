@@ -9,6 +9,41 @@ export let ObjectPropertyNewLine = new RuleSuite(
             Description: "Checking whether new-lines between object-properties must be consistent…",
             RuleSet: RuleSet.All,
             ScriptKind: ScriptKind.Scripts,
-            CodeSnippets: []
+            CodeSnippets: [
+                {
+                    Valid: false,
+                    Snippets: [
+                        `
+                            let x = { a: "test",
+                                b: "test"
+                            }`,
+                        `
+                            let x = {
+                                a: "test",
+                                b: "test", c: "test"
+                            }`,
+                        `
+                            let x = {
+                                a: "test", b: "test"
+                            }`
+                    ]
+                },
+                {
+                    Valid: true,
+                    Snippets: [
+                        `
+                            let x = {
+                                a: "test",
+                                b: "test"
+                            }`,
+                        `
+                            let x = { a: "test", b: "test" }`,
+                        `
+                            let x = {
+                                a: "test", b: "test"
+                            }`
+                    ]
+                }
+            ]
         }
     ]);
