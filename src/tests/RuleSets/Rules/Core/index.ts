@@ -87,6 +87,7 @@ import { SwitchColonSpacing } from "./SwitchColonSpacing";
 import { TemplateCurlySpacing } from "./TemplateCurlySpacing";
 import { UseIsNaN } from "./UseIsNaN";
 import { ValidTypeof } from "./ValidTypeof";
+import { YieldStarSpacing } from "./YieldStarSpacing";
 import { Yoda } from "./Yoda";
 
 export let CoreTests = new ContainerSuite(
@@ -180,5 +181,6 @@ export let CoreTests = new ContainerSuite(
         TemplateCurlySpacing,
         UseIsNaN,
         ValidTypeof,
+        YieldStarSpacing,
         Yoda
     ]);
