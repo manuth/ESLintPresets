@@ -22,7 +22,8 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
             "@typescript-eslint",
             "deprecation",
             "import",
-            "jsdoc"
+            "jsdoc",
+            "node"
         ],
         extends: [
             "eslint:recommended",
@@ -457,6 +458,23 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
             "no-var": "error",
             "no-void": "warn",
             "no-whitespace-before-property": "warn",
+            "node/no-unpublished-import": [
+                "error",
+                {
+                    convertPath: [
+                        {
+                            include: [
+                                "src/**/*.*"
+                            ],
+                            replace: [
+                                "^src/(.+)$",
+                                "lib/$1"
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "node/no-unpublished-require": "error",
             "object-curly-newline":
                 [
                     "warn",
