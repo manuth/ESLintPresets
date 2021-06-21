@@ -72,6 +72,34 @@ export class Workspace
     }
 
     /**
+     * Joins the arguments together and returns the path contained by the workspace.
+     *
+     * @param path
+     * The path that is to be joined.
+     *
+     * @returns
+     * The joined path relative to the workspace.
+     */
+    public MakePath(...path: string[]): string
+    {
+        return this.TempDir.MakePath(...path);
+    }
+
+    /**
+     * Joins the arguments together and returns the path contained by the source-directory.
+     *
+     * @param path
+     * The path that is to be joined.
+     *
+     * @returns
+     * The joined path relative to the source-directory.
+     */
+    public MakeSourcePath(...path: string[]): string
+    {
+        return this.MakePath(this.sourceDirectory, ...path);
+    }
+
+    /**
      * Gets the filename for the specified `scriptKind`.
      *
      * @param scriptKind
@@ -82,7 +110,7 @@ export class Workspace
      */
     public GetFileName(scriptKind: ScriptKind): string
     {
-        let result = this.TempDir.MakePath(this.sourceDirectory, TestConstants.FileNames[scriptKind]);
+        let result = this.MakeSourcePath(TestConstants.FileNames[scriptKind]);
         ensureFileSync(result);
         return result;
     }
