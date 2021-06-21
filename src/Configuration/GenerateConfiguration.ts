@@ -16,6 +16,18 @@ import { join } from "upath";
  */
 export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
 {
+    let pathConverter: any = [
+        {
+            include: [
+                "src/**/*.*"
+            ],
+            replace: [
+                "^src/(.+)$",
+                "lib/$1"
+            ]
+        }
+    ];
+
     let config: Linter.Config = {
         parser: "@typescript-eslint/parser",
         plugins: [
@@ -461,20 +473,15 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
             "node/no-unpublished-import": [
                 "error",
                 {
-                    convertPath: [
-                        {
-                            include: [
-                                "src/**/*.*"
-                            ],
-                            replace: [
-                                "^src/(.+)$",
-                                "lib/$1"
-                            ]
-                        }
-                    ]
+                    convertPath: pathConverter
                 }
             ],
-            "node/no-unpublished-require": "error",
+            "node/no-unpublished-require": [
+                "error",
+                {
+                    convertPath: pathConverter
+                }
+            ],
             "object-curly-newline":
                 [
                     "warn",
