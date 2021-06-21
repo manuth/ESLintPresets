@@ -96,10 +96,21 @@ export class TestContext
 
         if (!this.linters.get(ruleSet).has(typeChecking))
         {
+            let configuration = this.GetConfiguration(ruleSet, typeChecking, typeChecking);
+
             this.linters.get(ruleSet).set(
                 typeChecking,
                 new ESLint(
-                    this.GetConfiguration(ruleSet, typeChecking, typeChecking)));
+                    {
+                        ...configuration,
+                        baseConfig: {
+                            ...configuration.baseConfig,
+                            env: {
+                                node: true,
+                                es6: true
+                            }
+                        }
+                    }));
         }
 
         return this.linters.get(ruleSet).get(typeChecking);
