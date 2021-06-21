@@ -39,25 +39,25 @@ export abstract class Suite implements ISuite
                 suiteSetup(
                     async function()
                     {
-                        return self.SuiteSetup(this);
+                        return self.SuiteSetup(this, context);
                     });
 
                 suiteTeardown(
                     async function()
                     {
-                        return self.SuiteTeardown(this);
+                        return self.SuiteTeardown(this, context);
                     });
 
                 setup(
                     async function()
                     {
-                        return self.TestSetup(this);
+                        return self.TestSetup(this, context);
                     });
 
                 teardown(
                     async function()
                     {
-                        return self.TestTeardown(this);
+                        return self.TestTeardown(this, context);
                     });
 
                 this.RegisterInternal(context, ruleSet);
@@ -69,8 +69,11 @@ export abstract class Suite implements ISuite
      *
      * @param mocha
      * The mocha-context.
+     *
+     * @param testContext
+     * The test-context.
      */
-    public async SuiteSetup(mocha: Context): Promise<void>
+    public async SuiteSetup(mocha: Context, testContext: TestContext): Promise<void>
     { }
 
     /**
@@ -78,8 +81,11 @@ export abstract class Suite implements ISuite
      *
      * @param mocha
      * The mocha-context.
+     *
+     * @param testContext
+     * The test-context.
      */
-    public async SuiteTeardown(mocha: Context): Promise<void>
+    public async SuiteTeardown(mocha: Context, testContext: TestContext): Promise<void>
     { }
 
     /**
@@ -87,8 +93,11 @@ export abstract class Suite implements ISuite
      *
      * @param mocha
      * The mocha-context.
+     *
+     * @param testContext
+     * The test-context.
      */
-    public async TestSetup(mocha: Context): Promise<void>
+    public async TestSetup(mocha: Context, testContext: TestContext): Promise<void>
     { }
 
     /**
@@ -96,8 +105,11 @@ export abstract class Suite implements ISuite
      *
      * @param mocha
      * The mocha-context.
+     *
+     * @param testContext
+     * The test-context.
      */
-    public async TestTeardown(mocha: Context): Promise<void>
+    public async TestTeardown(mocha: Context, testContext: TestContext): Promise<void>
     { }
 
     /**
