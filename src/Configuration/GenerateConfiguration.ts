@@ -224,58 +224,6 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
             "@typescript-eslint/triple-slash-reference": "off",
             "@typescript-eslint/type-annotation-spacing": "warn",
             "@typescript-eslint/unified-signatures": "off",
-            "array-bracket-newline": [
-                "warn",
-                "consistent"
-            ],
-            "array-bracket-spacing": "warn",
-            "array-element-newline": [
-                "warn",
-                "consistent"
-            ],
-            "arrow-parens": [
-                "off",
-                "as-needed"
-            ],
-            "arrow-spacing": "warn",
-            "block-spacing": "warn",
-            "brace-style": [
-                "warn",
-                "allman",
-                {
-                    allowSingleLine: true
-                }
-            ],
-            "comma-dangle": weak ? "off" : "error",
-            "comma-style": "warn",
-            complexity: "off",
-            "computed-property-spacing": "warn",
-            "constructor-super": "error",
-            curly: "off",
-            "dot-notation": "off",
-            "eol-last": "warn",
-            eqeqeq: [
-                "warn",
-                "always"
-            ],
-            "function-call-argument-newline": [
-                "warn",
-                "consistent"
-            ],
-            "generator-star-spacing": [
-                "warn",
-                {
-                    before: false,
-                    after: true,
-                    anonymous: "neither",
-                    method: {
-                        before: true,
-                        after: false
-                    }
-                }
-            ],
-            "grouped-accessor-pairs": "warn",
-            "guard-for-in": "off",
             "import/no-default-export": weak ? "off" : "warn",
             "import/no-duplicates": weak ? "off" : "warn",
             "import/order": [
@@ -370,22 +318,6 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
                     ]
                 }
             ],
-            "jsdoc/require-param-name": [
-                "warn",
-                {
-                    contexts: [
-                        "any"
-                    ]
-                }
-            ],
-            "jsdoc/require-param-type": [
-                weak ? "off" : "warn",
-                {
-                    contexts: [
-                        "any"
-                    ]
-                }
-            ],
             "jsdoc/require-param": [
                 weak ? "off" : "warn",
                 {
@@ -404,7 +336,15 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
                     ]
                 }
             ],
-            "jsdoc/require-returns-type": [
+            "jsdoc/require-param-name": [
+                "warn",
+                {
+                    contexts: [
+                        "any"
+                    ]
+                }
+            ],
+            "jsdoc/require-param-type": [
                 weak ? "off" : "warn",
                 {
                     contexts: [
@@ -424,6 +364,78 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
                     ]
                 }
             ],
+            "jsdoc/require-returns-type": [
+                weak ? "off" : "warn",
+                {
+                    contexts: [
+                        "any"
+                    ]
+                }
+            ],
+            "node/no-unpublished-import": [
+                "error",
+                {
+                    convertPath: pathConverter
+                }
+            ],
+            "node/no-unpublished-require": [
+                "error",
+                {
+                    convertPath: pathConverter
+                }
+            ],
+            "array-bracket-newline": [
+                "warn",
+                "consistent"
+            ],
+            "array-bracket-spacing": "warn",
+            "array-element-newline": [
+                "warn",
+                "consistent"
+            ],
+            "arrow-parens": [
+                "off",
+                "as-needed"
+            ],
+            "arrow-spacing": "warn",
+            "block-spacing": "warn",
+            "brace-style": [
+                "warn",
+                "allman",
+                {
+                    allowSingleLine: true
+                }
+            ],
+            "comma-dangle": weak ? "off" : "error",
+            "comma-style": "warn",
+            complexity: "off",
+            "computed-property-spacing": "warn",
+            "constructor-super": "error",
+            curly: "off",
+            "dot-notation": "off",
+            "eol-last": "warn",
+            eqeqeq: [
+                "warn",
+                "always"
+            ],
+            "function-call-argument-newline": [
+                "warn",
+                "consistent"
+            ],
+            "generator-star-spacing": [
+                "warn",
+                {
+                    before: false,
+                    after: true,
+                    anonymous: "neither",
+                    method: {
+                        before: true,
+                        after: false
+                    }
+                }
+            ],
+            "grouped-accessor-pairs": "warn",
+            "guard-for-in": "off",
             "lines-between-class-members": "warn",
             "max-classes-per-file": "off",
             "max-len": "off",
@@ -479,18 +491,6 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
             "no-var": "error",
             "no-void": "warn",
             "no-whitespace-before-property": "warn",
-            "node/no-unpublished-import": [
-                "error",
-                {
-                    convertPath: pathConverter
-                }
-            ],
-            "node/no-unpublished-require": [
-                "error",
-                {
-                    convertPath: pathConverter
-                }
-            ],
             "object-curly-newline":
                 [
                     "warn",
@@ -600,16 +600,16 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
                 "*.tsx"
             ],
             rules: {
-                "@typescript-eslint/explicit-member-accessibility": [
-                    "warn",
-                    {
-                        accessibility: "explicit"
-                    }
-                ],
                 "@typescript-eslint/explicit-function-return-type": [
                     "warn",
                     {
                         allowExpressions: true
+                    }
+                ],
+                "@typescript-eslint/explicit-member-accessibility": [
+                    "warn",
+                    {
+                        accessibility: "explicit"
                     }
                 ],
                 "@typescript-eslint/no-var-requires": "warn",
