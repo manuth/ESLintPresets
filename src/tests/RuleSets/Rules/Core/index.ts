@@ -4,7 +4,7 @@ import { ArrayBracketSpacing } from "./ArrayBracketSpacing.test";
 import { ArrayElementNewLine } from "./ArrayElementNewLine.test";
 import { ArrowParens } from "./ArrowParens.test";
 import { ArrowSpacing } from "./ArrowSpacing.test";
-import { BlockSpacint as BlockSpacing } from "./BlockSpacing.test";
+import { BlockSpacing } from "./BlockSpacing.test";
 import { BraceStyle } from "./BraceStyle.test";
 import { CommaDangle } from "./CommaDangle.test";
 import { CommaStyle } from "./CommaStyle.test";
@@ -39,7 +39,7 @@ import { NoEmptyPattern } from "./NoEmptyPattern.test";
 import { NoEval } from "./NoEval.test";
 import { NoFallthrough } from "./NoFallthrough.test";
 import { NoFloatingDecimal } from "./NoFloatingDecimal.test";
-import { NoImplicitCoericon } from "./NoImplicitCoericon.test";
+import { NoImplicitCoercion } from "./NoImplicitCoercion.test";
 import { NoInnerDeclarations } from "./NoInnerDeclarations.test";
 import { NoInvalidThis } from "./NoInvalidThis.test";
 import { NoLonelyIf } from "./NoLonelyIf.test";
@@ -71,7 +71,7 @@ import { OperatorLineBreak } from "./OperatorLineBreak.test";
 import { PaddedBlocks } from "./PaddedBlocks.test";
 import { PaddingLineBetweenStatements } from "./PaddingLineBetweenStatements.test";
 import { PreferConst } from "./PreferConst.test";
-import { PreferObjectSpread } from "./PreferObjectSpred.test";
+import { PreferObjectSpread } from "./PreferObjectSpread.test";
 import { PreferRestParams } from "./PreferRestParams.test";
 import { PreferSpread } from "./PreferSpread.test";
 import { QuoteProps } from "./QuoteProps.test";
@@ -133,7 +133,7 @@ export let CoreTests = new ContainerSuite(
         NoEval,
         NoFallthrough,
         NoFloatingDecimal,
-        NoImplicitCoericon,
+        NoImplicitCoercion,
         NoInnerDeclarations,
         NoInvalidThis,
         NoLonelyIf,

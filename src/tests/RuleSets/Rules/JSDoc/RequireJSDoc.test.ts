@@ -6,7 +6,7 @@ export let RequireJSDoc = new RuleSuite(
     "jsdoc/require-jsdoc",
     [
         {
-            Description: "Checking whether jsdocs are required where appropriate…",
+            Description: "Checking whether jsdoc-comments are required where appropriate…",
             RuleSet: RuleSet.Recommended,
             ScriptKind: ScriptKind.Scripts,
             CodeSnippets: [
@@ -107,7 +107,7 @@ export let RequireJSDoc = new RuleSuite(
             ]
         },
         {
-            Description: "Checking whether jsdocs are required where appropriate in typescript-files…",
+            Description: "Checking whether jsdoc-comments are required where appropriate in typescript-files…",
             RuleSet: RuleSet.Recommended,
             ScriptKind: ScriptKind.TS,
             CodeSnippets: [
@@ -349,7 +349,7 @@ export let RequireJSDoc = new RuleSuite(
             ]
         },
         {
-            Description: "Checking whether inline-expressions don't require jsdocs…",
+            Description: "Checking whether inline-expressions don't require jsdoc-comments…",
             RuleSet: RuleSet.Recommended,
             ScriptKind: ScriptKind.Scripts,
             CodeSnippets: [

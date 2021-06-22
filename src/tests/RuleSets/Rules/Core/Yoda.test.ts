@@ -6,7 +6,7 @@ export let Yoda = new RuleSuite(
     "yoda",
     [
         {
-            Description: "Checking whether comparsions must look correctly…",
+            Description: "Checking whether comparisons must look correctly…",
             RuleSet: RuleSet.All,
             ScriptKind: ScriptKind.Scripts,
             CodeSnippets: [

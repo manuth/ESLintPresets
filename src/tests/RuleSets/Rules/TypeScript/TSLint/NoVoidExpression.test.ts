@@ -29,7 +29,7 @@ export let NoVoidExpression = new TSLintRuleSuite(
             ]
         },
         {
-            Description: "Checking whether void-returnung functions are allowed in shorthand arrow-functions…",
+            Description: "Checking whether void-returning functions are allowed in shorthand arrow-functions…",
             RuleSet: RuleSet.All,
             ScriptKind: ScriptKind.Scripts,
             CodeSnippets: [

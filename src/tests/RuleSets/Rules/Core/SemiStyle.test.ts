@@ -6,7 +6,7 @@ export let SemiStyle = new RuleSuite(
     "semi-style",
     [
         {
-            Description: "Checking whether semicolons must be at the end of the lilne rather than at the beginning…",
+            Description: "Checking whether semicolons must be at the end of the line rather than at the beginning…",
             RuleSet: RuleSet.All,
             ScriptKind: ScriptKind.Scripts,
             CodeSnippets: [

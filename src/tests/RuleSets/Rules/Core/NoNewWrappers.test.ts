@@ -6,7 +6,7 @@ export let NoNewWrappers = new RuleSuite(
     "no-new-wrappers",
     [
         {
-            Description: "Checking whether initializing new objects of classes for literals such as `Boolean` are disallowed…",
+            Description: `Checking whether initializing new objects of classes for literals such as \`${nameof(Boolean)}\` are disallowed…`,
             RuleSet: RuleSet.All,
             ScriptKind: ScriptKind.Scripts,
             CodeSnippets: [

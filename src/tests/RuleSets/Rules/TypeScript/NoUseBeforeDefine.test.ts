@@ -30,7 +30,7 @@ export let NoUseBeforeDefine = new RuleSuite(
                             {
                                 let x = new TestClass();
                             }
-                            
+
                             class TestClass { }`
                     ]
                 }

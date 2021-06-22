@@ -100,7 +100,6 @@ export let RequireParam = new RuleSuite(
             ScriptKind: ScriptKind.TS,
             CodeSnippets: [
                 {
-                    /* ToDo Wait for this commit to close: [gajus/eslint-plugin-jsdoc#512](https://github.com/gajus/eslint-plugin-jsdoc/issues/512) */
                     Valid: false,
                     Snippets: [
                         `

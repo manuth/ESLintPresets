@@ -2,7 +2,7 @@ import { RuleSet } from "../../../Debugging/RuleSet";
 import { ScriptKind } from "../../../Debugging/ScriptKind";
 import { RuleSuite } from "../../../Debugging/Suites/RuleSuite";
 
-export let BlockSpacint = new RuleSuite(
+export let BlockSpacing = new RuleSuite(
     "block-spacing",
     [
         {

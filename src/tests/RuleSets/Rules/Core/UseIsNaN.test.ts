@@ -6,7 +6,7 @@ export let UseIsNaN = new RuleSuite(
     "use-isnan",
     [
         {
-            Description: "Checking whether `NaN`-equatations are disallowed…",
+            Description: "Checking whether `NaN`-equations are disallowed…",
             RuleSet: RuleSet.All,
             ScriptKind: ScriptKind.Scripts,
             CodeSnippets: [

@@ -6,7 +6,7 @@ export let NoFallthrough = new RuleSuite(
     "no-fallthrough",
     [
         {
-            Description: "Checking whether case-fallthroughs are disallowed…",
+            Description: "Checking whether case fall-throughs are disallowed…",
             RuleSet: RuleSet.All,
             ScriptKind: ScriptKind.Scripts,
             CodeSnippets: [

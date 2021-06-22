@@ -15,8 +15,8 @@ export let NoMultipleEmptyLines = new RuleSuite(
                     Snippets: [
                         `
                             console.log();
-                            
-                            
+
+
                             console.log();`
                     ]
                 },
@@ -25,7 +25,7 @@ export let NoMultipleEmptyLines = new RuleSuite(
                     Snippets: [
                         `
                             console.log();
-                            
+
                             console.log();`
                     ]
                 }

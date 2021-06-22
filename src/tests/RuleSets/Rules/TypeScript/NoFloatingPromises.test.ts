@@ -18,7 +18,7 @@ export let NoFloatingPromises = new RuleSuite(
                             {
                                 return new Promise(() => { });
                             }
-                            
+
                             test();`
                     ]
                 }

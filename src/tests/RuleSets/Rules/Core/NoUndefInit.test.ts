@@ -6,7 +6,7 @@ export let NoUndefInit = new RuleSuite(
     "no-undef-init",
     [
         {
-            Description: "Checking whether initializeations to `undefined` are disallowed…",
+            Description: `Checking whether initializations to \`${undefined}\` are disallowed…`,
             RuleSet: RuleSet.All,
             ScriptKind: ScriptKind.Scripts,
             CodeSnippets: [
