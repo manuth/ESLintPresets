@@ -16,10 +16,10 @@ export class TSLintRuleTestCase extends RuleTestCase
     private tslintTestSuite: TSLintRuleSuite;
 
     /**
-     * Initializes a new instance of the `TestCase` class.
+     * Initializes a new instance of the {@link TSLintRuleTestCase `TSLintRuleTestCase`} class.
      *
      * @param ruleSuite
-     * The `TSLintRuleSuite` of this test-case.
+     * The {@link TSLintRuleSuite `TSLintRuleSuite`} of this test-case.
      *
      * @param description
      * The description of the test-case.

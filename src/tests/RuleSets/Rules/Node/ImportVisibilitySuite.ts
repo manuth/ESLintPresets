@@ -27,7 +27,7 @@ export class ImportVisibilitySuite extends RuleSuite
     private npmIgnoreFileName = ".npmignore";
 
     /**
-     * Initializes a new instance of the `ImportVisibilitySuite` class.
+     * Initializes a new instance of the {@link ImportVisibilitySuite `ImportVisibilitySuite`} class.
      *
      * @param ruleName
      * The name of the rule to test.

@@ -19,7 +19,16 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
     let pathConverter: any = [
         {
             include: [
-                "src/**/*.*"
+                "src/**/*.ts"
+            ],
+            replace: [
+                "^src/(.+)\\.ts$",
+                "lib/$1.js"
+            ]
+        },
+        {
+            include: [
+                "src/**"
             ],
             replace: [
                 "^src/(.+)$",

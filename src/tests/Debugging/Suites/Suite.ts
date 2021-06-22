@@ -9,7 +9,7 @@ import { ISuite } from "./ISuite";
 export abstract class Suite implements ISuite
 {
     /**
-     * Initializes a new instance of the `Suite` class.
+     * Initializes a new instance of the {@link Suite `Suite`} class.
      */
     public constructor()
     { }
@@ -89,7 +89,7 @@ export abstract class Suite implements ISuite
     { }
 
     /**
-     * Prepares each test.
+     * Prepares each the current test.
      *
      * @param mocha
      * The mocha-context.
@@ -101,7 +101,7 @@ export abstract class Suite implements ISuite
     { }
 
     /**
-     * Releases the resources of each test.
+     * Releases the resources of the current test.
      *
      * @param mocha
      * The mocha-context.

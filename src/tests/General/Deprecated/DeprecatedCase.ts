@@ -9,7 +9,7 @@ import { LintReportTestCase } from "../../Debugging/TestCases/LintReportTestCase
 export class DeprecatedCase extends LintReportTestCase
 {
     /**
-     * Initializes a new instance of the `DeprecatedCase` class.
+     * Initializes a new instance of the {@link DeprecatedCase `DeprecatedCase`} class.
      */
     public constructor()
     {

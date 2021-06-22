@@ -16,10 +16,10 @@ export class RuleTestCase extends LintReportTestCase
     private testSuite: RuleSuite;
 
     /**
-     * Initializes a new instance of the `TestCase` class.
+     * Initializes a new instance of the {@link RuleTestCase `RuleTestCase`} class.
      *
      * @param ruleSuite
-     * The `RuleSuite` of this test-case.
+     * The {@link RuleSuite `RuleSuite`} of this test-case.
      *
      * @param description
      * The description of the test-case.

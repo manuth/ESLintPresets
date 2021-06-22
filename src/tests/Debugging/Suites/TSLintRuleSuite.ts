@@ -13,7 +13,7 @@ export class TSLintRuleSuite extends RuleSuite
     private tslintRuleName: string;
 
     /**
-     * Initializes a new instance of the `TSLintRuleSuite` class.
+     * Initializes a new instance of the {@link TSLintRuleSuite `TSLintRuleSuite`} class.
      *
      * @param ruleName
      * The name of the `tslint`-rule to test.

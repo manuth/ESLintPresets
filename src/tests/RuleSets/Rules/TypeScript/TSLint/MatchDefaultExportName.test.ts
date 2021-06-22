@@ -23,7 +23,7 @@ class MatchDefaultExportNameSuite extends TSLintRuleSuite
     private exportName = "testExport";
 
     /**
-     * Initializes a new instance of the `MatchDefaultExportNameSuite` class.
+     * Initializes a new instance of the {@link MatchDefaultExportNameSuite `MatchDefaultExportNameSuite`} class.
      */
     public constructor()
     {

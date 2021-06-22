@@ -21,7 +21,7 @@ export class TypeCheckingCase extends LintTestCase
     private typeCheckingEnabled: boolean;
 
     /**
-     * Initializes a new instance of the `TypeCheckingCase` class.
+     * Initializes a new instance of the {@link TypeCheckingCase `TypeCheckingCase`} class.
      *
      * @param useTypeCheckingRules
      * A value indicating whether type-checking rules should be loaded.
@@ -78,7 +78,7 @@ export class TypeCheckingCase extends LintTestCase
      * The rule-set to add tests for.
      *
      * @returns
-     * The linter for the specified `ruleSet`.
+     * The linter for the specified {@link ruleSet `ruleSet`}.
      */
     protected override GetLinter(context: TestContext, ruleSet: RuleSet): ESLint
     {

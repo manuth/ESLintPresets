@@ -1,5 +1,8 @@
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import { TypeCheckingCase } from "./TypeCheckingCase";
+
 /**
- * Provides data for `TypeCheckingCase`s.
+ * Provides data for {@link TypeCheckingCase `TypeCheckingCase`}s.
  */
 export interface ITypeCheckingCase
 {

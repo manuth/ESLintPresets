@@ -20,7 +20,7 @@ export class ContainerSuite extends Suite
     private container: RegisterableContainer;
 
     /**
-     * Initializes a new instance of the `SuiteContainer` class.
+     * Initializes a new instance of the {@link ContainerSuite `ContainerSuite`} class.
      *
      * @param suiteName
      * The name of the suite.

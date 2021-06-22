@@ -14,7 +14,7 @@ export class RuleSetContainer implements IRegisterable
     private registerable: IRegisterable;
 
     /**
-     * Initializes a new instance of the `RuleSetContainer` class.
+     * Initializes a new instance of the {@link RuleSetContainer `RuleSetContainer`} class.
      *
      * @param registerable
      * The component to register.

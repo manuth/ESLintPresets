@@ -19,7 +19,7 @@ export class Workspace
     private sourceDirectory = "src";
 
     /**
-     * Initializes a new instance of the `Workspace` class.
+     * Initializes a new instance of the {@link Workspace `Workspace`} class.
      */
     public constructor()
     {
@@ -100,13 +100,13 @@ export class Workspace
     }
 
     /**
-     * Gets the filename for the specified `scriptKind`.
+     * Gets the filename for the specified {@link scriptKind `scriptKind`}.
      *
      * @param scriptKind
      * The script-kind to get the filename for.
      *
      * @returns
-     * The filename for the specified `scriptKind`.
+     * The filename for the specified {@link scriptKind `scriptKind`}.
      */
     public GetFileName(scriptKind: ScriptKind): string
     {

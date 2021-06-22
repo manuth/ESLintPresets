@@ -21,7 +21,7 @@ export class TestContext
     private linters: Map<RuleSet, Map<boolean, ESLint>> = new Map();
 
     /**
-     * Initializes a new instance of the `TestContext` class.
+     * Initializes a new instance of the {@link TestContext `TestContext`} class.
      */
     public constructor()
     { }
@@ -55,7 +55,7 @@ export class TestContext
      * A value indicating whether the type-checking should be enabled.
      *
      * @returns
-     * The configuration for the specified `ruleSet`.
+     * The configuration for the specified {@link ruleSet `ruleSet`}.
      */
     public GetConfiguration(ruleSet: RuleSet, useTypeCheckingRules: boolean, enableTypeChecking: boolean): ESLint.Options
     {
@@ -76,7 +76,7 @@ export class TestContext
     }
 
     /**
-     * Gets the linter for the specified `ruleSet`.
+     * Gets the linter for the specified {@link ruleSet `ruleSet`}.
      *
      * @param ruleSet
      * The rule-set to get the linter for.
@@ -85,7 +85,7 @@ export class TestContext
      * A value indicating whether type-checking should be enabled.
      *
      * @returns
-     * The linter for the specified `ruleSet`.
+     * The linter for the specified {@link ruleSet `ruleSet`}.
      */
     public GetLinter(ruleSet: RuleSet, typeChecking: boolean): ESLint
     {
@@ -117,13 +117,13 @@ export class TestContext
     }
 
     /**
-     * Gets the filename for the specified `scriptKind`.
+     * Gets the filename for the specified {@link scriptKind `scriptKind`}.
      *
      * @param scriptKind
      * The script-kind to get the filename for.
      *
      * @returns
-     * The filename for the specified `scriptKind`.
+     * The filename for the specified {@link scriptKind `scriptKind`}.
      */
     public GetFileName(scriptKind: ScriptKind): string
     {

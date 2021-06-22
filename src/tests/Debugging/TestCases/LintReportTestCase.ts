@@ -11,7 +11,7 @@ import { ICodeSnippetCollection } from "./ICodeSnippet";
 export abstract class LintReportTestCase extends LintTestCase
 {
     /**
-     * Initializes a new instance of the `LintReportTestCase` class.
+     * Initializes a new instance of the {@link LintReportTestCase `LintReportTestCase`} class.
      *
      * @param description
      * The description of the test-case.
