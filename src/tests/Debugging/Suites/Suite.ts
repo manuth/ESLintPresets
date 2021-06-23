@@ -30,6 +30,7 @@ export abstract class Suite implements ISuite
      */
     public Register(context: TestContext, ruleSet: RuleSet): void
     {
+        let suiteContext = this.GetSuiteContext(context);
         let self = this;
 
         suite(
@@ -39,28 +40,28 @@ export abstract class Suite implements ISuite
                 suiteSetup(
                     async function()
                     {
-                        return self.SuiteSetup(this, context);
+                        return self.SuiteSetup(this, suiteContext);
                     });
 
                 suiteTeardown(
                     async function()
                     {
-                        return self.SuiteTeardown(this, context);
+                        return self.SuiteTeardown(this, suiteContext);
                     });
 
                 setup(
                     async function()
                     {
-                        return self.TestSetup(this, context);
+                        return self.TestSetup(this, suiteContext);
                     });
 
                 teardown(
                     async function()
                     {
-                        return self.TestTeardown(this, context);
+                        return self.TestTeardown(this, suiteContext);
                     });
 
-                this.RegisterInternal(context, ruleSet);
+                this.RegisterInternal(suiteContext, ruleSet);
             });
     }
 
@@ -111,6 +112,20 @@ export abstract class Suite implements ISuite
      */
     public async TestTeardown(mocha: Context, testContext: TestContext): Promise<void>
     { }
+
+    /**
+     * Gets the test-context for this suite.
+     *
+     * @param context
+     * The global test-context.
+     *
+     * @returns
+     * The test-context of this suite.
+     */
+    protected GetSuiteContext(context: TestContext): TestContext
+    {
+        return context;
+    }
 
     /**
      * Registers the `mocha`-tests.
