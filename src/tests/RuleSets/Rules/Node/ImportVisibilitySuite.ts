@@ -86,7 +86,7 @@ export class ImportVisibilitySuite extends RuleSuite
 
         let npmPackage = new Package(testContext.Workspace.PackageManifestFileName);
         npmPackage.Dependencies.Add(ImportVisibilitySuite.PublicDependency, "*");
-        npmPackage.DevelpomentDependencies.Add(ImportVisibilitySuite.DevelopmentDependency, "*");
+        npmPackage.DevelopmentDependencies.Add(ImportVisibilitySuite.DevelopmentDependency, "*");
         await writeJSON(testContext.Workspace.PackageManifestFileName, npmPackage.ToJSON());
         await writeFile(testContext.Workspace.MakePath(this.npmIgnoreFileName), ImportVisibilitySuite.IgnoredFileName);
         await ensureFile(testContext.Workspace.MakeSourcePath(ImportVisibilitySuite.IgnoredFileName));
