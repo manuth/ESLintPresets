@@ -253,7 +253,7 @@ export abstract class LintTestCase implements ITestCase, IRegisterable
      */
     protected GetLinter(context: TestContext, ruleSet: RuleSet): ESLint
     {
-        return context.GetLinter(ruleSet, true);
+        return context.Workspace.GetLinter(ruleSet, true);
     }
 
     /**

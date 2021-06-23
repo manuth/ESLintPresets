@@ -82,7 +82,7 @@ export class TypeCheckingCase extends LintTestCase
      */
     protected override GetLinter(context: TestContext, ruleSet: RuleSet): ESLint
     {
-        return new ESLint(context.GetConfiguration(ruleSet, this.UseTypeCheckingRules, this.TypeCheckingEnabled));
+        return new ESLint(context.Workspace.GetConfiguration(ruleSet, this.UseTypeCheckingRules, this.TypeCheckingEnabled));
     }
 
     /**
