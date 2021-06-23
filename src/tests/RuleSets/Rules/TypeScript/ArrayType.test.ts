@@ -1,9 +1,10 @@
+import { ESLintRule } from "../../../../ESLintRule";
 import { RuleSet } from "../../../Debugging/RuleSet";
 import { ScriptKind } from "../../../Debugging/ScriptKind";
 import { RuleSuite } from "../../../Debugging/Suites/RuleSuite";
 
 export let ArrayType = new RuleSuite(
-    "@typescript-eslint/array-type",
+    ESLintRule.TypeScriptArrayType,
     [
         {
             Description: "Checking whether complex array-types require the generic array class…",

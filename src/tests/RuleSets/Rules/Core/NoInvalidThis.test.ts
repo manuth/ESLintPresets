@@ -1,9 +1,10 @@
+import { ESLintRule } from "../../../../ESLintRule";
 import { RuleSet } from "../../../Debugging/RuleSet";
 import { ScriptKind } from "../../../Debugging/ScriptKind";
 import { RuleSuite } from "../../../Debugging/Suites/RuleSuite";
 
 export let NoInvalidThis = new RuleSuite(
-    "no-invalid-this",
+    ESLintRule.NoInvalidThis,
     [
         {
             Description: "Checking whether the usage of the global `this`-object is allowed…",

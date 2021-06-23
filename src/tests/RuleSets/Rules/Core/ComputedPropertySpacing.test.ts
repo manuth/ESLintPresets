@@ -1,9 +1,10 @@
+import { ESLintRule } from "../../../../ESLintRule";
 import { RuleSet } from "../../../Debugging/RuleSet";
 import { ScriptKind } from "../../../Debugging/ScriptKind";
 import { RuleSuite } from "../../../Debugging/Suites/RuleSuite";
 
 export let ComputedPropertySpacing = new RuleSuite(
-    "computed-property-spacing",
+    ESLintRule.ComputedPropertySpacing,
     [
         {
             Description: "Checking whether spacing in computed properties is enforced correctly…",

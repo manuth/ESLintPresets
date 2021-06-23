@@ -1,3 +1,4 @@
+import { ESLintRule } from "../../../../ESLintRule";
 import { RuleSet } from "../../../Debugging/RuleSet";
 import { ScriptKind } from "../../../Debugging/ScriptKind";
 import { RuleSuite } from "../../../Debugging/Suites/RuleSuite";
@@ -43,7 +44,7 @@ function wrapRecursive(count: number, code: string): string
 }
 
 export let Complexity = new RuleSuite(
-    "complexity",
+    ESLintRule.Complexity,
     [
         {
             Description: "Checking whether any complexity is allowed…",

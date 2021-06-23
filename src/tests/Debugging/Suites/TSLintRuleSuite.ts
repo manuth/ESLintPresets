@@ -1,3 +1,4 @@
+import { ESLintRule } from "../../../ESLintRule";
 import { ITestCase } from "../TestCases/ITestCase";
 import { TSLintRuleTestCase } from "../TestCases/TSLintRuleTestCase";
 import { RuleSuite } from "./RuleSuite";
@@ -23,7 +24,7 @@ export class TSLintRuleSuite extends RuleSuite
      */
     public constructor(ruleName: string, testCases: ITestCase[])
     {
-        super("@typescript-eslint/tslint/config", testCases);
+        super(ESLintRule.TSLint, testCases);
         this.tslintRuleName = ruleName;
     }
 

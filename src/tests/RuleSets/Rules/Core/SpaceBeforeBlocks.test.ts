@@ -1,9 +1,10 @@
+import { ESLintRule } from "../../../../ESLintRule";
 import { RuleSet } from "../../../Debugging/RuleSet";
 import { ScriptKind } from "../../../Debugging/ScriptKind";
 import { RuleSuite } from "../../../Debugging/Suites/RuleSuite";
 
 export let SpaceBeforeBlocks = new RuleSuite(
-    "space-before-blocks",
+    ESLintRule.SpaceBeforeBlocks,
     [
         {
             Description: "Checking whether spaces before blocks are required…",

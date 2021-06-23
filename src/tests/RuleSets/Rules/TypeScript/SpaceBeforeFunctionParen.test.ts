@@ -1,9 +1,10 @@
+import { ESLintRule } from "../../../../ESLintRule";
 import { RuleSet } from "../../../Debugging/RuleSet";
 import { ScriptKind } from "../../../Debugging/ScriptKind";
 import { RuleSuite } from "../../../Debugging/Suites/RuleSuite";
 
 export let SpaceBeforeFunctionParen = new RuleSuite(
-    "@typescript-eslint/space-before-function-paren",
+    ESLintRule.TypeScriptSpaceBeforeFunctionParen,
     [
         {
             Description: "Checking whether spaces before parens of named and anonymous functions are disallowed…",

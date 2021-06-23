@@ -1,9 +1,10 @@
+import { ESLintRule } from "../../../../ESLintRule";
 import { RuleSet } from "../../../Debugging/RuleSet";
 import { ScriptKind } from "../../../Debugging/ScriptKind";
 import { RuleSuite } from "../../../Debugging/Suites/RuleSuite";
 
 export let RequireJSDoc = new RuleSuite(
-    "jsdoc/require-jsdoc",
+    ESLintRule.JSDocRequireJSDoc,
     [
         {
             Description: "Checking whether jsdoc-comments are required where appropriate…",

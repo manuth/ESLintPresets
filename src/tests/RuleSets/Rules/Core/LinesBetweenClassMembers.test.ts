@@ -1,9 +1,10 @@
+import { ESLintRule } from "../../../../ESLintRule";
 import { RuleSet } from "../../../Debugging/RuleSet";
 import { ScriptKind } from "../../../Debugging/ScriptKind";
 import { RuleSuite } from "../../../Debugging/Suites/RuleSuite";
 
 export let LinesBetweenClassMembers = new RuleSuite(
-    "lines-between-class-members",
+    ESLintRule.LinesBetweenClassMembers,
     [
         {
             Description: "Checking whether class-members must be separated by a blank line…",

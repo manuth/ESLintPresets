@@ -1,9 +1,10 @@
+import { ESLintRule } from "../../../../ESLintRule";
 import { RuleSet } from "../../../Debugging/RuleSet";
 import { ScriptKind } from "../../../Debugging/ScriptKind";
 import { RuleSuite } from "../../../Debugging/Suites/RuleSuite";
 
 export let ConstructorSuper = new RuleSuite(
-    "constructor-super",
+    ESLintRule.ConstructorSuper,
     [
         {
             Description: "Checking whether constructors must contain a `super()`-call…",

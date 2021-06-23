@@ -1,9 +1,10 @@
+import { ESLintRule } from "../../../../ESLintRule";
 import { RuleSet } from "../../../Debugging/RuleSet";
 import { ScriptKind } from "../../../Debugging/ScriptKind";
 import { RuleSuite } from "../../../Debugging/Suites/RuleSuite";
 
 export let NoNewWrappers = new RuleSuite(
-    "no-new-wrappers",
+    ESLintRule.NoNewWrappers,
     [
         {
             Description: `Checking whether initializing new objects of classes for literals such as \`${nameof(Boolean)}\` are disallowed…`,

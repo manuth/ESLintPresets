@@ -1,6 +1,8 @@
 import type { Linter } from "eslint";
 import merge = require("lodash.merge");
 import { join } from "upath";
+import { ESLintPlugin } from "../ESLintPlugin";
+import { ESLintRule } from "../ESLintRule";
 
 /**
  * Generates an `eslint`-configuration.
@@ -40,40 +42,40 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
     let config: Linter.Config = {
         parser: "@typescript-eslint/parser",
         plugins: [
-            "@typescript-eslint",
-            "deprecation",
-            "import",
-            "jsdoc",
-            "node"
+            ESLintPlugin.TypeScriptESLint,
+            ESLintPlugin.Deprecation,
+            ESLintPlugin.Import,
+            ESLintPlugin.JSDoc,
+            ESLintPlugin.Node
         ],
         extends: [
             "eslint:recommended",
-            "plugin:@typescript-eslint/eslint-recommended",
-            "plugin:@typescript-eslint/recommended"
+            `plugin:${ESLintPlugin.TypeScriptESLint}/eslint-recommended`,
+            `plugin:${ESLintPlugin.TypeScriptESLint}/recommended`
         ],
         rules: {
-            "@typescript-eslint/adjacent-overload-signatures": "warn",
-            "@typescript-eslint/array-type": [
+            [ESLintRule.TypeScriptAdjacentOverloadSignatures]: "warn",
+            [ESLintRule.TypeScriptArrayType]: [
                 weak ? "off" : "warn",
                 {
                     default: "array-simple"
                 }
             ],
-            "@typescript-eslint/ban-ts-comment": "off",
-            "@typescript-eslint/ban-types": "error",
-            "@typescript-eslint/camelcase": "off",
-            "@typescript-eslint/class-name-casing": "off",
-            "@typescript-eslint/comma-spacing": "warn",
-            "@typescript-eslint/consistent-type-assertions": "warn",
-            "@typescript-eslint/consistent-type-definitions": [
+            [ESLintRule.TypeScriptBanTSComment]: "off",
+            [ESLintRule.TypeScriptBanTypes]: "error",
+            [ESLintRule.TypeScriptCamelCase]: "off",
+            [ESLintRule.TypeScriptClassNameCasing]: "off",
+            [ESLintRule.TypeScriptCommaSpacing]: "warn",
+            [ESLintRule.TypeScriptConsistentTypeAssertions]: "warn",
+            [ESLintRule.TypeScriptConsistentTypeDefinitions]: [
                 "warn",
                 "interface"
             ],
-            "@typescript-eslint/default-param-last": "error",
-            "@typescript-eslint/explicit-function-return-type": "off",
-            "@typescript-eslint/explicit-module-boundary-types": "off",
-            "@typescript-eslint/func-call-spacing": "warn",
-            // "@typescript-eslint/indent": [
+            [ESLintRule.TypeScriptDefaultParamLast]: "error",
+            [ESLintRule.TypeScriptExplicitFunctionReturnType]: "off",
+            [ESLintRule.TypeScriptExplicitModuleBoundaryTypes]: "off",
+            [ESLintRule.TypeScriptFuncCallSpacing]: "warn",
+            // [ESLintRule.TypeScriptIndent]: [
             //     "warn",
             //     4,
             //     {
@@ -89,8 +91,8 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
             //         "SwitchCase": 1
             //     }
             // ],
-            "@typescript-eslint/interface-name-prefix": "off",
-            "@typescript-eslint/member-delimiter-style": [
+            [ESLintRule.TypeScriptInterfaceNamePrefix]: "off",
+            [ESLintRule.TypeScriptMemberDelimiterStyle]: [
                 "warn",
                 {
                     singleline: {
@@ -103,7 +105,7 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
                     }
                 }
             ],
-            "@typescript-eslint/member-ordering": [
+            [ESLintRule.TypeScriptMemberOrdering]: [
                 weak ? "off" : "warn",
                 {
                     default: [
@@ -144,7 +146,7 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
                     ]
                 }
             ],
-            "@typescript-eslint/naming-convention": [
+            [ESLintRule.TypeScriptNamingConvention]: [
                 weak ? "off" : "warn",
                 {
                     selector: "enumMember",
@@ -165,23 +167,23 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
                     format: ["PascalCase"]
                 }
             ],
-            "@typescript-eslint/no-dynamic-delete": "off",
-            "@typescript-eslint/no-empty-function": "off",
-            "@typescript-eslint/no-empty-interface": "off",
-            "@typescript-eslint/no-explicit-any": "off",
-            "@typescript-eslint/no-for-in-array": weak ? "off" : "error",
-            "@typescript-eslint/no-inferrable-types": weak ? "off" : "error",
-            "@typescript-eslint/no-misused-new": "error",
-            "@typescript-eslint/no-namespace": [
+            [ESLintRule.TypeScriptNoDynamicDelete]: "off",
+            [ESLintRule.TypeScriptNoEmptyFunction]: "off",
+            [ESLintRule.TypeScriptNoEmptyInterface]: "off",
+            [ESLintRule.TypeScriptNoExplicitAny]: "off",
+            [ESLintRule.TypeScriptNoForInArray]: weak ? "off" : "error",
+            [ESLintRule.TypeScriptNoInferrableTypes]: weak ? "off" : "error",
+            [ESLintRule.TypeScriptNoMisusedNew]: "error",
+            [ESLintRule.TypeScriptNoNamespace]: [
                 "warn",
                 {
                     allowDeclarations: true,
                     allowDefinitionFiles: true
                 }
             ],
-            "@typescript-eslint/no-parameter-properties": "error",
-            "@typescript-eslint/no-this-alias": "off",
-            "@typescript-eslint/no-unused-expressions": [
+            [ESLintRule.TypeScriptNoParameterProperties]: "error",
+            [ESLintRule.TypeScriptNoThisAlias]: "off",
+            [ESLintRule.TypeScriptNoUnusedExpressions]: [
                 "warn",
                 {
                     allowShortCircuit: true,
@@ -189,31 +191,31 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
                     allowTaggedTemplates: true
                 }
             ],
-            "@typescript-eslint/no-unused-vars": [
+            [ESLintRule.TypeScriptNoUnusedVars]: [
                 "warn",
                 {
                     args: "none"
                 }
             ],
-            "@typescript-eslint/no-use-before-define": "off",
-            "@typescript-eslint/no-var-requires": "off",
-            "@typescript-eslint/prefer-as-const": "warn",
-            "@typescript-eslint/prefer-for-of": "warn",
-            "@typescript-eslint/prefer-function-type": "warn",
-            "@typescript-eslint/prefer-namespace-keyword": "error",
-            "@typescript-eslint/prefer-optional-chain": "warn",
-            "@typescript-eslint/quotes": [
+            [ESLintRule.TypeScriptNoUseBeforeDefine]: "off",
+            [ESLintRule.TypeScriptNoVarRequires]: "off",
+            [ESLintRule.TypeScriptPreferAsConst]: "warn",
+            [ESLintRule.TypeScriptPreferForOf]: "warn",
+            [ESLintRule.TypeScriptPreferFunctionType]: "warn",
+            [ESLintRule.TypeScriptPreferNamespaceKeyword]: "error",
+            [ESLintRule.TypeScriptPreferOptionalChain]: "warn",
+            [ESLintRule.TypeScriptQuotes]: [
                 "warn",
                 "double",
                 {
                     avoidEscape: true
                 }
             ],
-            "@typescript-eslint/semi": [
+            [ESLintRule.TypeScriptSemi]: [
                 "error",
                 "always"
             ],
-            "@typescript-eslint/space-before-function-paren": [
+            [ESLintRule.TypeScriptSpaceBeforeFunctionParen]: [
                 "warn",
                 {
                     anonymous: "never",
@@ -221,12 +223,12 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
                     named: "never"
                 }
             ],
-            "@typescript-eslint/triple-slash-reference": "off",
-            "@typescript-eslint/type-annotation-spacing": "warn",
-            "@typescript-eslint/unified-signatures": "off",
-            "import/no-default-export": weak ? "off" : "warn",
-            "import/no-duplicates": weak ? "off" : "warn",
-            "import/order": [
+            [ESLintRule.TypeScriptTripleSlashReference]: "off",
+            [ESLintRule.TypeScriptTypeAnnotationSpacing]: "warn",
+            [ESLintRule.TypeScriptUnifiedSignatures]: "off",
+            [ESLintRule.ImportNoDefaultExport]: weak ? "off" : "warn",
+            [ESLintRule.ImportNoDuplicates]: weak ? "off" : "warn",
+            [ESLintRule.ImportOrder]: [
                 "warn",
                 {
                     groups: [
@@ -253,15 +255,15 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
                     }
                 }
             ],
-            "jsdoc/check-alignment": weak ? "off" : "warn",
-            "jsdoc/check-indentation": weak ? "off" : "warn",
-            "jsdoc/check-param-names": weak ? "off" : "warn",
-            "jsdoc/check-syntax": weak ? "off" : "warn",
-            "jsdoc/check-tag-names": "warn",
-            "jsdoc/check-values": "warn",
-            "jsdoc/empty-tags": "warn",
-            "jsdoc/newline-after-description": weak ? "off" : "warn",
-            "jsdoc/require-description": [
+            [ESLintRule.JSDocCheckAlignment]: weak ? "off" : "warn",
+            [ESLintRule.JSDocCheckIndentation]: weak ? "off" : "warn",
+            [ESLintRule.JSDocCheckParamNames]: weak ? "off" : "warn",
+            [ESLintRule.JSDocCheckSyntax]: weak ? "off" : "warn",
+            [ESLintRule.JSDocCheckTagNames]: "warn",
+            [ESLintRule.JSDocCheckValues]: "warn",
+            [ESLintRule.JSDocEmptyTags]: "warn",
+            [ESLintRule.JSDocNewlineAfterDescription]: weak ? "off" : "warn",
+            [ESLintRule.JSDocRequireDescription]: [
                 weak ? "off" : "warn",
                 {
                     contexts: [
@@ -284,7 +286,7 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
                     ]
                 }
             ],
-            "jsdoc/require-jsdoc": [
+            [ESLintRule.JSDocRequireJSDoc]: [
                 weak ? "off" : "warn",
                 {
                     require: {
@@ -310,7 +312,7 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
                     ]
                 }
             ],
-            "jsdoc/require-param-description": [
+            [ESLintRule.JSDocRequireParamDescription]: [
                 weak ? "off" : "warn",
                 {
                     contexts: [
@@ -318,7 +320,7 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
                     ]
                 }
             ],
-            "jsdoc/require-param": [
+            [ESLintRule.JSDocRequireParam]: [
                 weak ? "off" : "warn",
                 {
                     exemptedBy: [],
@@ -336,7 +338,7 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
                     ]
                 }
             ],
-            "jsdoc/require-param-name": [
+            [ESLintRule.JSDocRequireParamName]: [
                 "warn",
                 {
                     contexts: [
@@ -344,7 +346,7 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
                     ]
                 }
             ],
-            "jsdoc/require-param-type": [
+            [ESLintRule.JSDocRequireParamType]: [
                 weak ? "off" : "warn",
                 {
                     contexts: [
@@ -352,7 +354,7 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
                     ]
                 }
             ],
-            "jsdoc/require-returns": [
+            [ESLintRule.JSDocRequireReturns]: [
                 weak ? "off" : "warn",
                 {
                     checkGetters: false,
@@ -364,7 +366,7 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
                     ]
                 }
             ],
-            "jsdoc/require-returns-type": [
+            [ESLintRule.JSDocRequireReturnsType]: [
                 weak ? "off" : "warn",
                 {
                     contexts: [
@@ -372,57 +374,57 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
                     ]
                 }
             ],
-            "node/no-unpublished-import": [
+            [ESLintRule.NodeNoUnpublishedImport]: [
                 "error",
                 {
                     convertPath: pathConverter
                 }
             ],
-            "node/no-unpublished-require": [
+            [ESLintRule.NodeNoUnpublishedRequire]: [
                 "error",
                 {
                     convertPath: pathConverter
                 }
             ],
-            "array-bracket-newline": [
+            [ESLintRule.ArrayBracketNewLine]: [
                 "warn",
                 "consistent"
             ],
-            "array-bracket-spacing": "warn",
-            "array-element-newline": [
+            [ESLintRule.ArrayBracketSpacing]: "warn",
+            [ESLintRule.ArrayElementNewline]: [
                 "warn",
                 "consistent"
             ],
-            "arrow-parens": [
+            [ESLintRule.ArrowParens]: [
                 "off",
                 "as-needed"
             ],
-            "arrow-spacing": "warn",
-            "block-spacing": "warn",
-            "brace-style": [
+            [ESLintRule.ArrowSpacing]: "warn",
+            [ESLintRule.BlockSpacing]: "warn",
+            [ESLintRule.BraceStyle]: [
                 "warn",
                 "allman",
                 {
                     allowSingleLine: true
                 }
             ],
-            "comma-dangle": weak ? "off" : "error",
-            "comma-style": "warn",
-            complexity: "off",
-            "computed-property-spacing": "warn",
-            "constructor-super": "error",
-            curly: "off",
-            "dot-notation": "off",
-            "eol-last": "warn",
-            eqeqeq: [
+            [ESLintRule.CommaDangle]: weak ? "off" : "error",
+            [ESLintRule.CommaStyle]: "warn",
+            [ESLintRule.Complexity]: "off",
+            [ESLintRule.ComputedPropertySpacing]: "warn",
+            [ESLintRule.ConstructorSuper]: "error",
+            [ESLintRule.Curly]: "off",
+            [ESLintRule.DotNotation]: "off",
+            [ESLintRule.EOLLast]: "warn",
+            [ESLintRule.EQEQEQ]: [
                 "warn",
                 "always"
             ],
-            "function-call-argument-newline": [
+            [ESLintRule.FunctionCallArgumentNewline]: [
                 "warn",
                 "consistent"
             ],
-            "generator-star-spacing": [
+            [ESLintRule.GeneratorStarSpacing]: [
                 "warn",
                 {
                     before: false,
@@ -434,37 +436,37 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
                     }
                 }
             ],
-            "grouped-accessor-pairs": "warn",
-            "guard-for-in": "off",
-            "lines-between-class-members": "warn",
-            "max-classes-per-file": "off",
-            "max-len": "off",
-            "multiline-ternary": [
+            [ESLintRule.GroupedAccessorPairs]: "warn",
+            [ESLintRule.GuardForIn]: "off",
+            [ESLintRule.LinesBetweenClassMembers]: "warn",
+            [ESLintRule.MaxClassesPerFile]: "off",
+            [ESLintRule.MaxLen]: "off",
+            [ESLintRule.MultilineTernary]: [
                 "warn",
                 "always-multiline"
             ],
-            "new-parens": "warn",
-            "no-async-promise-executor": "off",
-            "no-bitwise": "off",
-            "no-caller": "error",
-            "no-case-declarations": "off",
-            "no-cond-assign": "error",
-            "no-console": "off",
-            "no-constant-condition": "warn",
-            "no-constructor-return": "error",
-            "no-control-regex": "off",
-            "no-debugger": "warn",
-            "no-duplicate-case": "error",
-            "no-empty": "off",
-            "no-empty-pattern": "off",
-            "no-eval": "warn",
-            "no-fallthrough": "error",
-            "no-floating-decimal": "error",
-            "no-implicit-coercion": "warn",
-            "no-inner-declarations": "off",
-            "no-invalid-this": "off",
-            "no-lonely-if": "warn",
-            "no-multiple-empty-lines": [
+            [ESLintRule.NewParens]: "warn",
+            [ESLintRule.NoAsyncPromiseExecutor]: "off",
+            [ESLintRule.NoBitwise]: "off",
+            [ESLintRule.NoCaller]: "error",
+            [ESLintRule.NoCaseDeclarations]: "off",
+            [ESLintRule.NoCondAssign]: "error",
+            [ESLintRule.NoConsole]: "off",
+            [ESLintRule.NoConstantCondition]: "warn",
+            [ESLintRule.NoConstructorReturn]: "error",
+            [ESLintRule.NoControlRegex]: "off",
+            [ESLintRule.NoDebugger]: "warn",
+            [ESLintRule.NoDuplicateCase]: "error",
+            [ESLintRule.NoEmpty]: "off",
+            [ESLintRule.NoEmptyPattern]: "off",
+            [ESLintRule.NoEval]: "warn",
+            [ESLintRule.NoFallthrough]: "error",
+            [ESLintRule.NoFloatingDecimal]: "error",
+            [ESLintRule.NoImplicitCoercion]: "warn",
+            [ESLintRule.NoInnerDeclarations]: "off",
+            [ESLintRule.NoInvalidThis]: "off",
+            [ESLintRule.NoLonelyIf]: "warn",
+            [ESLintRule.NoMultipleEmptyLines]: [
                 "warn",
                 {
                     max: 1,
@@ -472,26 +474,26 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
                     maxEOF: 0
                 }
             ],
-            "no-multi-spaces": "warn",
-            "no-new-wrappers": "error",
-            "no-octal-escape": "warn",
-            "no-regex-spaces": "off",
-            "no-return-await": "warn",
-            "no-sequences": "error",
-            "no-shadow": "off",
-            "no-sparse-arrays": "error",
-            "no-throw-literal": "error",
-            "no-trailing-spaces": "warn",
-            "no-undef-init": "warn",
-            "no-unreachable": "off",
-            "no-unsafe-finally": "error",
-            "no-unused-labels": "warn",
-            "no-useless-catch": "off",
-            "no-useless-rename": "warn",
-            "no-var": "error",
-            "no-void": "warn",
-            "no-whitespace-before-property": "warn",
-            "object-curly-newline":
+            [ESLintRule.NoMultiSpaces]: "warn",
+            [ESLintRule.NoNewWrappers]: "error",
+            [ESLintRule.NoOctalEscape]: "warn",
+            [ESLintRule.NoRegexSpaces]: "off",
+            [ESLintRule.NoReturnAwait]: "warn",
+            [ESLintRule.NoSequences]: "error",
+            [ESLintRule.NoShadow]: "off",
+            [ESLintRule.NoSparseArrays]: "error",
+            [ESLintRule.NoThrowLiteral]: "error",
+            [ESLintRule.NoTrailingSpaces]: "warn",
+            [ESLintRule.NoUndefInit]: "warn",
+            [ESLintRule.NoUnreachable]: "off",
+            [ESLintRule.NoUnsafeFinally]: "error",
+            [ESLintRule.NoUnusedLabels]: "warn",
+            [ESLintRule.NoUselessCatch]: "off",
+            [ESLintRule.NoUselessRename]: "warn",
+            [ESLintRule.NoVar]: "error",
+            [ESLintRule.NoVoid]: "warn",
+            [ESLintRule.NoWhitespaceBeforeProperty]: "warn",
+            [ESLintRule.ObjectCurlyNewline]:
                 [
                     "warn",
                     {
@@ -499,30 +501,30 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
                         consistent: true
                     }
                 ],
-            "object-curly-spacing": [
+            [ESLintRule.ObjectCurlySpacing]: [
                 "warn",
                 "always"
             ],
-            "object-property-newline": [
+            [ESLintRule.ObjectPropertyNewline]: [
                 "warn",
                 {
                     allowAllPropertiesOnSameLine: true
                 }
             ],
-            "object-shorthand": "warn",
+            [ESLintRule.ObjectShorthand]: "warn",
             "one-var": [
                 "warn",
                 "never"
             ],
-            "operator-linebreak": [
+            [ESLintRule.OperatorLineBreak]: [
                 weak ? "off" : "warn",
                 "after"
             ],
-            "padded-blocks": [
+            [ESLintRule.PaddedBlocks]: [
                 weak ? "off" : "warn",
                 "never"
             ],
-            "padding-line-between-statements": [
+            [ESLintRule.PaddingLineBetweenStatements]: [
                 weak ? "off" : "warn",
                 {
                     blankLine: "always",
@@ -544,22 +546,22 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
                     ]
                 }
             ],
-            "prefer-const": "off",
-            "prefer-object-spread": "warn",
-            "prefer-rest-params": "warn",
-            "prefer-spread": "warn",
-            "quote-props": [
+            [ESLintRule.PreferConst]: "off",
+            [ESLintRule.PreferObjectSpread]: "warn",
+            [ESLintRule.PreferRestParams]: "warn",
+            [ESLintRule.PreferSpread]: "warn",
+            [ESLintRule.QuoteProps]: [
                 weak ? "off" : "warn",
                 "as-needed"
             ],
-            "rest-spread-spacing": "warn",
-            "semi-spacing": "warn",
-            "semi-style": "warn",
-            "space-before-blocks": "warn",
-            "space-in-parens": "warn",
-            "space-infix-ops": "warn",
-            "space-unary-ops": "warn",
-            "spaced-comment": weak ?
+            [ESLintRule.RestSpreadSpacing]: "warn",
+            [ESLintRule.SemiSpacing]: "warn",
+            [ESLintRule.SemiStyle]: "warn",
+            [ESLintRule.SpaceBeforeBlocks]: "warn",
+            [ESLintRule.SpaceInParens]: "warn",
+            [ESLintRule.SpaceInfixOPs]: "warn",
+            [ESLintRule.SpaceUnaryOPs]: "warn",
+            [ESLintRule.SpacedComment]: weak ?
                 "off" :
                 [
                     "warn",
@@ -570,11 +572,11 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
                         ]
                     }
                 ],
-            "switch-colon-spacing": "warn",
-            "template-curly-spacing": "warn",
-            "use-isnan": "warn",
-            "yield-star-spacing": "warn",
-            yoda: "warn"
+            [ESLintRule.SwitchColonSpacing]: "warn",
+            [ESLintRule.TemplateCurlySpacing]: "warn",
+            [ESLintRule.UseIsNaN]: "warn",
+            [ESLintRule.YieldStarSpacing]: "warn",
+            [ESLintRule.Yoda]: "warn"
         },
         overrides: [],
         settings: {
@@ -591,7 +593,7 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
                 "*.jsx"
             ],
             rules: {
-                "valid-typeof": "error"
+                [ESLintRule.ValidTypeof]: "error"
             }
         },
         {
@@ -600,20 +602,20 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
                 "*.tsx"
             ],
             rules: {
-                "@typescript-eslint/explicit-function-return-type": [
+                [ESLintRule.TypeScriptExplicitFunctionReturnType]: [
                     "warn",
                     {
                         allowExpressions: true
                     }
                 ],
-                "@typescript-eslint/explicit-member-accessibility": [
+                [ESLintRule.TypeScriptExplicitMemberAccessibility]: [
                     "warn",
                     {
                         accessibility: "explicit"
                     }
                 ],
-                "@typescript-eslint/no-var-requires": "warn",
-                "jsdoc/no-types": [
+                [ESLintRule.TypeScriptNoVarRequires]: "warn",
+                [ESLintRule.JSDocNoTypes]: [
                     "warn",
                     {
                         contexts: [
@@ -621,8 +623,8 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
                         ]
                     }
                 ],
-                "jsdoc/require-param-type": "off",
-                "jsdoc/require-returns-type": "off"
+                [ESLintRule.JSDocRequireParamType]: "off",
+                [ESLintRule.JSDocRequireReturnsType]: "off"
             }
         });
 
@@ -634,7 +636,7 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
                     "*.d.ts"
                 ],
                 rules: {
-                    "import/no-default-export": "off"
+                    [ESLintRule.ImportNoDefaultExport]: "off"
                 }
             });
     }
@@ -645,28 +647,28 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
             {
                 plugins: [
                     ...config.plugins,
-                    "@typescript-eslint/tslint"
+                    ESLintPlugin.TSLint
                 ],
                 rules: {
-                    "@typescript-eslint/await-thenable": "warn",
-                    "@typescript-eslint/no-throw-literal": "warn",
-                    "@typescript-eslint/no-floating-promises": "off",
-                    "@typescript-eslint/no-unnecessary-boolean-literal-compare": "warn",
-                    "@typescript-eslint/no-unnecessary-qualifier": "warn",
-                    "@typescript-eslint/no-unnecessary-type-arguments": "warn",
-                    "@typescript-eslint/no-unnecessary-type-assertion": "warn",
-                    "@typescript-eslint/prefer-includes": "warn",
-                    "@typescript-eslint/prefer-nullish-coalescing": "warn",
-                    "@typescript-eslint/prefer-string-starts-ends-with": "warn",
-                    "@typescript-eslint/restrict-plus-operands": [
+                    [ESLintRule.TypeScriptAwaitThenable]: "warn",
+                    [ESLintRule.TypeScriptNoThrowLiteral]: "warn",
+                    [ESLintRule.TypeScriptNoFloatingPromises]: "off",
+                    [ESLintRule.TypeScriptNoUnnecessaryBooleanLiteralCompare]: "warn",
+                    [ESLintRule.TypeScriptNoUnnecessaryQualifier]: "warn",
+                    [ESLintRule.TypeScriptNoUnnecessaryTypeArguments]: "warn",
+                    [ESLintRule.TypeScriptNoUnnecessaryTypeAssertion]: "warn",
+                    [ESLintRule.TypeScriptPreferIncludes]: "warn",
+                    [ESLintRule.TypeScriptPreferNullishCoalescing]: "warn",
+                    [ESLintRule.TypeScriptPreferStringStartsEndsWith]: "warn",
+                    [ESLintRule.TypeScriptRestrictPlusOperands]: [
                         "warn",
                         {
                             checkCompoundAssignments: true
                         }
                     ],
-                    "@typescript-eslint/return-await": "warn",
-                    "@typescript-eslint/unbound-method": "off",
-                    "@typescript-eslint/tslint/config": [
+                    [ESLintRule.NoReturnAwait]: "warn",
+                    [ESLintRule.TypeScriptUnboundMethod]: "off",
+                    [ESLintRule.TSLint]: [
                         "warn",
                         {
                             lintFile: require.resolve(
@@ -676,7 +678,7 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
                                     `${weak ? "Weak" : "Recommended"}${typeChecking ? "WithTypeChecking" : ""}`))
                         }
                     ],
-                    "deprecation/deprecation": "warn"
+                    [ESLintRule.Deprecation]: "warn"
                 }
             } :
             {});

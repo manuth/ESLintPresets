@@ -1,9 +1,10 @@
+import { ESLintRule } from "../../../../ESLintRule";
 import { RuleSet } from "../../../Debugging/RuleSet";
 import { ScriptKind } from "../../../Debugging/ScriptKind";
 import { RuleSuite } from "../../../Debugging/Suites/RuleSuite";
 
 export let SpaceUnaryOPs = new RuleSuite(
-    "space-unary-ops",
+    ESLintRule.SpaceUnaryOPs,
     [
         {
             Description: "Checking whether spacing of unary operators must be correct…",

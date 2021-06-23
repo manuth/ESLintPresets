@@ -1,9 +1,10 @@
+import { ESLintRule } from "../../../../ESLintRule";
 import { RuleSet } from "../../../Debugging/RuleSet";
 import { ScriptKind } from "../../../Debugging/ScriptKind";
 import { RuleSuite } from "../../../Debugging/Suites/RuleSuite";
 
 export let MemberDelimiterStyle = new RuleSuite(
-    "@typescript-eslint/member-delimiter-style",
+    ESLintRule.TypeScriptMemberDelimiterStyle,
     [
         {
             Description: "Checking whether members must be delimited with semicolons…",

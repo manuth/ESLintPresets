@@ -1,9 +1,10 @@
+import { TSLintRule } from "../../../../../TSLintRule";
 import { RuleSet } from "../../../../Debugging/RuleSet";
 import { ScriptKind } from "../../../../Debugging/ScriptKind";
 import { TSLintRuleSuite } from "../../../../Debugging/Suites/TSLintRuleSuite";
 
 export let OrderedImports = new TSLintRuleSuite(
-    "ordered-imports",
+    TSLintRule.OrderedImports,
     [
         {
             Description: "Checking whether the order import-sources is ignored…",

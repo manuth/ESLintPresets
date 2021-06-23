@@ -1,9 +1,10 @@
+import { ESLintRule } from "../../../../ESLintRule";
 import { RuleSet } from "../../../Debugging/RuleSet";
 import { ScriptKind } from "../../../Debugging/ScriptKind";
 import { RuleSuite } from "../../../Debugging/Suites/RuleSuite";
 
 export let QuoteProps = new RuleSuite(
-    "quote-props",
+    ESLintRule.QuoteProps,
     [
         {
             Description: "Checking whether properties must not be quoted unless it's necessary…",

@@ -1,9 +1,10 @@
+import { ESLintRule } from "../../../../ESLintRule";
 import { RuleSet } from "../../../Debugging/RuleSet";
 import { ScriptKind } from "../../../Debugging/ScriptKind";
 import { RuleSuite } from "../../../Debugging/Suites/RuleSuite";
 
 export let DefaultParamLast = new RuleSuite(
-    "@typescript-eslint/default-param-last",
+    ESLintRule.TypeScriptDefaultParamLast,
     [
         {
             Description: "Checking whether default-parameters must be declared after required parameters…",

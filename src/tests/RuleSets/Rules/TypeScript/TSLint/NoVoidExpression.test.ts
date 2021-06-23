@@ -1,9 +1,10 @@
+import { TSLintRule } from "../../../../../TSLintRule";
 import { RuleSet } from "../../../../Debugging/RuleSet";
 import { ScriptKind } from "../../../../Debugging/ScriptKind";
 import { TSLintRuleSuite } from "../../../../Debugging/Suites/TSLintRuleSuite";
 
 export let NoVoidExpression = new TSLintRuleSuite(
-    "no-void-expression",
+    TSLintRule.NoVoidExpression,
     [
         {
             Description: "Checking whether the correct usage of void-returning functions is enforced…",

@@ -1,9 +1,10 @@
+import { ESLintRule } from "../../../../ESLintRule";
 import { RuleSet } from "../../../Debugging/RuleSet";
 import { ScriptKind } from "../../../Debugging/ScriptKind";
 import { RuleSuite } from "../../../Debugging/Suites/RuleSuite";
 
 export let NoUseBeforeDefine = new RuleSuite(
-    "@typescript-eslint/no-use-before-define",
+    ESLintRule.TypeScriptNoUseBeforeDefine,
     [
         {
             Description: "Checking whether using variables before declaration is disallowed…",

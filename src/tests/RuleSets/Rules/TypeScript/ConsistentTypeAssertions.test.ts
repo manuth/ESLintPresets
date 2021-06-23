@@ -1,9 +1,10 @@
+import { ESLintRule } from "../../../../ESLintRule";
 import { RuleSet } from "../../../Debugging/RuleSet";
 import { ScriptKind } from "../../../Debugging/ScriptKind";
 import { RuleSuite } from "../../../Debugging/Suites/RuleSuite";
 
 export let ConsistentTypeAssertions = new RuleSuite(
-    "@typescript-eslint/consistent-type-assertions",
+    ESLintRule.TypeScriptConsistentTypeAssertions,
     [
         {
             Description: "Checking whether types must be asserted consistently…",

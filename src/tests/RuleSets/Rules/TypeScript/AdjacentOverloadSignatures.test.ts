@@ -1,9 +1,10 @@
+import { ESLintRule } from "../../../../ESLintRule";
 import { RuleSet } from "../../../Debugging/RuleSet";
 import { ScriptKind } from "../../../Debugging/ScriptKind";
 import { RuleSuite } from "../../../Debugging/Suites/RuleSuite";
 
 export let AdjacentOverloadSignatures = new RuleSuite(
-    "@typescript-eslint/adjacent-overload-signatures",
+    ESLintRule.TypeScriptAdjacentOverloadSignatures,
     [
         {
             Description: "Checking whether the rule works as expected…",

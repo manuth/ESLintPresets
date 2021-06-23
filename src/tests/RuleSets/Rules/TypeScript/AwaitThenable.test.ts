@@ -1,9 +1,10 @@
+import { ESLintRule } from "../../../../ESLintRule";
 import { RuleSet } from "../../../Debugging/RuleSet";
 import { ScriptKind } from "../../../Debugging/ScriptKind";
 import { RuleSuite } from "../../../Debugging/Suites/RuleSuite";
 
 export let AwaitThenable = new RuleSuite(
-    "@typescript-eslint/await-thenable",
+    ESLintRule.TypeScriptAwaitThenable,
     [
         {
             Description: "Checking whether only thenable variables can be awaited…",

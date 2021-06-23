@@ -1,9 +1,10 @@
+import { ESLintRule } from "../../../../ESLintRule";
 import { RuleSet } from "../../../Debugging/RuleSet";
 import { ScriptKind } from "../../../Debugging/ScriptKind";
 import { RuleSuite } from "../../../Debugging/Suites/RuleSuite";
 
 export let CheckAlignment = new RuleSuite(
-    "jsdoc/check-alignment",
+    ESLintRule.JSDocCheckAlignment,
     [
         {
             Description: "Checking whether the alignment is enforced correctly…",

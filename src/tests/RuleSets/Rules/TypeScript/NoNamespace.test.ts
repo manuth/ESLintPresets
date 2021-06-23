@@ -1,9 +1,10 @@
+import { ESLintRule } from "../../../../ESLintRule";
 import { RuleSet } from "../../../Debugging/RuleSet";
 import { ScriptKind } from "../../../Debugging/ScriptKind";
 import { RuleSuite } from "../../../Debugging/Suites/RuleSuite";
 
 export let NoNamespace = new RuleSuite(
-    "@typescript-eslint/no-namespace",
+    ESLintRule.TypeScriptNoNamespace,
     [
         {
             Description: "Checking whether normal namespaces are disallowed…",

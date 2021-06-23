@@ -1,9 +1,10 @@
+import { ESLintRule } from "../../../../ESLintRule";
 import { RuleSet } from "../../../Debugging/RuleSet";
 import { ScriptKind } from "../../../Debugging/ScriptKind";
 import { RuleSuite } from "../../../Debugging/Suites/RuleSuite";
 
 export let CommaStyle = new RuleSuite(
-    "comma-style",
+    ESLintRule.CommaStyle,
     [
         {
             Description: "Checking whether commas are enforced correctly…",

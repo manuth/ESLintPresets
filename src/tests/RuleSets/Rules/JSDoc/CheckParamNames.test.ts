@@ -1,9 +1,10 @@
+import { ESLintRule } from "../../../../ESLintRule";
 import { RuleSet } from "../../../Debugging/RuleSet";
 import { ScriptKind } from "../../../Debugging/ScriptKind";
 import { RuleSuite } from "../../../Debugging/Suites/RuleSuite";
 
 export let CheckParamNames = new RuleSuite(
-    "jsdoc/check-param-names",
+    ESLintRule.JSDocCheckParamNames,
     [
         {
             Description: "Checking whether the parameter names must be matching…",

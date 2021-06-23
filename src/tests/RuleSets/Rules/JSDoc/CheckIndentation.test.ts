@@ -1,9 +1,10 @@
+import { ESLintRule } from "../../../../ESLintRule";
 import { RuleSet } from "../../../Debugging/RuleSet";
 import { ScriptKind } from "../../../Debugging/ScriptKind";
 import { RuleSuite } from "../../../Debugging/Suites/RuleSuite";
 
 export let CheckIndentation = new RuleSuite(
-    "jsdoc/check-indentation",
+    ESLintRule.JSDocCheckIndentation,
     [
         {
             Description: "Checking whether the parameter names must be matching…",

@@ -1,9 +1,10 @@
+import { ESLintRule } from "../../../../ESLintRule";
 import { RuleSet } from "../../../Debugging/RuleSet";
 import { ScriptKind } from "../../../Debugging/ScriptKind";
 import { RuleSuite } from "../../../Debugging/Suites/RuleSuite";
 
 export let SpacedComment = new RuleSuite(
-    "spaced-comment",
+    ESLintRule.SpacedComment,
     [
         {
             Description: "Checking whether comments must start with a space…",

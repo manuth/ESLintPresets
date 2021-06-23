@@ -1,9 +1,10 @@
+import { ESLintRule } from "../../../../ESLintRule";
 import { RuleSet } from "../../../Debugging/RuleSet";
 import { ScriptKind } from "../../../Debugging/ScriptKind";
 import { RuleSuite } from "../../../Debugging/Suites/RuleSuite";
 
 export let RequireDescription = new RuleSuite(
-    "jsdoc/require-description",
+    ESLintRule.JSDocRequireDescription,
     [
         {
             Description: "Checking whether descriptions are required where appropriate…",

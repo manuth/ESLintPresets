@@ -1,9 +1,10 @@
+import { ESLintRule } from "../../../../ESLintRule";
 import { RuleSet } from "../../../Debugging/RuleSet";
 import { ScriptKind } from "../../../Debugging/ScriptKind";
 import { RuleSuite } from "../../../Debugging/Suites/RuleSuite";
 
 export let NewParens = new RuleSuite(
-    "new-parens",
+    ESLintRule.NewParens,
     [
         {
             Description: "Checking whether `new`-expressions without parentheses are disallowed…",

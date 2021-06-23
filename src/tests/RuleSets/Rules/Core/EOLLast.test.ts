@@ -1,9 +1,10 @@
+import { ESLintRule } from "../../../../ESLintRule";
 import { RuleSet } from "../../../Debugging/RuleSet";
 import { ScriptKind } from "../../../Debugging/ScriptKind";
 import { RuleSuite } from "../../../Debugging/Suites/RuleSuite";
 
 export let EOLLast = new RuleSuite(
-    "eol-last",
+    ESLintRule.EOLLast,
     [
         {
             Description: "Checking whether files must have a new-line character at the end…",

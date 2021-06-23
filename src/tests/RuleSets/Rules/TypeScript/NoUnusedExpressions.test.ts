@@ -1,9 +1,10 @@
+import { ESLintRule } from "../../../../ESLintRule";
 import { RuleSet } from "../../../Debugging/RuleSet";
 import { ScriptKind } from "../../../Debugging/ScriptKind";
 import { RuleSuite } from "../../../Debugging/Suites/RuleSuite";
 
 export let NoUnusedExpressions = new RuleSuite(
-    "@typescript-eslint/no-unused-expressions",
+    ESLintRule.TypeScriptNoUnusedExpressions,
     [
         {
             Description: "Checking whether unused expressions cause a warning…",

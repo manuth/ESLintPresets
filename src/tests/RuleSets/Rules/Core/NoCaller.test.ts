@@ -1,9 +1,10 @@
+import { ESLintRule } from "../../../../ESLintRule";
 import { RuleSet } from "../../../Debugging/RuleSet";
 import { ScriptKind } from "../../../Debugging/ScriptKind";
 import { RuleSuite } from "../../../Debugging/Suites/RuleSuite";
 
 export let NoCaller = new RuleSuite(
-    "no-caller",
+    ESLintRule.NoCaller,
     [
         {
             Description: "Checking whether the use of `arguments.caller` is disallowed…",

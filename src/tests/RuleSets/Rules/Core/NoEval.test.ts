@@ -1,9 +1,10 @@
+import { ESLintRule } from "../../../../ESLintRule";
 import { RuleSet } from "../../../Debugging/RuleSet";
 import { ScriptKind } from "../../../Debugging/ScriptKind";
 import { RuleSuite } from "../../../Debugging/Suites/RuleSuite";
 
 export let NoEval = new RuleSuite(
-    "no-eval",
+    ESLintRule.NoEval,
     [
         {
             // eslint-disable-next-line no-eval

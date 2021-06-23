@@ -1,9 +1,10 @@
+import { ESLintRule } from "../../../../ESLintRule";
 import { RuleSet } from "../../../Debugging/RuleSet";
 import { ScriptKind } from "../../../Debugging/ScriptKind";
 import { RuleSuite } from "../../../Debugging/Suites/RuleSuite";
 
 export let NoExplicitAny = new RuleSuite(
-    "@typescript-eslint/no-explicit-any",
+    ESLintRule.TypeScriptNoExplicitAny,
     [
         {
             Description: "Checking whether explicit `any` assertions are allowed…",

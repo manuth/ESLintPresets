@@ -1,9 +1,10 @@
+import { ESLintRule } from "../../../../ESLintRule";
 import { RuleSet } from "../../../Debugging/RuleSet";
 import { ScriptKind } from "../../../Debugging/ScriptKind";
 import { RuleSuite } from "../../../Debugging/Suites/RuleSuite";
 
 export let NoDuplicates = new RuleSuite(
-    "import/no-duplicates",
+    ESLintRule.ImportNoDuplicates,
     [
         {
             Description: "Checking whether duplicate imports are disallowed…",

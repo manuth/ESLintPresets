@@ -1,9 +1,10 @@
+import { ESLintRule } from "../../../../ESLintRule";
 import { RuleSet } from "../../../Debugging/RuleSet";
 import { ScriptKind } from "../../../Debugging/ScriptKind";
 import { RuleSuite } from "../../../Debugging/Suites/RuleSuite";
 
 export let NoSparseArrays = new RuleSuite(
-    "no-sparse-arrays",
+    ESLintRule.NoSparseArrays,
     [
         {
             Description: "Checking whether the rule acts as expected…",

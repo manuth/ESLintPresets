@@ -1,9 +1,10 @@
+import { ESLintRule } from "../../../../ESLintRule";
 import { RuleSet } from "../../../Debugging/RuleSet";
 import { ScriptKind } from "../../../Debugging/ScriptKind";
 import { RuleSuite } from "../../../Debugging/Suites/RuleSuite";
 
 export let PreferNamespaceKeyword = new RuleSuite(
-    "@typescript-eslint/prefer-namespace-keyword",
+    ESLintRule.TypeScriptPreferNamespaceKeyword,
     [
         {
             Description: "Checking whether the namespace-keyword is preferred…",

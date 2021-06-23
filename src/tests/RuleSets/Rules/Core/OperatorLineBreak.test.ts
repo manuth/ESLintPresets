@@ -1,9 +1,10 @@
+import { ESLintRule } from "../../../../ESLintRule";
 import { RuleSet } from "../../../Debugging/RuleSet";
 import { ScriptKind } from "../../../Debugging/ScriptKind";
 import { RuleSuite } from "../../../Debugging/Suites/RuleSuite";
 
 export let OperatorLineBreak = new RuleSuite(
-    "operator-linebreak",
+    ESLintRule.OperatorLineBreak,
     [
         {
             Description: "Checking whether operators, if separated by line-breaks must be at the end of the line…",

@@ -1,9 +1,10 @@
+import { ESLintRule } from "../../../../ESLintRule";
 import { RuleSet } from "../../../Debugging/RuleSet";
 import { ScriptKind } from "../../../Debugging/ScriptKind";
 import { ImportVisibilitySuite } from "./ImportVisibilitySuite";
 
 export let NoUnpublishedRequire = new ImportVisibilitySuite(
-    "node/no-unpublished-require",
+    ESLintRule.NodeNoUnpublishedRequire,
     [
         {
             Description: "Checking whether importing `devDependencies` from public files is disallowed…",

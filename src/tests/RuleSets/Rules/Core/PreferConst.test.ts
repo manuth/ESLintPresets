@@ -1,9 +1,10 @@
+import { ESLintRule } from "../../../../ESLintRule";
 import { RuleSet } from "../../../Debugging/RuleSet";
 import { ScriptKind } from "../../../Debugging/ScriptKind";
 import { RuleSuite } from "../../../Debugging/Suites/RuleSuite";
 
 export let PreferConst = new RuleSuite(
-    "prefer-const",
+    ESLintRule.PreferConst,
     [
         {
             Description: "Checking whether the `const`-keyword is not preferred…",

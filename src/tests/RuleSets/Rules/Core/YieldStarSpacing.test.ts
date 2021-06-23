@@ -1,9 +1,10 @@
+import { ESLintRule } from "../../../../ESLintRule";
 import { RuleSet } from "../../../Debugging/RuleSet";
 import { ScriptKind } from "../../../Debugging/ScriptKind";
 import { RuleSuite } from "../../../Debugging/Suites/RuleSuite";
 
 export let YieldStarSpacing = new RuleSuite(
-    "yield-star-spacing",
+    ESLintRule.YieldStarSpacing,
     [
         {
             Description: "Checking whether yield-operators must be spaced correctly…",

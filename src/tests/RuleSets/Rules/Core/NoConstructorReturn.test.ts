@@ -1,9 +1,10 @@
+import { ESLintRule } from "../../../../ESLintRule";
 import { RuleSet } from "../../../Debugging/RuleSet";
 import { ScriptKind } from "../../../Debugging/ScriptKind";
 import { RuleSuite } from "../../../Debugging/Suites/RuleSuite";
 
 export let NoConstructorReturn = new RuleSuite(
-    "no-constructor-return",
+    ESLintRule.NoConstructorReturn,
     [
         {
             Description: "Checking whether `return`-statements in constructors are disallowed…",

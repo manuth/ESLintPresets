@@ -1,9 +1,10 @@
+import { ESLintRule } from "../../../../ESLintRule";
 import { RuleSet } from "../../../Debugging/RuleSet";
 import { ScriptKind } from "../../../Debugging/ScriptKind";
 import { RuleSuite } from "../../../Debugging/Suites/RuleSuite";
 
 export let RequireParam = new RuleSuite(
-    "jsdoc/require-param",
+    ESLintRule.JSDocRequireParam,
     [
         {
             Description: "Checking whether all parameters must have an `@param`-tag…",

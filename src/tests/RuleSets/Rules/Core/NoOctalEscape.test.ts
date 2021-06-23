@@ -1,9 +1,10 @@
+import { ESLintRule } from "../../../../ESLintRule";
 import { RuleSet } from "../../../Debugging/RuleSet";
 import { ScriptKind } from "../../../Debugging/ScriptKind";
 import { RuleSuite } from "../../../Debugging/Suites/RuleSuite";
 
 export let NoOctalEscape = new RuleSuite(
-    "no-octal-escape",
+    ESLintRule.NoOctalEscape,
     [
         {
             Description: "Checking whether octal escape-sequences are disallowed…",
