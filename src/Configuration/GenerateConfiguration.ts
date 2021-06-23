@@ -228,6 +228,7 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
             [ESLintRule.TypeScriptUnifiedSignatures]: "off",
             [ESLintRule.ImportNoDefaultExport]: weak ? "off" : "warn",
             [ESLintRule.ImportNoDuplicates]: weak ? "off" : "warn",
+            [ESLintRule.ImportNoExtraneousDependencies]: "error",
             [ESLintRule.ImportOrder]: [
                 "warn",
                 {

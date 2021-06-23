@@ -71,6 +71,7 @@ export abstract class ESLintRule
     public static Deprecation = `${ESLintPlugin.Deprecation}/deprecation`;
     public static ImportNoDefaultExport = `${ESLintPlugin.Import}/no-default-export`;
     public static ImportNoDuplicates = `${ESLintPlugin.Import}/no-duplicates`;
+    public static ImportNoExtraneousDependencies = `${ESLintPlugin.Import}/no-extraneous-dependencies`;
     public static ImportOrder = `${ESLintPlugin.Import}/order`;
     public static JSDocCheckAlignment = `${ESLintPlugin.JSDoc}/check-alignment`;
     public static JSDocCheckIndentation = `${ESLintPlugin.JSDoc}/check-indentation`;
