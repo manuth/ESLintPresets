@@ -6,7 +6,7 @@ export let NoExplicitAny = new RuleSuite(
     "@typescript-eslint/no-explicit-any",
     [
         {
-            Description: "Checking whether explicit `any` assertions are disallowed…",
+            Description: "Checking whether explicit `any` assertions are allowed…",
             RuleSet: RuleSet.All,
             ScriptKind: ScriptKind.TS,
             CodeSnippets: [

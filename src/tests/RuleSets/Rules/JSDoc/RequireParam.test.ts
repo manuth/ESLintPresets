@@ -6,7 +6,7 @@ export let RequireParam = new RuleSuite(
     "jsdoc/require-param",
     [
         {
-            Description: "Checking whether all parameters must have a `@param`-tag…",
+            Description: "Checking whether all parameters must have an `@param`-tag…",
             RuleSet: RuleSet.Recommended,
             ScriptKind: ScriptKind.Scripts,
             CodeSnippets: [
