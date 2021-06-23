@@ -1,10 +1,11 @@
 import { Package } from "@manuth/package-json-editor";
 import { TempFileSystem } from "@manuth/temp-files";
-import { ensureFile, readFile, remove, writeFile, writeJSON } from "fs-extra";
+import { ensureFile, remove, writeFile, writeJSON } from "fs-extra";
 import { Context } from "mocha";
 import { RuleSuite } from "../../../Debugging/Suites/RuleSuite";
 import { ITestCase } from "../../../Debugging/TestCases/ITestCase";
 import { TestContext } from "../../../Debugging/TestContext";
+import { Workspace } from "../../../Debugging/Workspace";
 
 /**
  * Provides the functionality to test rules related to the visibility of imports.
@@ -17,9 +18,9 @@ export class ImportVisibilitySuite extends RuleSuite
     private static ignoredFileName: string = null;
 
     /**
-     * The backup of the `package.json`-file.
+     * The backup of the workspace.
      */
-    private packageBackup: Buffer;
+    private workspaceBackup: Workspace;
 
     /**
      * The name of the `.npmignore`-file.
@@ -81,8 +82,11 @@ export class ImportVisibilitySuite extends RuleSuite
     public override async SuiteSetup(mocha: Context, testContext: TestContext): Promise<void>
     {
         super.SuiteSetup(mocha, testContext);
+        this.workspaceBackup = testContext.Workspace;
+        testContext.Workspace = new Workspace();
+        await testContext.Workspace.Initialize();
+
         let npmPackage = new Package(testContext.Workspace.PackageManifestFileName);
-        this.packageBackup = await readFile(testContext.Workspace.PackageManifestFileName);
         npmPackage.Dependencies.Add(ImportVisibilitySuite.PublicDependency, "*");
         npmPackage.DevelpomentDependencies.Add(ImportVisibilitySuite.DevelopmentDependency, "*");
         await writeJSON(testContext.Workspace.PackageManifestFileName, npmPackage.ToJSON());
@@ -102,8 +106,9 @@ export class ImportVisibilitySuite extends RuleSuite
      */
     public override async SuiteTeardown(mocha: Context, testContext: TestContext): Promise<void>
     {
-        await writeFile(testContext.Workspace.PackageManifestFileName, this.packageBackup);
         await remove(testContext.Workspace.MakePath(this.npmIgnoreFileName));
         await remove(testContext.Workspace.MakeSourcePath(ImportVisibilitySuite.IgnoredFileName));
+        testContext.Workspace.Dispose();
+        testContext.Workspace = this.workspaceBackup;
     }
 }
