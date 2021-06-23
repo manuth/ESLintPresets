@@ -1,6 +1,6 @@
 import { Package } from "@manuth/package-json-editor";
 import { TempFileSystem } from "@manuth/temp-files";
-import { ensureFile, remove, writeFile, writeJSON } from "fs-extra";
+import { ensureFile, writeFile, writeJSON } from "fs-extra";
 import { Context } from "mocha";
 import { RuleSuite } from "../../../Debugging/Suites/RuleSuite";
 import { ITestCase } from "../../../Debugging/TestCases/ITestCase";
@@ -82,8 +82,6 @@ export class ImportVisibilitySuite extends RuleSuite
     public override async SuiteSetup(mocha: Context, testContext: TestContext): Promise<void>
     {
         super.SuiteSetup(mocha, testContext);
-        this.workspaceBackup = testContext.Workspace;
-        testContext.Workspace = new Workspace();
         await testContext.Workspace.Initialize();
 
         let npmPackage = new Package(testContext.Workspace.PackageManifestFileName);
@@ -106,9 +104,20 @@ export class ImportVisibilitySuite extends RuleSuite
      */
     public override async SuiteTeardown(mocha: Context, testContext: TestContext): Promise<void>
     {
-        await remove(testContext.Workspace.MakePath(this.npmIgnoreFileName));
-        await remove(testContext.Workspace.MakeSourcePath(ImportVisibilitySuite.IgnoredFileName));
         testContext.Workspace.Dispose();
-        testContext.Workspace = this.workspaceBackup;
+    }
+
+    /**
+     * @inheritdoc
+     *
+     * @param context
+     * The parent test-context.
+     *
+     * @returns
+     * The test-context of this suite.
+     */
+    protected override GetSuiteContext(context: TestContext): TestContext
+    {
+        return new TestContext();
     }
 }
