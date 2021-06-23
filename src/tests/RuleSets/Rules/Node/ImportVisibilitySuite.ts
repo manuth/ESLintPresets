@@ -2,15 +2,14 @@ import { Package } from "@manuth/package-json-editor";
 import { TempFileSystem } from "@manuth/temp-files";
 import { ensureFile, writeFile, writeJSON } from "fs-extra";
 import { Context } from "mocha";
-import { RuleSuite } from "../../../Debugging/Suites/RuleSuite";
+import { IndependentRuleSuite } from "../../../Debugging/IndependentRuleSuite";
 import { ITestCase } from "../../../Debugging/TestCases/ITestCase";
 import { TestContext } from "../../../Debugging/TestContext";
-import { Workspace } from "../../../Debugging/Workspace";
 
 /**
  * Provides the functionality to test rules related to the visibility of imports.
  */
-export class ImportVisibilitySuite extends RuleSuite
+export class ImportVisibilitySuite extends IndependentRuleSuite
 {
     /**
      * The name of the ignored file.
@@ -76,9 +75,7 @@ export class ImportVisibilitySuite extends RuleSuite
      */
     public override async SuiteSetup(mocha: Context, testContext: TestContext): Promise<void>
     {
-        super.SuiteSetup(mocha, testContext);
-        await testContext.Workspace.Initialize();
-
+        await super.SuiteSetup(mocha, testContext);
         let npmPackage = new Package(testContext.Workspace.PackageManifestFileName);
         npmPackage.Dependencies.Add(ImportVisibilitySuite.PublicDependency, "*");
         npmPackage.DevelopmentDependencies.Add(ImportVisibilitySuite.DevelopmentDependency, "*");
@@ -86,33 +83,5 @@ export class ImportVisibilitySuite extends RuleSuite
         await writeFile(testContext.Workspace.MakePath(this.npmIgnoreFileName), ImportVisibilitySuite.IgnoredFileName);
         await ensureFile(testContext.Workspace.MakeSourcePath(ImportVisibilitySuite.IgnoredFileName));
         await writeFile(testContext.Workspace.MakeSourcePath(ImportVisibilitySuite.IgnoredFileName), "export = {};");
-    }
-
-    /**
-     * @inheritdoc
-     *
-     * @param mocha
-     * The mocha-context.
-     *
-     * @param testContext
-     * The test-context.
-     */
-    public override async SuiteTeardown(mocha: Context, testContext: TestContext): Promise<void>
-    {
-        testContext.Workspace.Dispose();
-    }
-
-    /**
-     * @inheritdoc
-     *
-     * @param context
-     * The parent test-context.
-     *
-     * @returns
-     * The test-context of this suite.
-     */
-    protected override GetSuiteContext(context: TestContext): TestContext
-    {
-        return new TestContext();
     }
 }
