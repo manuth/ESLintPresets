@@ -22,15 +22,12 @@ export class TestContext
      */
     public get Workspace(): Workspace
     {
-        return this.workspace;
-    }
+        if (this.workspace === null)
+        {
+            this.workspace = new Workspace();
+        }
 
-    /**
-     * @inheritdoc
-     */
-    public set Workspace(value: Workspace)
-    {
-        this.workspace = value;
+        return this.workspace;
     }
 
     /**
