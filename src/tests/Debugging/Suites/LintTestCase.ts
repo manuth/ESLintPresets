@@ -42,7 +42,7 @@ export abstract class LintTestCase implements ITestCase, IRegisterable
     private codeSnippets: ICodeSnippetCollection[] = [];
 
     /**
-     * Initializes a new instance of the `TestCase` class.
+     * Initializes a new instance of the {@link LintTestCase `LintTestCase`} class.
      *
      * @param description
      * The description of the test-case.
@@ -212,7 +212,7 @@ export abstract class LintTestCase implements ITestCase, IRegisterable
     }
 
     /**
-     * Lints the specified `codeSnippet`.
+     * Lints the specified {@link `codeSnippet`}.
      *
      * @param context
      * The test-context.
@@ -240,7 +240,7 @@ export abstract class LintTestCase implements ITestCase, IRegisterable
     }
 
     /**
-     * Gets the linter for the specified `ruleSet`.
+     * Gets the linter for the specified {@link ruleSet `ruleSet`}.
      *
      * @param context
      * The test-context.
@@ -249,11 +249,11 @@ export abstract class LintTestCase implements ITestCase, IRegisterable
      * The rule-set to get the linter for.
      *
      * @returns
-     * The linter for the specified `ruleSet`.
+     * The linter for the specified {@link ruleSet `ruleSet`}.
      */
     protected GetLinter(context: TestContext, ruleSet: RuleSet): ESLint
     {
-        return context.GetLinter(ruleSet, true);
+        return context.Workspace.GetLinter(ruleSet, true);
     }
 
     /**

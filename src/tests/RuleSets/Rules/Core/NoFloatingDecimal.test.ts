@@ -1,9 +1,10 @@
+import { ESLintRule } from "../../../../ESLintRule";
 import { RuleSet } from "../../../Debugging/RuleSet";
 import { ScriptKind } from "../../../Debugging/ScriptKind";
 import { RuleSuite } from "../../../Debugging/Suites/RuleSuite";
 
 export let NoFloatingDecimal = new RuleSuite(
-    "no-floating-decimal",
+    ESLintRule.NoFloatingDecimal,
     [
         {
             Description: "Checking whether decimal points without a leading number or zero are disallowed…",

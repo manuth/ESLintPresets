@@ -1,4 +1,5 @@
 import merge = require("lodash.merge");
+import { TSLintRule } from "../../TSLintRule";
 
 /**
  * Generates a `tslint`-configuration.
@@ -15,7 +16,7 @@ import merge = require("lodash.merge");
 export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
 {
     let commonRules = {
-        "ordered-imports": {
+        [TSLintRule.OrderedImports]: {
             options: {
                 "import-sources-order": "any",
                 "named-imports": "case-insensitive"
@@ -31,18 +32,18 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
         commonRules = merge(
             commonRules,
             {
-                "no-void-expression": {
+                [TSLintRule.NoVoidExpression]: {
                     options: [
                         "ignore-arrow-function-shorthand"
                     ]
                 },
-                "return-undefined": true
+                [TSLintRule.ReturnUndefined]: true
             });
 
         typeScriptRules = merge(
             typeScriptRules,
             {
-                "match-default-export-name": true
+                [TSLintRule.MatchDefaultExportName]: true
             });
     }
 

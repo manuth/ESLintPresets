@@ -1,12 +1,13 @@
+import { ESLintRule } from "../../../../ESLintRule";
 import { RuleSet } from "../../../Debugging/RuleSet";
 import { ScriptKind } from "../../../Debugging/ScriptKind";
 import { RuleSuite } from "../../../Debugging/Suites/RuleSuite";
 
 export let Yoda = new RuleSuite(
-    "yoda",
+    ESLintRule.Yoda,
     [
         {
-            Description: "Checking whether comparsions must look correctly…",
+            Description: "Checking whether comparisons must look correctly…",
             RuleSet: RuleSet.All,
             ScriptKind: ScriptKind.Scripts,
             CodeSnippets: [

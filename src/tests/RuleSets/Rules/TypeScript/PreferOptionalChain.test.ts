@@ -1,9 +1,10 @@
+import { ESLintRule } from "../../../../ESLintRule";
 import { RuleSet } from "../../../Debugging/RuleSet";
 import { ScriptKind } from "../../../Debugging/ScriptKind";
 import { RuleSuite } from "../../../Debugging/Suites/RuleSuite";
 
 export let PreferOptionalChain = new RuleSuite(
-    "@typescript-eslint/prefer-optional-chain",
+    ESLintRule.TypeScriptPreferOptionalChain,
     [
         {
             Description: "Checking whether optional chains are preferred…",

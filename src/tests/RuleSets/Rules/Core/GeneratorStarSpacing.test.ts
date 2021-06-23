@@ -1,9 +1,10 @@
+import { ESLintRule } from "../../../../ESLintRule";
 import { RuleSet } from "../../../Debugging/RuleSet";
 import { ScriptKind } from "../../../Debugging/ScriptKind";
 import { RuleSuite } from "../../../Debugging/Suites/RuleSuite";
 
 export let GeneratorStarSpacing = new RuleSuite(
-    "generator-star-spacing",
+    ESLintRule.GeneratorStarSpacing,
     [
         {
             Description: "Checking whether the expected star-spacing is forced…",

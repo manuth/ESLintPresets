@@ -115,7 +115,7 @@ export class SourceCodeCreator
      * The class-members to create.
      *
      * @returns
-     * The code of the specified `members`.
+     * The code of the specified {@link members `members`}.
      */
     public static TestMembers(members: MemberDefinition[]): string
     {

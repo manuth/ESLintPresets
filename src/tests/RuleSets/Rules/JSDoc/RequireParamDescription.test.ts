@@ -1,9 +1,10 @@
+import { ESLintRule } from "../../../../ESLintRule";
 import { RuleSet } from "../../../Debugging/RuleSet";
 import { ScriptKind } from "../../../Debugging/ScriptKind";
 import { RuleSuite } from "../../../Debugging/Suites/RuleSuite";
 
 export let RequireParamDescription = new RuleSuite(
-    "jsdoc/require-param-description",
+    ESLintRule.JSDocRequireParamDescription,
     [
         {
             Description: "Checking whether descriptions are required in `@param`-tags…",

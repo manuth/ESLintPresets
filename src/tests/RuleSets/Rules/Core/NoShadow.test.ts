@@ -1,9 +1,10 @@
+import { ESLintRule } from "../../../../ESLintRule";
 import { RuleSet } from "../../../Debugging/RuleSet";
 import { ScriptKind } from "../../../Debugging/ScriptKind";
 import { RuleSuite } from "../../../Debugging/Suites/RuleSuite";
 
 export let NoShadow = new RuleSuite(
-    "no-shadow",
+    ESLintRule.NoShadow,
     [
         {
             Description: "Checking whether shadowed variables are allowed…",

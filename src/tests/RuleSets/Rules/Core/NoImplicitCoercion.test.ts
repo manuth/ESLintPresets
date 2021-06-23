@@ -1,9 +1,10 @@
+import { ESLintRule } from "../../../../ESLintRule";
 import { RuleSet } from "../../../Debugging/RuleSet";
 import { ScriptKind } from "../../../Debugging/ScriptKind";
 import { RuleSuite } from "../../../Debugging/Suites/RuleSuite";
 
-export let NoImplicitCoericon = new RuleSuite(
-    "no-implicit-coercion",
+export let NoImplicitCoercion = new RuleSuite(
+    ESLintRule.NoImplicitCoercion,
     [
         {
             Description: "Checking whether shorthand type-conversion is disallowed…",

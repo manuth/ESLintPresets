@@ -1,9 +1,10 @@
+import { ESLintRule } from "../../../../ESLintRule";
 import { RuleSet } from "../../../Debugging/RuleSet";
 import { ScriptKind } from "../../../Debugging/ScriptKind";
 import { RuleSuite } from "../../../Debugging/Suites/RuleSuite";
 
 export let CommaSpacing = new RuleSuite(
-    "@typescript-eslint/comma-spacing",
+    ESLintRule.TypeScriptCommaSpacing,
     [
         {
             Description: "Checking whether commas need to be spaced correctly…",

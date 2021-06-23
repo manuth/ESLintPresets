@@ -1,12 +1,13 @@
+import { ESLintRule } from "../../../../ESLintRule";
 import { RuleSet } from "../../../Debugging/RuleSet";
 import { ScriptKind } from "../../../Debugging/ScriptKind";
 import { RuleSuite } from "../../../Debugging/Suites/RuleSuite";
 
 export let RequireParamType = new RuleSuite(
-    "jsdoc/require-param-type",
+    ESLintRule.JSDocRequireParamType,
     [
         {
-            Description: "Checking whether parameter-types in jsdocs are required in javascript-files…",
+            Description: "Checking whether parameter-types in jsdoc-comments are required in javascript-files…",
             RuleSet: RuleSet.Recommended,
             ScriptKind: ScriptKind.JS,
             CodeSnippets: [
@@ -31,7 +32,7 @@ export let RequireParamType = new RuleSuite(
             ]
         },
         {
-            Description: "Checking whether parameter-types in jsdocs aren't required in typescript-files…",
+            Description: "Checking whether parameter-types in jsdoc-comments aren't required in typescript-files…",
             RuleSet: RuleSet.Recommended,
             ScriptKind: ScriptKind.TS,
             CodeSnippets: [

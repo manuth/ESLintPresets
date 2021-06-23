@@ -1,9 +1,10 @@
+import { ESLintRule } from "../../../../ESLintRule";
 import { RuleSet } from "../../../Debugging/RuleSet";
 import { ScriptKind } from "../../../Debugging/ScriptKind";
 import { RuleSuite } from "../../../Debugging/Suites/RuleSuite";
 
 export let ExplicitMemberAccessibility = new RuleSuite(
-    "@typescript-eslint/explicit-member-accessibility",
+    ESLintRule.TypeScriptExplicitMemberAccessibility,
     [
         {
             Description: "Checking whether the accessability of members must be declared explicitly…",

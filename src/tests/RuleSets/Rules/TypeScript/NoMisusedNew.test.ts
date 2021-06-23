@@ -1,9 +1,10 @@
+import { ESLintRule } from "../../../../ESLintRule";
 import { RuleSet } from "../../../Debugging/RuleSet";
 import { ScriptKind } from "../../../Debugging/ScriptKind";
 import { RuleSuite } from "../../../Debugging/Suites/RuleSuite";
 
 export let NoMisusedNew = new RuleSuite(
-    "@typescript-eslint/no-misused-new",
+    ESLintRule.TypeScriptNoMisusedNew,
     [
         {
             Description: "Checking whether misused `new`s are disallowed…",

@@ -1,9 +1,10 @@
+import { ESLintRule } from "../../../../ESLintRule";
 import { RuleSet } from "../../../Debugging/RuleSet";
 import { ScriptKind } from "../../../Debugging/ScriptKind";
 import { RuleSuite } from "../../../Debugging/Suites/RuleSuite";
 
 export let SwitchColonSpacing = new RuleSuite(
-    "switch-colon-spacing",
+    ESLintRule.SwitchColonSpacing,
     [
         {
             Description: "Checking whether colons in `switch`es must be spaced correctly…",

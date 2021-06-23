@@ -13,7 +13,7 @@ export class RegisterableContainer implements IRegisterable
     private children: IRegisterable[] = [];
 
     /**
-     * Initializes a new instance of the `RegisterableContainer` class.
+     * Initializes a new instance of the {@link RegisterableContainer `RegisterableContainer`} class.
      *
      * @param children
      * The children of the container.

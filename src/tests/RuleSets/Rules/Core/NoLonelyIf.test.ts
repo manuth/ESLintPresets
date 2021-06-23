@@ -1,9 +1,10 @@
+import { ESLintRule } from "../../../../ESLintRule";
 import { RuleSet } from "../../../Debugging/RuleSet";
 import { ScriptKind } from "../../../Debugging/ScriptKind";
 import { RuleSuite } from "../../../Debugging/Suites/RuleSuite";
 
 export let NoLonelyIf = new RuleSuite(
-    "no-lonely-if",
+    ESLintRule.NoLonelyIf,
     [
         {
             Description: "Checking whether expressions that could be converted to an `else if` cause a failure…",

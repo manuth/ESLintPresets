@@ -13,7 +13,7 @@ export class RuleSuite extends LintSuite
     private ruleName: string;
 
     /**
-     * Initializes a new instance of the `RuleTest` class.
+     * Initializes a new instance of the {@link RuleSuite `RuleSuite`} class.
      *
      * @param ruleName
      * The name of the rule to test.

@@ -1,9 +1,10 @@
+import { ESLintRule } from "../../../../ESLintRule";
 import { RuleSet } from "../../../Debugging/RuleSet";
 import { ScriptKind } from "../../../Debugging/ScriptKind";
 import { RuleSuite } from "../../../Debugging/Suites/RuleSuite";
 
 export let GuardForIn = new RuleSuite(
-    "guard-for-in",
+    ESLintRule.GuardForIn,
     [
         {
             Description: "Checking whether `for ... in`-loops do not have to be guarded…",

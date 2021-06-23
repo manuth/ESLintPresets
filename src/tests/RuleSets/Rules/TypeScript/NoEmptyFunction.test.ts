@@ -1,9 +1,10 @@
+import { ESLintRule } from "../../../../ESLintRule";
 import { RuleSet } from "../../../Debugging/RuleSet";
 import { ScriptKind } from "../../../Debugging/ScriptKind";
 import { RuleSuite } from "../../../Debugging/Suites/RuleSuite";
 
 export let NoEmptyFunction = new RuleSuite(
-    "@typescript-eslint/no-empty-function",
+    ESLintRule.TypeScriptNoEmptyFunction,
     [
         {
             Description: "Checking whether empty functions are allowed…",

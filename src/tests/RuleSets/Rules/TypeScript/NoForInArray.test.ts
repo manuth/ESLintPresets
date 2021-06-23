@@ -1,9 +1,10 @@
+import { ESLintRule } from "../../../../ESLintRule";
 import { RuleSet } from "../../../Debugging/RuleSet";
 import { ScriptKind } from "../../../Debugging/ScriptKind";
 import { RuleSuite } from "../../../Debugging/Suites/RuleSuite";
 
 export let NoForInArray = new RuleSuite(
-    "@typescript-eslint/no-for-in-array",
+    ESLintRule.TypeScriptNoForInArray,
     [
         {
             Description: "Checking whether iterating through an array using `for ... in` is disallowed…",
@@ -20,6 +21,23 @@ export let NoForInArray = new RuleSuite(
                     Valid: true,
                     Snippets: [
                         "for (let i of []) { }"
+                    ]
+                }
+            ]
+        },
+        {
+            Description: "Checking whether the usage of `for ... in` is allowed if the indexer is being used…",
+            RuleSet: RuleSet.Recommended,
+            ScriptKind: ScriptKind.Scripts,
+            CodeSnippets: [
+                {
+                    Valid: true,
+                    Snippets: [
+                        `
+                            for (let in in [])
+                            {
+                                console.log(i);
+                            }`
                     ]
                 }
             ]

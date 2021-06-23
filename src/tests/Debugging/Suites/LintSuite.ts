@@ -6,6 +6,9 @@ import { Suite } from "./Suite";
 
 /**
  * Represents a test for linting.
+ *
+ * @template TCaseData
+ * The type of the test-case options.
  */
 export abstract class LintSuite<TCaseData = ITestCase> extends Suite
 {
@@ -15,7 +18,7 @@ export abstract class LintSuite<TCaseData = ITestCase> extends Suite
     private readonly testCases: LintTestCase[] = [];
 
     /**
-     * Initializes a new instance of the `LintTestBase` class.
+     * Initializes a new instance of the {@link LintSuite `LintSuite<TCaseData>`} class.
      *
      * @param testCases
      * The test-cases of the test-suite.

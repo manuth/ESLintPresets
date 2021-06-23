@@ -1,9 +1,10 @@
+import { ESLintRule } from "../../../../ESLintRule";
 import { RuleSet } from "../../../Debugging/RuleSet";
 import { ScriptKind } from "../../../Debugging/ScriptKind";
 import { RuleSuite } from "../../../Debugging/Suites/RuleSuite";
 
 export let ObjectCurlyNewLine = new RuleSuite(
-    "object-curly-newline",
+    ESLintRule.ObjectCurlyNewline,
     [
         {
             Description: "Checking whether new-lines after curly braces must be consistent…",
@@ -35,7 +36,7 @@ export let ObjectCurlyNewLine = new RuleSuite(
             ]
         },
         {
-            Description: "Checking whether new-lines areforced for multi-line objects…",
+            Description: "Checking whether new-lines are forced for multi-line objects…",
             RuleSet: RuleSet.All,
             ScriptKind: ScriptKind.Scripts,
             CodeSnippets: [

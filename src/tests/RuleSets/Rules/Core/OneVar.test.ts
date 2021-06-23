@@ -1,9 +1,10 @@
+import { ESLintRule } from "../../../../ESLintRule";
 import { RuleSet } from "../../../Debugging/RuleSet";
 import { ScriptKind } from "../../../Debugging/ScriptKind";
 import { RuleSuite } from "../../../Debugging/Suites/RuleSuite";
 
 export let OneVar = new RuleSuite(
-    "one-var",
+    ESLintRule.OneVar,
     [
         {
             Description: "Checking whether multiple var-declarations in one statement are disallowed…",

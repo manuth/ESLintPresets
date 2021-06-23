@@ -9,7 +9,7 @@ import { ISuite } from "./ISuite";
 export abstract class Suite implements ISuite
 {
     /**
-     * Initializes a new instance of the `Suite` class.
+     * Initializes a new instance of the {@link Suite `Suite`} class.
      */
     public constructor()
     { }
@@ -30,6 +30,7 @@ export abstract class Suite implements ISuite
      */
     public Register(context: TestContext, ruleSet: RuleSet): void
     {
+        let suiteContext = this.GetSuiteContext(context);
         let self = this;
 
         suite(
@@ -39,28 +40,28 @@ export abstract class Suite implements ISuite
                 suiteSetup(
                     async function()
                     {
-                        return self.SuiteSetup(this);
+                        return self.SuiteSetup(this, suiteContext);
                     });
 
                 suiteTeardown(
                     async function()
                     {
-                        return self.SuiteTeardown(this);
+                        return self.SuiteTeardown(this, suiteContext);
                     });
 
                 setup(
                     async function()
                     {
-                        return self.TestSetup(this);
+                        return self.TestSetup(this, suiteContext);
                     });
 
                 teardown(
                     async function()
                     {
-                        return self.TestTeardown(this);
+                        return self.TestTeardown(this, suiteContext);
                     });
 
-                this.RegisterInternal(context, ruleSet);
+                this.RegisterInternal(suiteContext, ruleSet);
             });
     }
 
@@ -69,8 +70,11 @@ export abstract class Suite implements ISuite
      *
      * @param mocha
      * The mocha-context.
+     *
+     * @param testContext
+     * The test-context.
      */
-    public async SuiteSetup(mocha: Context): Promise<void>
+    public async SuiteSetup(mocha: Context, testContext: TestContext): Promise<void>
     { }
 
     /**
@@ -78,27 +82,50 @@ export abstract class Suite implements ISuite
      *
      * @param mocha
      * The mocha-context.
+     *
+     * @param testContext
+     * The test-context.
      */
-    public async SuiteTeardown(mocha: Context): Promise<void>
+    public async SuiteTeardown(mocha: Context, testContext: TestContext): Promise<void>
     { }
 
     /**
-     * Prepares each test.
+     * Prepares each the current test.
      *
      * @param mocha
      * The mocha-context.
+     *
+     * @param testContext
+     * The test-context.
      */
-    public async TestSetup(mocha: Context): Promise<void>
+    public async TestSetup(mocha: Context, testContext: TestContext): Promise<void>
     { }
 
     /**
-     * Releases the resources of each test.
+     * Releases the resources of the current test.
      *
      * @param mocha
      * The mocha-context.
+     *
+     * @param testContext
+     * The test-context.
      */
-    public async TestTeardown(mocha: Context): Promise<void>
+    public async TestTeardown(mocha: Context, testContext: TestContext): Promise<void>
     { }
+
+    /**
+     * Gets the test-context for this suite.
+     *
+     * @param context
+     * The global test-context.
+     *
+     * @returns
+     * The test-context of this suite.
+     */
+    protected GetSuiteContext(context: TestContext): TestContext
+    {
+        return context;
+    }
 
     /**
      * Registers the `mocha`-tests.

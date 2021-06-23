@@ -9,7 +9,7 @@ import { TypeCheckingCase } from "./TypeCheckingCase";
 export class TypeCheckingSuite extends LintSuite<ITypeCheckingCase>
 {
     /**
-     * Initializes a new instance of the `TypeCheckingSuite` class.
+     * Initializes a new instance of the {@link TypeCheckingSuite `TypeCheckingSuite`} class.
      */
     public constructor()
     {

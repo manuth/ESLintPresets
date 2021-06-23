@@ -8,6 +8,6 @@ export type ESLintRunner =
      * Runs the linter.
      *
      * @returns
-     * The result of the linter.
+     * The result of the lint.
      */
     () => Promise<ESLint.LintResult[]>;

@@ -1,3 +1,4 @@
+import { ESLintRule } from "../../../../../ESLintRule";
 import { ContainerSuite } from "../../../../Debugging/Suites/ContainerSuite";
 import { RuleSuite } from "../../../../Debugging/Suites/RuleSuite";
 import { MatchDefaultExportName } from "./MatchDefaultExportName.test";
@@ -9,7 +10,7 @@ export let TSLintTests = new ContainerSuite(
     "TSLint",
     [
         new ContainerSuite(
-            new RuleSuite("@typescript-eslint/tslint/config", []).SuiteName,
+            new RuleSuite(ESLintRule.TSLint, []).SuiteName,
             [
                 MatchDefaultExportName,
                 NoVoidExpression,

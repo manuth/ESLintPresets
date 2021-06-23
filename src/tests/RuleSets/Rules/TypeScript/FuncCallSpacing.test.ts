@@ -1,9 +1,10 @@
+import { ESLintRule } from "../../../../ESLintRule";
 import { RuleSet } from "../../../Debugging/RuleSet";
 import { ScriptKind } from "../../../Debugging/ScriptKind";
 import { RuleSuite } from "../../../Debugging/Suites/RuleSuite";
 
 export let FuncCallSpacing = new RuleSuite(
-    "@typescript-eslint/func-call-spacing",
+    ESLintRule.TypeScriptFuncCallSpacing,
     [
         {
             Description: "Checking whether function-calls must be spaced correctly…",

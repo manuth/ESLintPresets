@@ -1,9 +1,10 @@
+import { ESLintRule } from "../../../../ESLintRule";
 import { RuleSet } from "../../../Debugging/RuleSet";
 import { ScriptKind } from "../../../Debugging/ScriptKind";
 import { RuleSuite } from "../../../Debugging/Suites/RuleSuite";
 
-export let BlockSpacint = new RuleSuite(
-    "block-spacing",
+export let BlockSpacing = new RuleSuite(
+    ESLintRule.BlockSpacing,
     [
         {
             Description: "Checking whether function-blocks must be spaced correctly…",

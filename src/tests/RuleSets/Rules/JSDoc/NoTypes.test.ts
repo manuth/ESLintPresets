@@ -1,9 +1,10 @@
+import { ESLintRule } from "../../../../ESLintRule";
 import { RuleSet } from "../../../Debugging/RuleSet";
 import { ScriptKind } from "../../../Debugging/ScriptKind";
 import { RuleSuite } from "../../../Debugging/Suites/RuleSuite";
 
 export let NoTypes = new RuleSuite(
-    "jsdoc/no-types",
+    ESLintRule.JSDocNoTypes,
     [
         {
             Description: "Checking whether types in jsdoc-comments are disallowed for typescript-files…",

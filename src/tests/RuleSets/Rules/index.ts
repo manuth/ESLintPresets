@@ -3,6 +3,7 @@ import { CoreTests } from "./Core";
 import { DeprecationTests } from "./Deprecation";
 import { ImportTests } from "./Import";
 import { JSDocTests } from "./JSDoc";
+import { NodeTests } from "./Node";
 import { TypeScriptTests } from "./TypeScript";
 
 export let RuleTests = new ContainerSuite(
@@ -12,5 +13,6 @@ export let RuleTests = new ContainerSuite(
         CoreTests,
         ImportTests,
         JSDocTests,
-        DeprecationTests
+        DeprecationTests,
+        NodeTests
     ]);

@@ -8,7 +8,7 @@ import { DeprecatedCase } from "./DeprecatedCase";
 export class DeprecatedSuite extends LintSuite<[]>
 {
     /**
-     * Initializes a new instance of the `DeprecatedSuite` class.
+     * Initializes a new instance of the {@link DeprecatedSuite `DeprecatedSuite`} class.
      */
     public constructor()
     {

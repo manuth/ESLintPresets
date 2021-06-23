@@ -1,9 +1,10 @@
+import { ESLintRule } from "../../../../ESLintRule";
 import { RuleSet } from "../../../Debugging/RuleSet";
 import { ScriptKind } from "../../../Debugging/ScriptKind";
 import { RuleSuite } from "../../../Debugging/Suites/RuleSuite";
 
 export let NoSequences = new RuleSuite(
-    "no-sequences",
+    ESLintRule.NoSequences,
     [
         {
             Description: "Checking whether comma-sequence are disallowed…",

@@ -1,12 +1,13 @@
+import { ESLintRule } from "../../../../ESLintRule";
 import { RuleSet } from "../../../Debugging/RuleSet";
 import { ScriptKind } from "../../../Debugging/ScriptKind";
 import { RuleSuite } from "../../../Debugging/Suites/RuleSuite";
 
 export let NoThrowLiteral = new RuleSuite(
-    "no-throw-literal",
+    ESLintRule.NoThrowLiteral,
     [
         {
-            Description: "Checking whether throwin literals is disallowed…",
+            Description: "Checking whether throwing literals is disallowed…",
             RuleSet: RuleSet.All,
             ScriptKind: ScriptKind.Scripts,
             CodeSnippets: [

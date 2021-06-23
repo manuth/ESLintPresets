@@ -1,12 +1,13 @@
+import { ESLintRule } from "../../../../ESLintRule";
 import { RuleSet } from "../../../Debugging/RuleSet";
 import { ScriptKind } from "../../../Debugging/ScriptKind";
 import { RuleSuite } from "../../../Debugging/Suites/RuleSuite";
 
 export let RequireJSDoc = new RuleSuite(
-    "jsdoc/require-jsdoc",
+    ESLintRule.JSDocRequireJSDoc,
     [
         {
-            Description: "Checking whether jsdocs are required where appropriate…",
+            Description: "Checking whether jsdoc-comments are required where appropriate…",
             RuleSet: RuleSet.Recommended,
             ScriptKind: ScriptKind.Scripts,
             CodeSnippets: [
@@ -107,7 +108,7 @@ export let RequireJSDoc = new RuleSuite(
             ]
         },
         {
-            Description: "Checking whether jsdocs are required where appropriate in typescript-files…",
+            Description: "Checking whether jsdoc-comments are required where appropriate in typescript-files…",
             RuleSet: RuleSet.Recommended,
             ScriptKind: ScriptKind.TS,
             CodeSnippets: [
@@ -349,7 +350,7 @@ export let RequireJSDoc = new RuleSuite(
             ]
         },
         {
-            Description: "Checking whether inline-expressions don't require jsdocs…",
+            Description: "Checking whether inline-expressions don't require jsdoc-comments…",
             RuleSet: RuleSet.Recommended,
             ScriptKind: ScriptKind.Scripts,
             CodeSnippets: [

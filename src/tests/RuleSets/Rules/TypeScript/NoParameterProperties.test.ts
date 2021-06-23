@@ -1,9 +1,10 @@
+import { ESLintRule } from "../../../../ESLintRule";
 import { RuleSet } from "../../../Debugging/RuleSet";
 import { ScriptKind } from "../../../Debugging/ScriptKind";
 import { RuleSuite } from "../../../Debugging/Suites/RuleSuite";
 
 export let NoParameterProperties = new RuleSuite(
-    "@typescript-eslint/no-parameter-properties",
+    ESLintRule.TypeScriptNoParameterProperties,
     [
         {
             Description: "Checking whether parameter-properties are disallowed…",

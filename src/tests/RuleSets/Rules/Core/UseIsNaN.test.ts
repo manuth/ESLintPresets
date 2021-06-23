@@ -1,12 +1,13 @@
+import { ESLintRule } from "../../../../ESLintRule";
 import { RuleSet } from "../../../Debugging/RuleSet";
 import { ScriptKind } from "../../../Debugging/ScriptKind";
 import { RuleSuite } from "../../../Debugging/Suites/RuleSuite";
 
 export let UseIsNaN = new RuleSuite(
-    "use-isnan",
+    ESLintRule.UseIsNaN,
     [
         {
-            Description: "Checking whether `NaN`-equatations are disallowed…",
+            Description: `Checking whether \`${NaN}\`-equations are disallowed…`,
             RuleSet: RuleSet.All,
             ScriptKind: ScriptKind.Scripts,
             CodeSnippets: [

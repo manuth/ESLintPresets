@@ -1,12 +1,13 @@
+import { ESLintRule } from "../../../../ESLintRule";
 import { RuleSet } from "../../../Debugging/RuleSet";
 import { ScriptKind } from "../../../Debugging/ScriptKind";
 import { RuleSuite } from "../../../Debugging/Suites/RuleSuite";
 
 export let RequireParam = new RuleSuite(
-    "jsdoc/require-param",
+    ESLintRule.JSDocRequireParam,
     [
         {
-            Description: "Checking whether all parameters must have a `@param`-tag…",
+            Description: "Checking whether all parameters must have an `@param`-tag…",
             RuleSet: RuleSet.Recommended,
             ScriptKind: ScriptKind.Scripts,
             CodeSnippets: [
@@ -100,7 +101,6 @@ export let RequireParam = new RuleSuite(
             ScriptKind: ScriptKind.TS,
             CodeSnippets: [
                 {
-                    /* ToDo Wait for this commit to close: [gajus/eslint-plugin-jsdoc#512](https://github.com/gajus/eslint-plugin-jsdoc/issues/512) */
                     Valid: false,
                     Snippets: [
                         `

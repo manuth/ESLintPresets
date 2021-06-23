@@ -1,9 +1,10 @@
+import { ESLintRule } from "../../../../ESLintRule";
 import { RuleSet } from "../../../Debugging/RuleSet";
 import { ScriptKind } from "../../../Debugging/ScriptKind";
 import { RuleSuite } from "../../../Debugging/Suites/RuleSuite";
 
 export let NoUselessRename = new RuleSuite(
-    "no-useless-rename",
+    ESLintRule.NoUselessRename,
     [
         {
             Description: "Checking whether useless names are disallowed…",

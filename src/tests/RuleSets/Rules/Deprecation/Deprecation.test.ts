@@ -1,9 +1,10 @@
+import { ESLintRule } from "../../../../ESLintRule";
 import { RuleSet } from "../../../Debugging/RuleSet";
 import { ScriptKind } from "../../../Debugging/ScriptKind";
 import { RuleSuite } from "../../../Debugging/Suites/RuleSuite";
 
 export let Deprecation = new RuleSuite(
-    "deprecation/deprecation",
+    ESLintRule.Deprecation,
     [
         {
             Description: "Checking whether the usage of deprecated methods are prohibited…",

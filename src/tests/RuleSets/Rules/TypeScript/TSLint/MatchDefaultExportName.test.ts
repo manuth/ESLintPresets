@@ -1,6 +1,7 @@
 import { TempFileSystem } from "@manuth/temp-files";
 import { remove, writeFile } from "fs-extra";
 import { Context } from "mocha";
+import { TSLintRule } from "../../../../../TSLintRule";
 import { RuleSet } from "../../../../Debugging/RuleSet";
 import { ScriptKind } from "../../../../Debugging/ScriptKind";
 import { LintTestCase } from "../../../../Debugging/Suites/LintTestCase";
@@ -23,11 +24,11 @@ class MatchDefaultExportNameSuite extends TSLintRuleSuite
     private exportName = "testExport";
 
     /**
-     * Initializes a new instance of the `MatchDefaultExportNameSuite` class.
+     * Initializes a new instance of the {@link MatchDefaultExportNameSuite `MatchDefaultExportNameSuite`} class.
      */
     public constructor()
     {
-        super("match-default-export-name", []);
+        super(TSLintRule.MatchDefaultExportName, []);
     }
 
     /**

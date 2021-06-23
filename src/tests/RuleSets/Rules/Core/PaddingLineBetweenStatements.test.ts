@@ -1,9 +1,10 @@
+import { ESLintRule } from "../../../../ESLintRule";
 import { RuleSet } from "../../../Debugging/RuleSet";
 import { ScriptKind } from "../../../Debugging/ScriptKind";
 import { RuleSuite } from "../../../Debugging/Suites/RuleSuite";
 
 export let PaddingLineBetweenStatements = new RuleSuite(
-    "padding-line-between-statements",
+    ESLintRule.PaddingLineBetweenStatements,
     [
         {
             Description: "Checking whether lines between some statements are required…",

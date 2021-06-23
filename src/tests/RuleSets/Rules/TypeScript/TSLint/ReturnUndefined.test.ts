@@ -1,9 +1,10 @@
+import { TSLintRule } from "../../../../../TSLintRule";
 import { RuleSet } from "../../../../Debugging/RuleSet";
 import { ScriptKind } from "../../../../Debugging/ScriptKind";
 import { TSLintRuleSuite } from "../../../../Debugging/Suites/TSLintRuleSuite";
 
 export let ReturnUndefined = new TSLintRuleSuite(
-    "return-undefined",
+    TSLintRule.ReturnUndefined,
     [
         {
             Description: "Checking whether `return undefined;` is disallowed in void functions…",

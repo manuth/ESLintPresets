@@ -1,9 +1,10 @@
+import { ESLintRule } from "../../../../ESLintRule";
 import { RuleSet } from "../../../Debugging/RuleSet";
 import { ScriptKind } from "../../../Debugging/ScriptKind";
 import { RuleSuite } from "../../../Debugging/Suites/RuleSuite";
 
 export let NoInnerDeclarations = new RuleSuite(
-    "no-inner-declarations",
+    ESLintRule.NoInnerDeclarations,
     [
         {
             Description: "Checking whether inner function-declarations are allowed…",

@@ -6,7 +6,24 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## ESLintPresets [Unreleased]
 
-[Show differences](https://github.com/manuth/ESLintPresets/compare/v3.0.2...dev)
+[Show differences](https://github.com/manuth/ESLintPresets/compare/v3.1.0...dev)
+
+## ESLintPresets v3.1.0
+### Fixed
+  - Broken `eslint` Linter creation for test-cases
+  - Broken tests
+  - Usage of `@typescript-eslint/tslint/config`-rule for configurations without type-checking
+
+### Added
+  - Support for the Test Explorer UI
+  - Rules for disallowing the use of unpublished files or modules
+  - Rules for preventing the use of packages which aren't specified in `package.json`
+  - Improvements to the development-environment
+
+### Updated
+  - All dependencies
+
+[Show differences](https://github.com/manuth/ESLintPresets/compare/v3.0.2...v3.1.0)
 
 ## ESLintPresets v3.0.2
 ### Updated
@@ -155,7 +172,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Rules to allow explicit `any`-types in parameter- and return-types
   - Member-Ordering rule
     - Members must be grouped by their type and access
-    - Static members of the same type and acess must occur first
+    - Static members of the same type and access must occur first
     - The order of abstract/non-abstract members of the same type and access is irrelevant
   - The `@typescript-eslint/no-unused-expressions`-rule to allow side-effects
   - The `@typescript-eslint/no-unused-vars` to allow unused function-parameters
@@ -199,7 +216,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [Show differences](https://github.com/manuth/ESLintPresets/compare/v2.1.0...2.1.1)
 
 ## ESLintPresets v2.1.0
-The new version of `eslint-plugin-import` supports tyescript's `TSImportEqualsDeclaration`s.
+The new version of `eslint-plugin-import` supports typescript's `TSImportEqualsDeclaration`s.
 
 ### Added
   - `peerDependencies` where necessary
@@ -220,7 +237,7 @@ As the shareable configurations weren't even added to the module-exports, the co
 This is fixed now and the plugin can be used now.
 
 ### Updated
-  - JSDoc-rules to only require jsdocs for variables which are arrow-functions
+  - JSDoc-rules to only require jsdoc-comments for variables which are arrow-functions
   - All dependencies
 
 ### Added

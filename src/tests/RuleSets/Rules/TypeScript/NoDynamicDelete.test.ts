@@ -1,9 +1,10 @@
+import { ESLintRule } from "../../../../ESLintRule";
 import { RuleSet } from "../../../Debugging/RuleSet";
 import { ScriptKind } from "../../../Debugging/ScriptKind";
 import { RuleSuite } from "../../../Debugging/Suites/RuleSuite";
 
 export let NoDynamicDelete = new RuleSuite(
-    "@typescript-eslint/no-dynamic-delete",
+    ESLintRule.TypeScriptNoDynamicDelete,
     [
         {
             Description: "Checking whether dynamic deletes are allowed…",

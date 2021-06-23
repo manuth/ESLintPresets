@@ -1,9 +1,10 @@
+import { ESLintRule } from "../../../../ESLintRule";
 import { RuleSet } from "../../../Debugging/RuleSet";
 import { ScriptKind } from "../../../Debugging/ScriptKind";
 import { RuleSuite } from "../../../Debugging/Suites/RuleSuite";
 
 export let NoVarRequires = new RuleSuite(
-    "@typescript-eslint/no-var-requires",
+    ESLintRule.TypeScriptNoVarRequires,
     [
         {
             Description: 'Checking whether the `var foo = require("foo"); syntax is banned…',

@@ -1,9 +1,10 @@
+import { ESLintRule } from "../../../../ESLintRule";
 import { RuleSet } from "../../../Debugging/RuleSet";
 import { ScriptKind } from "../../../Debugging/ScriptKind";
 import { RuleSuite } from "../../../Debugging/Suites/RuleSuite";
 
 export let CheckSyntax = new RuleSuite(
-    "jsdoc/check-syntax",
+    ESLintRule.JSDocCheckSyntax,
     [
         {
             Description: "Checking whether syntax-errors cause rule-failures…",
@@ -33,7 +34,7 @@ export let CheckSyntax = new RuleSuite(
             ]
         },
         {
-            Description: "Checking whether the `check-syntax` rule is disabled for the weak rule-set…",
+            Description: `Checking whether the \`${ESLintRule.JSDocCheckSyntax}\` rule is disabled for the weak rule-set…`,
             RuleSet: RuleSet.Weak,
             ScriptKind: ScriptKind.Scripts,
             CodeSnippets: [

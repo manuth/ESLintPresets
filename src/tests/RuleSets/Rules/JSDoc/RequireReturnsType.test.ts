@@ -1,9 +1,10 @@
+import { ESLintRule } from "../../../../ESLintRule";
 import { RuleSet } from "../../../Debugging/RuleSet";
 import { ScriptKind } from "../../../Debugging/ScriptKind";
 import { RuleSuite } from "../../../Debugging/Suites/RuleSuite";
 
 export let RequireReturnsType = new RuleSuite(
-    "jsdoc/require-returns-type",
+    ESLintRule.JSDocRequireReturnsType,
     [
         {
             Description: "Checking whether return-types in `@returns`-tags are required in javascript-files…",
