@@ -26,6 +26,23 @@ export let NoForInArray = new RuleSuite(
             ]
         },
         {
+            Description: "Checking whether the usage of `for ... in` is allowed if the indexer is being used…",
+            RuleSet: RuleSet.Recommended,
+            ScriptKind: ScriptKind.Scripts,
+            CodeSnippets: [
+                {
+                    Valid: true,
+                    Snippets: [
+                        `
+                            for (let in in [])
+                            {
+                                console.log(i);
+                            }`
+                    ]
+                }
+            ]
+        },
+        {
             Description: "Checking whether the rule is disabled for the weak rule-set…",
             RuleSet: RuleSet.Weak,
             ScriptKind: ScriptKind.Scripts,
