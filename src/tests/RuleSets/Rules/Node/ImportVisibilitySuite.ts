@@ -18,11 +18,6 @@ export class ImportVisibilitySuite extends RuleSuite
     private static ignoredFileName: string = null;
 
     /**
-     * The backup of the workspace.
-     */
-    private workspaceBackup: Workspace;
-
-    /**
      * The name of the `.npmignore`-file.
      */
     private npmIgnoreFileName = ".npmignore";
