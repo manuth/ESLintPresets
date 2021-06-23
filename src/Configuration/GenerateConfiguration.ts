@@ -641,8 +641,22 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
             });
     }
 
-    return merge<Linter.Config, Linter.Config>(
+    return merge<Linter.Config, Linter.Config, Linter.Config>(
         config,
+        {
+            rules: {
+                [ESLintRule.TSLint]: [
+                    "warn",
+                    {
+                        lintFile: require.resolve(
+                            join(
+                                __dirname,
+                                "TSLint",
+                                `${weak ? "Weak" : "Recommended"}${typeChecking ? "WithTypeChecking" : ""}`))
+                    }
+                ]
+            }
+        },
         typeChecking ?
             {
                 plugins: [
@@ -668,16 +682,6 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
                     ],
                     [ESLintRule.NoReturnAwait]: "warn",
                     [ESLintRule.TypeScriptUnboundMethod]: "off",
-                    [ESLintRule.TSLint]: [
-                        "warn",
-                        {
-                            lintFile: require.resolve(
-                                join(
-                                    __dirname,
-                                    "TSLint",
-                                    `${weak ? "Weak" : "Recommended"}${typeChecking ? "WithTypeChecking" : ""}`))
-                        }
-                    ],
                     [ESLintRule.Deprecation]: "warn"
                 }
             } :
