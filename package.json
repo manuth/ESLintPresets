@@ -45,8 +45,8 @@
   "devDependencies": {
     "@manuth/package-json-editor": "^2.0.0",
     "@manuth/temp-files": "^2.0.5",
-    "@manuth/tsconfig": "^2.0.1",
-    "@manuth/typescript-eslint-plugin": "^1.4.0",
+    "@manuth/tsconfig": "^2.0.2",
+    "@manuth/typescript-eslint-plugin": "^1.4.1",
     "@types/dedent": "^0.7.0",
     "@types/eslint": "^7.2.13",
     "@types/fs-extra": "^9.0.11",
