@@ -6,7 +6,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## ESLintPresets [Unreleased]
 
-[Show differences](https://github.com/manuth/ESLintPresets/compare/v3.1.2...dev)
+[Show differences](https://github.com/manuth/ESLintPresets/compare/v3.1.3...dev)
+
+## ESLintPresets v3.1.3
+### Removed
+  - The `constructor-super` rule
+
+### Updated
+  - All dependencies
+
+[Show differences](https://github.com/manuth/ESLintPresets/compare/v3.1.2...v3.1.3)
 
 ## ESLintPresets v3.1.2
 ### Removed

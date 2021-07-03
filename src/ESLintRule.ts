@@ -103,7 +103,6 @@ export abstract class ESLintRule
     public static CommaStyle = "comma-style";
     public static Complexity = "complexity";
     public static ComputedPropertySpacing = "computed-property-spacing";
-    public static ConstructorSuper = "constructor-super";
     public static Curly = "curly";
     public static DotNotation = "dot-notation";
     public static EOLLast = "eol-last";
