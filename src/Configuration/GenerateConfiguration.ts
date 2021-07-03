@@ -413,7 +413,6 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
             [ESLintRule.CommaStyle]: "warn",
             [ESLintRule.Complexity]: "off",
             [ESLintRule.ComputedPropertySpacing]: "warn",
-            [ESLintRule.ConstructorSuper]: "error",
             [ESLintRule.Curly]: "off",
             [ESLintRule.DotNotation]: "off",
             [ESLintRule.EOLLast]: "warn",
