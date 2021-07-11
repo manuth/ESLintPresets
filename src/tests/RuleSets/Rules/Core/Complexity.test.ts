@@ -43,6 +43,9 @@ function wrapRecursive(count: number, code: string): string
     return code;
 }
 
+/**
+ * Provides tests for the {@link ESLintRule.Complexity `Complexity`} rule.
+ */
 export let Complexity = new RuleSuite(
     ESLintRule.Complexity,
     [

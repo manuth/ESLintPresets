@@ -19,6 +19,9 @@ let accessorMembers = [
     MemberType.Constructor
 ];
 
+/**
+ * Provides tests for the {@link ESLintRule.TypeScriptMemberOrdering `TypeScriptMemberOrdering`} rule.
+ */
 export let MemberOrdering = new RuleSuite(
     ESLintRule.TypeScriptMemberOrdering,
     [

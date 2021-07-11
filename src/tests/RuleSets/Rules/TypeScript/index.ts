@@ -43,6 +43,9 @@ import { TypeAnnotationSpacing } from "./TypeAnnotationSpacing.test";
 import { UnboundMethod } from "./UnboundMethod.test";
 import { UnifiedSignatures } from "./UnifiedSignatures.test";
 
+/**
+ * Provides tests for typescript-related rules.
+ */
 export let TypeScriptTests = new ContainerSuite(
     "TypeScript",
     [

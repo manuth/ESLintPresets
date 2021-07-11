@@ -6,7 +6,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## ESLintPresets [Unreleased]
 
-[Show differences](https://github.com/manuth/ESLintPresets/compare/v3.2.0...dev)
+[Show differences](https://github.com/manuth/ESLintPresets/compare/v3.2.1...dev)
+
+## ESLintPresets v3.2.1
+### Added
+  - A rule for forcing new-lines after import-statements
+  - Rule-settings for requiring jsdoc-comments to be added to exported variables
+  - Support for parallel step-execution of drone-pipelines
+
+[Show differences](https://github.com/manuth/ESLintPresets/compare/v3.2.0...v3.2.1)
 
 ## ESLintPresets v3.2.0
 ### Added

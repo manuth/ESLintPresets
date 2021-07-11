@@ -3,6 +3,9 @@ import { RuleSet } from "../../../Debugging/RuleSet";
 import { ScriptKind } from "../../../Debugging/ScriptKind";
 import { RuleSuite } from "../../../Debugging/Suites/RuleSuite";
 
+/**
+ * Provides tests for the {@link ESLintRule.TypeScriptDefaultParamLast `TypeScriptDefaultParamLast`} rule.
+ */
 export let DefaultParamLast = new RuleSuite(
     ESLintRule.TypeScriptDefaultParamLast,
     [

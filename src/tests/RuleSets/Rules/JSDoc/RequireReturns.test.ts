@@ -3,6 +3,9 @@ import { RuleSet } from "../../../Debugging/RuleSet";
 import { ScriptKind } from "../../../Debugging/ScriptKind";
 import { RuleSuite } from "../../../Debugging/Suites/RuleSuite";
 
+/**
+ * Provides tests for the {@link ESLintRule.JSDocRequireReturns `JSDocRequireReturns`} rule.
+ */
 export let RequireReturns = new RuleSuite(
     ESLintRule.JSDocRequireReturns,
     [

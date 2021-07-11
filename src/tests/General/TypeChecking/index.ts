@@ -5,6 +5,9 @@ import { TypeCheckingSuite } from "./TypeCheckingSuite";
 
 let suite = new TypeCheckingSuite();
 
+/**
+ * Provides tests for type-checking.
+ */
 export let TypeCheckingTests = new ContainerSuite(
     suite.SuiteName,
     [

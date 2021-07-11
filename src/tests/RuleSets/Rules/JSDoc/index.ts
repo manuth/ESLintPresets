@@ -16,6 +16,9 @@ import { RequireParamType } from "./RequireParamType.test";
 import { RequireReturns } from "./RequireReturns.test";
 import { RequireReturnsType } from "./RequireReturnsType.test";
 
+/**
+ * Provides tests for jsdoc-rules.
+ */
 export let JSDocTests = new ContainerSuite(
     "JSDoc",
     [

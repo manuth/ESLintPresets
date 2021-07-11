@@ -45,6 +45,9 @@ namespace ESLintPresets
      */
     export let GenerateTSLintConfiguration = _GenerateTSLintConfiguration;
 
+    /**
+     * Provides configurations for `eslint`.
+     */
     export let configs = {
         [PresetName.Recommended]: Recommended,
         [PresetName.RecommendedWithTypeChecking]: RecommendedWithTypeChecking,

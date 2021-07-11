@@ -3,6 +3,9 @@ import { RuleSet } from "../../../Debugging/RuleSet";
 import { ScriptKind } from "../../../Debugging/ScriptKind";
 import { ExtraneousDependencySuite } from "./ExtraneousDependencySuite";
 
+/**
+ * Provides tests for the {@link ESLintRule.ImportNoExtraneousDependencies `ImportNoExtraneousDependencies`} rule.
+ */
 export let NoExtraneousDependencies = new ExtraneousDependencySuite(
     ESLintRule.ImportNoExtraneousDependencies,
     [

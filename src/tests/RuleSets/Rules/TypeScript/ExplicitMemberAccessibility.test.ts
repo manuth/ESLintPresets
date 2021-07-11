@@ -3,6 +3,9 @@ import { RuleSet } from "../../../Debugging/RuleSet";
 import { ScriptKind } from "../../../Debugging/ScriptKind";
 import { RuleSuite } from "../../../Debugging/Suites/RuleSuite";
 
+/**
+ * Provides tests for the {@link ESLintRule.TypeScriptExplicitMemberAccessibility `TypeScriptExplicitMemberAccessibility`} rule.
+ */
 export let ExplicitMemberAccessibility = new RuleSuite(
     ESLintRule.TypeScriptExplicitMemberAccessibility,
     [
