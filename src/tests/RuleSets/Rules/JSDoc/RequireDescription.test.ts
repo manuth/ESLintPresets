@@ -170,6 +170,13 @@ export let RequireDescription = new RuleSuite(
                                 abstract test;
                             }`,
                         `
+                            declare class Test {
+                                /**
+                                 *
+                                 */
+                                get Test();
+                            }`,
+                        `
                             abstract class Test {
                                 /**
                                  *
@@ -177,7 +184,7 @@ export let RequireDescription = new RuleSuite(
                                 abstract get Test();
                             }`,
                         `
-                            abstract class Test {
+                            declare class Test {
                                 /**
                                  *
                                  */
@@ -188,7 +195,7 @@ export let RequireDescription = new RuleSuite(
                                 /**
                                  *
                                  */
-                                abstract Method();
+                                abstract set Test(value);
                             }`,
                         `
                             declare class Test {
@@ -196,6 +203,13 @@ export let RequireDescription = new RuleSuite(
                                  *
                                  */
                                 Method();
+                            }`,
+                        `
+                            abstract class Test {
+                                /**
+                                 *
+                                 */
+                                abstract Method();
                             }`,
                         `
                             /**
@@ -300,6 +314,17 @@ export let RequireDescription = new RuleSuite(
                                 Test
                             }`,
                         `
+                            declare class Test {
+                                Method();
+                            }`,
+                        `
+                            declare class Test {
+                                /**
+                                 * Test.
+                                 */
+                                Method();
+                            }`,
+                        `
                             class Test {
                                 abstract Method();
                             }`,
@@ -323,6 +348,28 @@ export let RequireDescription = new RuleSuite(
                             }`,
                         `
                             abstract class Test {
+                                abstract test;
+                            }`,
+                        `
+                            abstract class Test {
+                                /**
+                                 * Test.
+                                 */
+                                abstract test;
+                            }`,
+                        `
+                            declare class Test {
+                                get Test();
+                            }`,
+                        `
+                            declare class Test {
+                                /**
+                                 * Test.
+                                 */
+                                get Test();
+                            }`,
+                        `
+                            abstract class Test {
                                 abstract get Test();
                             }`,
                         `
@@ -331,6 +378,17 @@ export let RequireDescription = new RuleSuite(
                                  * Test.
                                  */
                                 abstract get Test();
+                            }`,
+                        `
+                            declare class Test {
+                                set Test(value);
+                            }`,
+                        `
+                            declare class Test {
+                                /**
+                                 * Test.
+                                 */
+                                set Test(value);
                             }`,
                         `
                             abstract class Test {
