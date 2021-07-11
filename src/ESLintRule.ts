@@ -69,6 +69,7 @@ export abstract class ESLintRule
     public static readonly TypeScriptUnifiedSignatures = `${ESLintPlugin.TypeScriptESLint}/unified-signatures` as const;
     public static readonly TSLint = `${ESLintPlugin.TSLint}/config` as const;
     public static readonly Deprecation = `${ESLintPlugin.Deprecation}/deprecation` as const;
+    public static readonly ImportNewLineAfterImport = `${ESLintPlugin.Import}/new-line-after-import` as const;
     public static readonly ImportNoDefaultExport = `${ESLintPlugin.Import}/no-default-export` as const;
     public static readonly ImportNoDuplicates = `${ESLintPlugin.Import}/no-duplicates` as const;
     public static readonly ImportNoExtraneousDependencies = `${ESLintPlugin.Import}/no-extraneous-dependencies` as const;

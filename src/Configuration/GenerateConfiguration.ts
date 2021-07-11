@@ -234,6 +234,7 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
             [ESLintRule.TypeScriptTripleSlashReference]: "off",
             [ESLintRule.TypeScriptTypeAnnotationSpacing]: "warn",
             [ESLintRule.TypeScriptUnifiedSignatures]: "off",
+            [ESLintRule.ImportNewLineAfterImport]: "warn",
             [ESLintRule.ImportNoDefaultExport]: weak ? "off" : "warn",
             [ESLintRule.ImportNoDuplicates]: weak ? "off" : "warn",
             [ESLintRule.ImportNoExtraneousDependencies]: "error",
