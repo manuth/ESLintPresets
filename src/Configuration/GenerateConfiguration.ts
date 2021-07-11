@@ -283,6 +283,7 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
                         AST_NODE_TYPES.TSInterfaceDeclaration,
                         AST_NODE_TYPES.ClassProperty,
                         AST_NODE_TYPES.TSPropertySignature,
+                        AST_NODE_TYPES.TSAbstractClassProperty,
                         AST_NODE_TYPES.TSAbstractMethodDefinition,
                         AST_NODE_TYPES.TSCallSignatureDeclaration,
                         AST_NODE_TYPES.TSConstructSignatureDeclaration,
