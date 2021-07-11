@@ -41,13 +41,6 @@ export let RequireDescription = new RuleSuite(
                                 /**
                                  *
                                  */
-                                Method() { }
-                            }`,
-                        `
-                            class Test {
-                                /**
-                                 *
-                                 */
                                 get Test() {
                                     return 1;
                                 }
@@ -58,6 +51,13 @@ export let RequireDescription = new RuleSuite(
                                  *
                                  */
                                 set Test(value) { }
+                            }`,
+                        `
+                            class Test {
+                                /**
+                                 *
+                                 */
+                                Method() { }
                             }`
                     ]
                 },
@@ -96,17 +96,6 @@ export let RequireDescription = new RuleSuite(
                             }`,
                         `
                             class Test {
-                                Method() { }
-                            }`,
-                        `
-                            class Test {
-                                /**
-                                 * Test.
-                                 */
-                                Method() { }
-                            }`,
-                        `
-                            class Test {
                                 get Test() {
                                     return 1;
                                 }
@@ -130,6 +119,17 @@ export let RequireDescription = new RuleSuite(
                                  * Test.
                                  */
                                 set Test(value) { }
+                            }`,
+                        `
+                            class Test {
+                                Method() { }
+                            }`,
+                        `
+                            class Test {
+                                /**
+                                 * Test.
+                                 */
+                                Method() { }
                             }`
                     ]
                 }
@@ -156,18 +156,18 @@ export let RequireDescription = new RuleSuite(
                                 Test
                             }`,
                         `
-                            class Test {
-                                /**
-                                 *
-                                 */
-                                abstract Method();
-                            }`,
-                        `
                             declare class Test {
                                 /**
                                  *
                                  */
                                 test;
+                            }`,
+                        `
+                            class Test {
+                                /**
+                                 *
+                                 */
+                                abstract Method();
                             }`,
                         `
                             declare class Test {
