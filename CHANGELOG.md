@@ -5,6 +5,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## ESLintPresets [Unreleased]
+### Added
+  - An exported member `PresetName` for getting the names of the presets
+
+### Updated
+  - The `jsdoc/require-description`-settings to require descriptions for abstract class-fields
+  - All dependencies
 
 [Show differences](https://github.com/manuth/ESLintPresets/compare/v3.1.3...dev)
 
