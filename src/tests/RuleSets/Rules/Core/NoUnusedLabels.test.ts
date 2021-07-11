@@ -3,6 +3,9 @@ import { RuleSet } from "../../../Debugging/RuleSet";
 import { ScriptKind } from "../../../Debugging/ScriptKind";
 import { RuleSuite } from "../../../Debugging/Suites/RuleSuite";
 
+/**
+ * Provides tests for the {@link ESLintRule.NoUnusedLabels `NoUnusedLabels`} rule.
+ */
 export let NoUnusedLabels = new RuleSuite(
     ESLintRule.NoUnusedLabels,
     [

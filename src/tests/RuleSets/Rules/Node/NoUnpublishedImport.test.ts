@@ -4,6 +4,9 @@ import { RuleSet } from "../../../Debugging/RuleSet";
 import { ScriptKind } from "../../../Debugging/ScriptKind";
 import { ImportVisibilitySuite } from "./ImportVisibilitySuite";
 
+/**
+ * Provides tests for the {@link ESLintRule.NodeNoUnpublishedImport `NodeNoUnpublishedImport`} rule.
+ */
 export let NoUnpublishedImport = new ImportVisibilitySuite(
     ESLintRule.NodeNoUnpublishedImport,
     [

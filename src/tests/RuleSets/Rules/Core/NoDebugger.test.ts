@@ -3,6 +3,9 @@ import { RuleSet } from "../../../Debugging/RuleSet";
 import { ScriptKind } from "../../../Debugging/ScriptKind";
 import { RuleSuite } from "../../../Debugging/Suites/RuleSuite";
 
+/**
+ * Provides tests for the {@link ESLintRule.NoDebugger `NoDebugger`} rule.
+ */
 export let NoDebugger = new RuleSuite(
     ESLintRule.NoDebugger,
     [

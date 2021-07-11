@@ -3,6 +3,9 @@ import { RuleSet } from "../../../Debugging/RuleSet";
 import { ScriptKind } from "../../../Debugging/ScriptKind";
 import { RuleSuite } from "../../../Debugging/Suites/RuleSuite";
 
+/**
+ * Provides tests for the {@link ESLintRule.TypeScriptAwaitThenable `TypeScriptAwaitThenable`} rule.
+ */
 export let AwaitThenable = new RuleSuite(
     ESLintRule.TypeScriptAwaitThenable,
     [

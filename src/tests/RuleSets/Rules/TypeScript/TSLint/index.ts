@@ -6,6 +6,9 @@ import { NoVoidExpression } from "./NoVoidExpression.test";
 import { OrderedImports } from "./OrderedImports.test";
 import { ReturnUndefined } from "./ReturnUndefined.test";
 
+/**
+ * Provides tests for tslint-rules.
+ */
 export let TSLintTests = new ContainerSuite(
     "TSLint",
     [

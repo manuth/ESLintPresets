@@ -89,6 +89,9 @@ import { ValidTypeof } from "./ValidTypeof.test";
 import { YieldStarSpacing } from "./YieldStarSpacing.test";
 import { Yoda } from "./Yoda.test";
 
+/**
+ * Provides tests for core-rules.
+ */
 export let CoreTests = new ContainerSuite(
     "Core",
     [

@@ -6,6 +6,9 @@ import { JSDocTests } from "./JSDoc";
 import { NodeTests } from "./Node";
 import { TypeScriptTests } from "./TypeScript";
 
+/**
+ * Provides tests for rules.
+ */
 export let RuleTests = new ContainerSuite(
     "Rules",
     [

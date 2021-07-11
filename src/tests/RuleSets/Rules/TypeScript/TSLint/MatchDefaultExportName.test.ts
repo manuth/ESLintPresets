@@ -9,7 +9,7 @@ import { TSLintRuleSuite } from "../../../../Debugging/Suites/TSLintRuleSuite";
 import { ITestCase } from "../../../../Debugging/TestCases/ITestCase";
 
 /**
- * Represents a suite for the `match-default-export-name` rule.
+ * Represents a suite for the {@link TSLintRule.MatchDefaultExportName `MatchDefaultExportName`} rule.
  */
 class MatchDefaultExportNameSuite extends TSLintRuleSuite
 {
@@ -118,4 +118,7 @@ class MatchDefaultExportNameSuite extends TSLintRuleSuite
     }
 }
 
+/**
+ * Represents a suite for the {@link TSLintRule.MatchDefaultExportName `MatchDefaultExportName`} rule.
+ */
 export let MatchDefaultExportName = new MatchDefaultExportNameSuite();

@@ -3,6 +3,9 @@ import { RuleSet } from "../../../../Debugging/RuleSet";
 import { ScriptKind } from "../../../../Debugging/ScriptKind";
 import { TSLintRuleSuite } from "../../../../Debugging/Suites/TSLintRuleSuite";
 
+/**
+ * Provides tests for the {@link TSLintRule.ReturnUndefined `ReturnUndefined`} rule.
+ */
 export let ReturnUndefined = new TSLintRuleSuite(
     TSLintRule.ReturnUndefined,
     [

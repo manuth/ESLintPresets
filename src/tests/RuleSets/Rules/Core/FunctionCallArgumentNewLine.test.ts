@@ -3,6 +3,9 @@ import { RuleSet } from "../../../Debugging/RuleSet";
 import { ScriptKind } from "../../../Debugging/ScriptKind";
 import { RuleSuite } from "../../../Debugging/Suites/RuleSuite";
 
+/**
+ * Provides tests for the {@link ESLintRule.FunctionCallArgumentNewline `FunctionCallArgumentNewline`} rule.
+ */
 export let FunctionCallArgumentNewLine = new RuleSuite(
     ESLintRule.FunctionCallArgumentNewline,
     [
