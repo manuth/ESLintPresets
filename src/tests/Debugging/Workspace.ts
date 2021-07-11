@@ -1,7 +1,9 @@
+import { Package } from "@manuth/package-json-editor";
 import { TempDirectory } from "@manuth/temp-files";
 import { ESLint, Linter } from "eslint";
 import { ensureFileSync, writeJSON } from "fs-extra";
 import merge = require("lodash.merge");
+import { fileName } from "types-tsconfig";
 import { TestConstants } from "../TestConstants";
 import { RuleSet } from "./RuleSet";
 import { ScriptKind } from "./ScriptKind";
@@ -68,7 +70,7 @@ export class Workspace
      */
     public get PackageManifestFileName(): string
     {
-        return this.TempDir.MakePath("package.json");
+        return this.TempDir.MakePath(Package.FileName);
     }
 
     /**
@@ -76,7 +78,7 @@ export class Workspace
      */
     public get TSConfigFileName(): string
     {
-        return this.TempDir.MakePath("tsconfig.json");
+        return this.TempDir.MakePath(fileName);
     }
 
     /**

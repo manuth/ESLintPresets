@@ -7,7 +7,7 @@ export let ReturnUndefined = new TSLintRuleSuite(
     TSLintRule.ReturnUndefined,
     [
         {
-            Description: "Checking whether `return undefined;` is disallowed in void functions…",
+            Description: `Checking whether \`return ${undefined};\` is disallowed in void \`${nameof(Function)}\`s…`,
             RuleSet: RuleSet.All,
             ScriptKind: ScriptKind.TS,
             CodeSnippets: [
@@ -34,7 +34,7 @@ export let ReturnUndefined = new TSLintRuleSuite(
             ]
         },
         {
-            Description: "Checking whether `return;` is disallowed in value-returning functions…",
+            Description: `Checking whether \`return;\` is disallowed in value-returning \`${nameof(Function)}\`s…`,
             RuleSet: RuleSet.All,
             ScriptKind: ScriptKind.TS,
             CodeSnippets: [
