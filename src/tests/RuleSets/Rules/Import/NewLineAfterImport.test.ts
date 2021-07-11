@@ -6,9 +6,6 @@ import { RuleSuite } from "../../../Debugging/Suites/RuleSuite";
 /**
  * Provides tests for the {@link ESLintRule.ImportNewLineAfterImport `ImportNewLineAfterImport`} rule.
  */
-/**
- * Provides tests for the {@link ESLintRule.ImportNewLineAfterImport `ImportNewLineAfterImport`} rule.
- */
 export let NewLineAfterImport = new RuleSuite(
     ESLintRule.ImportNewLineAfterImport,
     [
