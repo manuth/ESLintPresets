@@ -179,7 +179,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Updated
   - The tests for improving the stability of the code
-  - The rulesets to disable the `no-use-before-define` rule
+  - The rule-sets to disable the `no-use-before-define` rule
   - The development environment
 
 [Show differences](https://github.com/manuth/ESLintPresets/compare/v2.2.1...v2.3.0)
