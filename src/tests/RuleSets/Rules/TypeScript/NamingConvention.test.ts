@@ -155,7 +155,7 @@ export let NamingConvention = new RuleSuite(
                 {
                     Valid: false,
                     Snippets: [
-                        "interface Itest { }"
+                        "interface Iteraton { }"
                     ]
                 },
                 {
@@ -214,7 +214,7 @@ export let NamingConvention = new RuleSuite(
                 {
                     Valid: false,
                     Snippets: [
-                        "class List<Ttest> { }"
+                        "class List<Test> { }"
                     ]
                 },
                 {
@@ -233,7 +233,7 @@ export let NamingConvention = new RuleSuite(
                 {
                     Valid: true,
                     Snippets: [
-                        "class List<Ttest> { }",
+                        "class List<Test> { }",
                         "class List<TTest> { }",
                         "class List<test> { }",
                         "class List<Test> { }"

@@ -7,7 +7,7 @@ export let FuncCallSpacing = new RuleSuite(
     ESLintRule.TypeScriptFuncCallSpacing,
     [
         {
-            Description: "Checking whether function-calls must be spaced correctly…",
+            Description: `Checking whether \`${nameof(Function)}\`-calls must be spaced correctly…`,
             RuleSet: RuleSet.All,
             ScriptKind: ScriptKind.Scripts,
             CodeSnippets: [

@@ -6,7 +6,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## ESLintPresets [Unreleased]
 
-[Show differences](https://github.com/manuth/ESLintPresets/compare/v3.1.3...dev)
+[Show differences](https://github.com/manuth/ESLintPresets/compare/v3.2.0...dev)
+
+## ESLintPresets v3.2.0
+### Added
+  - An exported member `PresetName` for getting the names of the presets
+
+### Updated
+  - The `jsdoc/require-description`-settings to require descriptions for abstract class-fields
+  - All dependencies
+
+[Show differences](https://github.com/manuth/ESLintPresets/compare/v3.1.3...v3.2.0)
 
 ## ESLintPresets v3.1.3
 ### Removed
@@ -179,7 +189,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Updated
   - The tests for improving the stability of the code
-  - The rulesets to disable the `no-use-before-define` rule
+  - The rule-sets to disable the `no-use-before-define` rule
   - The development environment
 
 [Show differences](https://github.com/manuth/ESLintPresets/compare/v2.2.1...v2.3.0)

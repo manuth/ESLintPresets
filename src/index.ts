@@ -6,6 +6,7 @@ import Weak = require("./Configuration/Weak");
 import WeakWithTypeChecking = require("./Configuration/WeakWithTypeChecking");
 import { ESLintPlugin as _ESLintPlugin } from "./ESLintPlugin";
 import { ESLintRule as _ESLintRule } from "./ESLintRule";
+import { PresetName as _PresetName } from "./PresetName";
 import { TSLintRule as _TSLintRule } from "./TSLintRule";
 
 /**
@@ -14,13 +15,6 @@ import { TSLintRule as _TSLintRule } from "./TSLintRule";
 // eslint-disable-next-line @typescript-eslint/no-namespace
 namespace ESLintPresets
 {
-    export let configs = {
-        recommended: Recommended,
-        "recommended-requiring-type-checking": RecommendedWithTypeChecking,
-        weak: Weak,
-        "weak-requiring-type-checking": WeakWithTypeChecking
-    };
-
     /**
      * Represents an `eslint`-plugin.
      */
@@ -30,6 +24,11 @@ namespace ESLintPresets
      * Indicates an `eslint`-rule.
      */
     export let ESLintRule = _ESLintRule;
+
+    /**
+     * Represents a configuration-preset.
+     */
+    export let PresetName = _PresetName;
 
     /**
      * Indicates a `tslint`-rule.
@@ -45,6 +44,13 @@ namespace ESLintPresets
      * Generates a `tslint`-configuration.
      */
     export let GenerateTSLintConfiguration = _GenerateTSLintConfiguration;
+
+    export let configs = {
+        [PresetName.Recommended]: Recommended,
+        [PresetName.RecommendedWithTypeChecking]: RecommendedWithTypeChecking,
+        [PresetName.Weak]: Weak,
+        [PresetName.WeakWithTypeChecking]: WeakWithTypeChecking
+    };
 }
 
 export = ESLintPresets;

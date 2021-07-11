@@ -22,15 +22,14 @@
             ]
         },
         {
-            "name": "Debug Mocha Tests",
             "type": "pwa-node",
             "request": "attach",
+            "name": "Debug Mocha Tests",
             "presentation": {
                 "hidden": true
             },
             "port": 9229,
             "continueOnAttach": true,
-            "autoAttachChildProcesses": false,
             "resolveSourceMapLocations": [
                 "!**/node_modules/**",
                 "!**/.vscode/extensions/hbenl.vscode-mocha-test-adapter-*/**"

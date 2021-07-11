@@ -1,8 +1,13 @@
+import { AST_NODE_TYPES } from "@typescript-eslint/typescript-estree";
 import type { Linter } from "eslint";
 import merge = require("lodash.merge");
 import { join } from "upath";
 import { ESLintPlugin } from "../ESLintPlugin";
 import { ESLintRule } from "../ESLintRule";
+import Recommended = require("./TSLint/Recommended");
+import RecommendedWithTypeChecking = require("./TSLint/RecommendedWithTypeChecking");
+import Weak = require("./TSLint/Weak");
+import WeakWithTypeChecking = require("./TSLint/WeakWithTypeChecking");
 
 /**
  * Generates an `eslint`-configuration.
@@ -38,6 +43,9 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
             ]
         }
     ];
+
+    let returnsFilterSelector = `:not([returnType.typeAnnotation.type='${AST_NODE_TYPES.TSVoidKeyword}'])` +
+        `:not([returnType.typeAnnotation.typeName.name='${nameof(Promise)}'][returnType.typeAnnotation.typeParameters.params.0.type='${AST_NODE_TYPES.TSVoidKeyword}'])`;
 
     let config: Linter.Config = {
         parser: "@typescript-eslint/parser",
@@ -268,22 +276,23 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
                 weak ? "off" : "warn",
                 {
                     contexts: [
-                        "ClassDeclaration",
-                        "ClassExpression",
-                        "ArrowFunctionExpression",
-                        "FunctionDeclaration",
-                        "FunctionExpression",
-                        "MethodDefinition",
-                        "TSEnumDeclaration",
-                        "TSEnumMember",
-                        "TSInterfaceDeclaration",
-                        "ClassProperty",
-                        "TSPropertySignature",
-                        "TSAbstractMethodDefinition",
-                        "TSCallSignatureDeclaration",
-                        "TSConstructSignatureDeclaration",
-                        "TSMethodSignature",
-                        "TSTypeAliasDeclaration"
+                        AST_NODE_TYPES.ClassDeclaration,
+                        AST_NODE_TYPES.ClassExpression,
+                        AST_NODE_TYPES.ArrowFunctionExpression,
+                        AST_NODE_TYPES.FunctionDeclaration,
+                        AST_NODE_TYPES.FunctionExpression,
+                        AST_NODE_TYPES.MethodDefinition,
+                        AST_NODE_TYPES.TSEnumDeclaration,
+                        AST_NODE_TYPES.TSEnumMember,
+                        AST_NODE_TYPES.TSInterfaceDeclaration,
+                        AST_NODE_TYPES.ClassProperty,
+                        AST_NODE_TYPES.TSPropertySignature,
+                        AST_NODE_TYPES.TSAbstractClassProperty,
+                        AST_NODE_TYPES.TSAbstractMethodDefinition,
+                        AST_NODE_TYPES.TSCallSignatureDeclaration,
+                        AST_NODE_TYPES.TSConstructSignatureDeclaration,
+                        AST_NODE_TYPES.TSMethodSignature,
+                        AST_NODE_TYPES.TSTypeAliasDeclaration
                     ]
                 }
             ],
@@ -299,17 +308,17 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
                         MethodDefinition: true
                     },
                     contexts: [
-                        "TSEnumDeclaration",
-                        "TSEnumMember",
-                        "TSInterfaceDeclaration",
-                        "ClassProperty",
-                        "TSTypeAliasDeclaration",
-                        "TSPropertySignature",
-                        "TSAbstractMethodDefinition",
-                        "TSCallSignatureDeclaration",
-                        "TSConstructSignatureDeclaration",
-                        "TSMethodSignature",
-                        "TSDeclareFunction"
+                        AST_NODE_TYPES.TSEnumDeclaration,
+                        AST_NODE_TYPES.TSEnumMember,
+                        AST_NODE_TYPES.TSInterfaceDeclaration,
+                        AST_NODE_TYPES.ClassProperty,
+                        AST_NODE_TYPES.TSTypeAliasDeclaration,
+                        AST_NODE_TYPES.TSPropertySignature,
+                        AST_NODE_TYPES.TSAbstractMethodDefinition,
+                        AST_NODE_TYPES.TSCallSignatureDeclaration,
+                        AST_NODE_TYPES.TSConstructSignatureDeclaration,
+                        AST_NODE_TYPES.TSMethodSignature,
+                        AST_NODE_TYPES.TSDeclareFunction
                     ]
                 }
             ],
@@ -327,15 +336,15 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
                     exemptedBy: [],
                     checkSetters: false,
                     contexts: [
-                        "ArrowFunctionExpression",
-                        "FunctionDeclaration",
-                        "FunctionExpression",
-                        "TSEmptyBodyFunctionExpression",
-                        "TSMethodSignature",
-                        "TSConstructSignatureDeclaration",
-                        "TSCallSignatureDeclaration",
-                        "TSDeclareFunction",
-                        "TSFunctionType"
+                        AST_NODE_TYPES.ArrowFunctionExpression,
+                        AST_NODE_TYPES.FunctionDeclaration,
+                        AST_NODE_TYPES.FunctionExpression,
+                        AST_NODE_TYPES.TSEmptyBodyFunctionExpression,
+                        AST_NODE_TYPES.TSMethodSignature,
+                        AST_NODE_TYPES.TSConstructSignatureDeclaration,
+                        AST_NODE_TYPES.TSCallSignatureDeclaration,
+                        AST_NODE_TYPES.TSDeclareFunction,
+                        AST_NODE_TYPES.TSFunctionType
                     ]
                 }
             ],
@@ -361,9 +370,9 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
                     checkGetters: false,
                     exemptedBy: [],
                     contexts: [
-                        "ArrowFunctionExpression:not([returnType.typeAnnotation.type='TSVoidKeyword']):not([returnType.typeAnnotation.typeName.name='Promise'][returnType.typeAnnotation.typeParameters.params.0.type='TSVoidKeyword'])",
-                        "FunctionDeclaration:not([returnType.typeAnnotation.type='TSVoidKeyword']):not([returnType.typeAnnotation.typeName.name='Promise'][returnType.typeAnnotation.typeParameters.params.0.type='TSVoidKeyword'])",
-                        "FunctionExpression:not([returnType.typeAnnotation.type='TSVoidKeyword']):not([returnType.typeAnnotation.typeName.name='Promise'][returnType.typeAnnotation.typeParameters.params.0.type='TSVoidKeyword'])"
+                        `${AST_NODE_TYPES.ArrowFunctionExpression}${returnsFilterSelector}`,
+                        `${AST_NODE_TYPES.FunctionDeclaration}${returnsFilterSelector}`,
+                        `${AST_NODE_TYPES.FunctionExpression}${returnsFilterSelector}`
                     ]
                 }
             ],
@@ -652,7 +661,13 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
                             join(
                                 __dirname,
                                 "TSLint",
-                                `${weak ? "Weak" : "Recommended"}${typeChecking ? "WithTypeChecking" : ""}`))
+                                typeChecking ?
+                                    weak ?
+                                        nameof(WeakWithTypeChecking) :
+                                        nameof(RecommendedWithTypeChecking) :
+                                    weak ?
+                                        nameof(Weak) :
+                                        nameof(Recommended)))
                     }
                 ]
             }
