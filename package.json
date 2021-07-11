@@ -42,7 +42,7 @@
     "upath": "^2.0.1"
   },
   "devDependencies": {
-    "@manuth/package-json-editor": "^2.0.0",
+    "@manuth/package-json-editor": "^2.1.0",
     "@manuth/temp-files": "^2.0.6",
     "@manuth/tsconfig": "^2.0.2",
     "@manuth/typescript-eslint-plugin": "^1.4.1",
