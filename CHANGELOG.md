@@ -5,6 +5,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## ESLintPresets [Unreleased]
+### Added
+  - A rule for forcing new-lines after import-statements
+  - Rule-settings for requiring jsdoc-comments to be added to exported variables
+  - Support for parallel step-execution of drone-pipelines
 
 [Show differences](https://github.com/manuth/ESLintPresets/compare/v3.2.0...dev)
 
