@@ -7,7 +7,7 @@ export let NoWhitespaceBeforeProperty = new RuleSuite(
     ESLintRule.NoWhitespaceBeforeProperty,
     [
         {
-            Description: "Checking whether whitespaces in property-paths are disallowed…",
+            Description: "Checking whether white-spaces in property-paths are disallowed…",
             RuleSet: RuleSet.All,
             ScriptKind: ScriptKind.Scripts,
             CodeSnippets: [
