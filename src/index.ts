@@ -46,6 +46,11 @@ namespace ESLintPresets
     export let GenerateTSLintConfiguration = _GenerateTSLintConfiguration;
 
     /**
+     * Gets the name of the plugin.
+     */
+    export let PluginName = "@manuth/typescript";
+
+    /**
      * Provides configurations for `eslint`.
      */
     export let configs = {
