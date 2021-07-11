@@ -4,6 +4,10 @@ import merge = require("lodash.merge");
 import { join } from "upath";
 import { ESLintPlugin } from "../ESLintPlugin";
 import { ESLintRule } from "../ESLintRule";
+import Recommended = require("./TSLint/Recommended");
+import RecommendedWithTypeChecking = require("./TSLint/RecommendedWithTypeChecking");
+import Weak = require("./TSLint/Weak");
+import WeakWithTypeChecking = require("./TSLint/WeakWithTypeChecking");
 
 /**
  * Generates an `eslint`-configuration.
@@ -657,7 +661,13 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
                             join(
                                 __dirname,
                                 "TSLint",
-                                `${weak ? "Weak" : "Recommended"}${typeChecking ? "WithTypeChecking" : ""}`))
+                                typeChecking ?
+                                    weak ?
+                                        nameof(WeakWithTypeChecking) :
+                                        nameof(RecommendedWithTypeChecking) :
+                                    weak ?
+                                        nameof(Weak) :
+                                        nameof(Recommended)))
                     }
                 ]
             }
