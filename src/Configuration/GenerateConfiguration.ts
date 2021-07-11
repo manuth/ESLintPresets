@@ -277,6 +277,7 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
                 weak ? "off" : "warn",
                 {
                     contexts: [
+                        AST_NODE_TYPES.VariableDeclaration,
                         AST_NODE_TYPES.ClassDeclaration,
                         AST_NODE_TYPES.ClassExpression,
                         AST_NODE_TYPES.ArrowFunctionExpression,
@@ -293,7 +294,9 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
                         AST_NODE_TYPES.TSCallSignatureDeclaration,
                         AST_NODE_TYPES.TSConstructSignatureDeclaration,
                         AST_NODE_TYPES.TSMethodSignature,
-                        AST_NODE_TYPES.TSTypeAliasDeclaration
+                        AST_NODE_TYPES.TSTypeAliasDeclaration,
+                        `${AST_NODE_TYPES.ExportNamedDeclaration}[declaration.type='${AST_NODE_TYPES.VariableDeclaration}']`,
+                        `${AST_NODE_TYPES.ExportDefaultDeclaration}[declaration.type='${AST_NODE_TYPES.VariableDeclaration}']`
                     ]
                 }
             ],
@@ -319,7 +322,9 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
                         AST_NODE_TYPES.TSCallSignatureDeclaration,
                         AST_NODE_TYPES.TSConstructSignatureDeclaration,
                         AST_NODE_TYPES.TSMethodSignature,
-                        AST_NODE_TYPES.TSDeclareFunction
+                        AST_NODE_TYPES.TSDeclareFunction,
+                        `${AST_NODE_TYPES.ExportNamedDeclaration}[declaration.type='${AST_NODE_TYPES.VariableDeclaration}']`,
+                        `${AST_NODE_TYPES.ExportDefaultDeclaration}[declaration.type='${AST_NODE_TYPES.VariableDeclaration}']`
                     ]
                 }
             ],
