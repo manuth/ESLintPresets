@@ -1,4 +1,6 @@
 import merge = require("lodash.merge");
+// eslint-disable-next-line node/no-unpublished-import
+import type { Configuration } from "tslint";
 import { TSLintRule } from "../../TSLintRule";
 
 /**
@@ -22,7 +24,7 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
                 "named-imports": "case-insensitive"
             }
         }
-    };
+    } as Configuration.RawRulesConfig;
 
     let typeScriptRules = {};
     let javaScriptRules = {};
@@ -38,17 +40,17 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
                     ]
                 },
                 [TSLintRule.ReturnUndefined]: true
-            });
+            } as Configuration.RawRulesConfig);
 
         typeScriptRules = merge(
             typeScriptRules,
             {
                 [TSLintRule.MatchDefaultExportName]: true
-            });
+            } as Configuration.RawRulesConfig);
     }
 
     return {
         rules: merge(typeScriptRules, commonRules),
         jsRules: merge(javaScriptRules, commonRules)
-    };
+    } as Configuration.RawConfigFile;
 }

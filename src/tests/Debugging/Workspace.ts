@@ -3,7 +3,7 @@ import { TempDirectory } from "@manuth/temp-files";
 import { ESLint, Linter } from "eslint";
 import { ensureFileSync, writeJSON } from "fs-extra";
 import merge = require("lodash.merge");
-import { fileName } from "types-tsconfig";
+import { fileName, TSConfigJSON } from "types-tsconfig";
 import { TestConstants } from "../TestConstants";
 import { RuleSet } from "./RuleSet";
 import { ScriptKind } from "./ScriptKind";
@@ -48,13 +48,13 @@ export class Workspace
             {
                 compilerOptions: {
                     rootDir: this.sourceDirectory,
-                    module: "commonjs",
+                    module: "CommonJS",
                     allowJs: true,
                     lib: [
-                        "es7"
+                        "ES2020"
                     ]
                 }
-            });
+            } as TSConfigJSON);
     }
 
     /**
