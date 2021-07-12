@@ -1,9 +1,5 @@
 import { GenerateConfiguration as _GenerateESLintConfiguration } from "./Configuration/GenerateConfiguration";
-import Recommended = require("./Configuration/Recommended");
-import RecommendedWithTypeChecking = require("./Configuration/RecommendedWithTypeChecking");
 import { GenerateConfiguration as _GenerateTSLintConfiguration } from "./Configuration/TSLint/GenerateConfiguration";
-import Weak = require("./Configuration/Weak");
-import WeakWithTypeChecking = require("./Configuration/WeakWithTypeChecking");
 import { ESLintPlugin as _ESLintPlugin } from "./ESLintPlugin";
 import { ESLintRule as _ESLintRule } from "./ESLintRule";
 import { PresetName as _PresetName } from "./PresetName";
@@ -54,10 +50,22 @@ namespace ESLintPresets
      * Provides configurations for `eslint`.
      */
     export let configs = {
-        [PresetName.Recommended]: Recommended,
-        [PresetName.RecommendedWithTypeChecking]: RecommendedWithTypeChecking,
-        [PresetName.Weak]: Weak,
-        [PresetName.WeakWithTypeChecking]: WeakWithTypeChecking
+        get [PresetName.Recommended]()
+        {
+            return GenerateESLintConfiguration(false, false);
+        },
+        get [PresetName.RecommendedWithTypeChecking]()
+        {
+            return GenerateESLintConfiguration(false, true);
+        },
+        get [PresetName.Weak]()
+        {
+            return GenerateESLintConfiguration(true, false);
+        },
+        get [PresetName.WeakWithTypeChecking]()
+        {
+            return GenerateESLintConfiguration(true, true);
+        }
     };
 }
 
