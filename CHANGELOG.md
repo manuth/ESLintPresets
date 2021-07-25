@@ -8,6 +8,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Updated
   - All dependencies
 
+### Added
+  - Support for caching the presets for improving performance
+
 ### Fixed
   - Drone-pipelines by preventing steps from interrupting each other
 
