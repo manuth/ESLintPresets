@@ -29,7 +29,7 @@ export class ExtraneousDependencySuite extends IndependentRuleSuite
      */
     public static get ExtraneousDependency(): string
     {
-        return "@stdlib/utils-escape-regexp-string";
+        return "escape-string-regexp";
     }
 
     /**
