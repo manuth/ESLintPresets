@@ -1,3 +1,4 @@
+import { basename } from "path";
 import { ContainerSuite } from "../Debugging/Suites/ContainerSuite";
 import { DeprecatedRulesTests } from "./Deprecated";
 import { TypeCheckingTests } from "./TypeChecking";
@@ -6,7 +7,7 @@ import { TypeCheckingTests } from "./TypeChecking";
  * Provides general tests.
  */
 export let GeneralTests = new ContainerSuite(
-    "General",
+    basename(__dirname),
     [
         TypeCheckingTests,
         DeprecatedRulesTests

@@ -1,3 +1,4 @@
+import { basename } from "path";
 import { ContainerSuite } from "../../../Debugging/Suites/ContainerSuite";
 import { CheckAlignment } from "./CheckAlignment.test";
 import { CheckIndentation } from "./CheckIndentation.test";
@@ -20,7 +21,7 @@ import { RequireReturnsType } from "./RequireReturnsType.test";
  * Provides tests for jsdoc-rules.
  */
 export let JSDocTests = new ContainerSuite(
-    "JSDoc",
+    basename(__dirname),
     [
         CheckAlignment,
         CheckIndentation,

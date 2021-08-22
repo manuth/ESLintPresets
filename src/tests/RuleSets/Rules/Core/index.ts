@@ -1,3 +1,4 @@
+import { basename } from "path";
 import { ContainerSuite } from "../../../Debugging/Suites/ContainerSuite";
 import { ArrayBracketNewLine } from "./ArrayBracketNewLine.test";
 import { ArrayBracketSpacing } from "./ArrayBracketSpacing.test";
@@ -93,7 +94,7 @@ import { Yoda } from "./Yoda.test";
  * Provides tests for core-rules.
  */
 export let CoreTests = new ContainerSuite(
-    "Core",
+    basename(__dirname),
     [
         ArrayBracketSpacing,
         ArrayBracketNewLine,
