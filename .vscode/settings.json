@@ -6,5 +6,6 @@
     "typescript.format.placeOpenBraceOnNewLineForControlBlocks": true,
     "typescript.format.placeOpenBraceOnNewLineForFunctions": true,
     "mochaExplorer.debuggerConfig": "Debug Mocha Tests",
-    "mochaExplorer.require": "source-map-support/register"
+    "mochaExplorer.require": "source-map-support/register",
+    "mochaExplorer.timeout": 0
 }
