@@ -1,3 +1,4 @@
+import { basename } from "path";
 import { ESLintRule } from "../../../../../ESLintRule";
 import { ContainerSuite } from "../../../../Debugging/Suites/ContainerSuite";
 import { RuleSuite } from "../../../../Debugging/Suites/RuleSuite";
@@ -10,7 +11,7 @@ import { ReturnUndefined } from "./ReturnUndefined.test";
  * Provides tests for tslint-rules.
  */
 export let TSLintTests = new ContainerSuite(
-    "TSLint",
+    basename(__dirname),
     [
         new ContainerSuite(
             new RuleSuite(ESLintRule.TSLint, []).SuiteName,

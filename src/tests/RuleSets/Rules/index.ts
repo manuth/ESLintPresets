@@ -1,3 +1,4 @@
+import { basename } from "path";
 import { ContainerSuite } from "../../Debugging/Suites/ContainerSuite";
 import { CoreTests } from "./Core";
 import { DeprecationTests } from "./Deprecation";
@@ -10,7 +11,7 @@ import { TypeScriptTests } from "./TypeScript";
  * Provides tests for rules.
  */
 export let RuleTests = new ContainerSuite(
-    "Rules",
+    basename(__dirname),
     [
         TypeScriptTests,
         CoreTests,

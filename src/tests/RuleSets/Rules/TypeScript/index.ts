@@ -1,3 +1,4 @@
+import { basename } from "path";
 import { ContainerSuite } from "../../../Debugging/Suites/ContainerSuite";
 import { AdjacentOverloadSignatures } from "./AdjacentOverloadSignatures.test";
 import { ArrayType } from "./ArrayType.test";
@@ -47,7 +48,7 @@ import { UnifiedSignatures } from "./UnifiedSignatures.test";
  * Provides tests for typescript-related rules.
  */
 export let TypeScriptTests = new ContainerSuite(
-    "TypeScript",
+    basename(__dirname),
     [
         AdjacentOverloadSignatures,
         ArrayType,
