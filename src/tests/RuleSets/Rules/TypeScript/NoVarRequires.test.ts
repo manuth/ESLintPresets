@@ -3,6 +3,8 @@ import { RuleSet } from "../../../Debugging/RuleSet";
 import { ScriptKind } from "../../../Debugging/ScriptKind";
 import { RuleSuite } from "../../../Debugging/Suites/RuleSuite";
 
+let incorrectCode = 'var foo = require("foo");';
+
 /**
  * Provides tests for the {@link ESLintRule.TypeScriptNoVarRequires `TypeScriptNoVarRequires`} rule.
  */
@@ -10,14 +12,14 @@ export let NoVarRequires = new RuleSuite(
     ESLintRule.TypeScriptNoVarRequires,
     [
         {
-            Description: 'Checking whether the `var foo = require("foo"); syntax is banned…',
+            Description: `Checking whether the \`${incorrectCode}\` syntax is banned…`,
             RuleSet: RuleSet.All,
             ScriptKind: ScriptKind.TS,
             CodeSnippets: [
                 {
                     Valid: false,
                     Snippets: [
-                        'var foo = require("foo");'
+                        incorrectCode
                     ]
                 },
                 {
