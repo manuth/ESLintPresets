@@ -14,9 +14,9 @@ export enum ESLintPlugin
     TSLint = "@typescript-eslint/tslint",
 
     /**
-     * Indicates the `deprecation` plugin.
+     * Indicates the `@delagen/deprecation` plugin.
      */
-    Deprecation = "deprecation",
+    Deprecation = "@delagen/deprecation",
 
     /**
      * Indicates the `import` plugin.
