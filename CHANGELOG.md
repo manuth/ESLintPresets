@@ -12,7 +12,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Updated
   - All dependencies
 
-[Show differences](https://github.com/manuth/ESLintPresets/compare/v3.2.5...dev)
+[Show differences](https://github.com/manuth/ESLintPresets/compare/v3.2.6...dev)
+
+## ESLintPresets v3.2.6
+### Fixed
+  - Vulnerabilities in dependencies
+  - Broken ruleset by replacing `eslint-plugin-deprecation` with `@delagen/eslint-plugin-deprecation`
+
+### Updated
+  - All dependencies
+
+[Show differences](https://github.com/manuth/ESLintPresets/compare/v3.2.5...v3.2.6)
 
 ## ESLintPresets v3.2.5
 ### Fixed
