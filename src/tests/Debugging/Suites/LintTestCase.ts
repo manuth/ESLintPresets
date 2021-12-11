@@ -148,7 +148,15 @@ export abstract class LintTestCase implements ITestCase, IRegisterable
                                                             }
                                                             catch (exception)
                                                             {
-                                                                error = exception;
+                                                                if (exception instanceof Error)
+                                                                {
+                                                                    error = exception;
+                                                                }
+                                                                else
+                                                                {
+                                                                    error = new Error(`${exception}`);
+                                                                }
+
                                                                 throw exception;
                                                             }
                                                         }),
