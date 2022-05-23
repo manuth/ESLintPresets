@@ -4,10 +4,10 @@ import { ScriptKind } from "../../../Debugging/ScriptKind";
 import { RuleSuite } from "../../../Debugging/Suites/RuleSuite";
 
 /**
- * Provides tests for the {@link ESLintRule.TypeScriptNoParameterProperties `TypeScriptNoParameterProperties`} rule.
+ * Provides tests for the {@link ESLintRule.TypeScriptParameterProperties `TypeScriptParameterProperties`} rule.
  */
-export let NoParameterProperties = new RuleSuite(
-    ESLintRule.TypeScriptNoParameterProperties,
+export let ParameterProperties = new RuleSuite(
+    ESLintRule.TypeScriptParameterProperties,
     [
         {
             Description: "Checking whether parameter-properties are disallowed…",
