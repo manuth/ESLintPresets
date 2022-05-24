@@ -6,7 +6,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## ESLintPresets [Unreleased]
 
-## ESLintPresets 3.2.8
+## ESLintPresets v3.2.8
 ### Fixed
   - All vulnerabilities in dependencies
   - Test timeouts
