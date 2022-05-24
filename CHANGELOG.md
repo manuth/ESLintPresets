@@ -5,6 +5,17 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## ESLintPresets [Unreleased]
+### Fixed
+  - All vulnerabilities in dependencies
+
+### Updated
+  - Linting environment
+  - All dependencies
+  - Deprecated rules
+    - `@typescript-eslint/no-parameter-properties` has been replaced by `@typescript-eslint/parameter-properties`
+
+### Added
+  - Reports for the use of deprecated rules while testing
 
 [Show differences](https://github.com/manuth/ESLintPresets/compare/v3.2.6...dev)
 
