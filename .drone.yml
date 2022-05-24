@@ -62,6 +62,16 @@ steps:
     when:
       event:
         - tag
+  - name: dump release notes
+    image: alpine
+    depends_on:
+      - prepare release notes
+    commands:
+      - echo "Release Title:" && cat .releaseTitle.md && echo ""
+      - echo "Release Notes:" && cat .releaseNotes.md && echo ""
+    when:
+      event:
+        - tag
   - name: publish package to npm
     image: node
     depends_on:
