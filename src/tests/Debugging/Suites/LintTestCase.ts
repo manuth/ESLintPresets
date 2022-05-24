@@ -148,7 +148,15 @@ export abstract class LintTestCase implements ITestCase, IRegisterable
                                                             }
                                                             catch (exception)
                                                             {
-                                                                error = exception;
+                                                                if (exception instanceof Error)
+                                                                {
+                                                                    error = exception;
+                                                                }
+                                                                else
+                                                                {
+                                                                    error = new Error(`${exception}`);
+                                                                }
+
                                                                 throw exception;
                                                             }
                                                         }),
@@ -189,6 +197,17 @@ export abstract class LintTestCase implements ITestCase, IRegisterable
                                                                 return `${message.ruleId}: ${message.message}`;
                                                             }).join("\n");
 
+                                                    let deprecatedRules = results.flatMap(
+                                                        (lintResult) => lintResult.usedDeprecatedRules).map(
+                                                            (deprecatedRuleUse) =>
+                                                            {
+                                                                return `\`${deprecatedRuleUse.ruleId}\` has been replaced by` +
+                                                                    ((deprecatedRuleUse.replacedBy.length > 1) ?
+                                                                        "the following rules" :
+                                                                        "") +
+                                                                    `: \`${deprecatedRuleUse.replacedBy.join("`, `")}\``;
+                                                            }).join("\n");
+
                                                     throw new Error(
                                                         [
                                                             dedent(`
@@ -196,8 +215,21 @@ export abstract class LintTestCase implements ITestCase, IRegisterable
                                                                 This code-snippet is expected to report ${valid ? "no errors" : "an error"} but reported ${valid ? "at least one" : "none"}:`),
                                                             snippetBlock,
                                                             "",
-                                                            "Following errors were reported:",
-                                                            messages
+                                                            ...(
+                                                                messages.length > 0 ?
+                                                                    [
+                                                                        "Following errors were reported:",
+                                                                        messages
+                                                                    ] :
+                                                                    []),
+                                                            ...(
+                                                                deprecatedRules.length > 0 ?
+                                                                    [
+                                                                        "Following deprecated rules were used:",
+                                                                        deprecatedRules
+                                                                    ] :
+                                                                    []
+                                                            )
                                                         ].join(EOL));
                                                 }
                                             }

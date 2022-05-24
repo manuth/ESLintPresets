@@ -189,7 +189,7 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
                     allowDefinitionFiles: true
                 }
             ],
-            [ESLintRule.TypeScriptNoParameterProperties]: "error",
+            [ESLintRule.TypeScriptParameterProperties]: "error",
             [ESLintRule.TypeScriptNoThisAlias]: "off",
             [ESLintRule.TypeScriptNoUnusedExpressions]: [
                 "warn",

@@ -24,12 +24,12 @@ import { NoForInArray } from "./NoForInArray.test";
 import { NoInferrableTypes } from "./NoInferrableTypes.test";
 import { NoMisusedNew } from "./NoMisusedNew.test";
 import { NoNamespace } from "./NoNamespace.test";
-import { NoParameterProperties } from "./NoParameterProperties.test";
 import { NoThisAlias } from "./NoThisAlias.test";
 import { NoUnusedExpressions } from "./NoUnusedExpressions.test";
 import { NoUnusedVars } from "./NoUnusedVars.test";
 import { NoUseBeforeDefine } from "./NoUseBeforeDefine.test";
 import { NoVarRequires } from "./NoVarRequires.test";
+import { ParameterProperties } from "./ParameterProperties.test";
 import { PreferAsConst } from "./PreferAsConst.test";
 import { PreferForOf } from "./PreferForOf.test";
 import { PreferFunctionType } from "./PreferFunctionType.test";
@@ -74,12 +74,12 @@ export let TypeScriptTests = new ContainerSuite(
         NoInferrableTypes,
         NoMisusedNew,
         NoNamespace,
-        NoParameterProperties,
         NoThisAlias,
         NoUnusedExpressions,
         NoUnusedVars,
         NoUseBeforeDefine,
         NoVarRequires,
+        ParameterProperties,
         PreferAsConst,
         PreferForOf,
         PreferFunctionType,

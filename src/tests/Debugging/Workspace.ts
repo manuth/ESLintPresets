@@ -185,7 +185,7 @@ export class Workspace
     {
         return {
             useEslintrc: false,
-            baseConfig: merge<Linter.Config<Linter.RulesRecord>, Linter.Config<Linter.RulesRecord>>(
+            baseConfig: merge<Linter.Config, Linter.Config>(
                 enableTypeChecking ?
                     {
                         parserOptions: {

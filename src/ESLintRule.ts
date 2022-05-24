@@ -39,7 +39,7 @@ export abstract class ESLintRule
     public static readonly TypeScriptNoInferrableTypes = `${ESLintPlugin.TypeScriptESLint}/no-inferrable-types` as const;
     public static readonly TypeScriptNoMisusedNew = `${ESLintPlugin.TypeScriptESLint}/no-misused-new` as const;
     public static readonly TypeScriptNoNamespace = `${ESLintPlugin.TypeScriptESLint}/no-namespace` as const;
-    public static readonly TypeScriptNoParameterProperties = `${ESLintPlugin.TypeScriptESLint}/no-parameter-properties` as const;
+    public static readonly TypeScriptParameterProperties = `${ESLintPlugin.TypeScriptESLint}/parameter-properties` as const;
     public static readonly TypeScriptNoThisAlias = `${ESLintPlugin.TypeScriptESLint}/no-this-alias` as const;
     public static readonly TypeScriptNoThrowLiteral = `${ESLintPlugin.TypeScriptESLint}/no-throw-literal` as const;
     public static readonly TypeScriptNoUnnecessaryBooleanLiteralCompare = `${ESLintPlugin.TypeScriptESLint}/no-unnecessary-boolean-literal-compare` as const;
