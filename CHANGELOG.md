@@ -6,9 +6,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## ESLintPresets [Unreleased]
 
-[Show differences](https://github.com/manuth/ESLintPresets/compare/v3.2.9...dev)
+[Show differences](https://github.com/manuth/ESLintPresets/compare/v3.2.10...dev)
 
-## ESLintPresets v3.2.9
+## ESLintPresets v3.2.10
 ### Fixed
   - All vulnerabilities in dependencies
   - Test timeouts
@@ -23,7 +23,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
   - Reports for the use of deprecated rules while testing
 
-[Show differences](https://github.com/manuth/ESLintPresets/compare/v3.2.6...v3.2.9)
+[Show differences](https://github.com/manuth/ESLintPresets/compare/v3.2.6...v3.2.10)
 
 ## ESLintPresets v3.2.6
 ### Fixed
