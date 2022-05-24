@@ -34,7 +34,7 @@ steps:
       - npm pack
     when:
       event:
-        - promote
+        - tag
   - name: prepare release
     image: node
     depends_on:
@@ -46,7 +46,6 @@ steps:
     when:
       event:
         - tag
-        - promote
   - name: prepare release notes
     image: alpine
     depends_on:
@@ -63,7 +62,6 @@ steps:
     when:
       event:
         - tag
-        - promote
   - name: dump release notes
     image: alpine
     depends_on:
@@ -87,7 +85,7 @@ steps:
       - npm publish
     when:
       event:
-        - promote
+        - tag
       ref:
         - refs/tags/v[0-9]*.[0-9]*.[0-9]*
   - name: publish package to github
@@ -103,7 +101,7 @@ steps:
       - npm publish
     when:
       event:
-        - promote
+        - tag
       ref:
         - refs/tags/v[0-9]*.[0-9]*.[0-9]*
   - name: publish release
@@ -121,7 +119,7 @@ steps:
       note: .releaseNotes.md
     when:
       event:
-        - promote
+        - tag
 
 trigger:
   ref:
@@ -132,4 +130,3 @@ trigger:
     - push
     - pull_request
     - tag
-    - promote
