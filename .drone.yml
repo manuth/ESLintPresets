@@ -54,7 +54,7 @@ steps:
       - export TagName=$$(cat .tagName.txt)
       - export TagHeading="/## \(.* \($${TagName}\|\[$${TagName}\]\)\)\$/"
       - export HeadingPattern='/## \(.* \(v[0-9.]*\|\[.*\]\)\)/'
-      - '[ ! -z $$(sed "${TagHeading}p;d" CHANGELOG.md ] || { echo "No Changelog Entries Found!" && false;'
+      - '[ ! -z "$$(sed "$${TagHeading}p;d" CHANGELOG.md)" ] || { echo "No Changelog Entries Found!" && false; }'
       - cp -f CHANGELOG.md .releaseNotes.md
       - sed -i "1,$${TagHeading}{ $${TagHeading}P ; d } ; $${HeadingPattern},\$d" .releaseNotes.md
       - cp -f .releaseNotes.md .releaseTitle.md
