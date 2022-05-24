@@ -43,7 +43,7 @@ export class ExtraneousDependencySuite extends IndependentRuleSuite
      */
     public override async SuiteSetup(mocha: Context, testContext: TestContext): Promise<void>
     {
-        mocha.timeout(10 * 1000);
+        mocha.timeout(20 * 1000);
         await super.SuiteSetup(mocha, testContext);
 
         spawnSync(

@@ -1,6 +1,6 @@
 {
   "name": "@manuth/eslint-plugin-typescript",
-  "version": "3.2.7",
+  "version": "3.2.8",
   "description": "A set of personal eslint-rulesets for TypeScript-projects",
   "author": "Manuel Thalmann <m@nuth.ch>",
   "license": "MIT",
