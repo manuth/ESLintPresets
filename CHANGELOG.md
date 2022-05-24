@@ -16,6 +16,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - All dependencies
   - Deprecated rules
     - `@typescript-eslint/no-parameter-properties` has been replaced by `@typescript-eslint/parameter-properties`
+  - Automated build pipelines
 
 ### Added
   - Reports for the use of deprecated rules while testing
