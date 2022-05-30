@@ -1,3 +1,4 @@
 import { GenerateConfiguration } from "./GenerateConfiguration";
 
-export = GenerateConfiguration(true, true);
+const WeakWithTypeChecking = GenerateConfiguration(true, true);
+export = WeakWithTypeChecking;

@@ -7,5 +7,6 @@
     "typescript.format.placeOpenBraceOnNewLineForFunctions": true,
     "mochaExplorer.debuggerConfig": "Debug Mocha Tests",
     "mochaExplorer.require": "source-map-support/register",
-    "mochaExplorer.timeout": 0
+    "mochaExplorer.timeout": 0,
+    "typescript.tsdk": "node_modules\\typescript\\lib"
 }
