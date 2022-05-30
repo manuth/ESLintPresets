@@ -13,7 +13,7 @@ import { ExplicitFunctionReturnType } from "./ExplicitFunctionReturnType.test.mj
 import { ExplicitMemberAccessibility } from "./ExplicitMemberAccessibility.test.mjs";
 import { FuncCallSpacing } from "./FuncCallSpacing.test.mjs";
 import { MemberDelimiterStyle } from "./MemberDelimiterStyle.test.mjs";
-import { MemberOrdering } from "./MemberOrdering/index.mjs";
+import { MemberOrdering } from "./MemberOrdering/index.test.mjs";
 import { NamingConvention } from "./NamingConvention.test.mjs";
 import { NoDynamicDelete } from "./NoDynamicDelete.test.mjs";
 import { NoEmptyFunction } from "./NoEmptyFunction.test.mjs";
@@ -39,7 +39,7 @@ import { Quotes } from "./Quotes.test.mjs";
 import { Semi } from "./Semi.test.mjs";
 import { SpaceBeforeFunctionParen } from "./SpaceBeforeFunctionParen.test.mjs";
 import { TripleSlashReference } from "./TripleSlashReference.test.mjs";
-import { TSLintTests } from "./TSLint/index.mjs";
+import { TSLintTests } from "./TSLint/index.test.mjs";
 import { TypeAnnotationSpacing } from "./TypeAnnotationSpacing.test.mjs";
 import { UnboundMethod } from "./UnboundMethod.test.mjs";
 import { UnifiedSignatures } from "./UnifiedSignatures.test.mjs";

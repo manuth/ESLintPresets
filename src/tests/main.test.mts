@@ -2,7 +2,7 @@ import { RegisterableContainer } from "./Debugging/RegisterableContainer.mjs";
 import { RuleSet } from "./Debugging/RuleSet.mjs";
 import { TestContext } from "./Debugging/TestContext.mjs";
 import { GeneralTests } from "./General/index.mjs";
-import { RuleSetsTests } from "./RuleSets/index.mjs";
+import { RuleSetsTests } from "./RuleSets/index.test.mjs";
 
 suite(
     "ESLintPresets",

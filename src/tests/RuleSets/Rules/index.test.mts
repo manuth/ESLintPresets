@@ -1,11 +1,11 @@
 import { basename } from "path";
 import { ContainerSuite } from "../../Debugging/Suites/ContainerSuite.mjs";
-import { CoreTests } from "./Core/index.mjs";
-import { DeprecationTests } from "./Deprecation/index.mjs";
-import { ImportTests } from "./Import/index.mjs";
-import { JSDocTests } from "./JSDoc/index.mjs";
-import { NodeTests } from "./Node/index.mjs";
-import { TypeScriptTests } from "./TypeScript/index.mjs";
+import { CoreTests } from "./Core/index.test.mjs";
+import { DeprecationTests } from "./Deprecation/index.test.mjs";
+import { ImportTests } from "./Import/index.test.mjs";
+import { JSDocTests } from "./JSDoc/index.test.mjs";
+import { NodeTests } from "./Node/index.test.mjs";
+import { TypeScriptTests } from "./TypeScript/index.test.mjs";
 
 /**
  * Provides tests for rules.
