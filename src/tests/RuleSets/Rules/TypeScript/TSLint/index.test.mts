@@ -1,4 +1,4 @@
-import { basename } from "path";
+import { basename } from "node:path";
 import { ESLintRule } from "../../../../../ESLintRule.js";
 import { ContainerSuite } from "../../../../Debugging/Suites/ContainerSuite.mjs";
 import { RuleSuite } from "../../../../Debugging/Suites/RuleSuite.mjs";

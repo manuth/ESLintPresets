@@ -1,4 +1,4 @@
-import { EOL } from "os";
+import { EOL } from "node:os";
 import { Accessor } from "./Accessor.mjs";
 import { ContainerType } from "./ContainerType.mjs";
 import { MemberDefinition } from "./MemberDefinition.mjs";

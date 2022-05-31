@@ -1,4 +1,4 @@
-import { basename } from "path";
+import { basename } from "node:path";
 import { ContainerSuite } from "../../../Debugging/Suites/ContainerSuite.mjs";
 import { NoUnpublishedImport } from "./NoUnpublishedImport.test.mjs";
 import { NoUnpublishedRequire } from "./NoUnpublishedRequire.test.mjs";

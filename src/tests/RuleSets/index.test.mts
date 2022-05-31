@@ -1,4 +1,4 @@
-import { basename } from "path";
+import { basename } from "node:path";
 import { RuleSetContainer } from "../Debugging/RuleSetContainer.mjs";
 import { ContainerSuite } from "../Debugging/Suites/ContainerSuite.mjs";
 import { RuleTests } from "./Rules/index.test.mjs";

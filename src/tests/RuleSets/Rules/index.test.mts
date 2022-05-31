@@ -1,4 +1,4 @@
-import { basename } from "path";
+import { basename } from "node:path";
 import { ContainerSuite } from "../../Debugging/Suites/ContainerSuite.mjs";
 import { CoreTests } from "./Core/index.test.mjs";
 import { DeprecationTests } from "./Deprecation/index.test.mjs";

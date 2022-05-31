@@ -1,6 +1,6 @@
-import { strictEqual } from "assert";
-import { createRequire } from "module";
-import { EOL } from "os";
+import { strictEqual } from "node:assert";
+import { createRequire } from "node:module";
+import { EOL } from "node:os";
 import { ESLint } from "eslint";
 import { TestConstants } from "../../TestConstants.mjs";
 import { IRegisterable } from "../IRegisterable.mjs";

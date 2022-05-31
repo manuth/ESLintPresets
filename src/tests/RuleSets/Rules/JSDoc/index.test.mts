@@ -1,4 +1,4 @@
-import { basename } from "path";
+import { basename } from "node:path";
 import { ContainerSuite } from "../../../Debugging/Suites/ContainerSuite.mjs";
 import { CheckAlignment } from "./CheckAlignment.test.mjs";
 import { CheckIndentation } from "./CheckIndentation.test.mjs";

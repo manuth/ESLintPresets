@@ -1,4 +1,4 @@
-import { basename } from "path";
+import { basename } from "node:path";
 import { ContainerSuite } from "../../../Debugging/Suites/ContainerSuite.mjs";
 import { AdjacentOverloadSignatures } from "./AdjacentOverloadSignatures.test.mjs";
 import { ArrayType } from "./ArrayType.test.mjs";

@@ -1,5 +1,5 @@
-import { spawnSync } from "child_process";
-import { fileURLToPath } from "url";
+import { spawnSync } from "node:child_process";
+import { fileURLToPath } from "node:url";
 import { Context } from "mocha";
 import npmWhich from "npm-which";
 import { IndependentRuleSuite } from "../../../Debugging/IndependentRuleSuite.mjs";
