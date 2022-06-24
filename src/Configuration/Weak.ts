@@ -1,3 +1,4 @@
 import { GenerateConfiguration } from "./GenerateConfiguration";
 
-export = GenerateConfiguration(true, false);
+const Weak = GenerateConfiguration(true, false);
+export = Weak;

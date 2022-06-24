@@ -1,6 +1,6 @@
 {
     "spec": [
-        "./lib/tests/main.test.js"
+        "./lib/tests/main.test.mjs"
     ],
     "ui": "tdd",
     "colors": true

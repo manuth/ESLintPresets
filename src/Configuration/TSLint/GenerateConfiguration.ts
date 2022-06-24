@@ -15,7 +15,7 @@ import { TSLintRule } from "../../TSLintRule";
  * @returns
  * The configuration.
  */
-export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
+export function GenerateConfiguration(weak: boolean, typeChecking: boolean): Configuration.RawConfigFile
 {
     let commonRules = {
         [TSLintRule.OrderedImports]: {

@@ -1,3 +1,4 @@
 import { GenerateConfiguration } from "./GenerateConfiguration";
 
-export = GenerateConfiguration(false, true);
+const RecommendedWithTypeChecking = GenerateConfiguration(false, true);
+export = RecommendedWithTypeChecking;

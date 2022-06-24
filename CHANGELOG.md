@@ -6,7 +6,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## ESLintPresets [Unreleased]
 
-[Show differences](https://github.com/manuth/ESLintPresets/compare/v3.2.10...dev)
+[Show differences](https://github.com/manuth/ESLintPresets/compare/v3.3.0...dev)
+
+## ESLintPresets v3.3.0
+### Added
+  - Support for ESModule and CommonJS files such as `.cjs`, `.mjs`, `.cts` and `.mts`
+  - Unit tests for ESModule and CommonJS files
+
+### Updated
+  - All dependencies
+  - All unit test files to ESModules
+  - All `node` imports to `node:`-urls
+
+[Show differences](https://github.com/manuth/ESLintPresets/compare/v3.2.10...v3.3.0)
 
 ## ESLintPresets v3.2.10
 ### Fixed

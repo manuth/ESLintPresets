@@ -21,9 +21,9 @@ import WeakWithTypeChecking = require("./TSLint/WeakWithTypeChecking");
  * @returns
  * The configuration.
  */
-export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
+export function GenerateConfiguration(weak: boolean, typeChecking: boolean): Linter.Config
 {
-    let pathConverter: any = [
+    let pathConverter: unknown = [
         {
             include: [
                 "src/**/*.ts"
@@ -31,6 +31,15 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
             replace: [
                 "^src/(.+)\\.ts$",
                 "lib/$1.js"
+            ]
+        },
+        {
+            include: [
+                "src/**/*.[cm]ts"
+            ],
+            replace: [
+                "^src/(.+)\\.([cm])ts$",
+                "lib/$1.$2js"
             ]
         },
         {
@@ -605,6 +614,8 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
         {
             files: [
                 "*.js",
+                "*.cjs",
+                "*.mjs",
                 "*.jsx"
             ],
             rules: {
@@ -614,6 +625,8 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
         {
             files: [
                 "*.ts",
+                "*.cts",
+                "*.mts",
                 "*.tsx"
             ],
             rules: {
@@ -648,7 +661,9 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
         config.overrides.push(
             {
                 files: [
-                    "*.d.ts"
+                    "*.d.ts",
+                    "*.d.cts",
+                    "*.d.mts"
                 ],
                 rules: {
                     [ESLintRule.ImportNoDefaultExport]: "off"
