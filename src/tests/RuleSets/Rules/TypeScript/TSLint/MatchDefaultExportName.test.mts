@@ -7,6 +7,7 @@ import { ScriptKind } from "../../../../Debugging/ScriptKind.mjs";
 import { LintTestCase } from "../../../../Debugging/Suites/LintTestCase.mjs";
 import { TSLintRuleSuite } from "../../../../Debugging/Suites/TSLintRuleSuite.mjs";
 import { ITestCase } from "../../../../Debugging/TestCases/ITestCase.mjs";
+import { TestContext } from "../../../../Debugging/TestContext.mjs";
 
 const { remove, writeFile } = fs;
 
@@ -16,9 +17,19 @@ const { remove, writeFile } = fs;
 class MatchDefaultExportNameSuite extends TSLintRuleSuite
 {
     /**
-     * The name of the temporary file.
+     * The name of the generic file.
      */
-    private tempFileName: string;
+    private genericFileName: string;
+
+    /**
+     * The name of the commonjs file.
+     */
+    private commonJSFileName: string;
+
+    /**
+     * The name of the es-module file.
+     */
+    private esModuleFileName: string;
 
     /**
      * The name of the export to test.
@@ -34,19 +45,54 @@ class MatchDefaultExportNameSuite extends TSLintRuleSuite
     }
 
     /**
-     * Gets the name of the temporary file.
+     * Gets the name of the generic file.
      */
-    public get TempFileName(): string
+    public get GenericFileName(): string
     {
-        if (!this.tempFileName)
+        if (!this.genericFileName)
         {
-            this.tempFileName = TempFileSystem.TempName(
+            this.genericFileName = TempFileSystem.TempBaseName(
                 {
+                    Prefix: "generic-",
                     Suffix: ".ts"
                 });
         }
 
-        return this.tempFileName;
+        return this.genericFileName;
+    }
+
+    /**
+     * Gets the name of the commonjs file.
+     */
+    public get CommonJSFileName(): string
+    {
+        if (!this.commonJSFileName)
+        {
+            this.commonJSFileName = TempFileSystem.TempBaseName(
+                {
+                    Prefix: "commonjs-",
+                    Suffix: ".cts"
+                });
+        }
+
+        return this.commonJSFileName;
+    }
+
+    /**
+     * Gets the name of the es-module file.
+     */
+    public get ESModuleFileName(): string
+    {
+        if (!this.esModuleFileName)
+        {
+            this.esModuleFileName = TempFileSystem.TempBaseName(
+                {
+                    Prefix: "es-module-",
+                    Suffix: ".mts"
+                });
+        }
+
+        return this.esModuleFileName;
     }
 
     /**
@@ -66,14 +112,41 @@ class MatchDefaultExportNameSuite extends TSLintRuleSuite
 
         return [
             {
-                Description: "Checking whether names of default export-members in `import`-statements must match…",
+                Description: "Checking whether names of default export-members in `import`-statements must match in CommonJS files…",
                 RuleSet: RuleSet.All,
-                ScriptKind: ScriptKind.TS,
+                ScriptKind: ScriptKind.GenericTS | ScriptKind.CTS,
                 CodeSnippets: [
                     {
                         Valid: false,
                         Snippets: [
-                            `import incorrectName from ${JSON.stringify(self.TempFileName.replace(/.ts$/, ""))};`
+                            `import incorrectName from ${JSON.stringify("./" + self.GenericFileName.replace(/\.ts$/, ""))};`,
+                            `import incorrectName from ${JSON.stringify("./" + self.CommonJSFileName.replace(/(\.c)ts$/, "$1js"))};`
+                        ]
+                    },
+                    {
+                        Valid: true,
+                        Snippets: [
+                            `import ${self.ExportName} from ${JSON.stringify("./" + self.GenericFileName.replace(/\.ts$/, ""))};`,
+                            `import ${self.ExportName} from ${JSON.stringify("./" + self.CommonJSFileName.replace(/(\.c)ts$/, "$1js"))};`
+                        ]
+                    }
+                ]
+            },
+            {
+                Description: "Checking whether names of default export-members in `import`-statements must match in ESModule files…",
+                RuleSet: RuleSet.All,
+                ScriptKind: ScriptKind.MTS,
+                CodeSnippets: [
+                    {
+                        Valid: false,
+                        Snippets: [
+                            `import incorrectName from ${JSON.stringify("./" + self.ESModuleFileName.replace(/(\.m)ts$/, "$1js"))};`
+                        ]
+                    },
+                    {
+                        Valid: true,
+                        Snippets: [
+                            `import ${self.ExportName} from ${JSON.stringify("./" + self.ESModuleFileName.replace(/(\.m)ts$/, "$1js"))}`
                         ]
                     }
                 ]
@@ -98,14 +171,22 @@ class MatchDefaultExportNameSuite extends TSLintRuleSuite
      *
      * @param mocha
      * The mocha-context.
+     *
+     * @param testContext
+     * The test-context.
      */
-    public override async SuiteSetup(mocha: Context): Promise<void>
+    public override async TestSetup(mocha: Context, testContext: TestContext): Promise<void>
     {
-        return writeFile(
-            this.TempFileName,
-            `
-                let ${this.ExportName} = 2;
-                export default ${this.ExportName};`);
+        await Promise.all(
+            [
+                this.GenericFileName,
+                this.CommonJSFileName,
+                this.esModuleFileName
+            ].map((file) => writeFile(
+                testContext.Workspace.MakeSourcePath(file),
+                `
+                    let ${this.ExportName} = 2;
+                    export default ${this.ExportName};`)));
     }
 
     /**
@@ -113,10 +194,18 @@ class MatchDefaultExportNameSuite extends TSLintRuleSuite
      *
      * @param mocha
      * The mocha-context.
+     *
+     * @param testContext
+     * The test-context.
      */
-    public override async SuiteTeardown(mocha: Context): Promise<void>
+    public override async TestTeardown(mocha: Context, testContext: TestContext): Promise<void>
     {
-        return remove(this.TempFileName);
+        await Promise.all(
+            [
+                this.GenericFileName,
+                this.CommonJSFileName,
+                this.ESModuleFileName
+            ].map((file) => remove(testContext.Workspace.MakePath(file))));
     }
 }
 
