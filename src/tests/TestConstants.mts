@@ -14,9 +14,15 @@ export class TestConstants
      * Provides file-names for the different script-kinds.
      */
     public static FileNames: Record<ScriptKind, string> = {
-        [ScriptKind.JS]: "javascript.js",
-        [ScriptKind.TS]: "typescript.ts",
-        [ScriptKind.DTS]: "types.d.ts"
+        [ScriptKind.GenericJS]: "javascript.js",
+        [ScriptKind.CJS]: "commonjs.cjs",
+        [ScriptKind.MJS]: "es-module.mjs",
+        [ScriptKind.GenericTS]: "typescript.ts",
+        [ScriptKind.CTS]: "common-ts.cts",
+        [ScriptKind.MTS]: "es-module-ts.mts",
+        [ScriptKind.GenericDTS]: "types.d.ts",
+        [ScriptKind.CDTS]: "commonjs-types.d.cts",
+        [ScriptKind.MDTS]: "es-module-types.d.mts"
     };
 
     /**
@@ -31,9 +37,15 @@ export class TestConstants
      * Provides the script-kinds to execute.
      */
     public static ScriptKinds: ScriptKind[] = [
-        ScriptKind.JS,
-        ScriptKind.TS,
-        ScriptKind.DTS
+        ScriptKind.GenericJS,
+        ScriptKind.CJS,
+        ScriptKind.MJS,
+        ScriptKind.GenericTS,
+        ScriptKind.CTS,
+        ScriptKind.MTS,
+        ScriptKind.GenericDTS,
+        ScriptKind.CDTS,
+        ScriptKind.MDTS
     ];
 
     /**
