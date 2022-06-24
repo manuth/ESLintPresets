@@ -170,10 +170,13 @@ export abstract class LintTestCase implements ITestCase, IRegisterable
                                                     "```"
                                                 ].join(EOL);
 
+                                                let tagLine = `Error while linting ${TestConstants.ScriptKindNames[scriptKind]} file:`;
+
                                                 if (error)
                                                 {
                                                     throw new Error(
                                                         [
+                                                            tagLine,
                                                             "The following code-snippet couldn't be linted:",
                                                             snippetBlock,
                                                             "",
@@ -211,6 +214,7 @@ export abstract class LintTestCase implements ITestCase, IRegisterable
                                                     throw new Error(
                                                         [
                                                             dedent(`
+                                                                ${tagLine}
                                                                 Unexpected Linting-result:
                                                                 This code-snippet is expected to report ${valid ? "no errors" : "an error"} but reported ${valid ? "at least one" : "none"}:`),
                                                             snippetBlock,

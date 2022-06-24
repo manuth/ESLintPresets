@@ -26,6 +26,21 @@ export class TestConstants
     };
 
     /**
+     * Provides the names of the different script kinds.
+     */
+    public static ScriptKindNames: Record<ScriptKind, string> = {
+        [ScriptKind.GenericJS]: "JavaScript",
+        [ScriptKind.CJS]: "JavaScript CommonJS",
+        [ScriptKind.MJS]: "JavaScript ESModule",
+        [ScriptKind.GenericTS]: "TypeScript",
+        [ScriptKind.CTS]: "TypeScript CommonJS",
+        [ScriptKind.MTS]: "TypeScript ESModule",
+        [ScriptKind.GenericDTS]: "TypeScript Declaration",
+        [ScriptKind.CDTS]: "TypeScript CommonJS Declaration",
+        [ScriptKind.MDTS]: "TypeScript ESModule Declaration"
+    };
+
+    /**
      * Provides the rule-sets to execute.
      */
     public static RuleSets: RuleSet[] = [
