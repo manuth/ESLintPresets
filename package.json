@@ -9,8 +9,16 @@
     "Presets",
     "Rules"
   ],
-  "main": "lib/index.js",
-  "types": "lib/index.d.ts",
+  "exports": {
+    ".": {
+      "require": {
+        "types": "./lib/index.d.ts",
+        "default": "./lib/index.js"
+      }
+    }
+  },
+  "main": "./lib/index.js",
+  "types": "./lib/index.d.ts",
   "directories": {
     "lib": "lib"
   },
