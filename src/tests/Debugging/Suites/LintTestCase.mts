@@ -1,6 +1,6 @@
 import { strictEqual } from "node:assert";
-import { createRequire } from "node:module";
 import { EOL } from "node:os";
+import dedent from "dedent";
 import { ESLint } from "eslint";
 import { TestConstants } from "../../TestConstants.mjs";
 import { IRegisterable } from "../IRegisterable.mjs";
@@ -10,8 +10,6 @@ import { ICodeSnippetCollection } from "../TestCases/ICodeSnippet.mjs";
 import { ITestCase } from "../TestCases/ITestCase.mjs";
 import { TestContext } from "../TestContext.mjs";
 import { ESLintRunner } from "./ESLintRunner.mjs";
-
-const dedent = createRequire(import.meta.url)("dedent");
 
 /**
  * Represents a test-case.
