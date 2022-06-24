@@ -21,9 +21,9 @@ import WeakWithTypeChecking = require("./TSLint/WeakWithTypeChecking");
  * @returns
  * The configuration.
  */
-export function GenerateConfiguration(weak: boolean, typeChecking: boolean): any
+export function GenerateConfiguration(weak: boolean, typeChecking: boolean): Linter.Config
 {
-    let pathConverter: any = [
+    let pathConverter: unknown = [
         {
             include: [
                 "src/**/*.ts"
