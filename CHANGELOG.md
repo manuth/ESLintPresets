@@ -6,7 +6,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## ESLintPresets [Unreleased]
 
-[Show differences](https://github.com/manuth/ESLintPresets/compare/v3.3.0...dev)
+[Show differences](https://github.com/manuth/ESLintPresets/compare/v3.3.1...dev)
+
+## ESLintPresets v3.3.1
+### Add
+  - `exports` directive to the `package.json` file
+
+[Show differences](https://github.com/manuth/ESLintPresets/compare/v3.3.0...v3.3.1)
 
 ## ESLintPresets v3.3.0
 ### Added
