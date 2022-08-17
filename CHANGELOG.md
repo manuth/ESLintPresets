@@ -5,13 +5,17 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## ESLintPresets [Unreleased]
+
+[Show differences](https://github.com/manuth/ESLintPresets/compare/v3.3.2...dev)
+
+## ESLintPresets v3.3.2
 ### Fixed
   - Type declarations by adding missing dependencies
 
 ### Updated
   - All dependencies
 
-[Show differences](https://github.com/manuth/ESLintPresets/compare/v3.3.1...dev)
+[Show differences](https://github.com/manuth/ESLintPresets/compare/v3.3.1...v3.3.2)
 
 ## ESLintPresets v3.3.1
 ### Add
