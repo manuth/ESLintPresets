@@ -28,7 +28,8 @@ steps:
   - name: prepare release
     image: node
     depends_on:
-      - install
+      - lint
+      - test
     commands:
       - npm install @stdlib/utils-escape-regexp-string --no-save
       - node -e "console.log(require('@stdlib/utils-escape-regexp-string')('${DRONE_TAG}'))" > .tagName.txt
@@ -70,8 +71,6 @@ steps:
   - name: create package
     image: node
     depends_on:
-      - lint
-      - test
       - check release prerequisites
     commands:
       - npm pack
