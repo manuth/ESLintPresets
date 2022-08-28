@@ -6,7 +6,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## ESLintPresets [Unreleased]
 
-[Show differences](https://github.com/manuth/ESLintPresets/compare/v3.3.2...dev)
+[Show differences](https://github.com/manuth/ESLintPresets/compare/v3.3.3...dev)
+
+## ESLintPresets v3.3.3
+### Fixed
+  - The use of this package in ESModule environments by refactoring `exports` in the `package.json` file
+
+### Added
+  - Support for importing this package's `package.json` file
+  - Steps to the drone-pipeline for ensuring that the module is published without any errors
+
+### Updated
+  - All dependencies
+
+[Show differences](https://github.com/manuth/ESLintPresets/compare/v3.3.2...v3.3.3)
 
 ## ESLintPresets v3.3.2
 ### Fixed

@@ -2,7 +2,7 @@
     "extends": "@manuth/tsconfig/recommended",
     "compilerOptions": {
         "declaration": true,
-        "module": "NodeNext",
+        "module": "Node16",
         "lib": [
             "ES2020"
         ],
