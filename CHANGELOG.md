@@ -6,7 +6,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## ESLintPresets [Unreleased]
 
-[Show differences](https://github.com/manuth/ESLintPresets/compare/v3.3.3...dev)
+[Show differences](https://github.com/manuth/ESLintPresets/compare/v3.3.4...dev)
+
+## ESLintPresets v3.3.4
+### Fixed
+  - Dependency issues
+
+### Updated
+  - All dependencies
+
+[Show differences](https://github.com/manuth/ESLintPresets/compare/v3.3.3...v3.3.4)
 
 ## ESLintPresets v3.3.3
 ### Fixed
