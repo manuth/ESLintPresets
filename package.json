@@ -40,8 +40,8 @@
     "lint": "eslint --max-warnings 0 ./src .eslintrc.js",
     "lint-ide": "npm run lint || exit 0",
     "test": "mocha",
-    "prepare": "npm run patchTypeScript && npm run rebuild",
-    "patchTypeScript": "ts-patch install"
+    "prepare": "npm run patch-ts && npm run rebuild",
+    "patch-ts": "ts-patch install"
   },
   "dependencies": {
     "@typescript-eslint/typescript-estree": "^5.35.1",
