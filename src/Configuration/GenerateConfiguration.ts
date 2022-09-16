@@ -671,28 +671,8 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): Lin
             });
     }
 
-    return merge<Linter.Config, Linter.Config, Linter.Config>(
+    return merge<Linter.Config, Linter.Config>(
         config,
-        {
-            rules: {
-                [ESLintRule.TSLint]: [
-                    "warn",
-                    {
-                        lintFile: require.resolve(
-                            join(
-                                __dirname,
-                                "TSLint",
-                                typeChecking ?
-                                    weak ?
-                                        nameof(WeakWithTypeChecking) :
-                                        nameof(RecommendedWithTypeChecking) :
-                                    weak ?
-                                        nameof(Weak) :
-                                        nameof(Recommended)))
-                    }
-                ]
-            }
-        },
         typeChecking ?
             {
                 plugins: [
@@ -714,6 +694,22 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): Lin
                         "warn",
                         {
                             checkCompoundAssignments: true
+                        }
+                    ],
+                    [ESLintRule.TSLint]: [
+                        "warn",
+                        {
+                            lintFile: require.resolve(
+                                join(
+                                    __dirname,
+                                    "TSLint",
+                                    typeChecking ?
+                                        weak ?
+                                            nameof(WeakWithTypeChecking) :
+                                            nameof(RecommendedWithTypeChecking) :
+                                        weak ?
+                                            nameof(Weak) :
+                                            nameof(Recommended)))
                         }
                     ],
                     [ESLintRule.NoReturnAwait]: "warn",
