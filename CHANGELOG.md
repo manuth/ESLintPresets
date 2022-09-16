@@ -6,7 +6,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## ESLintPresets [Unreleased]
 
-[Show differences](https://github.com/manuth/ESLintPresets/compare/v3.3.4...dev)
+[Show differences](https://github.com/manuth/ESLintPresets/compare/v4.0.0...dev)
+
+## ESLintPresets v4.0.0
+### Fixed
+  - The use of the presets without type checking
+
+### Added
+  - The `eslint-comments` plugin for linting `eslint-enable` and `eslint-disable` comments
+  - Unit tests for the newly added rules
+
+### Updated
+  - All dependencies
+
+[Show differences](https://github.com/manuth/ESLintPresets/compare/v3.3.4...v4.0.0)
 
 ## ESLintPresets v3.3.4
 ### Fixed
