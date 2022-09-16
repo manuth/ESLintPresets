@@ -10,12 +10,12 @@ export let RequireDescription = new RuleSuite(
     ESLintRule.ESLintCommentRequireDescription,
     [
         {
-            Description: "Checking whether `eslint` directive comments require a description…",
+            Description: "Checking whether `eslint` directive comments do not require a description…",
             RuleSet: RuleSet.All,
             ScriptKind: ScriptKind.All,
             CodeSnippets: [
                 {
-                    Valid: false,
+                    Valid: true,
                     Snippets: [
                         `
                             /* eslint ${ESLintRule.NoConsole}: error */`,

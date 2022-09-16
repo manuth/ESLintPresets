@@ -255,7 +255,7 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): Lin
             [ESLintRule.ESLintCommentNoUnusedDisable]: "error",
             [ESLintRule.ESLintCommentNoUnusedEnable]: "error",
             [ESLintRule.ESLintCommentRequireDescription]: [
-                weak ? "off" : "warn",
+                "off",
                 {
                     ignore: [
                         "exported",
