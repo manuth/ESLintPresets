@@ -19,6 +19,11 @@ export enum ESLintPlugin
     Deprecation = "@delagen/deprecation",
 
     /**
+     * Indicates the `eslint-comments` plugin.
+     */
+    ESLintComments = "eslint-comments",
+
+    /**
      * Indicates the `import` plugin.
      */
     Import = "import",

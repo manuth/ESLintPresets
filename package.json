@@ -81,6 +81,7 @@
     "@typescript-eslint/eslint-plugin-tslint": "^5.35.1",
     "@typescript-eslint/parser": "^5.35.1",
     "eslint": "*",
+    "eslint-plugin-eslint-comments": "^3.2.0",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-jsdoc": "^39.3.6",
     "eslint-plugin-node": "^11.1.0",
