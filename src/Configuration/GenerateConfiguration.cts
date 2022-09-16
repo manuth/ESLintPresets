@@ -60,6 +60,7 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): Lin
         parser: "@typescript-eslint/parser",
         plugins: [
             ESLintPlugin.TypeScriptESLint,
+            ESLintPlugin.ESLintComments,
             ESLintPlugin.Import,
             ESLintPlugin.JSDoc,
             ESLintPlugin.Node
@@ -242,6 +243,12 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): Lin
             [ESLintRule.TypeScriptTripleSlashReference]: "off",
             [ESLintRule.TypeScriptTypeAnnotationSpacing]: "warn",
             [ESLintRule.TypeScriptUnifiedSignatures]: "off",
+            [ESLintRule.ESLintCommentDisableEnablePair]: [
+                "error",
+                {
+                    allowWholeFile: true
+                }
+            ],
             [ESLintRule.ImportNewLineAfterImport]: "warn",
             [ESLintRule.ImportNoDefaultExport]: weak ? "off" : "warn",
             [ESLintRule.ImportNoDuplicates]: weak ? "off" : "warn",
