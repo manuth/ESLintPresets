@@ -5,6 +5,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## ESLintPresets [Unreleased]
+
+[Show differences](https://github.com/manuth/ESLintPresets/compare/v4.0.0...dev)
+
+## ESLintPresets v4.0.0
 ### Fixed
   - The use of the presets without type checking
 
@@ -15,7 +19,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Updated
   - All dependencies
 
-[Show differences](https://github.com/manuth/ESLintPresets/compare/v3.3.4...dev)
+[Show differences](https://github.com/manuth/ESLintPresets/compare/v3.3.4...v4.0.0)
 
 ## ESLintPresets v3.3.4
 ### Fixed
