@@ -98,8 +98,8 @@ export class TypeCheckingCase extends LintTestCase
     {
         try
         {
-            await engineRunner();
-            return true;
+            let result = await engineRunner();
+            return result.flatMap((lintResult) => lintResult.messages).length === 0;
         }
         catch (e)
         {
