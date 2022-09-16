@@ -1,5 +1,4 @@
 import merge = require("lodash.merge");
-// eslint-disable-next-line node/no-unpublished-import
 import type { Configuration } from "tslint";
 import { TSLintRule } from "../../TSLintRule.cjs";
 
