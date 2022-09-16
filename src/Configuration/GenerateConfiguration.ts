@@ -60,7 +60,6 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): Lin
         parser: "@typescript-eslint/parser",
         plugins: [
             ESLintPlugin.TypeScriptESLint,
-            ESLintPlugin.Deprecation,
             ESLintPlugin.Import,
             ESLintPlugin.JSDoc,
             ESLintPlugin.Node
@@ -677,7 +676,8 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): Lin
             {
                 plugins: [
                     ...config.plugins,
-                    ESLintPlugin.TSLint
+                    ESLintPlugin.TSLint,
+                    ESLintPlugin.Deprecation
                 ],
                 rules: {
                     [ESLintRule.TypeScriptAwaitThenable]: "warn",
