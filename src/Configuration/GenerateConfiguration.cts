@@ -252,6 +252,7 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): Lin
             [ESLintRule.ESLintCommentNoAggregatingEnable]: "error",
             [ESLintRule.ESLintCommentNoDuplicateDisable]: "error",
             [ESLintRule.ESLintCommentNoUnlimitedDisable]: "error",
+            [ESLintRule.ESLintCommentNoUnusedDisable]: "error",
             [ESLintRule.ImportNewLineAfterImport]: "warn",
             [ESLintRule.ImportNoDefaultExport]: weak ? "off" : "warn",
             [ESLintRule.ImportNoDuplicates]: weak ? "off" : "warn",

@@ -72,6 +72,7 @@ export abstract class ESLintRule
     public static readonly ESLintCommentNoAggregatingEnable = `${ESLintPlugin.ESLintComments}/no-aggregating-enable` as const;
     public static readonly ESLintCommentNoDuplicateDisable = `${ESLintPlugin.ESLintComments}/no-duplicate-disable` as const;
     public static readonly ESLintCommentNoUnlimitedDisable = `${ESLintPlugin.ESLintComments}/no-unlimited-disable` as const;
+    public static readonly ESLintCommentNoUnusedDisable = `${ESLintPlugin.ESLintComments}/no-unused-disable` as const;
     public static readonly ImportNewLineAfterImport = `${ESLintPlugin.Import}/newline-after-import` as const;
     public static readonly ImportNoDefaultExport = `${ESLintPlugin.Import}/no-default-export` as const;
     public static readonly ImportNoDuplicates = `${ESLintPlugin.Import}/no-duplicates` as const;
