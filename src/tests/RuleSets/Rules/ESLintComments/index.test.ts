@@ -1,6 +1,7 @@
 import { basename } from "node:path";
 import { ContainerSuite } from "../../../Debugging/Suites/ContainerSuite.js";
 import { DisableEnablePair } from "./DisableEnablePair.test.js";
+import { NoAggregatingEnable } from "./NoAggregatingEnable.test.js";
 
 /**
  * Provides tests for eslint-comment rules.
@@ -8,5 +9,6 @@ import { DisableEnablePair } from "./DisableEnablePair.test.js";
 export let ESLintCommentTests = new ContainerSuite(
     basename(new URL(".", import.meta.url).pathname),
     [
-        DisableEnablePair
+        DisableEnablePair,
+        NoAggregatingEnable
     ]);

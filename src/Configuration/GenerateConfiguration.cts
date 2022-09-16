@@ -249,6 +249,7 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): Lin
                     allowWholeFile: true
                 }
             ],
+            [ESLintRule.ESLintCommentNoAggregatingEnable]: "error",
             [ESLintRule.ImportNewLineAfterImport]: "warn",
             [ESLintRule.ImportNoDefaultExport]: weak ? "off" : "warn",
             [ESLintRule.ImportNoDuplicates]: weak ? "off" : "warn",
