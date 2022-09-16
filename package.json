@@ -1,6 +1,7 @@
 {
   "name": "@manuth/eslint-plugin-typescript",
   "version": "3.3.4",
+  "type": "module",
   "description": "A set of personal eslint-rulesets for TypeScript-projects",
   "author": "Manuel Thalmann <m@nuth.ch>",
   "license": "MIT",
@@ -11,13 +12,13 @@
   ],
   "exports": {
     ".": {
-      "types": "./lib/index.d.ts",
-      "default": "./lib/index.js"
+      "types": "./lib/index.d.cts",
+      "default": "./lib/index.cjs"
     },
     "./package.json": "./package.json"
   },
-  "main": "./lib/index.js",
-  "types": "./lib/index.d.ts",
+  "main": "./lib/index.cjs",
+  "types": "./lib/index.d.cts",
   "directories": {
     "lib": "lib"
   },
