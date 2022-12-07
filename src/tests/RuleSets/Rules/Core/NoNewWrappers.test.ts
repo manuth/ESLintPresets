@@ -10,7 +10,7 @@ export let NoNewWrappers = new RuleSuite(
     ESLintRule.NoNewWrappers,
     [
         {
-            Description: `Checking whether initializing new objects of classes for literals such as \`${nameof(Boolean)}\` are disallowed…`,
+            Description: `Checking whether initializing new objects of classes for literals such as \`${Boolean.name}\` are disallowed…`,
             RuleSet: RuleSet.All,
             ScriptKind: ScriptKind.Scripts,
             CodeSnippets: [

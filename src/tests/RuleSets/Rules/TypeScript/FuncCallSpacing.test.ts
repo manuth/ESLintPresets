@@ -1,3 +1,4 @@
+import { nameOf } from "ts-nameof-proxy";
 import { ESLintRule } from "../../../../ESLintRule.cjs";
 import { RuleSet } from "../../../Debugging/RuleSet.js";
 import { ScriptKind } from "../../../Debugging/ScriptKind.js";
@@ -10,7 +11,7 @@ export let FuncCallSpacing = new RuleSuite(
     ESLintRule.TypeScriptFuncCallSpacing,
     [
         {
-            Description: `Checking whether \`${nameof(Function)}\`-calls must be spaced correctly…`,
+            Description: `Checking whether \`${nameOf(Function)}\`-calls must be spaced correctly…`,
             RuleSet: RuleSet.All,
             ScriptKind: ScriptKind.Scripts,
             CodeSnippets: [
