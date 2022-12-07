@@ -1,11 +1,11 @@
+import nameOf from "@fluffy-spoon/name-of";
 import { IPackageMetadata } from "@manuth/package-json-editor";
-import tsNameofProxy from "ts-nameof-proxy";
 import { ESLintRule } from "../../../../ESLintRule.cjs";
 import { RuleSet } from "../../../Debugging/RuleSet.js";
 import { ScriptKind } from "../../../Debugging/ScriptKind.js";
 import { ImportVisibilitySuite } from "./ImportVisibilitySuite.js";
 
-const { nameOf } = tsNameofProxy;
+const { getPropertyName } = nameOf;
 
 /**
  * Provides tests for the {@link ESLintRule.NodeNoUnpublishedImport `NodeNoUnpublishedImport`} rule.
@@ -14,7 +14,7 @@ export let NoUnpublishedImport = new ImportVisibilitySuite(
     ESLintRule.NodeNoUnpublishedImport,
     [
         {
-            Description: `Checking whether importing \`${nameOf<IPackageMetadata>((p) => p.devDependencies)}\` from public files is disallowed…`,
+            Description: `Checking whether importing \`${getPropertyName<IPackageMetadata>((p) => p.devDependencies)}\` from public files is disallowed…`,
             RuleSet: RuleSet.All,
             ScriptKind: ScriptKind.All,
             CodeSnippets: [
