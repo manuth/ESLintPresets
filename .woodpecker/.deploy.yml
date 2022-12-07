@@ -15,7 +15,7 @@ pipeline:
       event:
         - tag
         - deployment
-  prepare release:
+  check prerequisites:
     image: node
     secrets:
       - npm_token
