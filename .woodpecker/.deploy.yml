@@ -1,15 +1,20 @@
-when:
-  event: tag
-
 pipeline:
   install:
     image: node
     commands:
       - npm install
+    when:
+      event:
+        - tag
+        - deployment
   build:
     image: node
     commands:
       - npm run build
+    when:
+      event:
+        - tag
+        - deployment
   prepare release:
     image: node
     secrets:
@@ -35,11 +40,19 @@ pipeline:
       - testNPM "$NPM_TOKEN" || { echo "The NPM Access Token is invalid!" && false; }
       - testGitHub "$GITHUB_PACKAGE_TOKEN" || { echo "The GitHub Package Token is invalid!" && false; }
       - testGitHub "$GITHUB_PUBLISH_TOKEN" || { echo "The GitHub Publish Token is invalid!" && false; }
+    when:
+      event:
+        - tag
+        - deployment
   create package:
     image: node
     group: package
     commands:
       - npm pack
+    when:
+      event:
+        - tag
+        - deployment
   prepare release notes:
     image: alpine
     group: package
@@ -51,6 +64,10 @@ pipeline:
       - sed -i "1,$${TagHeading}{ $${TagHeading}P ; d } ; $${HeadingPattern},\$d" .releaseNotes.md
       - cp -f .releaseNotes.md .releaseTitle.md
       - sed -i "2,\$d ; s$${HeadingPattern}\\\\1/" .releaseTitle.md
+    when:
+      event:
+        - tag
+        - deployment
   publish to npm:
     image: node
     secrets:
@@ -58,6 +75,10 @@ pipeline:
     commands:
       - echo "//registry.npmjs.org/:_authToken=$${NPM_TOKEN}" > ~/.npmrc
       - npm publish
+    when:
+      event:
+        - tag
+        - deployment
   publish to GitHub:
     image: node
     secrets:
@@ -66,6 +87,10 @@ pipeline:
       - echo "//npm.pkg.github.com/:_authToken=$${GITHUB_TOKEN}" > ~/.npmrc
       - echo "registry=https://npm.pkg.github.com" >> ~/.npmrc
       - npm publish
+    when:
+      event:
+        - tag
+        - deployment
   publish release:
     image: plugins/github-release
     settings:
@@ -75,6 +100,10 @@ pipeline:
           - "*.tgz"
         title: .releaseTitle.md
         note: .releaseNotes.md
+    when:
+      event:
+        - tag
+        - deployment
     
 
 depends_on:
