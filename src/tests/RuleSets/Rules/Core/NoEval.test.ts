@@ -1,8 +1,10 @@
-import { keyof } from "ts-keyof";
+import tsKeyof from "ts-keyof";
 import { ESLintRule } from "../../../../ESLintRule.cjs";
 import { RuleSet } from "../../../Debugging/RuleSet.js";
 import { ScriptKind } from "../../../Debugging/ScriptKind.js";
 import { RuleSuite } from "../../../Debugging/Suites/RuleSuite.js";
+
+const { keyof } = tsKeyof;
 
 /**
  * Provides tests for the {@link ESLintRule.NoEval `NoEval`} rule.
