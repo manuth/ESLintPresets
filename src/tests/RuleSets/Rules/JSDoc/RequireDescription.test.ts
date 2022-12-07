@@ -19,11 +19,6 @@ export let RequireDescription = new RuleSuite(
                     Snippets: [
                         `
                             /**
-                             * 
-                             */
-                            let test = () => { };`,
-                        `
-                            /**
                              *
                              */
                             function test() { }`,
@@ -526,6 +521,23 @@ export let RequireDescription = new RuleSuite(
                                  */
                                 (a, b);
                             }`
+                    ]
+                }
+            ]
+        },
+        {
+            Description: "Checking whether descriptions are optional for variable declarations…",
+            RuleSet: RuleSet.Recommended,
+            ScriptKind: ScriptKind.Scripts,
+            CodeSnippets: [
+                {
+                    Valid: true,
+                    Snippets: [
+                        `
+                            /**
+                             * @type {string}
+                             */
+                            let test;`
                     ]
                 }
             ]

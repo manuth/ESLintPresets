@@ -308,7 +308,6 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): Lin
                 weak ? "off" : "warn",
                 {
                     contexts: [
-                        AST_NODE_TYPES.VariableDeclaration,
                         AST_NODE_TYPES.ClassDeclaration,
                         AST_NODE_TYPES.ClassExpression,
                         AST_NODE_TYPES.ArrowFunctionExpression,
