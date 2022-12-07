@@ -1,7 +1,5 @@
 when:
-  event: 
-    - tag
-    - deployment
+  event: tag
 
 pipeline:
   install:
