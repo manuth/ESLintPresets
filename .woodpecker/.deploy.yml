@@ -15,6 +15,19 @@ pipeline:
       event:
         - tag
         - deployment
+  prepare release:
+    image: node
+    commands:
+      - npm install @stdlib/utils-escape-regexp-string --no-save
+      - node -e "console.log(require('@stdlib/utils-escape-regexp-string')('$${TAG_NAME}'))" > .tagName.txt
+      - export TagName=$$(cat .tagName.txt)
+      - echo "/^## \(.* \($${TagName}\|\[$${TagName}\]\)\)\$/" > .tagHeading.txt
+    environment:
+      - TAG_NAME=${CI_COMMIT_TAG}
+    when:
+      event:
+        - tag
+        - deployment
   check prerequisites:
     image: node
     secrets:
