@@ -59,7 +59,7 @@
     "@types/dedent": "^0.7.0",
     "@types/fs-extra": "^9.0.13",
     "@types/lodash.merge": "^4.6.7",
-    "@types/mocha": "^9.1.1",
+    "@types/mocha": "^10.0.1",
     "@types/node": "^18.7.18",
     "@types/npm-which": "^3.0.1",
     "dedent": "^0.7.0",
