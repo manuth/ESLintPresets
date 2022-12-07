@@ -1,3 +1,8 @@
+when:
+  event: 
+    - tag
+    - deployment
+
 pipeline:
   install:
     image: node
@@ -76,8 +81,3 @@ pipeline:
 
 depends_on:
   - test
-
-when:
-  event: 
-    - tag
-    - deployment
