@@ -1,9 +1,11 @@
 import { IPackageMetadata } from "@manuth/package-json-editor";
-import { nameOf } from "ts-nameof-proxy";
+import tsNameofProxy from "ts-nameof-proxy";
 import { ESLintRule } from "../../../../ESLintRule.cjs";
 import { RuleSet } from "../../../Debugging/RuleSet.js";
 import { ScriptKind } from "../../../Debugging/ScriptKind.js";
 import { ImportVisibilitySuite } from "./ImportVisibilitySuite.js";
+
+const { nameOf } = tsNameofProxy;
 
 /**
  * Provides tests for the {@link ESLintRule.NodeNoUnpublishedRequire `NodeNoUnpublishedRequire`} rule.
