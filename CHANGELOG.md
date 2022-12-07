@@ -5,10 +5,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## ESLintPresets [Unreleased]
+
+[Show differences](https://github.com/manuth/ESLintPresets/compare/v4.0.1...dev)
+
+## ESLintPresets v4.0.1
 ### Removed
   - Enforcement of descriptions in jsdoc comments of variables
 
-[Show differences](https://github.com/manuth/ESLintPresets/compare/v4.0.0...dev)
+[Show differences](https://github.com/manuth/ESLintPresets/compare/v4.0.0...v4.0.1)
 
 ## ESLintPresets v4.0.0
 ### Fixed
