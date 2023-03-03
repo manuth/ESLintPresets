@@ -3,7 +3,7 @@ import { TempDirectory } from "@manuth/temp-files";
 import { ESLint, Linter } from "eslint";
 import fs from "fs-extra";
 import merge from "lodash.merge";
-import { fileName, Module, TSConfigJSON } from "types-tsconfig";
+import { fileName, TSConfigJSON } from "types-tsconfig";
 import { TestConstants } from "../TestConstants.js";
 import { RuleSet } from "./RuleSet.js";
 import { ScriptKind } from "./ScriptKind.js";
@@ -50,7 +50,7 @@ export class Workspace
             {
                 compilerOptions: {
                     rootDir: this.sourceDirectory,
-                    module: "NodeNext" as Module,
+                    module: "NodeNext",
                     allowJs: true,
                     lib: [
                         "ES2020"
