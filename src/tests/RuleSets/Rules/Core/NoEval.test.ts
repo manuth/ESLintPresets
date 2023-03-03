@@ -1,4 +1,3 @@
-import { keyof } from "ts-keyof";
 import { ESLintRule } from "../../../../ESLintRule.cjs";
 import { RuleSet } from "../../../Debugging/RuleSet.js";
 import { ScriptKind } from "../../../Debugging/ScriptKind.js";
@@ -12,7 +11,7 @@ export let NoEval = new RuleSuite(
     [
         {
             // eslint-disable-next-line no-eval
-            Description: `Checking whether the \`${keyof({ eval })}\`-method and similar methods are disallowed…`,
+            Description: `Checking whether the \`${nameof(eval)}\`-method and similar methods are disallowed…`,
             RuleSet: RuleSet.All,
             ScriptKind: ScriptKind.Scripts,
             CodeSnippets: [
@@ -20,7 +19,7 @@ export let NoEval = new RuleSuite(
                     Valid: false,
                     Snippets: [
                         // eslint-disable-next-line no-eval
-                        `${keyof({ eval })}('console.log()')`
+                        `${nameof(eval)}('console.log()')`
                     ]
                 }
             ]

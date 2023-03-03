@@ -1,7 +1,6 @@
 import { AST_NODE_TYPES } from "@typescript-eslint/typescript-estree";
 import type { Linter } from "eslint";
 import merge = require("lodash.merge");
-import { keyof } from "ts-keyof";
 import { join } from "upath";
 import { ESLintPlugin } from "../ESLintPlugin.cjs";
 import { ESLintRule } from "../ESLintRule.cjs";
@@ -55,7 +54,7 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): Lin
     ];
 
     let returnsFilterSelector = `:not([returnType.typeAnnotation.type='${AST_NODE_TYPES.TSVoidKeyword}'])` +
-        `:not([returnType.typeAnnotation.typeName.name='${Promise.name}'][returnType.typeAnnotation.typeParameters.params.0.type='${AST_NODE_TYPES.TSVoidKeyword}'])`;
+        `:not([returnType.typeAnnotation.typeName.name='${nameof(Promise)}'][returnType.typeAnnotation.typeParameters.params.0.type='${AST_NODE_TYPES.TSVoidKeyword}'])`;
 
     let config: Linter.Config = {
         parser: "@typescript-eslint/parser",
@@ -728,11 +727,11 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): Lin
                                     (
                                         typeChecking ?
                                             weak ?
-                                                keyof({ WeakWithTypeChecking }) :
-                                                keyof({ RecommendedWithTypeChecking }) :
+                                                nameof(WeakWithTypeChecking) :
+                                                nameof(RecommendedWithTypeChecking) :
                                             weak ?
-                                                keyof({ Weak }) :
-                                                keyof({ Recommended })) + ".cjs"))
+                                                nameof(Weak) :
+                                                nameof(Recommended)) + ".cjs"))
                         }
                     ],
                     [ESLintRule.NoReturnAwait]: "warn",

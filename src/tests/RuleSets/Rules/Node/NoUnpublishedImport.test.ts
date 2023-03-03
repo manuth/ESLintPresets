@@ -1,5 +1,4 @@
 import { IPackageMetadata } from "@manuth/package-json-editor";
-import { nameOf } from "ts-nameof-proxy";
 import { ESLintRule } from "../../../../ESLintRule.cjs";
 import { RuleSet } from "../../../Debugging/RuleSet.js";
 import { ScriptKind } from "../../../Debugging/ScriptKind.js";
@@ -12,7 +11,7 @@ export let NoUnpublishedImport = new ImportVisibilitySuite(
     ESLintRule.NodeNoUnpublishedImport,
     [
         {
-            Description: `Checking whether importing \`${nameOf<IPackageMetadata>((p) => p.devDependencies)}\` from public files is disallowed…`,
+            Description: `Checking whether importing \`${nameof<IPackageMetadata>((p) => p.devDependencies)}\` from public files is disallowed…`,
             RuleSet: RuleSet.All,
             ScriptKind: ScriptKind.All,
             CodeSnippets: [
