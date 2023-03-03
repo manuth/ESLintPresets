@@ -41,8 +41,7 @@
     "lint": "eslint --max-warnings 0 ./src .eslintrc.cjs",
     "lint-ide": "npm run lint || exit 0",
     "test": "mocha",
-    "prepare": "npm run patch-ts && npm run rebuild",
-    "patch-ts": "ts-patch install"
+    "prepare": "ts-patch install"
   },
   "dependencies": {
     "@types/eslint": "^8.4.6",
