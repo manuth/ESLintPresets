@@ -1,10 +1,8 @@
-import tsNameofProxy from "ts-nameof-proxy";
+import { nameOf } from "ts-nameof-proxy";
 import { ESLintRule } from "../../../../ESLintRule.cjs";
 import { RuleSet } from "../../../Debugging/RuleSet.js";
 import { ScriptKind } from "../../../Debugging/ScriptKind.js";
 import { RuleSuite } from "../../../Debugging/Suites/RuleSuite.js";
-
-const { nameOf } = tsNameofProxy;
 
 /**
  * Provides tests for the {@link ESLintRule.TypeScriptFuncCallSpacing `TypeScriptFuncCallSpacing`} rule.
