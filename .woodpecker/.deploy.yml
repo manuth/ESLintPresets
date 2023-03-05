@@ -38,9 +38,9 @@ pipeline:
         }
       - export TagHeading=$$(cat .tagHeading.txt)
       - '[ ! -z "$$(sed "$${TagHeading}p;d" CHANGELOG.md)" ] || { echo "No Changelog Entries Found!" && false; }'
-      - testNPM "$NPM_TOKEN" || { echo "The NPM Access Token is invalid!" && false; }
-      - testGitHub "$GITHUB_PACKAGES_TOKEN" || { echo "The GitHub Package Token is invalid!" && false; }
-      - testGitHub "$GITHUB_PUBLISH_TOKEN" || { echo "The GitHub Publish Token is invalid!" && false; }
+      - testNPM $NPM_TOKEN || { echo "The NPM Access Token is invalid!" && false; }
+      - testGitHub $GITHUB_PACKAGES_TOKEN || { echo "The GitHub Package Token is invalid!" && false; }
+      - testGitHub $GITHUB_PUBLISH_TOKEN || { echo "The GitHub Publish Token is invalid!" && false; }
     when:
       event: tag
       tag: v[0-9]*.[0-9]*.[0-9]*
