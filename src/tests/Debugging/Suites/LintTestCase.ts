@@ -132,8 +132,8 @@ export abstract class LintTestCase implements ITestCase, IRegisterable
                                     {
                                         for (let codeSnippet of snippetCollection.Snippets)
                                         {
-                                            let error: Error;
-                                            let results: ESLint.LintResult[];
+                                            let error: Error | undefined;
+                                            let results: ESLint.LintResult[] = [];
 
                                             try
                                             {

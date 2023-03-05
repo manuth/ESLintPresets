@@ -630,6 +630,8 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): Lin
         }
     };
 
+    config.overrides ??= [];
+
     config.overrides.push(
         {
             files: [
@@ -696,7 +698,7 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): Lin
         typeChecking ?
             {
                 plugins: [
-                    ...config.plugins,
+                    ...config.plugins ?? [],
                     ESLintPlugin.TSLint,
                     ESLintPlugin.Deprecation
                 ],

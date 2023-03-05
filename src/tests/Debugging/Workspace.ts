@@ -146,11 +146,11 @@ export class Workspace
             this.linters.set(ruleSet, new Map());
         }
 
-        if (!this.linters.get(ruleSet).has(typeChecking))
+        if (!this.linters.get(ruleSet)?.has(typeChecking))
         {
             let configuration = this.GetConfiguration(ruleSet, typeChecking, typeChecking);
 
-            this.linters.get(ruleSet).set(
+            this.linters.get(ruleSet)?.set(
                 typeChecking,
                 new ESLint(
                     {
@@ -165,7 +165,7 @@ export class Workspace
                     }));
         }
 
-        return this.linters.get(ruleSet).get(typeChecking);
+        return this.linters.get(ruleSet)?.get(typeChecking) as ESLint;
     }
 
     /**
