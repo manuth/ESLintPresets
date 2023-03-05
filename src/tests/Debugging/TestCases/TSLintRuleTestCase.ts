@@ -58,7 +58,7 @@ export class TSLintRuleTestCase extends RuleTestCase
      */
     protected override async VerifyResults(results: ESLint.LintResult[]): Promise<boolean>
     {
-        return super.VerifyResults(results) &&
+        return (await super.VerifyResults(results)) &&
             !results.some(
                 (result) =>
                 {
