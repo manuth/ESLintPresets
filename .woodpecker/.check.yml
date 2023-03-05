@@ -1,6 +1,6 @@
 pipeline:
   install:
-    image: node
+    image: node:lts
     commands:
       - npm install
   build:
