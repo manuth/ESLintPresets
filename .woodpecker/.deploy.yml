@@ -2,7 +2,7 @@ pipeline:
   install:
     image: node
     commands:
-      - npm install --unsafe-perm
+      - npm install
     when:
       event: tag
       tag: refs/tags/v[0-9]*.[0-9]*.[0-9]*
