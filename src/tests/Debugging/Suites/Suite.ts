@@ -1,7 +1,7 @@
 import { Context } from "mocha";
+import { ISuite } from "./ISuite.js";
 import { RuleSet } from "../RuleSet.js";
 import { TestContext } from "../TestContext.js";
-import { ISuite } from "./ISuite.js";
 
 /**
  * Represents a suite.

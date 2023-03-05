@@ -19,17 +19,17 @@ class MatchDefaultExportNameSuite extends TSLintRuleSuite
     /**
      * The name of the generic file.
      */
-    private genericFileName: string;
+    private genericFileName?: string;
 
     /**
      * The name of the commonjs file.
      */
-    private commonJSFileName: string;
+    private commonJSFileName?: string;
 
     /**
      * The name of the es-module file.
      */
-    private esModuleFileName: string;
+    private esModuleFileName?: string;
 
     /**
      * The name of the export to test.
@@ -181,7 +181,7 @@ class MatchDefaultExportNameSuite extends TSLintRuleSuite
             [
                 this.GenericFileName,
                 this.CommonJSFileName,
-                this.esModuleFileName
+                this.ESModuleFileName
             ].map((file) => writeFile(
                 testContext.Workspace.MakeSourcePath(file),
                 `

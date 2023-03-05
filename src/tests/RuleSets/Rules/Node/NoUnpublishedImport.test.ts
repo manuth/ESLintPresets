@@ -1,8 +1,8 @@
 import { IPackageMetadata } from "@manuth/package-json-editor";
+import { ImportVisibilitySuite } from "./ImportVisibilitySuite.js";
 import { ESLintRule } from "../../../../ESLintRule.cjs";
 import { RuleSet } from "../../../Debugging/RuleSet.js";
 import { ScriptKind } from "../../../Debugging/ScriptKind.js";
-import { ImportVisibilitySuite } from "./ImportVisibilitySuite.js";
 
 /**
  * Provides tests for the {@link ESLintRule.NodeNoUnpublishedImport `NodeNoUnpublishedImport`} rule.

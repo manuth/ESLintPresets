@@ -16,7 +16,7 @@ export class ImportVisibilitySuite extends IndependentRuleSuite
     /**
      * The name of the ignored file.
      */
-    private static ignoredFileName: string = null;
+    private static ignoredFileName: string | null = null;
 
     /**
      * The name of the `.npmignore`-file.

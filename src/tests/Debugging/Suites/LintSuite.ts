@@ -1,8 +1,8 @@
+import { LintTestCase } from "./LintTestCase.js";
+import { Suite } from "./Suite.js";
 import { RuleSet } from "../RuleSet.js";
 import { ITestCase } from "../TestCases/ITestCase.js";
 import { TestContext } from "../TestContext.js";
-import { LintTestCase } from "./LintTestCase.js";
-import { Suite } from "./Suite.js";
 
 /**
  * Represents a test for linting.

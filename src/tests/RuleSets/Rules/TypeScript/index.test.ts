@@ -1,5 +1,4 @@
 import { basename } from "node:path";
-import { ContainerSuite } from "../../../Debugging/Suites/ContainerSuite.js";
 import { AdjacentOverloadSignatures } from "./AdjacentOverloadSignatures.test.js";
 import { ArrayType } from "./ArrayType.test.js";
 import { AwaitThenable } from "./AwaitThenable.test.js";
@@ -43,6 +42,7 @@ import { TSLintTests } from "./TSLint/index.test.js";
 import { TypeAnnotationSpacing } from "./TypeAnnotationSpacing.test.js";
 import { UnboundMethod } from "./UnboundMethod.test.js";
 import { UnifiedSignatures } from "./UnifiedSignatures.test.js";
+import { ContainerSuite } from "../../../Debugging/Suites/ContainerSuite.js";
 
 /**
  * Provides tests for typescript-related rules.

@@ -1,7 +1,7 @@
+import { RuleSuite } from "./RuleSuite.js";
 import { ESLintRule } from "../../../ESLintRule.cjs";
 import { ITestCase } from "../TestCases/ITestCase.js";
 import { TSLintRuleTestCase } from "../TestCases/TSLintRuleTestCase.js";
-import { RuleSuite } from "./RuleSuite.js";
 
 /**
  * Represents a test for a `tslint`-rule.

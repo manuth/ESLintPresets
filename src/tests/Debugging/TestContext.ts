@@ -9,7 +9,7 @@ export class TestContext
     /**
      * The workspace.
      */
-    private workspace: Workspace = null;
+    private workspace: Workspace | null = null;
 
     /**
      * Initializes a new instance of the {@link TestContext `TestContext`} class.

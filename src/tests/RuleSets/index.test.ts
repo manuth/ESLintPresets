@@ -1,7 +1,7 @@
 import { basename } from "node:path";
+import { RuleTests } from "./Rules/index.test.js";
 import { RuleSetContainer } from "../Debugging/RuleSetContainer.js";
 import { ContainerSuite } from "../Debugging/Suites/ContainerSuite.js";
-import { RuleTests } from "./Rules/index.test.js";
 
 /**
  * Provides tests for rule-sets.

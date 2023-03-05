@@ -2,12 +2,12 @@ import { AST_NODE_TYPES } from "@typescript-eslint/typescript-estree";
 import type { Linter } from "eslint";
 import merge = require("lodash.merge");
 import { join } from "upath";
-import { ESLintPlugin } from "../ESLintPlugin.cjs";
-import { ESLintRule } from "../ESLintRule.cjs";
 import Recommended = require("./TSLint/Recommended.cjs");
 import RecommendedWithTypeChecking = require("./TSLint/RecommendedWithTypeChecking.cjs");
 import Weak = require("./TSLint/Weak.cjs");
 import WeakWithTypeChecking = require("./TSLint/WeakWithTypeChecking.cjs");
+import { ESLintPlugin } from "../ESLintPlugin.cjs";
+import { ESLintRule } from "../ESLintRule.cjs";
 
 /**
  * Generates an `eslint`-configuration.
@@ -85,8 +85,7 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): Lin
             [ESLintRule.TypeScriptCommaSpacing]: "warn",
             [ESLintRule.TypeScriptConsistentTypeAssertions]: "warn",
             [ESLintRule.TypeScriptConsistentTypeDefinitions]: [
-                "warn",
-                "interface"
+                "off"
             ],
             [ESLintRule.TypeScriptDefaultParamLast]: "error",
             [ESLintRule.TypeScriptExplicitFunctionReturnType]: "off",
@@ -307,7 +306,6 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): Lin
                 weak ? "off" : "warn",
                 {
                     contexts: [
-                        AST_NODE_TYPES.VariableDeclaration,
                         AST_NODE_TYPES.ClassDeclaration,
                         AST_NODE_TYPES.ClassExpression,
                         AST_NODE_TYPES.ArrowFunctionExpression,
@@ -631,6 +629,8 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): Lin
         }
     };
 
+    config.overrides ??= [];
+
     config.overrides.push(
         {
             files: [
@@ -697,7 +697,7 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): Lin
         typeChecking ?
             {
                 plugins: [
-                    ...config.plugins,
+                    ...config.plugins ?? [],
                     ESLintPlugin.TSLint,
                     ESLintPlugin.Deprecation
                 ],

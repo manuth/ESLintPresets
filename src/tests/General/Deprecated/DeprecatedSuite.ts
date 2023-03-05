@@ -1,6 +1,6 @@
+import { DeprecatedCase } from "./DeprecatedCase.js";
 import { LintSuite } from "../../Debugging/Suites/LintSuite.js";
 import { LintTestCase } from "../../Debugging/Suites/LintTestCase.js";
-import { DeprecatedCase } from "./DeprecatedCase.js";
 
 /**
  * Represents a test-suite for deprecated rules.

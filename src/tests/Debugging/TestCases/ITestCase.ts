@@ -1,6 +1,6 @@
+import { ICodeSnippetCollection } from "./ICodeSnippet.js";
 import { RuleSet } from "../RuleSet.js";
 import { ScriptKind } from "../ScriptKind.js";
-import { ICodeSnippetCollection } from "./ICodeSnippet.js";
 
 /**
  * Represents a test-case.

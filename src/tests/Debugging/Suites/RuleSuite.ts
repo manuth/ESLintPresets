@@ -1,6 +1,6 @@
+import { LintSuite } from "./LintSuite.js";
 import { ITestCase } from "../TestCases/ITestCase.js";
 import { RuleTestCase } from "../TestCases/RuleTestCase.js";
-import { LintSuite } from "./LintSuite.js";
 
 /**
  * Represents a test for an `eslint`-rule.
