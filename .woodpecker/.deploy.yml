@@ -64,7 +64,7 @@ pipeline:
     when:
       event: tag
       tag: v[0-9]*.[0-9]*.[0-9]*
-  publish to npm:
+  publish package to npm:
     image: node
     secrets:
       - npm_token
@@ -74,7 +74,7 @@ pipeline:
     when:
       event: tag
       tag: v[0-9]*.[0-9]*.[0-9]*
-  publish to GitHub:
+  publish package to github:
     image: node
     secrets:
       - github_packages_token
