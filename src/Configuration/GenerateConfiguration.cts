@@ -85,8 +85,7 @@ export function GenerateConfiguration(weak: boolean, typeChecking: boolean): Lin
             [ESLintRule.TypeScriptCommaSpacing]: "warn",
             [ESLintRule.TypeScriptConsistentTypeAssertions]: "warn",
             [ESLintRule.TypeScriptConsistentTypeDefinitions]: [
-                "warn",
-                "interface"
+                "off"
             ],
             [ESLintRule.TypeScriptDefaultParamLast]: "error",
             [ESLintRule.TypeScriptExplicitFunctionReturnType]: "off",
