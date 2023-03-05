@@ -54,7 +54,8 @@ export class Workspace
                     allowJs: true,
                     lib: [
                         "ES2020"
-                    ]
+                    ],
+                    strictNullChecks: true
                 }
             } as TSConfigJSON);
     }
