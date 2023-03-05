@@ -106,7 +106,6 @@ pipeline:
     when:
       event: tag
       tag: v[0-9]*.[0-9]*.[0-9]*
-    
 
 depends_on:
   - check
