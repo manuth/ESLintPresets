@@ -5,14 +5,14 @@ pipeline:
       - npm install
     when:
       event: tag
-      tag: refs/tags/v[0-9]*.[0-9]*.[0-9]*
+      tag: v[0-9]*.[0-9]*.[0-9]*
   build:
     image: node
     commands:
       - npm run build
     when:
       event: tag
-      tag: refs/tags/v[0-9]*.[0-9]*.[0-9]*
+      tag: v[0-9]*.[0-9]*.[0-9]*
   prepare release:
     image: node
     commands:
@@ -24,7 +24,7 @@ pipeline:
       - TAG_NAME=${CI_COMMIT_TAG}
     when:
       event: tag
-      tag: refs/tags/v[0-9]*.[0-9]*.[0-9]*
+      tag: v[0-9]*.[0-9]*.[0-9]*
   check prerequisites:
     image: node
     secrets:
@@ -52,7 +52,7 @@ pipeline:
       - testGitHub "$GITHUB_PUBLISH_TOKEN" || { echo "The GitHub Publish Token is invalid!" && false; }
     when:
       event: tag
-      tag: refs/tags/v[0-9]*.[0-9]*.[0-9]*
+      tag: v[0-9]*.[0-9]*.[0-9]*
   create package:
     image: node
     group: package
@@ -60,7 +60,7 @@ pipeline:
       - npm pack
     when:
       event: tag
-      tag: refs/tags/v[0-9]*.[0-9]*.[0-9]*
+      tag: v[0-9]*.[0-9]*.[0-9]*
   prepare release notes:
     image: alpine
     group: package
@@ -74,7 +74,7 @@ pipeline:
       - sed -i "2,\$d ; s$${HeadingPattern}\\\\1/" .releaseTitle.md
     when:
       event: tag
-      tag: refs/tags/v[0-9]*.[0-9]*.[0-9]*
+      tag: v[0-9]*.[0-9]*.[0-9]*
   publish to npm:
     image: node
     secrets:
@@ -84,7 +84,7 @@ pipeline:
       - npm publish
     when:
       event: tag
-      tag: refs/tags/v[0-9]*.[0-9]*.[0-9]*
+      tag: v[0-9]*.[0-9]*.[0-9]*
   publish to GitHub:
     image: node
     secrets:
@@ -95,7 +95,7 @@ pipeline:
       - npm publish
     when:
       event: tag
-      tag: refs/tags/v[0-9]*.[0-9]*.[0-9]*
+      tag: v[0-9]*.[0-9]*.[0-9]*
   publish release:
     image: plugins/github-release
     settings:
@@ -107,7 +107,7 @@ pipeline:
       note: .releaseNotes.md
     when:
       event: tag
-      tag: refs/tags/v[0-9]*.[0-9]*.[0-9]*
+      tag: v[0-9]*.[0-9]*.[0-9]*
     
 
 depends_on:
