@@ -111,4 +111,4 @@ pipeline:
     
 
 depends_on:
-  - test
+  - check
