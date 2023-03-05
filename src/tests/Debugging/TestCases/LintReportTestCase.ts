@@ -1,9 +1,9 @@
 import { ESLint } from "eslint";
+import { ICodeSnippetCollection } from "./ICodeSnippet.js";
 import { RuleSet } from "../RuleSet.js";
 import { ScriptKind } from "../ScriptKind.js";
 import { ESLintRunner } from "../Suites/ESLintRunner.js";
 import { LintTestCase } from "../Suites/LintTestCase.js";
-import { ICodeSnippetCollection } from "./ICodeSnippet.js";
 
 /**
  * Represents a test which checks lint-reports.

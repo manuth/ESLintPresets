@@ -1,7 +1,7 @@
+import { ExtraneousDependencySuite } from "./ExtraneousDependencySuite.js";
 import { ESLintRule } from "../../../../ESLintRule.cjs";
 import { RuleSet } from "../../../Debugging/RuleSet.js";
 import { ScriptKind } from "../../../Debugging/ScriptKind.js";
-import { ExtraneousDependencySuite } from "./ExtraneousDependencySuite.js";
 
 /**
  * Provides tests for the {@link ESLintRule.ImportNoExtraneousDependencies `ImportNoExtraneousDependencies`} rule.

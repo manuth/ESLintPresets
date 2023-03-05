@@ -1,7 +1,7 @@
-import { LintSuite } from "../../Debugging/Suites/LintSuite.js";
-import { LintTestCase } from "../../Debugging/Suites/LintTestCase.js";
 import { ITypeCheckingCase } from "./ITypeCheckingCase.js";
 import { TypeCheckingCase } from "./TypeCheckingCase.js";
+import { LintSuite } from "../../Debugging/Suites/LintSuite.js";
+import { LintTestCase } from "../../Debugging/Suites/LintTestCase.js";
 
 /**
  * Represents a test-suite for type-checking.

@@ -1,11 +1,11 @@
 import { basename } from "node:path";
-import { ESLintRule } from "../../../../../ESLintRule.cjs";
-import { ContainerSuite } from "../../../../Debugging/Suites/ContainerSuite.js";
-import { RuleSuite } from "../../../../Debugging/Suites/RuleSuite.js";
 import { MatchDefaultExportName } from "./MatchDefaultExportName.test.js";
 import { NoVoidExpression } from "./NoVoidExpression.test.js";
 import { OrderedImports } from "./OrderedImports.test.js";
 import { ReturnUndefined } from "./ReturnUndefined.test.js";
+import { ESLintRule } from "../../../../../ESLintRule.cjs";
+import { ContainerSuite } from "../../../../Debugging/Suites/ContainerSuite.js";
+import { RuleSuite } from "../../../../Debugging/Suites/RuleSuite.js";
 
 /**
  * Provides tests for tslint-rules.

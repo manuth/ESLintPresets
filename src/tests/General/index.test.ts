@@ -1,7 +1,7 @@
 import { basename } from "node:path";
-import { ContainerSuite } from "../Debugging/Suites/ContainerSuite.js";
 import { DeprecatedRulesTests } from "./Deprecated/index.test.js";
 import { TypeCheckingTests } from "./TypeChecking/index.test.js";
+import { ContainerSuite } from "../Debugging/Suites/ContainerSuite.js";
 
 /**
  * Provides general tests.

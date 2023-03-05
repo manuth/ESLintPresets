@@ -1,9 +1,9 @@
+import { RuleSet } from "./Debugging/RuleSet.js";
+import { ScriptKind } from "./Debugging/ScriptKind.js";
 import Recommended from "../Configuration/Recommended.cjs";
 import RecommendedWithTypeChecking from "../Configuration/RecommendedWithTypeChecking.cjs";
 import Weak from "../Configuration/Weak.cjs";
 import WeakWithTypeChecking from "../Configuration/WeakWithTypeChecking.cjs";
-import { RuleSet } from "./Debugging/RuleSet.js";
-import { ScriptKind } from "./Debugging/ScriptKind.js";
 
 /**
  * Provides constants for the tests.

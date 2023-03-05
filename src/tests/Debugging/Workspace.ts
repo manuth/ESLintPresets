@@ -4,9 +4,9 @@ import { ESLint, Linter } from "eslint";
 import fs from "fs-extra";
 import merge from "lodash.merge";
 import { fileName, TSConfigJSON } from "types-tsconfig";
-import { TestConstants } from "../TestConstants.js";
 import { RuleSet } from "./RuleSet.js";
 import { ScriptKind } from "./ScriptKind.js";
+import { TestConstants } from "../TestConstants.js";
 
 const { writeJSON, ensureFileSync } = fs;
 

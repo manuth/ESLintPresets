@@ -2,6 +2,7 @@ import { strictEqual } from "node:assert";
 import { EOL } from "node:os";
 import dedent from "dedent";
 import { ESLint } from "eslint";
+import { ESLintRunner } from "./ESLintRunner.js";
 import { TestConstants } from "../../TestConstants.js";
 import { IRegisterable } from "../IRegisterable.js";
 import { RuleSet } from "../RuleSet.js";
@@ -9,7 +10,6 @@ import { ScriptKind } from "../ScriptKind.js";
 import { ICodeSnippetCollection } from "../TestCases/ICodeSnippet.js";
 import { ITestCase } from "../TestCases/ITestCase.js";
 import { TestContext } from "../TestContext.js";
-import { ESLintRunner } from "./ESLintRunner.js";
 
 /**
  * Represents a test-case.

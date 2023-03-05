@@ -1,13 +1,13 @@
-import { ESLintRule } from "../../../../../ESLintRule.cjs";
-import { RuleSet } from "../../../../Debugging/RuleSet.js";
-import { ScriptKind } from "../../../../Debugging/ScriptKind.js";
-import { RuleSuite } from "../../../../Debugging/Suites/RuleSuite.js";
-import { ICodeSnippetCollection } from "../../../../Debugging/TestCases/ICodeSnippet.js";
 import { Accessor } from "./Accessor.js";
 import { ContainerType } from "./ContainerType.js";
 import { MemberType } from "./MemberType.js";
 import { Modifier } from "./Modifier.js";
 import { SourceCodeCreator } from "./SourceCodeCreator.js";
+import { ESLintRule } from "../../../../../ESLintRule.cjs";
+import { RuleSet } from "../../../../Debugging/RuleSet.js";
+import { ScriptKind } from "../../../../Debugging/ScriptKind.js";
+import { RuleSuite } from "../../../../Debugging/Suites/RuleSuite.js";
+import { ICodeSnippetCollection } from "../../../../Debugging/TestCases/ICodeSnippet.js";
 
 let signatureMembers = [
     MemberType.Field,

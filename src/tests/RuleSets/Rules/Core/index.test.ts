@@ -1,5 +1,4 @@
 import { basename } from "path";
-import { ContainerSuite } from "../../../Debugging/Suites/ContainerSuite.js";
 import { ArrayBracketNewLine } from "./ArrayBracketNewLine.test.js";
 import { ArrayBracketSpacing } from "./ArrayBracketSpacing.test.js";
 import { ArrayElementNewLine } from "./ArrayElementNewLine.test.js";
@@ -89,6 +88,7 @@ import { UseIsNaN } from "./UseIsNaN.test.js";
 import { ValidTypeof } from "./ValidTypeof.test.js";
 import { YieldStarSpacing } from "./YieldStarSpacing.test.js";
 import { Yoda } from "./Yoda.test.js";
+import { ContainerSuite } from "../../../Debugging/Suites/ContainerSuite.js";
 
 /**
  * Provides tests for core-rules.

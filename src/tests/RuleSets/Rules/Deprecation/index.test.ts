@@ -1,6 +1,6 @@
 import { basename } from "node:path";
-import { ContainerSuite } from "../../../Debugging/Suites/ContainerSuite.js";
 import { Deprecation } from "./Deprecation.test.js";
+import { ContainerSuite } from "../../../Debugging/Suites/ContainerSuite.js";
 
 /**
  * Provides tests for rule-deprecation.

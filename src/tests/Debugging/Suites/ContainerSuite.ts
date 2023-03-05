@@ -1,8 +1,8 @@
+import { Suite } from "./Suite.js";
 import { IRegisterable } from "../IRegisterable.js";
 import { RegisterableContainer } from "../RegisterableContainer.js";
 import { RuleSet } from "../RuleSet.js";
 import { TestContext } from "../TestContext.js";
-import { Suite } from "./Suite.js";
 
 /**
  * Represents a suite which contains other suites.

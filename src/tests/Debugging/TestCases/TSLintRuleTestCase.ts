@@ -1,9 +1,9 @@
 import { ESLint } from "eslint";
+import { ICodeSnippetCollection } from "./ICodeSnippet.js";
+import { RuleTestCase } from "./RuleTestCase.js";
 import { RuleSet } from "../RuleSet.js";
 import { ScriptKind } from "../ScriptKind.js";
 import { TSLintRuleSuite } from "../Suites/TSLintRuleSuite.js";
-import { ICodeSnippetCollection } from "./ICodeSnippet.js";
-import { RuleTestCase } from "./RuleTestCase.js";
 
 /**
  * Represents a test-case which verifies a `tslint`-rule.

@@ -1,5 +1,4 @@
 import { basename } from "node:path";
-import { ContainerSuite } from "../../../Debugging/Suites/ContainerSuite.js";
 import { CheckAlignment } from "./CheckAlignment.test.js";
 import { CheckIndentation } from "./CheckIndentation.test.js";
 import { CheckParamNames } from "./CheckParamNames.test.js";
@@ -16,6 +15,7 @@ import { RequireParamDescription } from "./RequireParamDescription.test.js";
 import { RequireParamType } from "./RequireParamType.test.js";
 import { RequireReturns } from "./RequireReturns.test.js";
 import { RequireReturnsType } from "./RequireReturnsType.test.js";
+import { ContainerSuite } from "../../../Debugging/Suites/ContainerSuite.js";
 
 /**
  * Provides tests for jsdoc-rules.

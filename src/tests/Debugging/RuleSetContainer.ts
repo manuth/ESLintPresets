@@ -1,7 +1,7 @@
-import { TestConstants } from "../TestConstants.js";
 import { IRegisterable } from "./IRegisterable.js";
 import { RuleSet } from "./RuleSet.js";
 import { TestContext } from "./TestContext.js";
+import { TestConstants } from "../TestConstants.js";
 
 /**
  * Represents a container which registers its children by their rule-set.

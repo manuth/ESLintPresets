@@ -2,12 +2,12 @@ import { AST_NODE_TYPES } from "@typescript-eslint/typescript-estree";
 import type { Linter } from "eslint";
 import merge = require("lodash.merge");
 import { join } from "upath";
-import { ESLintPlugin } from "../ESLintPlugin.cjs";
-import { ESLintRule } from "../ESLintRule.cjs";
 import Recommended = require("./TSLint/Recommended.cjs");
 import RecommendedWithTypeChecking = require("./TSLint/RecommendedWithTypeChecking.cjs");
 import Weak = require("./TSLint/Weak.cjs");
 import WeakWithTypeChecking = require("./TSLint/WeakWithTypeChecking.cjs");
+import { ESLintPlugin } from "../ESLintPlugin.cjs";
+import { ESLintRule } from "../ESLintRule.cjs";
 
 /**
  * Generates an `eslint`-configuration.
