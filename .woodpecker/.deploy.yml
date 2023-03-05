@@ -20,8 +20,6 @@ pipeline:
       - node -e "console.log(require('@stdlib/utils-escape-regexp-string')('${CI_COMMIT_TAG}'))" > .tagName.txt
       - export TagName=$$(cat .tagName.txt)
       - echo "/^## \(.* \($${TagName}\|\[$${TagName}\]\)\)\$/" > .tagHeading.txt
-    environment:
-      - TAG_NAME=${CI_COMMIT_TAG}
     when:
       event: tag
       tag: v[0-9]*.[0-9]*.[0-9]*
