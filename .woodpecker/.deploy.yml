@@ -46,7 +46,6 @@ pipeline:
       tag: v[0-9]*.[0-9]*.[0-9]*
   create package:
     image: node
-    group: package
     commands:
       - npm pack
     when:
@@ -54,7 +53,6 @@ pipeline:
       tag: v[0-9]*.[0-9]*.[0-9]*
   prepare release notes:
     image: alpine
-    group: package
     commands:
       - export TagName=$$(cat .tagName.txt)
       - export TagHeading=$$(cat .tagHeading.txt)
