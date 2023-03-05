@@ -9,7 +9,7 @@ pipeline:
   prepare release:
     image: node
     commands:
-      - npm install @stdlib/utils-escape-regexp-string --no-save
+      - npm install --no-save @stdlib/utils-escape-regexp-string
       - node -e "console.log(require('@stdlib/utils-escape-regexp-string')('${CI_COMMIT_TAG}'))" > .tagName.txt
       - export TagName=$$(cat .tagName.txt)
       - echo "/^## \(.* \($${TagName}\|\[$${TagName}\]\)\)\$/" > .tagHeading.txt
