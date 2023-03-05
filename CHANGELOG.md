@@ -5,6 +5,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## ESLintPresets [Unreleased]
+
+[Show differences](https://github.com/manuth/ESLintPresets/compare/v4.1.0...dev)
+
+## ESLintPresets v4.1.0
 ### Fixed
   - Vulnerabilities in dependencies
 
@@ -17,7 +21,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Dependabot checks
   - Enforcement of consistent type definitions
 
-[Show differences](https://github.com/manuth/ESLintPresets/compare/v4.0.1...dev)
+[Show differences](https://github.com/manuth/ESLintPresets/compare/v4.0.1...v4.1.0)
 
 ## ESLintPresets v4.0.1
 ### Removed
